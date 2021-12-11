@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Carbonext - API B2B",
   tagline:
-    "API para calculor, compra, venda e neutralização de créditos de carbono.",
+    "API para calculo, compra, venda e neutralização de créditos de carbono.",
   url: "https://b2b-docs.carbonext.com.br",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -25,13 +25,14 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl: "https://github.com/facebook/docusaurus/edit/main/website/",
+          editUrl:
+            "https://github.com/carbonext-co2e/api-b2b-docs/tree/master/src/pages",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            "https://github.com/facebook/docusaurus/edit/main/website/blog/",
+            "https://github.com/carbonext-co2e/api-b2b-docs/tree/master/blog",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -44,10 +45,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "My Site",
+        title: "Carbonext",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "Carbonext Logo",
+          src: "img/logo-clean.svg",
         },
         items: [
           {
@@ -58,7 +59,7 @@ const config = {
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/carbonext-co2e/api-b2b-docs",
             label: "GitHub",
             position: "right",
           },
@@ -80,16 +81,12 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                label: "Instagram",
+                href: "https://instagram.com/carbonext.oficial",
               },
               {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                label: "Website",
+                href: "https://carbonext.com.br",
               },
             ],
           },
@@ -102,12 +99,12 @@ const config = {
               },
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://github.com/carbonext-co2e/api-b2b-docs",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Carbonext. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
