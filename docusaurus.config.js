@@ -45,7 +45,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Carbonext",
+        // title: "Carbonext",
         logo: {
           alt: "Carbonext Logo",
           src: "img/logo-clean.svg",
