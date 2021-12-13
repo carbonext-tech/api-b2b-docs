@@ -2,15 +2,17 @@
 sidebar_position: 2
 ---
 
-# Create a Document
+# Create a customer
 
-Documents are **groups of pages** connected through:
+The requests in this page deal with customer requests:
 
-- a **sidebar**
-- **previous/next navigation**
-- **versioning**
+## Authorization - Bearer Token
 
-## Create your first Doc
+This endpoint is using Bearer Token from collection.
+
+## Applications
+
+Operations for customers applications (keys).
 
 Create a markdown file at `docs/hello.md`:
 

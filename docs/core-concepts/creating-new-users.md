@@ -2,17 +2,21 @@
 sidebar_position: 1
 ---
 
-# Create a Page
+# Criando uma chave
 
-Add **Markdown or React** files to `src/pages` to create a **standalone page**:
+Com a **Carbonext** é fácil tornar sua empresa Carbono Neutro, crie uma conta na plataforma para ser gerado uma chave de acesso
 
-- `src/pages/index.js` -> `localhost:3000/`
-- `src/pages/foo.md` -> `localhost:3000/foo`
-- `src/pages/foo/bar.js` -> `localhost:3000/foo/bar`
+```mdx title="npm"
+npm install carbonext
+```
+ou
 
-## Create your first React Page
 
-Create a file at `src/pages/my-react-page.js`:
+```mdx title="yarn"
+yarn add carbonext
+```
+
+## Usabilidade
 
 ```jsx title="src/pages/my-react-page.js"
 import React from 'react';
