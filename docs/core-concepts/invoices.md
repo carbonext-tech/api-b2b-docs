@@ -4,141 +4,211 @@ sidebar_position: 4
 
 # Deal with Invoices
 
-Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/syntax)** and a few **additional features**.
+Invoice related requests.
 
-## Front Matter
+## GET Invoices
 
-Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/):
+`/v1/invoices`
 
-```text title="my-doc.md"
-// highlight-start
----
-id: my-doc-id
-title: My document title
-description: My document description
-slug: /my-custom-url
----
-// highlight-end
+This request returns a paginated list of invoices.
 
-## Markdown heading
+**Response Attributes**
 
-Markdown text with [links](./hello.md)
+Attribute   | Description
+--------- | ------
+items |	An object containing all invoices related to the customer id
+id |	Invoice id
+status |	The current status of an invoice.
+totalVcuAmount |	Total amount of VCUs charged in the invoice
+totalPrice |	The amount charged in the invoice,
+currency |	The currency the invoice is charged in
+customerId |	The Id of the customer that owns the invoice
+orders |	List of orders attached to the invoice
+id |	The order Id
+vcuAmount |	The total amount of VCUs requested in this order
+vcuUnitPrice |	The VCU unitary price at the time of the order's creation
+targetCurrency |	The target currency the order is created in
+status |	Name of the order's current status
+createdAt |	The date and time the order was created
+pageIndex |	The index of the returned page
+totalPages |	The total number of pages
+totalCount |	The total number of orders
+hasPreviousPage |	Flag (boolean) indicating whether the list has a previous page
+hasNextPage |	Flag (boolean) indicating whether the list has a next page
+
+### Example Request
+
+```javascript
+curl --location -g --request GET '{{url}}/v1/invoices'
 ```
+_This request is using **Bearer Token**_
 
-## Links
+### Example Response
 
-Regular Markdown links are supported, using url paths or relative file paths.
 
-```md
-Let's see how to [Create a page](/create-a-page).
-```
-
-```md
-Let's see how to [Create a page](./create-a-page.md).
-```
-
-**Result:** Let's see how to [Create a page](./create-a-page.md).
-
-## Images
-
-Regular Markdown images are supported.
-
-Add an image at `static/img/docusaurus.png` and display it in Markdown:
-
-```md
-![Docusaurus logo](/img/docusaurus.png)
-```
-
-![Docusaurus logo](/img/docusaurus.png)
-
-## Code Blocks
-
-Markdown code blocks are supported with Syntax highlighting.
-
-    ```jsx title="src/components/HelloDocusaurus.js"
-    function HelloDocusaurus() {
-        return (
-            <h1>Hello, Docusaurus!</h1>
-        )
+```json
+{
+  "items": [
+    {
+      "id": "8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd",
+      "status": "Pending",
+      "totalVcuAmount": 200,
+      "totalPrice": 15400,
+      "currency": "BRL",
+      "customerId": "6aea7d01-5062-4aa3-ae22-ecd8069d6329",
+      "orders": [
+        {
+          "id": "c9dd9aca-e258-4e9a-82a7-f2a70815c193",
+          "vcuAmount": 200,
+          "vcuUnitPrice": 77,
+          "targetCurrency": "BRL",
+          "status": "Billed",
+          "createdAt": "22/10/2021 00:36:16"
+        }
+      ]
+    },
+    {
+      "id": "a1da7c6b-b94e-4e68-aa69-bfa7f2bb9b15",
+      "status": "Paid",
+      "totalVcuAmount": 75,
+      "totalPrice": 5775,
+      "currency": "BRL",
+      "customerId": "6aea7d01-5062-4aa3-ae22-ecd8069d6329",
+      "orders": [
+        {
+          "id": "712a7f26-cfe2-48db-afca-e79805238756",
+          "vcuAmount": 55,
+          "vcuUnitPrice": 77,
+          "targetCurrency": "BRL",
+          "status": "Refunded",
+          "createdAt": "21/10/2021 23:44:33"
+        }
+      ]
+    },
+    {
+      "id": "a4bc61bf-1b2b-4216-94ed-b434d5843542",
+      "status": "Paid",
+      "totalVcuAmount": 100,
+      "totalPrice": 7700,
+      "currency": "BRL",
+      "customerId": "6aea7d01-5062-4aa3-ae22-ecd8069d6329",
+      "orders": [
+        {
+          "id": "7caee506-fc6c-4cb3-8826-9bdc0855eb4a",
+          "vcuAmount": 55,
+          "vcuUnitPrice": 77,
+          "targetCurrency": "BRL",
+          "status": "Paid",
+          "createdAt": "21/10/2021 23:42:59"
+        },
+        {
+          "id": "815873f3-54d3-4e11-bbbd-05f76aaec3df",
+          "vcuAmount": 50,
+          "vcuUnitPrice": 77,
+          "targetCurrency": "BRL",
+          "status": "Refunded",
+          "createdAt": "21/10/2021 22:36:40"
+        },
+        {
+          "id": "c99a2da7-ab55-4156-ac4e-d6f3df7d3d28",
+          "vcuAmount": 30,
+          "vcuUnitPrice": 77,
+          "targetCurrency": "BRL",
+          "status": "Refunded",
+          "createdAt": "21/10/2021 22:36:23"
+        }
+      ]
+    },
+    {
+      "id": "b81ebfbe-984c-40cc-a7fc-1e33fa926176",
+      "status": "Paid",
+      "totalVcuAmount": 100,
+      "totalPrice": 7700,
+      "currency": "BRL",
+      "customerId": "6aea7d01-5062-4aa3-ae22-ecd8069d6329",
+      "orders": [
+        {
+          "id": "7caee506-fc6c-4cb3-8826-9bdc0855eb4a",
+          "vcuAmount": 55,
+          "vcuUnitPrice": 77,
+          "targetCurrency": "BRL",
+          "status": "Paid",
+          "createdAt": "21/10/2021 23:42:59"
+        },
+        {
+          "id": "815873f3-54d3-4e11-bbbd-05f76aaec3df",
+          "vcuAmount": 50,
+          "vcuUnitPrice": 77,
+          "targetCurrency": "BRL",
+          "status": "Refunded",
+          "createdAt": "21/10/2021 22:36:40"
+        }
+      ]
     }
-    ```
-
-```jsx title="src/components/HelloDocusaurus.js"
-function HelloDocusaurus() {
-  return <h1>Hello, Docusaurus!</h1>;
+  ],
+  "pageIndex": 1,
+  "totalPages": 1,
+  "totalCount": 4,
+  "hasPreviousPage": false,
+  "hasNextPage": false
 }
 ```
 
-## Admonitions
+## GET Invoice
 
-Docusaurus has a special syntax to create admonitions and callouts:
+`/v1/invoices/:id`
 
-    :::tip My tip
+This request will return information about a specific invoice.
 
-    Use this awesome feature option
+**Response Attributes**
 
-    :::
+Attribute   | Description
+--------- | ------
+id |	An invoice's id
+status |	The status of an invoice
+totalVcuAmount |	How many VCUs are being dealt in this invoice
+totalPrice |	The amount of currency being dealt in this invoice, in the currency specified below
+currency |	The currency being dealt in this invoice
+customerId |	The Id of the customer that owns the invoice
+orders |	List of orders attached to the invoice
+id |	The order Id
+vcuAmount |	The total amount of VCUs requested in this order
+vcuUnitPrice |	The VCU unitary price at the time of the order's creation
+targetCurrency |	The target currency the order is created in
+status |	Name of the order's current status
+createdAt |	The date and time the order was created
 
-    :::danger Take care
+### Example Request
 
-    This action is dangerous
+```javascript
+curl --location -g --request GET '{{url}}/v1/invoices/8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd'
+```
+_This request is using **Bearer Token**_
 
-    :::
+### Example Response
 
-:::tip My tip
 
-Use this awesome feature option
-
-:::
-
-:::danger Take care
-
-This action is dangerous
-
-:::
-
-## MDX and React Components
-
-[MDX](https://mdxjs.com/) can make your documentation more **interactive** and allows using any **React components inside Markdown**:
-
-```jsx
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '20px',
-      color: '#fff',
-      padding: '10px',
-      cursor: 'pointer',
-    }}
-    onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`)
-    }}>
-    {children}
-  </span>
-);
-
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
-
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+```json
+{
+  "id": "8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd",
+  "status": "Pending",
+  "totalVcuAmount": 200,
+  "totalPrice": 15400,
+  "currency": "BRL",
+  "customerId": "6aea7d01-5062-4aa3-ae22-ecd8069d6329",
+  "orders": [
+    {
+      "id": "c9dd9aca-e258-4e9a-82a7-f2a70815c193",
+      "vcuAmount": 200,
+      "vcuUnitPrice": 77,
+      "targetCurrency": "BRL",
+      "status": "Billed",
+      "createdAt": "22/10/2021 00:36:16"
+    }
+  ]
+}
 ```
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '20px',
-      color: '#fff',
-      padding: '10px',
-      cursor: 'pointer',
-    }}
-    onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`);
-    }}>
-    {children}
-  </span>
-);
-
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
-
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+```md title="PATH VARIABLES"
+id: 8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd
+```

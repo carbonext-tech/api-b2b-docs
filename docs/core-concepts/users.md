@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Deal with users
+# Deal with Users
 
 The requests in this page handle CRUD operations on Users resources.
 
