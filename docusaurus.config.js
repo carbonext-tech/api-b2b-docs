@@ -1,4 +1,4 @@
-// @ts-nocheck
+// @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
@@ -53,7 +53,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "start",
+            docId: "intro",
             position: "left",
             label: "Docs",
           },
@@ -72,8 +72,8 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Getting Started",
-                to: "/docs/start",
+                label: "Docs",
+                to: "/docs/intro",
               },
             ],
           },
