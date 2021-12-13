@@ -176,6 +176,7 @@ id: 8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d
 curl --location -g --request DELETE '{{host}}/v1/users/8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d' \
 --data-raw ''
 ```
+_This request is using **Bearer Token**_
 
 ### Example Response
 

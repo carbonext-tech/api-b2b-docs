@@ -4,54 +4,40 @@ sidebar_position: 2
 
 # Consulting VCU Price
 
-The requests in this page deal with customer requests:
+Pricing related requests.
 
-## Authorization - Bearer Token
+## GET Vcu Price
 
-This endpoint is using Bearer Token from collection.
+`/v1/customers/applications?page=2&page-size=10`
 
-## Applications
+Retrieves the VCU unitary price.
 
-Operations for customers applications (keys).
+**Response Attributes**
 
-Create a markdown file at `docs/hello.md`:
+Attribute   | Description
+--------- | ------
+vcuPrice |	The price applied for 1 VCU (equivalent to 1 ton CO2eq)
+currency |	The currency of the price for which the price was calculated
 
-```md title="docs/hello.md"
-# Hello
+### Example Request
 
-This is my **first Docusaurus document**!
+```javascript
+curl --location -g --request GET '{{url}}/v1/prices?vcu-amount=1000000'
+```
+_This request is using **Bearer Token**_
+
+### Example Response
+
+
+```json
+{
+  "vcuPrice": 77,
+  "currency": "BRL"
+}
 ```
 
-A new document is now available at `http://localhost:3000/docs/hello`.
-
-## Configure the Sidebar
-
-Docusaurus automatically **creates a sidebar** from the `docs` folder.
-
-Add metadata to customize the sidebar label and position:
-
-```md title="docs/hello.md" {1-4}
----
-sidebar_label: 'Hi!'
-sidebar_position: 3
----
-
-# Hello
-
-This is my **first Docusaurus document**!
+```md title="PARAMS"
+vcu-amount: 10
+target-currency: BRL (Optional. Default value is BRL)
 ```
-
-It is also possible to create your sidebar explicitly in `sidebars.js`:
-
-```diff title="sidebars.js"
-module.exports = {
-  tutorialSidebar: [
-    {
-      type: 'category',
-      label: 'Tutorial',
--     items: [...],
-+     items: ['hello'],
-    },
-  ],
-};
-```
+_We currently have `BRL` and `USD` currency options, in the future we will expand options._
