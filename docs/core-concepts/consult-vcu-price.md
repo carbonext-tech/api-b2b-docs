@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Create a customer
+# Consulting VCU Price
 
 The requests in this page deal with customer requests:
 
