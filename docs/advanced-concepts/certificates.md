@@ -8,7 +8,7 @@ Request to get the certificate id
 
 ## GET By External ID
 
-`/v1/certificates?origin-system-id=61c113a1-87bf-488f-83fd-ae659c02016f&email&page&page-size`
+`{{certificates_host}}/v1/certificates?origin-system-id=61c113a1-87bf-488f-83fd-ae659c02016f&email&page&page-size`
 
 ### Example Request
 
@@ -26,7 +26,7 @@ page-size
 
 ## GET Id
 
-`/v1/certificates/:id`
+`{{certificates_host}}/v1/certificates/:id`
 
 ### Example Request
 
