@@ -57,7 +57,7 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          { to: "https://app.carbonext.com.br/", label: "App Cbx", position: "left" },
           {
             href: "https://github.com/carbonext-co2e/api-b2b-docs",
             label: "GitHub",
@@ -72,7 +72,7 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Docs",
+                label: "Introduction",
                 to: "/docs/intro",
               },
             ],
@@ -93,10 +93,10 @@ const config = {
           {
             title: "More",
             items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
+              // {
+              //   label: "Blog",
+              //   to: "/blog",
+              // },
               {
                 label: "GitHub",
                 href: "https://github.com/carbonext-co2e/api-b2b-docs",

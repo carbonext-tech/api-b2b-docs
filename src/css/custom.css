@@ -16,6 +16,23 @@
   --ifm-code-font-size: 95%;
 }
 
+.bg-header {
+  background: url('https://carbonext-s3.s3.amazonaws.com/public/assets-b2b/bg-amazon.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;
