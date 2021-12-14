@@ -46,6 +46,7 @@ const config = {
     ({
       navbar: {
         // title: "Carbonext",
+        style: 'dark',
         logo: {
           alt: "Carbonext Logo",
           src: "img/logo-clean.svg",
