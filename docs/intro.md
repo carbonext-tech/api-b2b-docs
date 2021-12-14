@@ -10,7 +10,7 @@ This is the API that will handle client-side requests for our B2B applications.
 
 `/connect/token`
 
-Retrieves the VCU unitary price.
+This request authorizes the client to log in.
 
 **Parameter Attributes**
 
