@@ -31,7 +31,7 @@ refresh_token | The refresh token provided in the authorization request
 ### Example Request
 
 ```javascript
-curl --location -g --request POST '{{host}}/connect/token' \
+curl --location -g --request POST '{{url}}/connect/token' \
 --data-urlencode 'client_id={{client_id}}' \
 --data-urlencode 'client_secret={{client_secret}}' \
 --data-urlencode 'grant_type=client_credentials' \
@@ -72,7 +72,7 @@ refresh_token | The refresh token provided in the authorization response
 ### Example Request
 
 ```javascript
-curl --location -g --request POST '{{host}}/connect/token' \
+curl --location -g --request POST '{{url}}/connect/token' \
 --data-urlencode 'grant_type=refresh_token' \
 --data-urlencode 'refresh_token={{refresh_token}}' \
 --data-urlencode 'client_id={{client_id}}' \
@@ -125,7 +125,7 @@ Permissions |	An array containing the permissions keys for the user (or applicat
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{host}}/connect/userinfo'
+curl --location -g --request GET '{{url}}/connect/userinfo'
 ```
 _This request is using **Bearer Token**_
 
