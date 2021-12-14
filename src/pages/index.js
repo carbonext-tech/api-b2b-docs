@@ -16,7 +16,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/introduction"
+            to="/docs/intro"
           >
             Seu app carbono neutro em 5min ⏱️
           </Link>
