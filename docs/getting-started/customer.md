@@ -2,18 +2,15 @@
 sidebar_position: 2
 ---
 
-# Getting Started
+# Deal with Customer
 
-Create an account on our platform and use our **B2B API**.
-
-Data required to create a customer record on our platform **[Carbonext B2B](https://docusaurus.new)**.
+The requests in this page deal with customer requests.
 
 ## POST Aplication
 
 `/v1/customers/applications`
 
 This request creates an application (key) that can be used on machine-2-machine integrations with the API.
-
 ```md title="Required permissions"
 customerApplication_write
 ```
