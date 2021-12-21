@@ -58,7 +58,7 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          { to: "https://app.carbonext.com.br/", label: "App Cbx", position: "left" },
+          { href: "https://app.carbonext.com.br/", label: "App Cbx", position: "left" },
           {
             href: "https://github.com/carbonext-co2e/api-b2b-docs",
             label: "GitHub",
