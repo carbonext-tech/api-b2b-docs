@@ -6,11 +6,11 @@ sidebar_position: 1
 
 This is the API that will handle client-side requests for our B2B applications. First of all, let's see how to create an authorization token in our B2B.
 
-## POST Authorize client
+## Authorize client [POST]
 
 `/connect/token`
 
-This request authorizes the client to log in.
+This request validates the provided credentials and returns the generated tokens
 
 **Parameter Attributes**
 
@@ -31,7 +31,7 @@ refresh_token | The refresh token provided in the authorization request
 ### Example Request
 
 ```javascript
-curl --location -g --request POST '{{url}}/connect/token' \
+curl '{{url}}/connect/token' \
 --data-urlencode 'client_id={{client_id}}' \
 --data-urlencode 'client_secret={{client_secret}}' \
 --data-urlencode 'grant_type=client_credentials' \
@@ -39,7 +39,6 @@ curl --location -g --request POST '{{url}}/connect/token' \
 ```
 
 ### Example Response
-
 
 ```json
 {
@@ -57,11 +56,11 @@ grant_type: client_credentials
 scope: offline_access
 ```
 
-## POST Refresh token
+## Refresh token [POST]
 
 `/connect/token`
 
-This request refreshes the access token.
+This endpoint retrieves information about the logged in user or application key.
 
 **Parameter Attributes**
 
@@ -72,7 +71,7 @@ refresh_token | The refresh token provided in the authorization response
 ### Example Request
 
 ```javascript
-curl --location -g --request POST '{{url}}/connect/token' \
+curl '{{url}}/connect/token' \
 --data-urlencode 'grant_type=refresh_token' \
 --data-urlencode 'refresh_token={{refresh_token}}' \
 --data-urlencode 'client_id={{client_id}}' \
@@ -80,7 +79,6 @@ curl --location -g --request POST '{{url}}/connect/token' \
 ```
 
 ### Example Response
-
 
 ```json
 {
@@ -100,7 +98,7 @@ client_secret: {{client_secret}}
 ```
 
 
-## GET User Info
+## User Info [GET]
 
 `/connect/userinfo`
 
@@ -114,7 +112,6 @@ ClientId |	The client identification (public key)
 UserId |	The user identification
 Name |	The user's name
 Email |	The user's email
-IsAdmin |	A boolean to identify if the user has admin privileges
 IsEmailValid |	A boolean to identify if the user's email has been verified
 CustomerId |	The ID of the customer the user or application is related to
 CustomerApplicationId |	The ID of the customer's application (key)
@@ -125,12 +122,12 @@ Permissions |	An array containing the permissions keys for the user (or applicat
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{url}}/connect/userinfo'
+curl '{{url}}/connect/userinfo' \
+    -H 'Accept: application/json'
+    -H 'Authorization: Bearer {token}'
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
-
 
 ```json
 {
