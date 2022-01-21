@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Carbonext - API B2B",
   tagline:
-    "API para calculo, compra, venda e neutralização de créditos de carbono.",
+    "API for calculating, buying, selling and offsetting carbon credits.",
   url: "https://b2b-docs.carbonext.com.br",
   baseUrl: "/",
   onBrokenLinks: "throw",

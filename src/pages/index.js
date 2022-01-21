@@ -18,7 +18,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/intro"
           >
-            Seu app carbono neutro
+            Make your app carbon neutral
           </Link>
         </div>
       </div>
