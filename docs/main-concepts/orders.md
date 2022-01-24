@@ -2,13 +2,13 @@
 sidebar_position: 2
 ---
 
-# Deal with Orders
+# Orders
 
-This page presents request related to orders.
+This page presents request related to orders, which is a carbon credits purchase order (VCU).
 
-## POST Order
+## Order [POST]
 
-`/v1/orders`
+`https://api-b2b.carbonext.com.br/v1/orders`
 
 This request creates an order.
 
@@ -18,7 +18,7 @@ Attribute   | Description
 --------- | ------
 vcuAmount |	The amount of VCU assigned to the order
 targetCurrency |	The desired currency for the order to be charged in
-payWithBalance |	Flag (boolean) indicating if this order should automatically discount from customer balance or not(if the customer is allowed for creating postpaid orders)
+payWithBalance |	Flag (boolean) indicating if this order should automatically discount from customer balance (if the customer is allowed for creating postpaid orders)
 
 **Response Attributes**
 
@@ -34,17 +34,17 @@ createdAt |	The date and time the order was created
 ### Example Request
 
 ```javascript
-curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/orders' \
---data-raw '{
+curl 'https://api-b2b.carbonext.com.br/v1/orders' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}' \
+--data-raw {
     "vcuAmount":150,
     "targetCurrency":"BRL",
     "PayWithBalance":false
-}'
+}
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
-
 
 ```json
 {
@@ -57,11 +57,11 @@ _This request is using **Bearer Token**_
 }
 ```
 
-## POST Cancel Order
+## Cancel Order [POST]
 
-`/v1/orders/:orderId/cancel`
+`https://api-b2b.carbonext.com.br/v1/orders/:orderId/cancel`
 
-This request cancels an order.
+This request cancels an order, an order can only be canceled, while it has issued status, that is, after it has been created and before being paid.
 
 **Response Attributes**
 
@@ -77,9 +77,10 @@ createdAt |	The date and time this order was created
 ### Example Request
 
 ```javascript
-curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/orders/f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2/cancel'
+curl 'https://api-b2b.carbonext.com.br/v1/orders/f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2/cancel' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}'
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
 
@@ -98,9 +99,9 @@ _This request is using **Bearer Token**_
 orderId: f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2
 ```
 
-## POST Cancel Orders
+## Cancel Orders [POST]
 
-`/v1/orders/cancel`
+`https://api-b2b.carbonext.com.br/v1/orders/cancel`
 
 Orders can be cancelled in batches.
 
@@ -117,15 +118,16 @@ Returns `true` if, and only if, all orders were successfully cancelled.
 ### Example Request
 
 ```javascript
-curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/orders/cancel' \
---data-raw '{
+curl 'https://api-b2b.carbonext.com.br/v1/orders/cancel' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}' \
+--data-raw {
     "ordersIds":
     [
         "14a60138-d078-4f1d-b72a-87f0820b7ccb"
     ]
-}'
+}
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
 
@@ -133,9 +135,9 @@ _This request is using **Bearer Token**_
 true
 ```
 
-## GET Orders
+## Orders [GET]
 
-`/v1/orders?page=1&page-size=100`
+`https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=100`
 
 This request returns a paginated list of orders.
 
@@ -144,24 +146,14 @@ This request returns a paginated list of orders.
 Attribute   | Description
 --------- | ------
 items |	An array of paginated orders from the customer
-id |	The order Id
-vcuAmount |	The total amount of VCUs requested in this order
-vcuUnitPrice |	The VCU unitary price at the time of the order's creation
-targetCurrency |	The target currency the order was created in
-status |	Name of the order's current status
-createdAt |	The date and time the order was created
-pageIndex |	The index of the returned page
-totalPages |	The total number of pages
-totalCount |	The total number of orders
-hasPreviousPage |	Flag (boolean) indicating whether the list has a previous page
-hasNextPage |	Flag (boolean) indicating whether the list has a next page
 
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{host}}/v1/orders?page=1&page-size=100'
+curl 'https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=100' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}'
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
 
