@@ -6,11 +6,13 @@ sidebar_position: 5
 
 The request in this page refers to customer balance.
 
-## GET Balance
+The balance is a sum of all invoices (that generate credit) and orders (that generate debt), alongside with detailed information of open invoices (debit) and non billed orders for the customer.
 
-`/v1/customers/balance`
+## Balance [GET]
 
-This request returns the balance of the customer for each currency it has orders and/or invoices in. The balance is a sum between invoices that generate credit and invoices that generate debt, alongside with detailed information of open invoices (debit) and non billed orders for the customer.
+`https://api-b2b.carbonext.com.br/v1/customers/balance`
+
+This request returns the balance of the customer for each currency it has orders and/or invoices in.
 
 ```md title="Required permissions"
 financial_write
@@ -31,24 +33,16 @@ Attribute   | Description
 startPeriod |	The date the request started looking for data. Will only appear in the response if it was part of the request.
 endPeriod |	The date the request stopped looking for data. Will only appear in the response if it was part of the request.
 balancesByCurrency |	An array of objects, each containing a VcuBalance object, and the currency used to create orders.
-currency |	The currency for this particular vcuBalance
-vcuBalance |	The VcuBalance object
-type |	The type of the value. This value is 'VCU'
-balance |	Customer's balance (credit - usedCredit)
-credit |	Sum of invoices that generate credit for the customer
-usedCredit |	Sum of orders that consume from customer's balance
-debit |	Sum of open (yet to be paid) invoices
-futureDebit |	Sum of open orders (unbilled)
 
 ### Example Request
 
 ```javascript
-curl --location -g --request GET 'https://api-b2b.carbonext.com.br/v1/invoices/balance'
+curl 'https://api-b2b.carbonext.com.br/v1/invoices/balance'
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}'
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
-
 
 ```json
 {

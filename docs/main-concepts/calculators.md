@@ -4,11 +4,11 @@ sidebar_position: 6
 
 # Calculators
 
-This folder contains requests related to calculate the amount of tCO2eq emitted by differente types of transport, as well as the price to offset those emissions.
+This folder contains requests related to calculate the amount of tCO2eq emitted by different types of transport, as well as the price to offset those emissions.
 
-## GET Types
+## Types [GET]
 
-`/v1/calculators/types`
+`https://api-calculator.carbonext.com.br/v1/calculators/types`
 
 A request that lists the supported transport types for emissions calculation.
 
@@ -27,9 +27,10 @@ requestUnit |	Unit in which the field 'unitValue' should be sent when making req
 ### Example Request
 
 ```javascript
-curl --location -g --request GET 'https://api-calculator.carbonext.com.br/v1/calculators/types'
+curl 'https://api-calculator.carbonext.com.br/v1/calculators/types' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}'
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
 
@@ -58,18 +59,19 @@ _This request is using **Bearer Token**_
 }
 ```
 
-## GET Airports
+## Airports [GET]
 
-`/v1/calculators/airports`
+`https://api-calculator.carbonext.com.br/v1/calculators/airports`
 
 This request returns an array of Airports.
 
 ### Example Request
 
 ```javascript
-curl --location -g --request GET 'https://api-calculator.carbonext.com.br/v1/calculators/airports'
+curl 'https://api-calculator.carbonext.com.br/v1/calculators/airports' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}'
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
 
@@ -135,9 +137,9 @@ _This request is using **Bearer Token**_
 }
 ```
 
-## POST Calculate emission by distance
+## Calculate emission by distance [POST]
 
-`/v1/calculators/calculate`
+`https://api-calculator.carbonext.com.br/v1/calculators/calculate`
 
 This request returns the amount of tCO2eq the delivery or transport will emit, based on a given distance.
 
@@ -158,16 +160,16 @@ emissionUnit |	The unit of the emission, based on the "Type" parameter used in t
 ### Example Request
 
 ```javascript
-curl --location -g --request POST 'https://api-calculator.carbonext.com.br/v1/calculators/' \
---data-raw '{
+curl 'https://api-calculator.carbonext.com.br/v1/calculators/' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}' \
+--data-raw {
     "type": 0,
     "distance": 100000
-}'
+}
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
-
 
 ```json
 {
@@ -176,9 +178,9 @@ _This request is using **Bearer Token**_
 }
 ```
 
-## POST Calculate transport emission by code
+## Calculate transport emission by code [POST]
 
-`/v1/calculators/calculate`
+`https://api-calculator.carbonext.com.br/v1/calculators/calculate`
 
 This endpoint calculates the amount of tCO2eq emitted when traveling between two locations, for example, ZipCodes for road transport types (only Brazilian ZipCodes are supported for now) or airport codes for flight transport type.
 
@@ -202,15 +204,16 @@ emissionUnit| The value is tCO2eq. The result is calculated for the unitValue pr
 ### Example Request
 
 ```javascript
-curl --location -g --request POST 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
---data-raw '{
+curl 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}' \
+--data-raw {
     "type": 0,
     "originCode": "01526-000",
     "destCode": "66060425",
     "unitValue": 20000
-}'
+}
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
 
@@ -221,9 +224,9 @@ _This request is using **Bearer Token**_
 }
 ```
 
-## POST Calculate offset price by distance
+## Calculate offset price by distance [POST]
 
-`/v1/calculators/price`
+`https://api-calculator.carbonext.com.br/v1/calculators/price`
 
 This request will calculate the final price to offset the calculated emission.
 
@@ -247,14 +250,15 @@ emissionUnit	| The unit of the emission, based on the "Type" parameter used in t
 ### Example Request
 
 ```javascript
-curl --location -g --request POST 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
---data-raw '{
+curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}' \
+--data-raw {
     "type": 2,
     "distance": 1000000,
     "currency":"BRL"
-}'
+}
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
 
@@ -267,9 +271,9 @@ _This request is using **Bearer Token**_
 }
 ```
 
-## POST Calculate offset price by code
+## Calculate offset price by code [POST]
 
-`/v1/calculators/price`
+`https://api-calculator.carbonext.com.br/v1/calculators/price`
 
 This request will calculate the final price, in the requested currency, to offset the calculated emission between two locations.
 
@@ -295,16 +299,17 @@ emissionUnit |	The value is tCO2eq. The result is calculated for the unitValue p
 ### Example Request
 
 ```javascript
-curl --location -g --request POST 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
---data-raw '{
+curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}' \
+--data-raw {
     "type": 0,
     "currency": "BRL",
     "originCode": "60183692",
     "destCode": "04131000",
     "unitValue": 300000
-}'
+}
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
 
