@@ -1,5 +1,6 @@
 ---
 sidebar_position: 7
+custom_edit_url: null
 ---
 
 # Certificates
@@ -13,7 +14,7 @@ This requests allow receiving data related to the certificate through ID, Extern
 ### Example Request
 
 ```javascript
-curl 'https://api-certificates.carbonext.com.br/v1//v1/certificates?origin-system-id=b6fc68b0-a2d1-4330-ba97-9a30237aadc3' \
+curl 'https://api-certificates.carbonext.com.br/v1/certificates?origin-system-id=b6fc68b0-a2d1-4330-ba97-9a30237aadc3' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
