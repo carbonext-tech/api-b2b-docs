@@ -2,13 +2,13 @@
 sidebar_position: 3
 ---
 
-# Deal with Invoices
+# Invoices
 
-Invoice related requests.
+After generating orders, we need to generate the invoices for the same, on this page we will see how to make requests for these invoices.
 
-## POST Invoices
+## Invoices [POST]
 
-`/v1/invoices`
+`https://api-b2b.carbonext.com.br/v1/invoices`
 
 This request will create an invoice, it can be done for a specific order or for a group in a certain period of time.
 
@@ -29,7 +29,9 @@ You can create an invoice in three different ways.
 Without `ordersCreatedFrom` the request will use only `ordersIds` to create the invoice.
 
 ```javascript
-curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
+curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}' \
 --data-raw {
     "ordersIds":[
         "f4f7e937-c5ae-4d85-be5f-13ad804c0670"
@@ -42,7 +44,9 @@ curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/invoices'
 With `ordersCreatedFrom` the request will create an invoice from the date received to the current day.
 
 ```javascript
-curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
+curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}' \
 --data-raw {
     "ordersCreatedFrom":"01/01/2022 22:09:40",
     "vcuAmount": 100,
@@ -53,7 +57,9 @@ curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/invoices'
 Or if you have a specific time interval, you can declare in the `ordersCreatedTo` attribute. It also works without the `ordersCreatedFrom`, this way an invoice is created for all orders created before the date described.
 
 ```javascript
-curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
+curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}' \
 --data-raw {
     "ordersCreatedFrom":"01/01/2022 22:09:40",
     "ordersCreatedTo":"05/01/2022 12:00:00",
@@ -113,9 +119,9 @@ curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/invoices'
 }
 ```
 
-## GET Invoices
+## Invoices [GET]
 
-`/v1/invoices`
+`https://api-b2b.carbonext.com.br/v1/invoices`
 
 This request returns a paginated list of invoices.
 
@@ -124,32 +130,14 @@ This request returns a paginated list of invoices.
 | Attribute       | Description                                                    |
 | --------------- | -------------------------------------------------------------- |
 | items           | An object containing all invoices related to the customer id   |
-| id              | Invoice id                                                     |
-| status          | The current status of an invoice.                              |
-| totalVcuAmount  | Total amount of VCUs charged in the invoice                    |
-| totalPrice      | The amount charged in the invoice,                             |
-| currency        | The currency the invoice is charged in                         |
-| customerId      | The Id of the customer that owns the invoice                   |
-| orders          | List of orders attached to the invoice                         |
-| id              | The order Id                                                   |
-| vcuAmount       | The total amount of VCUs requested in this order               |
-| vcuUnitPrice    | The VCU unitary price at the time of the order's creation      |
-| targetCurrency  | The target currency the order is created in                    |
-| status          | Name of the order's current status                             |
-| createdAt       | The date and time the order was created                        |
-| pageIndex       | The index of the returned page                                 |
-| totalPages      | The total number of pages                                      |
-| totalCount      | The total number of orders                                     |
-| hasPreviousPage | Flag (boolean) indicating whether the list has a previous page |
-| hasNextPage     | Flag (boolean) indicating whether the list has a next page     |
 
 ### Example Request
 
 ```javascript
-curl --location -g --request GET 'https://api-b2b.carbonext.com.br/v1/invoices'
+curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}'
 ```
-
-_This request is using **Bearer Token**_
 
 ### Example Response
 
@@ -261,9 +249,9 @@ _This request is using **Bearer Token**_
 }
 ```
 
-## GET Invoices By Status
+## Invoices By Status [GET]
 
-`/v1/invoices?status=0`
+`https://api-b2b.carbonext.com.br/v1/invoices?status=0`
 
 This request returns a paginated list of invoices filtered by status, you can filter for 5 different statuses, being them Pending, Overdue, Paid, Cancelled and Refunded.
 
@@ -272,25 +260,13 @@ This request returns a paginated list of invoices filtered by status, you can fi
 | Attribute           | Description                                                        |
 | ------------------- | ------------------------------------------------------------------ |
 | items               | An object containing all invoices related to the customer id       |
-| id                  | Invoice id                                                         |
-| status              | The current status of an invoice.                                  |
-| totalVcuAmount      | Total amount of VCUs charged in the invoice                        |
-| totalPrice          | The amount charged in the invoice,                                 |
-| currency            | The currency the invoice is charged in                             |
-| customerId          | The Id of the customer that owns the invoice                       |
-| orders              | List of orders attached to the invoice                             |
-| id                  | The order Id                                                       |
-| vcuAmount           | The total amount of VCUs requested in this order                   |
-| vcuUnitPrice        | The VCU unitary price at the time of the order's creation          |
-| targetCurrency      | The target currency the order is created in                        |
-| status              | Name of the order's current status                                 |
-| createdAt           | The date and time the order was created                            |
-| notifyCertificateTo | A boolean attribute intended to notify the user of the certificate |
 
 ### Example Request
 
 ```javascript
-curl --location -g --request GET 'https://api-b2b.carbonext.com.br/v1/invoices?status=0'
+curl 'https://api-b2b.carbonext.com.br/v1/invoices?status=0' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}'
 ```
 
 ### Example Response
@@ -519,9 +495,9 @@ status: 3 (Cancelled)
 status: 4 (Refunded)
 ```
 
-## GET Invoice
+## Invoice [GET]
 
-`/v1/invoices/:id`
+`https://api-b2b.carbonext.com.br/v1/invoices/:id`
 
 This request will return information about a specific invoice.
 
@@ -536,20 +512,14 @@ This request will return information about a specific invoice.
 | currency       | The currency being dealt in this invoice                                            |
 | customerId     | The Id of the customer that owns the invoice                                        |
 | orders         | List of orders attached to the invoice                                              |
-| id             | The order Id                                                                        |
-| vcuAmount      | The total amount of VCUs requested in this order                                    |
-| vcuUnitPrice   | The VCU unitary price at the time of the order's creation                           |
-| targetCurrency | The target currency the order is created in                                         |
-| status         | Name of the order's current status                                                  |
-| createdAt      | The date and time the order was created                                             |
 
 ### Example Request
 
 ```javascript
-curl --location -g --request GET 'https://api-b2b.carbonext.com.br/v1/invoices/8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd'
+curl 'https://api-b2b.carbonext.com.br/v1/invoices/8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd'
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}'
 ```
-
-_This request is using **Bearer Token**_
 
 ### Example Response
 
