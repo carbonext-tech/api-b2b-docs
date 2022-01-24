@@ -21,7 +21,7 @@ Congratulations you just generated your `client_id` and `client_secret`, save th
 
 ## Authorization
 
-Before making our first request, we need an authentication `token` that we receive through the following endpoint passing our `client_id` and `client_secret` in the body of the request in `urlencode` format.
+Before making our first request, we need an authorization `token` that we receive through the following endpoint passing our `client_id` and `client_secret` in the body of the request in `urlencode` format.
 
 ### Example Request
 
