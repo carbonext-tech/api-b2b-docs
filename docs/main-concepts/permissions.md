@@ -4,37 +4,43 @@ sidebar_position: 4
 
 # Permissions list
 
-Request to get the list of permissions.
+Request to get the list of permissions, this permissions allow you to define what a user can interact with, edit, add or remove on the API.
 
-## GET List Permissions
+## List Permissions [GET]
 
-`/v1/permissions?page=1&page-size=20`
+`https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20`
 
-This request returns a paginated lists all permissions available. This permissions can be attached to users and/or customerApplications (keys)
+This request returns a paginated lists all permissions available. This permissions can be attached to users and/or customerApplications (keys).
+
+**Permissions list**
+
+| Permission                | Description                   |
+| ------------------------- | ----------------------------- |
+| orders_read               | Orders read only              |
+| orders_write              | Add, edit or remove orders    |
+| customerApplication_read  | Customer read only            |
+| customerApplication_write | Add, edit or remove customers |
+| financial_write           | Add or cancel invoices        |
+| financial_read            | Financial read only           |
+| users_write               | Add, edit or remove users     |
+| users_read                | Users read only               |
+| certificates_read         | Certificates read only        |
 
 **Response Attributes**
 
-Attribute   | Description
---------- | ------
-items |	A list of permissions
-name |	The name of the permission
-key |	The key relating to the permission
-description |	Any aditional info
-pageIndex |	The index of the returned page
-totalPages |	The total number of pages
-totalCount |	The total number of orders
-hasPreviousPage |	Flag (boolean) indicating whether the list has a previous page
-hasNextPage |	Flag (boolean) indicating whether the list has a next page
+| Attribute | Description           |
+| --------- | --------------------- |
+| items     | A list of permissions |
 
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{host}}/v1/permissions?page=1&page-size=20'
+curl 'https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}'
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
-
 
 ```json
 {
