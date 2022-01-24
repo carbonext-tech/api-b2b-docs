@@ -53,7 +53,7 @@ origin-system-id: b6fc68b0-a2d1-4330-ba97-9a30237aadc3
 | --------- | ------------------------------ |
 | page      | Total page                     |
 | page-size | The quantity items on the page |
-| email     | E-mail related of certificate   |
+| email     | E-mail related of certificate  |
 
 **Response Attributes**
 
