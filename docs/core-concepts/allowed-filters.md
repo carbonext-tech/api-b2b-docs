@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 # Allowed Filters
@@ -8,7 +8,7 @@ Our API has a filter and sort system that allows searching for an entity by spec
 
 ## List Allowed Filters [GET]
 
-`/v1/allowed-filters/:entity`
+`https://api-b2b.carbonext.com.br/v1/allowed-filters/:entity`
 
 Parameter   | Description
 --------- | ------
@@ -19,7 +19,7 @@ This endpoint returns the fields accepted for filtering and sorting, it is impor
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{url}}/v1/allowed-filters/invoices'
+curl 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
 ```
 
 ### Example Response

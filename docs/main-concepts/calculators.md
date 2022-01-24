@@ -27,7 +27,7 @@ requestUnit |	Unit in which the field 'unitValue' should be sent when making req
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{url}}/v1/calculators/types'
+curl --location -g --request GET 'https://api-calculator.carbonext.com.br/v1/calculators/types'
 ```
 _This request is using **Bearer Token**_
 
@@ -67,7 +67,7 @@ This request returns an array of Airports.
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{url}}/v1/calculators/airports'
+curl --location -g --request GET 'https://api-calculator.carbonext.com.br/v1/calculators/airports'
 ```
 _This request is using **Bearer Token**_
 
@@ -158,7 +158,7 @@ emissionUnit |	The unit of the emission, based on the "Type" parameter used in t
 ### Example Request
 
 ```javascript
-curl --location -g --request POST '{{url}}/v1/calculators/' \
+curl --location -g --request POST 'https://api-calculator.carbonext.com.br/v1/calculators/' \
 --data-raw '{
     "type": 0,
     "distance": 100000
@@ -202,7 +202,7 @@ emissionUnit| The value is tCO2eq. The result is calculated for the unitValue pr
 ### Example Request
 
 ```javascript
-curl --location -g --request POST '{{url}}/v1/calculators/calculate' \
+curl --location -g --request POST 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
 --data-raw '{
     "type": 0,
     "originCode": "01526-000",
@@ -247,7 +247,7 @@ emissionUnit	| The unit of the emission, based on the "Type" parameter used in t
 ### Example Request
 
 ```javascript
-curl --location -g --request POST '{{url}}/v1/calculators/price' \
+curl --location -g --request POST 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
 --data-raw '{
     "type": 2,
     "distance": 1000000,
@@ -295,7 +295,7 @@ emissionUnit |	The value is tCO2eq. The result is calculated for the unitValue p
 ### Example Request
 
 ```javascript
-curl --location -g --request POST '{{url}}/v1/calculators/price' \
+curl --location -g --request POST 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
 --data-raw '{
     "type": 0,
     "currency": "BRL",

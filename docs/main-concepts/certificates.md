@@ -8,12 +8,12 @@ Request to get the certificate id
 
 ## GET By External ID
 
-`{{certificates_host}}/v1/certificates?origin-system-id=61c113a1-87bf-488f-83fd-ae659c02016f&email&page&page-size`
+`https://api-certificates.carbonext.com.br/v1/certificates?origin-system-id=61c113a1-87bf-488f-83fd-ae659c02016f&email&page&page-size`
 
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{certificates_host}}/v1/certificates?origin-system-id=61c113a1-87bf-488f-83fd-ae659c02016f&email&page&page-size'
+curl --location -g --request GET 'https://api-certificates.carbonext.com.br/v1/certificates?origin-system-id=61c113a1-87bf-488f-83fd-ae659c02016f&email&page&page-size'
 ```
 _This request is using **Bearer Token**_
 
@@ -26,12 +26,12 @@ page-size
 
 ## GET Id
 
-`{{certificates_host}}/v1/certificates/:id`
+`https://api-certificates.carbonext.com.br/v1/certificates/:id`
 
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{certificates_host}}/v1/certificates/7f2cd1c0-d62c-43e0-81f2-59f568ffbc3b'
+curl --location -g --request GET 'https://api-certificates.carbonext.com.br/v1/certificates/7f2cd1c0-d62c-43e0-81f2-59f568ffbc3b'
 ```
 _This request is using **Bearer Token**_
 

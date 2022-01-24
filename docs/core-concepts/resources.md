@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 # Resources
@@ -8,12 +8,12 @@ We have entities that allow us to use our advanced query filter that we will see
 
 ## List Resources [GET]
 
-`/v1/resources`
+`https://api-b2b.carbonext.com.br/v1/resources`
 
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{url}}/v1/resources'
+curl 'https://api-b2b.carbonext.com.br/v1/resources'
 ```
 
 ### Example Response

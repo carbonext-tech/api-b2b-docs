@@ -34,7 +34,7 @@ createdAt |	The date and time the order was created
 ### Example Request
 
 ```javascript
-curl --location -g --request POST '{{url}}/v1/orders' \
+curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/orders' \
 --data-raw '{
     "vcuAmount":150,
     "targetCurrency":"BRL",
@@ -77,7 +77,7 @@ createdAt |	The date and time this order was created
 ### Example Request
 
 ```javascript
-curl --location -g --request POST '{{url}}/v1/orders/f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2/cancel'
+curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/orders/f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2/cancel'
 ```
 _This request is using **Bearer Token**_
 
@@ -117,7 +117,7 @@ Returns `true` if, and only if, all orders were successfully cancelled.
 ### Example Request
 
 ```javascript
-curl --location -g --request POST '{{url}}/v1/orders/cancel' \
+curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/orders/cancel' \
 --data-raw '{
     "ordersIds":
     [

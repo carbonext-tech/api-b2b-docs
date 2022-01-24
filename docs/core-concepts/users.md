@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Users
@@ -8,7 +8,7 @@ The requests in this page handle CRUD operations on Users resources.
 
 ## Users [POST]
 
-`/v1/users`
+`https://api-b2b.carbonext.com.br/v1/users`
 
 This request creates a new user.
 
@@ -39,7 +39,7 @@ key | Key of the permission
 ### Example Request
 
 ```javascript
-curl '{{url}}/v1/users'
+curl 'https://api-b2b.carbonext.com.br/v1/users'
     -H 'Accept: application/json'
     -H 'Authorization: Bearer {token}'
 ```
@@ -100,7 +100,7 @@ curl '{{url}}/v1/users'
 
 ## Users [GET]
 
-`/v1/users?page=1&page-size=10`
+`https://api-b2b.carbonext.com.br/v1/users?page=1&page-size=10`
 
 This request returns a paginated list of active users.
 
@@ -128,7 +128,7 @@ hasNextPage |	Flag (boolean) indicating whether the list has a next page
 ### Example Request
 
 ```javascript
-curl '{{url}}/v1/users?page=1&pagesize=10' \
+curl 'https://api-b2b.carbonext.com.br/v1/users?page=1&pagesize=10' \
     -H 'Accept: application/json'
     -H 'Authorization: Bearer {token}'
 ```
@@ -211,7 +211,7 @@ curl '{{url}}/v1/users?page=1&pagesize=10' \
 
 ## Users [PUT]
 
-`/v1/users/:id`
+`https://api-b2b.carbonext.com.br/v1/users/:id`
 
 This request updates a user.
 
@@ -246,7 +246,7 @@ key |	Key of a desired permissions for the user
 ### Example Request
 
 ```javascript
-curl '{{url}}/v1/users/3f44d194-52cd-4a2b-ac37-1c9a7713add1' \
+curl 'https://api-b2b.carbonext.com.br/v1/users/3f44d194-52cd-4a2b-ac37-1c9a7713add1' \
     -H 'Accept: application/json'
     -H 'Authorization: Bearer {token}'
 ```
@@ -308,7 +308,7 @@ curl '{{url}}/v1/users/3f44d194-52cd-4a2b-ac37-1c9a7713add1' \
 
 ## Users [DEL]
 
-`/v1/users/:id`
+`https://api-b2b.carbonext.com.br/v1/users/:id`
 
 This request deletes a user.
 
@@ -319,7 +319,7 @@ id: 8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d
 ### Example Request
 
 ```javascript
-curl '{{url}}/v1/users/8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d' \
+curl 'https://api-b2b.carbonext.com.br/v1/users/8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d' \
     -H 'Accept: application/json'
     -H 'Authorization: Bearer {token}'
 ```

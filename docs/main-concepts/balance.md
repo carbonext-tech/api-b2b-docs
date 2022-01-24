@@ -43,7 +43,7 @@ futureDebit |	Sum of open orders (unbilled)
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{url}}/v1/invoices/balance'
+curl --location -g --request GET 'https://api-b2b.carbonext.com.br/v1/invoices/balance'
 ```
 _This request is using **Bearer Token**_
 

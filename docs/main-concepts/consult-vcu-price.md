@@ -2,15 +2,15 @@
 sidebar_position: 1
 ---
 
-# Consulting VCU Price
+# VCU Price
 
-Pricing related requests.
+Let's see how to query the price of the VCU.
 
 ## GET Vcu Price
 
-`/v1/customers/applications?page=2&page-size=10`
+`https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=10&target-currency=BRL`
 
-Retrieves the VCU unitary price.
+This endpoint will return the unit price of the VCU, it is very important to pass the `vcu-amount` in the query parameters, the `target-currency` is optional and it's default value is BRL.
 
 **Response Attributes**
 
@@ -22,12 +22,12 @@ currency |	The currency of the price for which the price was calculated
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{url}}/v1/prices?vcu-amount=1000000'
+curl 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000'
+    -H 'Accept: application/json'
+    -H 'Authorization: Bearer {token}'
 ```
-_This request is using **Bearer Token**_
 
 ### Example Response
-
 
 ```json
 {
@@ -38,6 +38,7 @@ _This request is using **Bearer Token**_
 
 ```md title="PARAMS"
 vcu-amount: 10
-target-currency: BRL (Optional. Default value is BRL)
+target-currency: BRL
 ```
+
 _We currently have `BRL` and `USD` currency options, in the future we will expand options._

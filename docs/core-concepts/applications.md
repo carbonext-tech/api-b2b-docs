@@ -8,7 +8,7 @@ The requests on this page present endpoints for applications
 
 ## Application [POST]
 
-`/v1/customers/applications`
+`https://api-b2b.carbonext.com.br/v1/customers/applications`
 
 This endpoint creates a new application key, used to build machine-to-machine (M2M) integrations.
 
@@ -34,7 +34,7 @@ customerApplicationKey | The generated client secret. This secret can not be ret
 ### Example Request
 
 ```javascript
-curl '{{url}}/v1/customers/applications' \
+curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
     -H 'Accept: application/json'
     -H 'Authorization: Bearer {token}'
 ```
@@ -65,7 +65,7 @@ curl '{{url}}/v1/customers/applications' \
 
 ## List Applications [GET]
 
-`/v1/customers/applications?page=2&page-size=10`
+`https://api-b2b.carbonext.com.br/v1/customers/applications?page=2&page-size=10`
 
 This endpoint returns a paginated list of applications (keys).
 
@@ -92,7 +92,7 @@ hasNextPage | 	Flag (boolean) indicating whether the list has a next page
 ### Example Request
 
 ```javascript
-curl '{{url}}/v1/customers/applications' \
+curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
     -H 'Accept: application/json'
     -H 'Authorization: Bearer {token}'
 ```

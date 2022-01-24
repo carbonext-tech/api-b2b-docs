@@ -29,7 +29,7 @@ You can create an invoice in three different ways.
 Without `ordersCreatedFrom` the request will use only `ordersIds` to create the invoice.
 
 ```javascript
-curl --location -g --request POST '{{url}}/v1/invoices' \
+curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
 --data-raw {
     "ordersIds":[
         "f4f7e937-c5ae-4d85-be5f-13ad804c0670"
@@ -42,7 +42,7 @@ curl --location -g --request POST '{{url}}/v1/invoices' \
 With `ordersCreatedFrom` the request will create an invoice from the date received to the current day.
 
 ```javascript
-curl --location -g --request POST '{{url}}/v1/invoices' \
+curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
 --data-raw {
     "ordersCreatedFrom":"01/01/2022 22:09:40",
     "vcuAmount": 100,
@@ -53,7 +53,7 @@ curl --location -g --request POST '{{url}}/v1/invoices' \
 Or if you have a specific time interval, you can declare in the `ordersCreatedTo` attribute. It also works without the `ordersCreatedFrom`, this way an invoice is created for all orders created before the date described.
 
 ```javascript
-curl --location -g --request POST '{{url}}/v1/invoices' \
+curl --location -g --request POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
 --data-raw {
     "ordersCreatedFrom":"01/01/2022 22:09:40",
     "ordersCreatedTo":"05/01/2022 12:00:00",
@@ -146,7 +146,7 @@ This request returns a paginated list of invoices.
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{url}}/v1/invoices'
+curl --location -g --request GET 'https://api-b2b.carbonext.com.br/v1/invoices'
 ```
 
 _This request is using **Bearer Token**_
@@ -290,7 +290,7 @@ This request returns a paginated list of invoices filtered by status, you can fi
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{url}}/v1/invoices?status=0'
+curl --location -g --request GET 'https://api-b2b.carbonext.com.br/v1/invoices?status=0'
 ```
 
 ### Example Response
@@ -546,7 +546,7 @@ This request will return information about a specific invoice.
 ### Example Request
 
 ```javascript
-curl --location -g --request GET '{{url}}/v1/invoices/8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd'
+curl --location -g --request GET 'https://api-b2b.carbonext.com.br/v1/invoices/8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd'
 ```
 
 _This request is using **Bearer Token**_
