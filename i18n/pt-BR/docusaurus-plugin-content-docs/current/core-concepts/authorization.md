@@ -5,31 +5,31 @@ custom_edit_url: null
 
 # Autorização
 
-This is the API that will handle client-side requests for our B2B applications. First of all, let's see how to create an authorization token in our B2B.
+Este é o endpoint que tratará as requisições do lado do cliente para nossas aplicações B2B. Antes de tudo, vamos ver como criar um token de autorização.
 
-## Authorize client [POST]
+## Autorizar cliente [POST]
 
 `https://api-auth.carbonext.com.br/connect/token`
 
-This request validates the provided credentials and returns the generated tokens
+Esta solicitação valida as credenciais fornecidas e retorna os tokens gerados
 
-**Parameter Attributes**
+**Atributos do Parâmetro**
 
-Parameter   | Description
+Parâmetro | Descrição
 --------- | ------
-clientId | The client's public credential key
-clientSecret | The client's private credential key
+clientId | A chave de credencial pública do cliente
+clientSecret | A chave de credencial privada do cliente
 
-**Response Attributes**
+**Atributos da resposta**
 
-Parameter   | Description
+Parâmetro | Descrição
 --------- | ------
-accessToken | A token used to authorize the user's access.
-token_type | The type of token
-expires_in | The amount of time until the token expires, in seconds
-refresh_token | The refresh token provided in the authorization request
+accessToken | Um token usado para autorizar o acesso do usuário.
+token_type | O tipo do token
+expires_in | A quantidade de tempo até que o token expire, números em segundos
+refresh_token | O token de atualização fornecido na requisição de autorização
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
@@ -39,7 +39,7 @@ curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
 --data-urlencode 'scope=offline_access'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -57,19 +57,19 @@ grant_type: client_credentials
 scope: offline_access
 ```
 
-## Refresh token [POST]
+## Atualizar token [POST]
 
 `https://api-auth.carbonext.com.br/connect/token`
 
-This endpoint retrieves information about the logged in user or application key.
+Este endpoint recupera informações sobre o usuário conectado ou a chave da aplicação.
 
-**Parameter Attributes**
+**Atributos do Parâmetro**
 
-Parameter   | Description
+Parâmetro   | Descrição
 --------- | ------
-refresh_token | The refresh token provided in the authorization response
+refresh_token | O token de atualização fornecido na resposta de autorização
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
@@ -79,7 +79,7 @@ curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
 --data-urlencode 'client_secret={{client_secret}}'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -103,24 +103,24 @@ client_secret: {{client_secret}}
 
 `https://api-auth.carbonext.com.br/connect/userinfo`
 
-A request that retrieves information from the user (or application key).
+Uma solicitação que recupera informações do usuário (ou chave da aplicação).
 
-**Response Attributes**
+**Atributos de resposta**
 
-Attributes   | Description
+Atributos | Descrição
 --------- | ------
-ClientId |	The client identification (public key)
-UserId |	The user identification
-Name |	The user's name
-Email |	The user's email
-IsEmailValid |	A boolean to identify if the user's email has been verified
-CustomerId |	The ID of the customer the user or application is related to
-CustomerApplicationId |	The ID of the customer's application (key)
-CustomerTaxId |	The customer's tax document number
-CustomerLegalName |	The customer's legal name
-Permissions |	An array containing the permissions keys for the user (or application)
+clientId | A identificação do cliente (chave pública)
+userId | A identificação do usuário
+name | O nome do usuário
+email | O e-mail do usuário
+isEmailValid | Um booleano para identificar se o e-mail do usuário foi verificado
+customerId | O ID do cliente ao qual o usuário ou aplicação está relacionado
+customerApplicationId | O ID da aplicação do cliente (chave)
+customerTaxId | Número do documento fiscal do cliente
+customerLegalName | O nome legal do cliente
+permissions | Uma matriz contendo as chaves de permissões para o usuário (ou aplicação)
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
@@ -128,7 +128,7 @@ curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
     -H 'Authorization: Bearer {token}'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
