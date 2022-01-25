@@ -13,7 +13,7 @@ The requests in this page handle CRUD operations on Users resources.
 
 This request creates a new user.
 
-**Request body attributes**
+**Request attributes**
 
 Attributes   | Description
 --------- | ------

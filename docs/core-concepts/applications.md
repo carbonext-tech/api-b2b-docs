@@ -24,7 +24,6 @@ Parameter   | Description
 clientId | The generated client Id
 clientName | The client's name
 permissions | An array of object that contains the keys of the user's permissions
-id (optional) | Id of a desired permissions for the user
 
 **Response attribute**
 
@@ -36,7 +35,7 @@ customerApplicationKey | The generated client secret. This secret can not be ret
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
-    -H 'Accept: application/json'
+    -H 'Accept: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 
@@ -80,21 +79,12 @@ customerApplication_read
 Attribute   | Description
 --------- | ------
 items | An array of paginated orders from the customer
-clientId | Public key of the application
-permissions | Array of permissions for the application (key)
-name (optional) | The name of the permission
-key | The key relating to the permission
-pageIndex | The index of the returned page
-totalPages | The total number of pages
-totalCount | The total number of orders
-hasPreviousPage | Flag (boolean) indicating whether the list has a previous page
-hasNextPage | 	Flag (boolean) indicating whether the list has a next page
 
 ### Example Request
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
-    -H 'Accept: application/json'
+    -H 'Accept: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 

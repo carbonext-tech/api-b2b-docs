@@ -3,17 +3,17 @@ sidebar_position: 3
 custom_edit_url: null
 ---
 
-# Users
+# Usuários
 
-The requests in this page handle CRUD operations on Users resources.
+As requisições nesta página tratam de operações CRUD em recursos de usuários.
 
-## Users [POST]
+## Usuários [POST]
 
 `https://api-b2b.carbonext.com.br/v1/users`
 
-This request creates a new user.
+Esta requisição cria um novo usuário.
 
-**Request body attributes**
+**Atributos de Requisição**
 
 Attributes   | Description
 --------- | ------

@@ -3,40 +3,39 @@ sidebar_position: 2
 custom_edit_url: null
 ---
 
-# Applications
+# Aplicações
 
-The requests on this page present endpoints for applications
+As requisições nesta página apresentam endpoints para aplicações.
 
-## Application [POST]
+## Aplicação [POST]
 
 `https://api-b2b.carbonext.com.br/v1/customers/applications`
 
-This endpoint creates a new application key, used to build machine-to-machine (M2M) integrations.
+Este endpoint cria uma nova chave de aplicação, usada para criar integrações Machine to Machine (M2M).
 
 ```md title="Required permissions"
 customerApplication_write
 ```
 
-**Request attributes**
+**Atributos de Requisição**
+
+Parâmetro | Descrição
+--------- | ------
+clientId | O ID do cliente gerado
+clientName | O nome do cliente
+permissions | Um array de objeto que contém as chaves de permissões do usuário
+
+**Atributos de Resposta**
 
 Parameter   | Description
 --------- | ------
-clientId | The generated client Id
-clientName | The client's name
-permissions | An array of object that contains the keys of the user's permissions
-id (optional) | Id of a desired permissions for the user
+customerApplicationKey | A chave secreta do cliente gerada. Essa chave não pode ser recuperada novamente em nossa API, portanto, deve ser armazenado com segurança.
 
-**Response attribute**
-
-Parameter   | Description
---------- | ------
-customerApplicationKey | The generated client secret. This secret can not be retrieved again from our API, so it must be securely stored.
-
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
-    -H 'Accept: application/json'
+    -H 'Accept: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 
@@ -56,7 +55,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
 }
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -64,41 +63,32 @@ curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
 }
 ```
 
-## List Applications [GET]
+## Listar Aplicações [GET]
 
 `https://api-b2b.carbonext.com.br/v1/customers/applications?page=2&page-size=10`
 
-This endpoint returns a paginated list of applications (keys).
+Esse endpoint retorna uma lista paginada de aplicativos (chaves).
 
 ```md title="Required permissions"
 customerApplication_write
 customerApplication_read
 ```
 
-**Response attributes**
+**Atributos de Resposta**
 
-Attribute   | Description
+Atributo | Descrição
 --------- | ------
-items | An array of paginated orders from the customer
-clientId | Public key of the application
-permissions | Array of permissions for the application (key)
-name (optional) | The name of the permission
-key | The key relating to the permission
-pageIndex | The index of the returned page
-totalPages | The total number of pages
-totalCount | The total number of orders
-hasPreviousPage | Flag (boolean) indicating whether the list has a previous page
-hasNextPage | 	Flag (boolean) indicating whether the list has a next page
+items | Um array de pedidos paginados do cliente
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
-    -H 'Accept: application/json'
+    -H 'Accept: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 
-### Example Response
+### Exemplo de resposta
 
 ```json
 {
