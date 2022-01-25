@@ -3,21 +3,21 @@ sidebar_position: 4
 custom_edit_url: null
 ---
 
-# Resources
+# Recursos
 
-We have entities that allow us to use our advanced query filter that we will see on the next page about **Allowed Filters**, but before that, let's see what these entities are.
+Temos entidades que nos permitem usar nosso filtro de consulta avançada, que veremos na próxima página sobre **Filtros Permitidos**, mas antes disso, vamos ver quais são essas entidades.
 
-## List Resources [GET]
+## Listar Recursos [GET]
 
 `https://api-b2b.carbonext.com.br/v1/resources`
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/resources'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
