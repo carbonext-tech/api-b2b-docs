@@ -9,7 +9,28 @@ This requests allow receiving data related to the certificate through ID, Extern
 
 ## By External ID [GET]
 
-`https://api-certificates.carbonext.com.br/v1//v1/certificates?origin-system-id=b6fc68b0-a2d1-4330-ba97-9a30237aadc3`
+Let's start by sending a request to get the certificate data through the External ID, this way we identify the certificate by its origin ID, passing the `origin-system-id` as a parameter.
+
+`https://api-certificates.carbonext.com.br/v1/certificates?origin-system-id=b6fc68b0-a2d1-4330-ba97-9a30237aadc3`
+
+**Response Attributes**
+
+| Attribute      | Description                                                             |
+| -------------- | ----------------------------------------------------------------------- |
+| id             | The unique id to identify the certificate                               |
+| email          | E-mail linked to certificate                                            |
+| customerName   | Customer name of certificate                                            |
+| type           | Certificate's type                                                      |
+| reference      | Signature date                                                          |
+| footprint      | Footprint neutralized                                                   |
+| serialNumber   | The certificate's number                                                |
+| fileUploadKey  | The link where certificate can be downloaded                            |
+| status         | Status of certificate                                                   |
+| queuedDate     | Is the date the certificate was processed                               |
+| created        | Certificate's emission date                                             |
+| data           | Extra data                                                              |
+| notifyCustomer | If the customer want to be notified about certificate                   |
+| originSystemId | Id of the identity than generated the certificate, for example an order |
 
 ### Example Request
 
@@ -45,6 +66,8 @@ origin-system-id: b6fc68b0-a2d1-4330-ba97-9a30237aadc3
 ```
 
 ## By Email [GET]
+
+We can send a request to get the certificate data through the email, in this way, all certificates linked to the same email will be returned in an array.
 
 `https://api-certificates.carbonext.com.br/v1/certificates?page-size=10&email=emp1@email.com&page=1`
 
@@ -133,6 +156,8 @@ curl 'https://api-certificates.carbonext.com.br/v1/certificates?page-size=10&ema
 ```
 
 ## By ID [GET]
+
+Finally, let's get the data of a specific certificate through its unique ID.
 
 `https://api-certificates.carbonext.com.br/v1/certificates/:id`
 
