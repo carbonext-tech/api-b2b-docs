@@ -3,7 +3,7 @@ sidebar_position: 1
 custom_edit_url: null
 ---
 
-# Authorization
+# Autorização
 
 This is the API that will handle client-side requests for our B2B applications. First of all, let's see how to create an authorization token in our B2B.
 
