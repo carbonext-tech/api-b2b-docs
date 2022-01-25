@@ -5,6 +5,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import HomepageFeatures from "../components/HomepageFeatures";
+import Translate from "@docusaurus/Translate";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -12,13 +13,17 @@ function HomepageHeader() {
     <header className={clsx("hero hero--primary bg-header", styles.heroBanner)}>
       <div className="container">
         <h1 className="title">{siteConfig.title}</h1>
-        <p className="subtitle">{siteConfig.tagline}</p>
+        <p className="subtitle">
+          <Translate>
+            API for calculating, buying, selling and offsetting carbon credits.
+          </Translate>
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro"
           >
-            Make your app carbon neutral
+            <Translate>Make your app carbon neutral</Translate>
           </Link>
         </div>
       </div>

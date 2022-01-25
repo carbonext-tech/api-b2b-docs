@@ -1,14 +1,11 @@
 // @ts-nocheck
 // Note: type annotations allow type checking and IDEs autocompletion
-
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Carbonext - API B2B",
-  tagline:
-    "API for calculating, buying, selling and offsetting carbon credits.",
   url: "https://b2b-docs.carbonext.com.br",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -46,7 +43,7 @@ const config = {
     ({
       navbar: {
         // title: "Carbonext",
-        style: 'dark',
+        style: "dark",
         logo: {
           alt: "Carbonext Logo",
           src: "img/logo-clean.svg",
@@ -58,7 +55,15 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          { href: "https://app.carbonext.com.br/", label: "App Cbx", position: "left" },
+          {
+            href: "https://app.carbonext.com.br/",
+            label: "App Cbx",
+            position: "left",
+          },
+          {
+            type: "localeDropdown",
+            position: "right",
+          },
           {
             href: "https://github.com/carbonext-co2e/api-b2b-docs",
             label: "GitHub",
@@ -112,6 +117,19 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "pt-BR"],
+    localeConfigs: {
+      en: {
+        label: "English",
+      },
+      // You can omit a locale (e.g. fr) if you don't need to override the defaults
+      ptBR: {
+        label: "Português",
+      },
+    },
+  },
 };
 
 module.exports = config;

@@ -1,40 +1,47 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
+import React from "react";
+import clsx from "clsx";
+import styles from "./HomepageFeatures.module.css";
+import Translate from "@docusaurus/Translate";
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/camping.svg').default,
+    title: <Translate>Easy to Use</Translate>,
+    Svg: require("../../static/img/camping.svg").default,
     description: (
       <>
-        Our API is fast and easy to use, focusing on practicality.
+        <Translate>
+          Our API is fast and easy to use, focusing on practicality.
+        </Translate>
       </>
     ),
   },
   {
-    title: 'Focus on Result',
-    Svg: require('../../static/img/cycling.svg').default,
+    title: <Translate>Focus on Result</Translate>,
+    Svg: require("../../static/img/cycling.svg").default,
     description: (
       <>
-        Accurate calculations, and quick responses for every request.
+        <Translate>
+          Accurate calculations, and quick responses for every request.
+        </Translate>
       </>
     ),
   },
   {
-    title: 'To be Carbon Neutral',
-    Svg: require('../../static/img/nature.svg').default,
+    title: <Translate>To be Carbon Neutral</Translate>,
+    Svg: require("../../static/img/nature.svg").default,
     description: (
       <>
-        Now with Carbonext it's easy to make your project carbon neutral.
+        <Translate>
+          Now with Carbonext it's easy to make your project carbon neutral.
+        </Translate>
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description }) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx("col col--4")}>
       <div className="text--center">
         <Svg className={styles.featureSvg} alt={title} />
       </div>

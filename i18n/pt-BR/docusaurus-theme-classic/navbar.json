@@ -1,0 +1,14 @@
+{
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.App Cbx": {
+    "message": "App Cbx",
+    "description": "Navbar item with label App Cbx"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
