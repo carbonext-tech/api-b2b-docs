@@ -3,36 +3,36 @@ sidebar_position: 2
 custom_edit_url: null
 ---
 
-# Orders
+# Pedidos
 
-This page presents request related to orders, which is a carbon credits purchase order (VCU).
+Esta página apresenta requisições relacionadas a pedidos, um pedido é a solicitação de compra de créditos de carbono (VCU).
 
 ## Order [POST]
 
 `https://api-b2b.carbonext.com.br/v1/orders`
 
-This request creates an order.
+Esta requisição irá criar um pedido.
 
-**Request Attributes**
+**Atributos de Requisição**
 
-Attribute   | Description
+Atributo | Descrição
 --------- | ------
-vcuAmount |	The amount of VCU assigned to the order
-targetCurrency |	The desired currency for the order to be charged in
-payWithBalance |	Flag (boolean) indicating if this order should automatically discount from customer balance (if the customer is allowed for creating postpaid orders)
+vcuAmount | A quantidade de VCU atribuída ao pedido
+targetCurrency | A moeda desejada para o pedido a ser cobrado
+payWithBalance | Sinalizador (booleano) indicando se este pedido deve ser descontado automaticamente do saldo do cliente (se o cliente tiver permissão para criar pedidos pós-pagos)
 
-**Response Attributes**
+**Atributos de Resposta**
 
-Attribute   | Description
+Atributo | Descrição
 --------- | ------
-id |	The generated order Id
-vcuAmount |	The total amount of VCU requested in the order
-vcuUnitPrice |	The unitary price of a VCU at the time the order creation
-targetCurrency |	The currency the order will be charged in
-status |	Name of the order's current status
-createdAt |	The date and time the order was created
+id | O ID do pedido gerado
+vcuAmount | A quantidade total de VCU solicitada no pedido
+vcuUnitPrice | O preço unitário de um VCU no momento da criação do pedido
+targetCurrency | A moeda em que o pedido será cobrado
+status | Nome do status atual do pedido
+createdAt | A data e hora em que o pedido foi criado
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/orders' \
@@ -45,7 +45,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/orders' \
 }
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -58,24 +58,24 @@ curl 'https://api-b2b.carbonext.com.br/v1/orders' \
 }
 ```
 
-## Cancel Order [POST]
+## Cancelar Pedido [POST]
 
 `https://api-b2b.carbonext.com.br/v1/orders/:orderId/cancel`
 
-This request cancels an order, an order can only be canceled, while it has issued status, that is, after it has been created and before being paid.
+Esta solicitação cancela um pedido, um pedido só pode ser cancelado enquanto estiver com status de emissão, ou seja, depois de criado e antes de ser pago.
 
-**Response Attributes**
+**Atributos de Resposta**
 
-Attribute   | Description
+Atributo | Descrição
 --------- | ------
-Id |	The order's Id
-vcuAmount |	The amount of VCUs that this order was handling
-vcuUnitPrice |	The VCU price when the order was created
-targetCurrency |	The currency this order was being handled in
-status |	Name of the order's current status, value will be "Cancelled"
-createdAt |	The date and time this order was created
+id | O ID do pedido gerado
+vcuAmount | A quantidade total de VCU solicitada no pedido
+vcuUnitPrice | O preço unitário de um VCU no momento da criação do pedido
+targetCurrency | A moeda em que o pedido será cobrado
+status | Nome do status atual do pedido, o valor será "Cancelled"
+createdAt | A data e hora em que o pedido foi criado
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/orders/f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2/cancel' \
@@ -83,7 +83,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/orders/f8e48b36-b0e4-41eb-bbe5-0cc1bdf
     -H 'Authorization: Bearer {token}'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -100,23 +100,21 @@ curl 'https://api-b2b.carbonext.com.br/v1/orders/f8e48b36-b0e4-41eb-bbe5-0cc1bdf
 orderId: f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2
 ```
 
-## Cancel Orders [POST]
+## Cancelar Pedidos [POST]
 
 `https://api-b2b.carbonext.com.br/v1/orders/cancel`
 
-Orders can be cancelled in batches.
+Os pedidos também podem ser cancelados em lotes.
 
-**Request parameters**
+**Parâmetros de Requisição**
 
-Parameter   | Description
+Parâmetro | Descrição
 --------- | ------
-ordersIds |	An array of Ids of the orders to be cancelled
+ordersIds | Um array de IDs dos pedidos a serem cancelados
 
-### Response
+Retorna `true` se, e somente se, todos os pedidos forem cancelados com sucesso.
 
-Returns `true` if, and only if, all orders were successfully cancelled.
-
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/orders/cancel' \
@@ -130,25 +128,25 @@ curl 'https://api-b2b.carbonext.com.br/v1/orders/cancel' \
 }
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```javascript
 true
 ```
 
-## Orders [GET]
+## Pedidos [GET]
 
 `https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=100`
 
-This request returns a paginated list of orders.
+Esta solicitação retorna uma lista paginada de pedidos.
 
-**Response attributes**
+**Atributos de resposta**
 
-Attribute   | Description
+Atributo | Descrição
 --------- | ------
-items |	An array of paginated orders from the customer
+items	 | Um array de pedidos paginados do cliente
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=100' \
@@ -156,7 +154,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=100' \
     -H 'Authorization: Bearer {token}'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {

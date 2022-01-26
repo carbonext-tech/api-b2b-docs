@@ -112,8 +112,6 @@ Parameter   | Description
 --------- | ------
 ordersIds |	An array of Ids of the orders to be cancelled
 
-### Response
-
 Returns `true` if, and only if, all orders were successfully cancelled.
 
 ### Example Request
