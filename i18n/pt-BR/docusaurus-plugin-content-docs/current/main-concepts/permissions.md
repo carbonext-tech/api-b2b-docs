@@ -3,37 +3,37 @@ sidebar_position: 4
 custom_edit_url: null
 ---
 
-# Permissions list
+# Lista de Permissões
 
-Request to get the list of permissions, this permissions allow you to define what a user can interact with, edit, add or remove on the API.
+Faça uma requisição para receber a lista de permissões, essas permissões permitem definir com o que um usuário pode interagir, editar, adicionar ou remover na API.
 
-## List Permissions [GET]
+## Listar Permissões [GET]
 
 `https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20`
 
-This request returns a paginated lists all permissions available. This permissions can be attached to users and/or customerApplications (keys).
+Esta requisição retorna uma lista paginada de todas as permissões disponíveis. Essas permissões podem ser anexadas a usuários e/ou customerApplications (chaves).
 
-**Permissions list**
+**Lista de Permissões**
 
-| Permission                | Description                   |
-| ------------------------- | ----------------------------- |
-| orders_read               | Orders read only              |
-| orders_write              | Add, edit or remove orders    |
-| customerApplication_read  | Customer read only            |
-| customerApplication_write | Add, edit or remove customers |
-| financial_write           | Add or cancel invoices        |
-| financial_read            | Financial read only           |
-| users_write               | Add, edit or remove users     |
-| users_read                | Users read only               |
-| certificates_read         | Certificates read only        |
+| Permissão                 | Descrição                             |
+| ------------------------- | ------------------------------------- |
+| orders_read               | Somente leitura de Pedidos            |
+| orders_write              | Adicionar, editar ou remover pedidos  |
+| customerApplication_read  | Somente leitura de Clientes           |
+| customerApplication_write | Adicionar, editar ou remover clientes |
+| financial_write           | Adicionar ou cancelar faturas         |
+| financial_read            | Somente leitura do Financeiro         |
+| users_write               | Adicionar, editar ou remover usuários |
+| user_read                 | Somente leitura de Usuários           |
+| certificates_read         | Somente leitura de Certificados       |
 
-**Response Attributes**
+**Atributos de Resposta**
 
-| Attribute | Description           |
-| --------- | --------------------- |
-| items     | A list of permissions |
+| Atributo | Descrição               |
+| -------- | ----------------------- |
+| items    | Uma lista de permissões |
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20' \
@@ -41,7 +41,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20' \
     -H 'Authorization: Bearer {token}'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
