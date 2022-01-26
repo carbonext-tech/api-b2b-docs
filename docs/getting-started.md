@@ -7,12 +7,18 @@ custom_edit_url: null
 
 ## Creating account
 
-Let's start with a basic authentication so we can evolve with the other requests of our API. Accessing our [B2B site](https://b2b-hml.carbonext.com.br/) in homologation environment to create a test account and following these steps:
+<!-- Let's start with a basic authentication so we can evolve with the other requests of our API. Accessing our [B2B site](https://b2b-hml.carbonext.com.br/) in homologation environment to create a test account and following these steps:
 
 Click on **Enter** > **Click here to register** and fill in your company and administrator details.
 
 To generate your keys and make queries in our API, it is necessary to buy at least one credit, you can register a test credit card without authentication
-to buy our VCU, fill in the form on the checkout page with card number `4242 4242 4242 4242` with any **CVC** and any future **expiration date**, add the number of **VCUs** you want to buy, click on **Continue** and wait for the purchase confirmation.
+to buy our VCU, fill in the form on the checkout page with card number `4242 4242 4242 4242` with any **CVC** and any future **expiration date**, add the number of **VCUs** you want to buy, click on **Continue** and wait for the purchase confirmation. -->
+
+Let's start with a basic authentication so we can evolve with the other requests of our API. Accessing our B2B website and following these steps:
+
+Click on **Enter** > **Click here to register** and fill in your company and administrator details.
+
+To generate your keys and make queries in our API, it is necessary to buy at least one credit, fill in the form on the checkout page with the credit card number and number of VCUs, click on **Continue** and wait for the purchase confirmation.
 
 :::tip keys generated
 
