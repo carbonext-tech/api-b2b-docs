@@ -3,31 +3,31 @@ sidebar_position: 3
 custom_edit_url: null
 ---
 
-# Invoices
+# Faturas
 
-After generating orders, we need to generate the invoices for the same, on this page we will see how to make requests for these invoices.
+Após gerar os pedidos, precisamos gerar as faturas para os mesmos, nesta página veremos como realizar requisições para essas faturas.
 
-## Invoices [POST]
+## Faturas [POST]
 
 `https://api-b2b.carbonext.com.br/v1/invoices`
 
-This request will create an invoice, it can be done for a specific order or for a group in a certain period of time.
+Esta requisição irá gerar uma fatura, pode ser feita para um pedido específico ou para um grupo em um determinado período de tempo.
 
-**Request Attributes**
+**Solicitar atributos**
 
-| Attribute                    | Description                                             |
-| ---------------------------- | ------------------------------------------------------- |
-| ordersIds                    | An order's id                                           |
-| ordersCreatedFrom (opcional) | Start date for selecting orders within a period of time |
-| ordersCreatedTo (opcional)   | Order selection end date                                |
-| vcuAmount                    | The vcu amount value                                    |
-| targetCurrency               | The local currency                                      |
+| Atributo | Descrição |
+| ---------------------------- | -------------------------------------------------- ----- |
+| ordersIds | ID de um pedido |
+| ordersCreatedFrom (opcional) | Data de início para seleção de pedidos dentro de um período de tempo |
+| ordersCreatedTo (opcional) | Data final da seleção do pedido |
+| vcuAmount	 | O valor da quantidade vcu |
+| targetCurrency | A moeda local |
 
-### Example Request
+### Exemplo de Requisição
 
-You can create an invoice in three different ways.
+Você pode criar uma fatura de três maneiras diferentes.
 
-Without `ordersCreatedFrom` the request will use only `ordersIds` to create the invoice.
+Sem `ordersCreatedFrom`, a solicitação usará apenas `ordersIds` para criar a fatura.
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
@@ -42,7 +42,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
 }
 ```
 
-With `ordersCreatedFrom` the request will create an invoice from the date received to the current day.
+Com `ordersCreatedFrom` a solicitação criará uma fatura a partir da data de recebimento até o dia atual.
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
@@ -55,7 +55,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
 }
 ```
 
-Or if you have a specific time interval, you can declare in the `ordersCreatedTo` attribute. It also works without the `ordersCreatedFrom`, this way an invoice is created for all orders created before the date described.
+Ou se você tiver um intervalo de tempo específico, você pode declarar no atributo `ordersCreatedTo`. Também funciona sem o `ordersCreatedFrom`, desta forma é criada uma fatura para todos os pedidos criados antes da data descrita.
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
@@ -69,7 +69,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
 }
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -124,15 +124,15 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
 
 `https://api-b2b.carbonext.com.br/v1/invoices`
 
-This request returns a paginated list of invoices.
+Essa solicitação retorna uma lista paginada de faturas.
 
-**Response Attributes**
+**Atributos de resposta**
 
-| Attribute       | Description                                                    |
-| --------------- | -------------------------------------------------------------- |
-| items           | An object containing all invoices related to the customer id   |
+| Atributo | Descrição |
+| --------------- | -------------------------------------------------- ------------ |
+| items | Um objeto contendo todas as faturas relacionadas ao ID do cliente |
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
@@ -140,7 +140,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
     -H 'Authorization: Bearer {token}'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -250,19 +250,20 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
 }
 ```
 
-## Invoices By Status [GET]
+## Faturas por Status [GET]
 
 `https://api-b2b.carbonext.com.br/v1/invoices?status=0`
 
-This request returns a paginated list of invoices filtered by status, you can filter for 5 different statuses, being them Pending, Overdue, Paid, Cancelled and Refunded.
+Esta requisição retorna uma lista paginada de faturas filtradas por status, você pode filtrar por 5 status diferentes, sendo eles 
+Pending (Pendente), Overdue (Vencido), Paid (Pago), Cancelled (Cancelado) e Refunded (Reembolsado).
 
-**Response Attributes**
+**Atributos de Resposta**
 
-| Attribute           | Description                                                        |
-| ------------------- | ------------------------------------------------------------------ |
-| items               | An object containing all invoices related to the customer id       |
+| Atributo | Descrição |
+| ------------------- | -------------------------------------------------- ---------------- |
+| items | Um array contendo todas as faturas relacionadas ao ID do cliente |
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/invoices?status=0' \
@@ -270,7 +271,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices?status=0' \
     -H 'Authorization: Bearer {token}'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -500,21 +501,21 @@ status: 4 (Refunded)
 
 `https://api-b2b.carbonext.com.br/v1/invoices/:id`
 
-This request will return information about a specific invoice.
+Esta solicitação retornará informações sobre uma fatura específica.
 
-**Response Attributes**
+**Atributos de Resposta**
 
-| Attribute      | Description                                                                         |
-| -------------- | ----------------------------------------------------------------------------------- |
-| id             | An invoice's id                                                                     |
-| status         | The status of an invoice                                                            |
-| totalVcuAmount | How many VCUs are being dealt in this invoice                                       |
-| totalPrice     | The amount of currency being dealt in this invoice, in the currency specified below |
-| currency       | The currency being dealt in this invoice                                            |
-| customerId     | The Id of the customer that owns the invoice                                        |
-| orders         | List of orders attached to the invoice                                              |
+| Atributo | Descrição |
+| -------------- | -------------------------------------------------- --------------------------------- |
+| id | ID de uma fatura |
+| status | O status de uma fatura |
+| totalVcuAmount | Quantas VCUs estão sendo negociadas nesta fatura |
+| totalPrice | A quantidade de moeda negociada nesta fatura, na moeda especificada abaixo |
+| currency | A moeda negociada nesta fatura |
+| customerId | O ID do cliente que possui a fatura |
+| orders | Lista de encomendas anexada à fatura |
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/invoices/8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd'
@@ -522,7 +523,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices/8dc48e75-4b71-4fa2-ada8-8516f
     -H 'Authorization: Bearer {token}'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
