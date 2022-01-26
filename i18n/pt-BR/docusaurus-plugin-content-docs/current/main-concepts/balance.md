@@ -3,47 +3,47 @@ sidebar_position: 5
 custom_edit_url: null
 ---
 
-# Balance
+# Saldo
 
-The request in this page refers to customer balance.
+A solicitação nesta página refere-se ao saldo do cliente.
 
-The balance is a sum of all invoices (that generate credit) and orders (that generate debt), alongside with detailed information of open invoices (debit) and non billed orders for the customer.
+O saldo é uma soma de todas as faturas pagas (que geram créditos) e pedidos não pagos (que geram débitos), juntamente com informações detalhadas de faturas em aberto (débito) e pedidos não faturados para o cliente.
 
-## Balance [GET]
+## Saldo [GET]
 
 `https://api-b2b.carbonext.com.br/v1/customers/balance`
 
-This request returns the balance of the customer for each currency it has orders and/or invoices in.
+Esta solicitação retorna o saldo do cliente para cada moeda em que possui pedidos e/ou faturas.
 
 ```md title="Required permissions"
 financial_write
 financial_read
 ```
 
-**Request parameters**
+**Parâmetros de Requisição**
 
-Parameter   | Description
+Parâmetro | Descrição
 --------- | ------
-startPeriod<br/>`Format: YYYY-MM-DD` |	Sets the start date to perform balance calculation from. This parameter is optional, if omitted the API will calculate the balance from the very first order and/or invoice.
-endPeriod<br/>`Format: YYYY-MM-DD` |	Sets the end date to perform balance calculation to. This parameter is optional, if omitted the API will calculate the balance until the current date.
+startPeriod<br/>`Formato: AAAA-MM-DD` | Define a data de início para realizar o cálculo do saldo. Este parâmetro é opcional, se omitido a API calculará o saldo desde o primeiro pedido e/ou fatura.
+endPeriod<br/>`Formato: AAAA-MM-DD` | Define a data final para realizar o cálculo do saldo. Este parâmetro é opcional, se omitido a API calculará o saldo até a data atual.
 
-**Response parameters**
+**Parâmetros de Resposta**
 
-Attribute   | Description
+Atributo | Descrição
 --------- | ------
-startPeriod |	The date the request started looking for data. Will only appear in the response if it was part of the request.
-endPeriod |	The date the request stopped looking for data. Will only appear in the response if it was part of the request.
-balancesByCurrency |	An array of objects, each containing a VcuBalance object, and the currency used to create orders.
+startPeriod | A data em que a requisição começou a procurar dados. Só aparecerá na resposta se fizer parte da requisição.
+endPeriod | A data em que a requisição parou de procurar dados. Só aparecerá na resposta se fizer parte da requisição.
+balancesByCurrency | Um array de objetos, cada um contendo um objeto VcuBalance e a moeda usada para criar pedidos.
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices/balance'
+curl 'https://api-b2b.carbonext.com.br/v1/invoices/balance' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
