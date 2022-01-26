@@ -3,37 +3,35 @@ sidebar_position: 6
 custom_edit_url: null
 ---
 
-# Calculators
+# Calculadoras
 
-This folder contains requests related to calculate the amount of tCO2eq emitted by different types of transport, as well as the price to offset those emissions.
+Esta página contém requisições relacionadas ao cálculo da quantidade de tCO2eq emitida por diferentes tipos de transporte, bem como o preço para compensar essas emissões.
 
-## Types [GET]
+## Tipos [GET]
 
 `https://api-calculator.carbonext.com.br/v1/calculators/types`
 
-A request that lists the supported transport types for emissions calculation.
+Uma requisição que lista os tipos de transporte suportados para cálculo de emissões.
 
-The request will also return the unit that the calculation request will use (e.g, "grams" for deliveries, "passenger" for transportation, etc.), and the unit of the response(e.g, "tCO2eq/tonne" for deliveries or "tCO2eq/passenger" for transportation, etc.).
+A requisição também retornará a unidade que a requisição de cálculo usará (por exemplo, "gramas" para entregas, "passageiro" para transporte etc.), e a unidade da resposta (por exemplo, "tCO2eq/tonelada" para entregas ou " tCO2eq/passageiro" para transporte, etc.).
 
-**Response Attributes**
+**Atributos de Resposta**
 
-Attribute   | Description
---------- | ------
-types |	A list of supported types
-value |	Identifier of the type to be used when making requests to calculate emissions.
-name |	The name of the transport type
-responseUnit |	Unit of the emission calculation response, when using the distance calculator
-requestUnit |	Unit in which the field 'unitValue' should be sent when making requests using Origin/Dest codes
+| Atributo     | Descrição                                                                                                  |
+| ------------ | ---------------------------------------------------------------------------------------------------------- |
+| types        | Uma lista de tipos suportados                                                                              |
+| value        | Identificador do tipo a ser utilizado na solicitação de cálculo de emissões.                               |
+| name         | O nome do tipo de transporte                                                                               |
+| responseUnit | Unidade da resposta do cálculo de emissão, ao usar a calculadora de distância                              |
+| requestUnit  | Unidade em que o campo `unitValue` deve ser enviado ao fazer solicitações usando códigos de Origem/Destino |
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/types' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer {token}'
+curl 'https://api-calculator.carbonext.com.br/v1/calculators/types'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -60,21 +58,19 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/types' \
 }
 ```
 
-## Airports [GET]
+## Aeroportos [GET]
 
 `https://api-calculator.carbonext.com.br/v1/calculators/airports`
 
-This request returns an array of Airports.
+Esta requisição retorna um array de Aeroportos.
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/airports' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer {token}'
+curl 'https://api-calculator.carbonext.com.br/v1/calculators/airports'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -138,39 +134,37 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/airports' \
 }
 ```
 
-## Calculate emission by distance [POST]
+## Calcular emissão por distância [POST]
 
 `https://api-calculator.carbonext.com.br/v1/calculators/calculate`
 
-This request returns the amount of tCO2eq the delivery or transport will emit, based on a given distance.
+Esta requisição retorna a quantidade de tCO2eq que a entrega ou transporte emitirá, com base em uma determinada distância.
 
-**Request Parameters**
+**Parâmetros de Requisição**
 
-Parameter   | Description
---------- | ------
-type | The type identifier from the 'Get Types' request
-distance | The distance to be traveled, in meters
+| Parâmetro | Descrição                                         |
+| --------- | ------------------------------------------------- |
+| type      | O identificador de tipo da requisição `Get Types` |
+| distance  | A distância a ser percorrida, em metros           |
 
-**Response attributes**
+**Atributos de Resposta**
 
-Attributes   | Description
---------- | ------
-emission |	The total amount of tCO2eq emitted during the travel
-emissionUnit |	The unit of the emission, based on the "Type" parameter used in the request ('responseUnit')
+| Atributos    | Descrição                                                                               |
+| ------------ | --------------------------------------------------------------------------------------- |
+| emission     | A quantidade total de tCO2eq emitida durante a viagem                                   |
+| emissionUnit | A unidade de emissão, com base no parâmetro `Type` utilizado no pedido (`responseUnit`) |
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer {token}' \
+curl 'https://api-calculator.carbonext.com.br/v1/calculators/'
 --data-raw {
     "type": 0,
     "distance": 100000
 }
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -179,35 +173,32 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/' \
 }
 ```
 
-## Calculate transport emission by code [POST]
+## Calcular emissão de transporte por código [POST]
 
 `https://api-calculator.carbonext.com.br/v1/calculators/calculate`
 
-This endpoint calculates the amount of tCO2eq emitted when traveling between two locations, for example, ZipCodes for road transport types (only Brazilian ZipCodes are supported for now) or airport codes for flight transport type.
+Este endpoint calcula a quantidade de tCO2eq emitida ao viajar entre dois locais, por exemplo, CEPs para tipos de transporte rodoviário (somente CEPs brasileiros são suportados no momento) ou códigos de aeroporto para tipo de transporte aéreo.
 
-**Request Parameters**
+**Parâmetros de Requisição**
 
-Parameter   | Description
---------- | ------
-type |	The type identifier from the 'Get Types' request
-originCode |	The code that the transport will depart from
-destZipCode |	The code that the transport will arrive at
-unitValue |	The unit amount to calculate the emissions for (i.e, 10 passengers, 10000 grams, etc.). The unit is specified by the field 'requestUnit' from 'Get Types' request
+| Parâmetro   | Descrição                                                                                                                                                               |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type        | O identificador de tipo da solicitação `Get Types`                                                                                                                      |
+| originCode  | O código de onde partirá o transporte                                                                                                                                   |
+| destZipCode | O código ao qual o transporte chegará                                                                                                                                   |
+| unitValue   | O valor unitário para calcular as emissões (ou seja, 10 passageiros, 10.000 gramas, etc.). A unidade é especificada pelo campo `requestUnit` da solicitação `Get Types` |
 
-**Response attributes**
+**Atributos de Resposta**
 
-Attributes   | Description
---------- | ------
-emission| The total amount of tCO2eq emitted during the travel
-emissionUnit| The value is tCO2eq. The result is calculated for the unitValue provided in the request
+| Atributos    | Descrição                                                                            |
+| ------------ | ------------------------------------------------------------------------------------ |
+| emission     | A quantidade total de tCO2eq emitida durante a viagem                                |
+| emissionUnit | O valor é tCO2eq. O resultado é calculado para o `unitValue` fornecido na requisição |
 
-
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer {token}' \
+curl 'https://api-calculator.carbonext.com.br/v1/calculators/calculate'
 --data-raw {
     "type": 0,
     "originCode": "01526-000",
@@ -216,7 +207,7 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
 }
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -225,30 +216,30 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
 }
 ```
 
-## Calculate offset price by distance [POST]
+## Calcular preço de compensação por distância [POST]
 
 `https://api-calculator.carbonext.com.br/v1/calculators/price`
 
-This request will calculate the final price to offset the calculated emission.
+Esta solicitação calculará o preço final para compensar a emissão calculada.
 
-**Request Parameters**
+**Parâmetros de Requisição**
 
-Parameter   | Description
---------- | ------
-type | The type identifier from the 'Get Types' request
-distance	| The distance to be traveled, in meters
-currency	| The currency to calculate the final price in
+| Parâmetro | Descrição                                          |
+| --------- | -------------------------------------------------- |
+| type      | O identificador de tipo da solicitação `Get Types` |
+| distance  | A distância a ser percorrida, em metros            |
+| currency  | A moeda para calcular o preço final                |
 
-**Response attributes**
+**Atributos de Resposta**
 
-Attributes   | Description
---------- | ------
-price	| The price to offset the emission
-currency	| The requested currency
-emission	| The total amount of tCO2eq emitted during the travel
-emissionUnit	| The unit of the emission, based on the "Type" parameter used in the request ('responseUnit')
+| Atributos    | Descrição                                                                               |
+| ------------ | --------------------------------------------------------------------------------------- |
+| price        | O preço para compensar a emissão                                                        |
+| currency     | A moeda solicitada                                                                      |
+| emission     | A quantidade total de tCO2eq emitida durante a viagem                                   |
+| emissionUnit | A unidade de emissão, com base no parâmetro `Type` utilizado no pedido (`responseUnit`) |
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
@@ -261,7 +252,7 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
 }
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -272,32 +263,31 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
 }
 ```
 
-## Calculate offset price by code [POST]
+## Calcular preço de compensação por código [POST]
 
 `https://api-calculator.carbonext.com.br/v1/calculators/price`
 
-This request will calculate the final price, in the requested currency, to offset the calculated emission between two locations.
+Esta requisição calculará o preço final, na moeda solicitada, para compensar a emissão calculada entre dois locais.
 
-**Request Parameters**
+**Parâmetros de Requisição**
 
-Parameter   | Description
---------- | ------
-type |	The type identifier from the 'Get Types' request
-currency |	The currency to calculate the final price in
-originCode |	The code that the transport will depart from
-destZipCode |	The code that the transport will arrive at
-unitValue |	The unit amount to calculate the emissions for (i.e, 10 passengers, 10000 grams, etc.). The unit is specified by the field 'requestUnit' from 'Get Types' request
+| Parâmetro   | Descrição                                                                                                                                                               |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type        | O identificador de tipo da solicitação `Get Types`                                                                                                                      |
+| originCode  | O código de onde partirá o transporte                                                                                                                                   |
+| destZipCode | O código ao qual o transporte chegará                                                                                                                                   |
+| unitValue   | O valor unitário para calcular as emissões (ou seja, 10 passageiros, 10.000 gramas, etc.). A unidade é especificada pelo campo `requestUnit` da solicitação `Get Types` |
 
-**Response attributes**
+**Atributos de Resposta**
 
-Attributes   | Description
---------- | ------
-price |	The price to offset the emission
-currency |	The requested currency
-emission |	The total amount of tCO2eq emitted during the travel
-emissionUnit |	The value is tCO2eq. The result is calculated for the unitValue provided in the request
+| Atributos    | Descrição                                                                           |
+| ------------ | ----------------------------------------------------------------------------------- |
+| price        | O preço para compensar a emissão                                                    |
+| currency     | A moeda solicitada                                                                  |
+| emission     | A quantidade total de tCO2eq emitida durante a viagem                               |
+| emissionUnit | O valor é tCO2eq. O resultado é calculado para o `unitValue` fornecido na solicitação |
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
@@ -312,7 +302,7 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
 }
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {

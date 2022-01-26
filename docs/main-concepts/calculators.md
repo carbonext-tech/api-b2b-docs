@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Calculators
 
-This folder contains requests related to calculate the amount of tCO2eq emitted by different types of transport, as well as the price to offset those emissions.
+This page contains requests related to calculate the amount of tCO2eq emitted by different types of transport, as well as the price to offset those emissions.
 
 ## Types [GET]
 
@@ -23,14 +23,12 @@ types |	A list of supported types
 value |	Identifier of the type to be used when making requests to calculate emissions.
 name |	The name of the transport type
 responseUnit |	Unit of the emission calculation response, when using the distance calculator
-requestUnit |	Unit in which the field 'unitValue' should be sent when making requests using Origin/Dest codes
+requestUnit |	Unit in which the field `unitValue` should be sent when making requests using Origin/Dest codes
 
 ### Example Request
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/types' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer {token}'
+curl 'https://api-calculator.carbonext.com.br/v1/calculators/types'
 ```
 
 ### Example Response
@@ -148,7 +146,7 @@ This request returns the amount of tCO2eq the delivery or transport will emit, b
 
 Parameter   | Description
 --------- | ------
-type | The type identifier from the 'Get Types' request
+type | The type identifier from the `Get Types` request
 distance | The distance to be traveled, in meters
 
 **Response attributes**
@@ -156,14 +154,12 @@ distance | The distance to be traveled, in meters
 Attributes   | Description
 --------- | ------
 emission |	The total amount of tCO2eq emitted during the travel
-emissionUnit |	The unit of the emission, based on the "Type" parameter used in the request ('responseUnit')
+emissionUnit |	The unit of the emission, based on the `Type` parameter used in the request (`responseUnit`)
 
 ### Example Request
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer {token}' \
+curl 'https://api-calculator.carbonext.com.br/v1/calculators/'
 --data-raw {
     "type": 0,
     "distance": 100000
@@ -199,15 +195,13 @@ unitValue |	The unit amount to calculate the emissions for (i.e, 10 passengers, 
 Attributes   | Description
 --------- | ------
 emission| The total amount of tCO2eq emitted during the travel
-emissionUnit| The value is tCO2eq. The result is calculated for the unitValue provided in the request
+emissionUnit| The value is tCO2eq. The result is calculated for the `unitValue` provided in the request
 
 
 ### Example Request
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer {token}' \
+curl 'https://api-calculator.carbonext.com.br/v1/calculators/calculate'
 --data-raw {
     "type": 0,
     "originCode": "01526-000",
@@ -235,7 +229,7 @@ This request will calculate the final price to offset the calculated emission.
 
 Parameter   | Description
 --------- | ------
-type | The type identifier from the 'Get Types' request
+type | The type identifier from the `Get Types` request
 distance	| The distance to be traveled, in meters
 currency	| The currency to calculate the final price in
 
@@ -246,7 +240,7 @@ Attributes   | Description
 price	| The price to offset the emission
 currency	| The requested currency
 emission	| The total amount of tCO2eq emitted during the travel
-emissionUnit	| The unit of the emission, based on the "Type" parameter used in the request ('responseUnit')
+emissionUnit	| The unit of the emission, based on the `Type` parameter used in the request (`responseUnit`)
 
 ### Example Request
 
@@ -282,11 +276,11 @@ This request will calculate the final price, in the requested currency, to offse
 
 Parameter   | Description
 --------- | ------
-type |	The type identifier from the 'Get Types' request
+type |	The type identifier from the `Get Types` request
 currency |	The currency to calculate the final price in
 originCode |	The code that the transport will depart from
 destZipCode |	The code that the transport will arrive at
-unitValue |	The unit amount to calculate the emissions for (i.e, 10 passengers, 10000 grams, etc.). The unit is specified by the field 'requestUnit' from 'Get Types' request
+unitValue |	The unit amount to calculate the emissions for (i.e, 10 passengers, 10000 grams, etc.). The unit is specified by the field `requestUnit` from `Get Types` request
 
 **Response attributes**
 
@@ -295,7 +289,7 @@ Attributes   | Description
 price |	The price to offset the emission
 currency |	The requested currency
 emission |	The total amount of tCO2eq emitted during the travel
-emissionUnit |	The value is tCO2eq. The result is calculated for the unitValue provided in the request
+emissionUnit |	The value is tCO2eq. The result is calculated for the `unitValue` provided in the request
 
 ### Example Request
 
