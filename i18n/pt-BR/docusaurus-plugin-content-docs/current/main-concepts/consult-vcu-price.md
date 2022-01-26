@@ -3,26 +3,26 @@ sidebar_position: 1
 custom_edit_url: null
 ---
 
-# VCU Price
+# Preço do VCU
 
-Let's see how to query the price of the VCU (Verified Carbon Unity).
+Vamos ver como consultar o preço do VCU (Verified Carbon Unity).
 
-## Vcu Price [GET]
+## Preço do VCU [GET]
 
 `https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=10&target-currency=BRL`
 
-This endpoint will return the unit price of the VCU, it is very important to pass the `vcu-amount` in the query parameters, the `target-currency` is optional and it's default value is BRL.
+Este endpoint retornará o preço unitário do VCU, é muito importante passar o `vcu-amount` nos parâmetros da consulta, o `target-currency` é opcional e seu valor padrão é BRL.
 
-We currently have `BRL` and `USD` currency options, in the future we will expand options.
+Atualmente temos opções de moeda `BRL` e `USD`, no futuro expandiremos as opções.
 
-**Response Attributes**
+**Atributos de Resposta**
 
-Attribute   | Description
+Atributo | Descrição
 --------- | ------
-vcuPrice |	The price applied for 1 VCU (equivalent to 1 ton CO2eq)
-currency |	The currency of the price for which the price was calculated
+vcuPrice | O preço aplicado para 1 VCU (equivalente a 1 tonelada CO2eq)
+currency | O tipo de moeda para o qual foi calculado
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
@@ -30,7 +30,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
     -H 'Authorization: Bearer {token}'
 ```
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
