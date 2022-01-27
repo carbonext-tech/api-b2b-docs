@@ -13,9 +13,9 @@ Let's see how to query the price of the VCU (Verified Carbon Unity).
 https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=10&target-currency=BRL
 ```
 
-This endpoint will return the unit price of the VCU, it is very important to pass the `vcu-amount` in the query parameters, the `target-currency` is optional and it's default value is BRL.
+This endpoint will return the unit price of the VCU. It is very important to pass the `vcu-amount` in the query parameters. The `target-currency` parameter's default option is BRL(Brazilian Reais).
 
-We currently have `BRL` and `USD` currency options, in the future we will expand options.
+We currently have `BRL` and `USD`(US Dollars) currency options. We plan to expand our offerings to more currencies in the future.
 
 **Response Attributes**
 
