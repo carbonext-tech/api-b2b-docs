@@ -99,7 +99,7 @@ client_secret: {{client_secret}}
 ```
 
 
-## User Info [GET]
+## Informações de Usuário [GET]
 
 `https://api-auth.carbonext.com.br/connect/userinfo`
 

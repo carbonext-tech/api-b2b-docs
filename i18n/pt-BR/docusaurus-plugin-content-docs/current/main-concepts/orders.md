@@ -7,7 +7,7 @@ custom_edit_url: null
 
 Esta página apresenta requisições relacionadas a pedidos, um pedido é a solicitação de compra de créditos de carbono (VCU).
 
-## Order [POST]
+## Pedido [POST]
 
 `https://api-b2b.carbonext.com.br/v1/orders`
 
