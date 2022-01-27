@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Invoices
 
-After generating orders, we need to generate the invoices for the same, on this page we will see how to make requests for these invoices.
+After generating orders, we need to generate the invoices for said orders. On this page we will learn how to create requests for these invoices.
 
 ## Invoices [POST]
 
@@ -57,7 +57,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
 }
 ```
 
-Or if you have a specific time interval, you can declare in the `ordersCreatedTo` attribute. It also works without the `ordersCreatedFrom`, this way an invoice is created for all orders created before the date described.
+Lastly, if you have a specific time interval, you can declare in the `ordersCreatedTo` attribute. It also works without the `ordersCreatedFrom`, this way an invoice is generated for all orders created before the date described.
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/invoices' \

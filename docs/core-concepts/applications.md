@@ -77,9 +77,9 @@ customerApplication_read
 
 **Response attributes**
 
-Attribute   | Description
+Attributes   | Description
 --------- | ------
-items | An array of paginated orders from the customer
+Items | An array of paginated orders from the customer
 
 ### Example Request
 

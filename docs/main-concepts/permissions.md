@@ -3,7 +3,7 @@ sidebar_position: 4
 custom_edit_url: null
 ---
 
-# Permissions list
+# Permission List
 
 Request to get the list of permissions, this permissions allow you to define what a user can interact with, edit, add or remove on the API.
 
@@ -15,7 +15,7 @@ https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20
 
 This request returns a paginated lists all permissions available. This permissions can be attached to users and/or customerApplications (keys).
 
-**Permissions list**
+**Permission List**
 
 | Permission                | Description                   |
 | ------------------------- | ----------------------------- |
@@ -31,9 +31,9 @@ This request returns a paginated lists all permissions available. This permissio
 
 **Response Attributes**
 
-| Attribute | Description           |
+| Attributes | Description           |
 | --------- | --------------------- |
-| items     | A list of permissions |
+| Items     | A list of permissions |
 
 ### Example Request
 
