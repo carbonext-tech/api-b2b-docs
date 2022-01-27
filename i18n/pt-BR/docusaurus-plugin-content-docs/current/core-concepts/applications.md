@@ -36,10 +36,7 @@ customerApplicationKey | A chave secreta do cliente gerada. Essa chave não pode
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
     -H 'Accept: application/json' \
-    -H 'Authorization: Bearer {token}'
-```
-
-```json
+    -H 'Authorization: Bearer {token}' \
 --data-raw {
     "clientId":"teste-app1",
     "applicationDisplayName": "Teste Chave",
@@ -88,7 +85,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
     -H 'Authorization: Bearer {token}'
 ```
 
-### Exemplo de resposta
+### Exemplo de Resposta
 
 ```json
 {
