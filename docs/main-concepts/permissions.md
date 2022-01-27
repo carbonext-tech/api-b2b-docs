@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Permission List
 
-Request to get the list of permissions, this permissions allow you to define what a user can interact with, edit, add or remove on the API.
+Request to get the list of permissions which define what the user interacts with, edits, adds or removes from the API.
 
 ## List Permissions [GET]
 
@@ -13,7 +13,7 @@ Request to get the list of permissions, this permissions allow you to define wha
 https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20
 ```
 
-This request returns a paginated lists all permissions available. This permissions can be attached to users and/or customerApplications (keys).
+This request returns a paginated list all permissions available. These permissions can be attached to users and/or customerApplications (keys).
 
 **Permission List**
 
