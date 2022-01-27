@@ -7,10 +7,10 @@ custom_edit_url: null
 
 ## Creating account
 
-Let's start with a basic authentication so we can evolve with the other requests of our API. Access our [B2B site](https://b2b-hml.carbonext.com.br/auth/signup) in homologation environment to create a test account.
+Let's start with a basic authentication so we can evolve with the other requests to our API. Access our [B2B site](https://b2b-hml.carbonext.com.br/auth/signup) in homologation environment to create a test account.
 
-To generate your keys and make queries in our API, it is necessary to buy at least one credit, you can register a test credit card without authentication
-to buy our VCU, fill in the form on the checkout page with card number `4242 4242 4242 4242` with any **CVC** and any future **expiration date**, add the number of **VCUs** you want to buy, click on **Comprar e continuar** and wait for the purchase confirmation.
+It's necessary to buy at least one carbon credit to generate your `client_id` and `client_secret` and create queries through our API, you can register a test credit card without authentication
+to buy our VCU, fill in the form on the checkout page with the test credit card number `4242 4242 4242 4242` with any **CVC** and any future **expiration date**, add the number of **VCUs** you want to buy, click on **Comprar e continuar** and wait for the purchase confirmation.
 
 :::tip keys generated
 
@@ -20,7 +20,7 @@ Congratulations you just generated your `client_id` and `client_secret`, save th
 
 ## Authorization
 
-Before making our first request, we need an authorization `token` that we receive through the following endpoint passing our `client_id` and `client_secret` in the body of the request in `urlencode` format.
+Before making our first request, we need an authorization `token` that we receive through the following endpoint sending our `client_id` and `client_secret` in the body of the request in `urlencode` format.
 
 ### Example Request
 
@@ -66,4 +66,4 @@ curl 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
 }
 ```
 
-Let's see more about our authorization requests and other concepts in the next page.
+Let's learn more about our authorization requests and other core concepts on the next pages.

@@ -3,14 +3,14 @@ sidebar_position: 2
 custom_edit_url: null
 ---
 
-# Vamos começar
+# Vamos Começar
 
-## Criar uma conta
+## Criar uma Conta
 
-Vamos começar com uma autenticação básica para podermos evoluir com as demais requisições da nossa API. Acesse o nosso [site B2B](https://b2b-hml.carbonext.com.br/auth/signup) em ambiente de homologação para criar uma conta de teste.
+Vamos começar com uma autenticação básica para podermos evoluir com as demais requisições para a nossa API. Acesse o nosso [site B2B](https://b2b-hml.carbonext.com.br/auth/signup) em ambiente de homologação para criar uma conta de teste.
 
-Para gerar suas chaves e fazer consultas em nossa API, é necessário comprar pelo menos um crédito, você pode cadastrar um cartão de crédito de teste sem autenticação
-para comprar nosso VCU, preencha o formulário na página de checkout com o número do cartão `4242 4242 4242 4242` com qualquer **CVC** e qualquer **data de validade** futura, adicione o número de **VCUs** que você deseja comprar, clique em **Comprar e continuar** e aguarde a confirmação da compra.
+É necessário comprar pelo menos um crédito de Carbono para gerar seu `client_id` e `client_secret` e utilizar de nossa API, você pode cadastrar um cartão de crédito de teste sem autenticação
+para comprar nosso VCU, preencha o formulário na página de checkout com o cartão de crédito de teste `4242 4242 4242 4242` com qualquer **CVC** e qualquer **data de validade** futura, adicione o número de **VCUs** que você deseja comprar, clique em **Comprar e continuar** e aguarde a confirmação da compra.
 
 :::tip chaves geradas
 
@@ -43,7 +43,7 @@ curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
 }
 ```
 
-## Consultando o preço do VCU
+## Consultando o Preço do VCU
 
 Agora, estamos prontos.
 
@@ -66,4 +66,4 @@ curl 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
 }
 ```
 
-Veremos mais sobre nossas requisições de autorização e outros conceitos na próxima página.
+Vamos aprender mais sobre as nossas requisições de autorização e outros conceitos básicos nas próximas páginas.
