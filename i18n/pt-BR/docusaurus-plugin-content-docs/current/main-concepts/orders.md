@@ -9,7 +9,9 @@ Esta página apresenta requisições relacionadas a pedidos, um pedido é a soli
 
 ## Pedido [POST]
 
-`https://api-b2b.carbonext.com.br/v1/orders`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/orders
+```
 
 Esta requisição irá criar um pedido.
 

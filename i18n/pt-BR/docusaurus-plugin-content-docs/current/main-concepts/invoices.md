@@ -9,7 +9,9 @@ Após gerar os pedidos, precisamos gerar as faturas para os mesmos, nesta págin
 
 ## Faturas [POST]
 
-`https://api-b2b.carbonext.com.br/v1/invoices`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/invoices
+```
 
 Esta requisição irá gerar uma fatura, pode ser feita para um pedido específico ou para um grupo em um determinado período de tempo.
 
@@ -122,7 +124,9 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
 
 ## Faturas [GET]
 
-`https://api-b2b.carbonext.com.br/v1/invoices`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/invoices
+```
 
 Essa solicitação retorna uma lista paginada de faturas.
 
@@ -252,7 +256,9 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
 
 ## Faturas por Status [GET]
 
-`https://api-b2b.carbonext.com.br/v1/invoices?status=0`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/invoices?status=0
+```
 
 Esta requisição retorna uma lista paginada de faturas filtradas por status, você pode filtrar por 5 status diferentes, sendo eles 
 Pending (Pendente), Overdue (Vencido), Paid (Pago), Cancelled (Cancelado) e Refunded (Reembolsado).
@@ -499,7 +505,9 @@ status: 4 (Refunded)
 
 ## Fatura [GET]
 
-`https://api-b2b.carbonext.com.br/v1/invoices/:id`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/invoices/:id
+```
 
 Esta solicitação retornará informações sobre uma fatura específica.
 

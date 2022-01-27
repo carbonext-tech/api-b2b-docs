@@ -9,7 +9,9 @@ We have entities that allow us to use our advanced query filter that we will see
 
 ## List Resources [GET]
 
-`https://api-b2b.carbonext.com.br/v1/resources`
+```url title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/resources
+```
 
 ### Example Request
 

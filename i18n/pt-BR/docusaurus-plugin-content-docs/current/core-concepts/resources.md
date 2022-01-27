@@ -9,7 +9,9 @@ Temos entidades que nos permitem usar nosso filtro de consulta avançada, que ve
 
 ## Listar Recursos [GET]
 
-`https://api-b2b.carbonext.com.br/v1/resources`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/resources
+```
 
 ### Exemplo de Requisição
 

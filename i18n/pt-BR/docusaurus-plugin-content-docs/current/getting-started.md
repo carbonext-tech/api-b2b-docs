@@ -14,7 +14,7 @@ Clique em **Entrar** > **Clique aqui para se cadastrar** e preencha os dados (fi
 Para gerar suas chaves e fazer consultas em nossa API, é necessário comprar pelo menos um crédito, você pode cadastrar um cartão de crédito de teste sem autenticação
 para comprar nosso VCU, preencha o formulário na página de checkout com o número do cartão `4242 4242 4242 4242` com qualquer **CVC** e qualquer **data de validade** futura, adicione o número de **VCUs** que você deseja comprar, clique em **Continuar** e aguarde a confirmação da compra. -->
 
-Vamos começar com uma autenticação básica para podermos evoluir com as demais requisições da nossa API. Acessando nosso site B2B e seguindo os próximos passos:
+Vamos começar com uma autenticação básica para podermos evoluir com as demais requisições da nossa API. Acesse o nosso site B2B e seguindo os próximos passos:
 
 Clique em **Entrar** > **Clique aqui para se cadastrar** e preencha os dados de sua empresa e administrador.
 

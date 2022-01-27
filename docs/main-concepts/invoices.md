@@ -9,7 +9,9 @@ After generating orders, we need to generate the invoices for the same, on this 
 
 ## Invoices [POST]
 
-`https://api-b2b.carbonext.com.br/v1/invoices`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/invoices
+```
 
 This request will create an invoice, it can be done for a specific order or for a group in a certain period of time.
 
@@ -122,7 +124,9 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
 
 ## Invoices [GET]
 
-`https://api-b2b.carbonext.com.br/v1/invoices`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/invoices
+```
 
 This request returns a paginated list of invoices.
 
@@ -252,7 +256,9 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
 
 ## Invoices By Status [GET]
 
-`https://api-b2b.carbonext.com.br/v1/invoices?status=0`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/invoices?status=0
+```
 
 This request returns a paginated list of invoices filtered by status, you can filter for 5 different statuses, being them Pending, Overdue, Paid, Cancelled and Refunded.
 
@@ -498,7 +504,9 @@ status: 4 (Refunded)
 
 ## Invoice [GET]
 
-`https://api-b2b.carbonext.com.br/v1/invoices/:id`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/invoices/:id
+```
 
 This request will return information about a specific invoice.
 

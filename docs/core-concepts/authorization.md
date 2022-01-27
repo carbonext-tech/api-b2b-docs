@@ -9,7 +9,9 @@ This is the API that will handle client-side requests for our B2B applications. 
 
 ## Authorize client [POST]
 
-`https://api-auth.carbonext.com.br/connect/token`
+```url title="BASE URL"
+https://api-auth.carbonext.com.br/connect/token
+```
 
 This request validates the provided credentials and returns the generated tokens
 
@@ -32,7 +34,7 @@ refresh_token | The refresh token provided in the authorization request
 ### Example Request
 
 ```javascript
-curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
+curl 'https://api-auth.carbonext.com.br/connect/token' \
 --data-urlencode 'client_id={{client_id}}' \
 --data-urlencode 'client_secret={{client_secret}}' \
 --data-urlencode 'grant_type=client_credentials' \
@@ -59,7 +61,9 @@ scope: offline_access
 
 ## Refresh token [POST]
 
-`https://api-auth.carbonext.com.br/connect/token`
+```url title="BASE URL"
+https://api-auth.carbonext.com.br/connect/token
+```
 
 This endpoint retrieves information about the logged in user or application key.
 
@@ -72,7 +76,7 @@ refresh_token | The refresh token provided in the authorization response
 ### Example Request
 
 ```javascript
-curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
+curl 'https://api-auth.carbonext.com.br/connect/token' \
 --data-urlencode 'grant_type=refresh_token' \
 --data-urlencode 'refresh_token={{refresh_token}}' \
 --data-urlencode 'client_id={{client_id}}' \
@@ -101,7 +105,9 @@ client_secret: {{client_secret}}
 
 ## User Info [GET]
 
-`https://api-auth.carbonext.com.br/connect/userinfo`
+```url title="BASE URL"
+https://api-auth.carbonext.com.br/connect/userinfo
+```
 
 A request that retrieves information from the user (or application key).
 

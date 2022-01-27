@@ -9,7 +9,9 @@ Our API has a filter and sort system that allows searching for an entity by spec
 
 ## List Allowed Filters [GET]
 
-`https://api-b2b.carbonext.com.br/v1/allowed-filters/:entity`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/allowed-filters/:entity
+```
 
 Parameter   | Description
 --------- | ------

@@ -11,7 +11,9 @@ The balance is a sum of all invoices (that generate credit) and orders (that gen
 
 ## Balance [GET]
 
-`https://api-b2b.carbonext.com.br/v1/customers/balance`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/customers/balance
+```
 
 This request returns the balance of the customer for each currency it has orders and/or invoices in.
 

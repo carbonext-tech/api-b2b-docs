@@ -9,7 +9,9 @@ This page presents request related to orders, which is a carbon credits purchase
 
 ## Order [POST]
 
-`https://api-b2b.carbonext.com.br/v1/orders`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/orders
+```
 
 This request creates an order.
 
@@ -60,7 +62,9 @@ curl 'https://api-b2b.carbonext.com.br/v1/orders' \
 
 ## Cancel Order [POST]
 
-`https://api-b2b.carbonext.com.br/v1/orders/:orderId/cancel`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/orders/:orderId/cancel
+```
 
 This request cancels an order, an order can only be canceled, while it has issued status, that is, after it has been created and before being paid.
 
@@ -102,7 +106,9 @@ orderId: f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2
 
 ## Cancel Orders [POST]
 
-`https://api-b2b.carbonext.com.br/v1/orders/cancel`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/orders/cancel
+```
 
 Orders can be cancelled in batches.
 
@@ -136,7 +142,9 @@ true
 
 ## Orders [GET]
 
-`https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=100`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=100
+```
 
 This request returns a paginated list of orders.
 

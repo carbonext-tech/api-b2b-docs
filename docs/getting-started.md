@@ -14,7 +14,7 @@ Click on **Enter** > **Click here to register** and fill in your company and adm
 To generate your keys and make queries in our API, it is necessary to buy at least one credit, you can register a test credit card without authentication
 to buy our VCU, fill in the form on the checkout page with card number `4242 4242 4242 4242` with any **CVC** and any future **expiration date**, add the number of **VCUs** you want to buy, click on **Continue** and wait for the purchase confirmation. -->
 
-Let's start with a basic authentication so we can evolve with the other requests of our API. Accessing our B2B website and following these steps:
+Let's start with a basic authentication so we can evolve with the other requests of our API. Access our B2B website and following these steps:
 
 Click on **Enter** > **Click here to register** and fill in your company and administrator details.
 

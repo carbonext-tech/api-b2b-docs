@@ -9,7 +9,9 @@ Esta página contém requisições relacionadas ao cálculo da quantidade de tCO
 
 ## Tipos [GET]
 
-`https://api-calculator.carbonext.com.br/v1/calculators/types`
+```md title="BASE URL"
+https://api-calculator.carbonext.com.br/v1/calculators/types
+```
 
 Uma requisição que lista os tipos de transporte suportados para cálculo de emissões.
 
@@ -60,7 +62,9 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/types'
 
 ## Aeroportos [GET]
 
-`https://api-calculator.carbonext.com.br/v1/calculators/airports`
+```md title="BASE URL"
+https://api-calculator.carbonext.com.br/v1/calculators/airports
+```
 
 Esta requisição retorna um array de Aeroportos.
 
@@ -136,7 +140,9 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/airports'
 
 ## Calcular emissão por distância [POST]
 
-`https://api-calculator.carbonext.com.br/v1/calculators/calculate`
+```md title="BASE URL"
+https://api-calculator.carbonext.com.br/v1/calculators/calculate
+```
 
 Esta requisição retorna a quantidade de tCO2eq que a entrega ou transporte emitirá, com base em uma determinada distância.
 
@@ -175,7 +181,9 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/'
 
 ## Calcular emissão de transporte por código [POST]
 
-`https://api-calculator.carbonext.com.br/v1/calculators/calculate`
+```md title="BASE URL"
+https://api-calculator.carbonext.com.br/v1/calculators/calculate
+```
 
 Este endpoint calcula a quantidade de tCO2eq emitida ao viajar entre dois locais, por exemplo, CEPs para tipos de transporte rodoviário (somente CEPs brasileiros são suportados no momento) ou códigos de aeroporto para tipo de transporte aéreo.
 
@@ -218,7 +226,9 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/calculate'
 
 ## Calcular preço de compensação por distância [POST]
 
-`https://api-calculator.carbonext.com.br/v1/calculators/price`
+```md title="BASE URL"
+https://api-calculator.carbonext.com.br/v1/calculators/price
+```
 
 Esta solicitação calculará o preço final para compensar a emissão calculada.
 
@@ -265,7 +275,9 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
 
 ## Calcular preço de compensação por código [POST]
 
-`https://api-calculator.carbonext.com.br/v1/calculators/price`
+```md title="BASE URL"
+https://api-calculator.carbonext.com.br/v1/calculators/price
+```
 
 Esta requisição calculará o preço final, na moeda solicitada, para compensar a emissão calculada entre dois locais.
 

@@ -9,7 +9,9 @@ Nossa API possui um sistema de filtro e ordenação que permite buscar uma entid
 
 ## Listar Filtros Permitidos [GET]
 
-`https://api-b2b.carbonext.com.br/v1/allowed-filters/:entity`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/allowed-filters/:entity
+```
 
 | Parâmetro | Descrição                                                                                                                      |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------ |

@@ -9,7 +9,9 @@ This page contains requests related to calculate the amount of tCO2eq emitted by
 
 ## Types [GET]
 
-`https://api-calculator.carbonext.com.br/v1/calculators/types`
+```md title="BASE URL"
+https://api-calculator.carbonext.com.br/v1/calculators/types
+```
 
 A request that lists the supported transport types for emissions calculation.
 
@@ -60,7 +62,9 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/types'
 
 ## Airports [GET]
 
-`https://api-calculator.carbonext.com.br/v1/calculators/airports`
+```md title="BASE URL"
+https://api-calculator.carbonext.com.br/v1/calculators/airports
+```
 
 This request returns an array of Airports.
 
@@ -138,7 +142,9 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/airports' \
 
 ## Calculate emission by distance [POST]
 
-`https://api-calculator.carbonext.com.br/v1/calculators/calculate`
+```md title="BASE URL"
+https://api-calculator.carbonext.com.br/v1/calculators/calculate
+```
 
 This request returns the amount of tCO2eq the delivery or transport will emit, based on a given distance.
 
@@ -177,7 +183,9 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/'
 
 ## Calculate transport emission by code [POST]
 
-`https://api-calculator.carbonext.com.br/v1/calculators/calculate`
+```md title="BASE URL"
+https://api-calculator.carbonext.com.br/v1/calculators/calculate
+```
 
 This endpoint calculates the amount of tCO2eq emitted when traveling between two locations, for example, ZipCodes for road transport types (only Brazilian ZipCodes are supported for now) or airport codes for flight transport type.
 
@@ -221,7 +229,9 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/calculate'
 
 ## Calculate offset price by distance [POST]
 
-`https://api-calculator.carbonext.com.br/v1/calculators/price`
+```md title="BASE URL"
+https://api-calculator.carbonext.com.br/v1/calculators/price
+```
 
 This request will calculate the final price to offset the calculated emission.
 
@@ -268,7 +278,9 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
 
 ## Calculate offset price by code [POST]
 
-`https://api-calculator.carbonext.com.br/v1/calculators/price`
+```md title="BASE URL"
+https://api-calculator.carbonext.com.br/v1/calculators/price
+```
 
 This request will calculate the final price, in the requested currency, to offset the calculated emission between two locations.
 

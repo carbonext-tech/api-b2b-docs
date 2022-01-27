@@ -9,7 +9,9 @@ Este é o endpoint que tratará as requisições do lado do cliente para nossas 
 
 ## Autorizar cliente [POST]
 
-`https://api-auth.carbonext.com.br/connect/token`
+```md title="BASE URL"
+https://api-auth.carbonext.com.br/connect/token
+```
 
 Esta solicitação valida as credenciais fornecidas e retorna os tokens gerados
 
@@ -32,7 +34,7 @@ refresh_token | O token de atualização fornecido na requisição de autorizaç
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
+curl 'https://api-auth.carbonext.com.br/connect/token' \
 --data-urlencode 'client_id={{client_id}}' \
 --data-urlencode 'client_secret={{client_secret}}' \
 --data-urlencode 'grant_type=client_credentials' \
@@ -59,7 +61,9 @@ scope: offline_access
 
 ## Atualizar token [POST]
 
-`https://api-auth.carbonext.com.br/connect/token`
+```md title="BASE URL"
+https://api-auth.carbonext.com.br/connect/token
+```
 
 Este endpoint recupera informações sobre o usuário conectado ou a chave da aplicação.
 
@@ -72,7 +76,7 @@ refresh_token | O token de atualização fornecido na resposta de autorização
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
+curl 'https://api-auth.carbonext.com.br/connect/token' \
 --data-urlencode 'grant_type=refresh_token' \
 --data-urlencode 'refresh_token={{refresh_token}}' \
 --data-urlencode 'client_id={{client_id}}' \
@@ -101,7 +105,9 @@ client_secret: {{client_secret}}
 
 ## Informações de Usuário [GET]
 
-`https://api-auth.carbonext.com.br/connect/userinfo`
+```md title="BASE URL"
+https://api-auth.carbonext.com.br/connect/userinfo
+```
 
 Uma solicitação que recupera informações do usuário (ou chave da aplicação).
 

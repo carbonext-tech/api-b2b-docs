@@ -11,7 +11,9 @@ O saldo é uma soma de todas as faturas pagas (que geram créditos) e pedidos n�
 
 ## Saldo [GET]
 
-`https://api-b2b.carbonext.com.br/v1/customers/balance`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/customers/balance
+```
 
 Esta solicitação retorna o saldo do cliente para cada moeda em que possui pedidos e/ou faturas.
 

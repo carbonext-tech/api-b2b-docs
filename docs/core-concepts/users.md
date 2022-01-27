@@ -9,7 +9,9 @@ The requests in this page handle CRUD operations on Users resources.
 
 ## Users [POST]
 
-`https://api-b2b.carbonext.com.br/v1/users`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/users
+```
 
 This request creates a new user.
 
@@ -94,7 +96,9 @@ curl 'https://api-b2b.carbonext.com.br/v1/users' \
 
 ## Users [GET]
 
-`https://api-b2b.carbonext.com.br/v1/users?page=1&page-size=10`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/users?page=1&page-size=10
+```
 
 This request returns a paginated list of active users.
 
@@ -190,7 +194,9 @@ curl 'https://api-b2b.carbonext.com.br/v1/users?page=1&pagesize=10' \
 
 ## Users [PUT]
 
-`https://api-b2b.carbonext.com.br/v1/users/:id`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/users/:id
+```
 
 This request updates a user.
 
@@ -284,7 +290,9 @@ curl 'https://api-b2b.carbonext.com.br/v1/users/3f44d194-52cd-4a2b-ac37-1c9a7713
 
 ## Users [DEL]
 
-`https://api-b2b.carbonext.com.br/v1/users/:id`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/users/:id
+```
 
 This request deletes a user through the id passed by parameter.
 

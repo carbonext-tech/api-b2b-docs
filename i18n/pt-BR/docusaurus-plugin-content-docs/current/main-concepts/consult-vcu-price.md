@@ -9,7 +9,9 @@ Vamos ver como consultar o preço do VCU (Verified Carbon Unity).
 
 ## Preço do VCU [GET]
 
-`https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=10&target-currency=BRL`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=10&target-currency=BRL
+```
 
 Este endpoint retornará o preço unitário do VCU, é muito importante passar o `vcu-amount` nos parâmetros da consulta, o `target-currency` é opcional e seu valor padrão é BRL.
 

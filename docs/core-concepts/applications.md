@@ -9,7 +9,9 @@ The requests on this page present endpoints for applications
 
 ## Application [POST]
 
-`https://api-b2b.carbonext.com.br/v1/customers/applications`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/customers/applications
+```
 
 This endpoint creates a new application key, used to build machine-to-machine (M2M) integrations.
 
@@ -62,7 +64,9 @@ curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
 
 ## List Applications [GET]
 
-`https://api-b2b.carbonext.com.br/v1/customers/applications?page=2&page-size=10`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/customers/applications?page=2&page-size=10
+```
 
 This endpoint returns a paginated list of applications (keys).
 

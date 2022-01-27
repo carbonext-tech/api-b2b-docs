@@ -281,7 +281,9 @@ curl 'https://api-b2b.carbonext.com.br/v1/users/3f44d194-52cd-4a2b-ac37-1c9a7713
 
 ## Usuários [DEL]
 
-`https://api-b2b.carbonext.com.br/v1/users/:id`
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/users/:id
+```
 
 Esta requisição deleta um usuário através do `id` passado pelo parâmetro.
 
