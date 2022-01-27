@@ -120,7 +120,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
 }
 ```
 
-## Invoices [GET]
+## Faturas [GET]
 
 `https://api-b2b.carbonext.com.br/v1/invoices`
 
@@ -497,7 +497,7 @@ status: 3 (Cancelled)
 status: 4 (Refunded)
 ```
 
-## Invoice [GET]
+## Fatura [GET]
 
 `https://api-b2b.carbonext.com.br/v1/invoices/:id`
 
