@@ -140,7 +140,7 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/airports' \
 }
 ```
 
-## Calculate emission by distance [POST]
+## Calculate Emission by Distance [POST]
 
 ```md title="BASE URL"
 https://api-calculator.carbonext.com.br/v1/calculators/calculate
@@ -181,7 +181,7 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/'
 }
 ```
 
-## Calculate transport emission by code [POST]
+## Calculate Transport Emission by Code [POST]
 
 ```md title="BASE URL"
 https://api-calculator.carbonext.com.br/v1/calculators/calculate
@@ -227,7 +227,7 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/calculate'
 }
 ```
 
-## Calculate offset price by distance [POST]
+## Calculate Offset Price by Distance [POST]
 
 ```md title="BASE URL"
 https://api-calculator.carbonext.com.br/v1/calculators/price
@@ -276,7 +276,7 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
 }
 ```
 
-## Calculate offset price by code [POST]
+## Calculate Offset Price by Code [POST]
 
 ```md title="BASE URL"
 https://api-calculator.carbonext.com.br/v1/calculators/price

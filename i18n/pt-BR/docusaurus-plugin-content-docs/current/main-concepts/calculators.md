@@ -138,7 +138,7 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/airports'
 }
 ```
 
-## Calcular emissão por distância [POST]
+## Calcular Emissão por Distância [POST]
 
 ```md title="BASE URL"
 https://api-calculator.carbonext.com.br/v1/calculators/calculate
@@ -179,7 +179,7 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/'
 }
 ```
 
-## Calcular emissão de transporte por código [POST]
+## Calcular Emissão de Transporte por Código [POST]
 
 ```md title="BASE URL"
 https://api-calculator.carbonext.com.br/v1/calculators/calculate
@@ -224,7 +224,7 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/calculate'
 }
 ```
 
-## Calcular preço de compensação por distância [POST]
+## Calcular Preço de Compensação por Distância [POST]
 
 ```md title="BASE URL"
 https://api-calculator.carbonext.com.br/v1/calculators/price
@@ -273,7 +273,7 @@ curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
 }
 ```
 
-## Calcular preço de compensação por código [POST]
+## Calcular Preço de Compensação por Código [POST]
 
 ```md title="BASE URL"
 https://api-calculator.carbonext.com.br/v1/calculators/price

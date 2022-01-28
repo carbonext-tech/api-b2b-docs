@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Resources
 
-We have entities that allow us to use our advanced query filter that we will see on the next page about **Allowed Filters**, but before that, let's see what these entities are.
+We have entities that allow us to use our advanced query filter, let's see what these entities are.
 
 ## List Resources [GET]
 

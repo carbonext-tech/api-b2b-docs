@@ -260,8 +260,9 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
 https://api-b2b.carbonext.com.br/v1/invoices?status=0
 ```
 
-Esta requisição retorna uma lista paginada de faturas filtradas por status, você pode filtrar por 5 status diferentes, sendo eles 
-Pending (Pendente), Overdue (Vencido), Paid (Pago), Cancelled (Cancelado) e Refunded (Reembolsado).
+Esta requisição retorna uma lista paginada de faturas filtradas por status
+
+Você pode filtrar através de 5 status diferentes: pending (pendente), overdue (vencido), paid (pago), cancelled (cancelado) e refunded (reembolsado).
 
 **Atributos de Resposta**
 

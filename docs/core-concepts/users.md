@@ -294,7 +294,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/users/3f44d194-52cd-4a2b-ac37-1c9a7713
 https://api-b2b.carbonext.com.br/v1/users/:id
 ```
 
-This request deletes a user through the id passed by parameter.
+This request deletes an user through the id passed by parameter.
 
 ```md title="PATH VARIABLES"
 id: 8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d

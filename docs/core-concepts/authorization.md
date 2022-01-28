@@ -5,9 +5,9 @@ custom_edit_url: null
 
 # Authorization
 
-This is the API that will handle client-side requests for our B2B applications. First of all, let's see how to create an authorization token in our B2B.
+This is the API that will handle client-side requests for our B2B applications. Firstly, let's see how we can create an authorization token.
 
-## Authorize client [POST]
+## Authorize Client [POST]
 
 ```url title="BASE URL"
 https://api-auth.carbonext.com.br/connect/token
@@ -59,7 +59,7 @@ grant_type: client_credentials
 scope: offline_access
 ```
 
-## Refresh token [POST]
+## Refresh Token [POST]
 
 ```url title="BASE URL"
 https://api-auth.carbonext.com.br/connect/token

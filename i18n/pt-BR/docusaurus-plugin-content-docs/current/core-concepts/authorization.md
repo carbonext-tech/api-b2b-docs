@@ -7,7 +7,7 @@ custom_edit_url: null
 
 Este é o endpoint que tratará as requisições do lado do cliente para nossas aplicações B2B. Antes de tudo, vamos ver como criar um token de autorização.
 
-## Autorizar cliente [POST]
+## Autorizar Cliente [POST]
 
 ```md title="BASE URL"
 https://api-auth.carbonext.com.br/connect/token
@@ -59,7 +59,7 @@ grant_type: client_credentials
 scope: offline_access
 ```
 
-## Atualizar token [POST]
+## Atualizar Token [POST]
 
 ```md title="BASE URL"
 https://api-auth.carbonext.com.br/connect/token

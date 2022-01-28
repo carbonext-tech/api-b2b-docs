@@ -43,7 +43,7 @@ curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
 }
 ```
 
-## Consulting VCU price
+## Consulting VCU Price
 
 Now, we are ready.
 
