@@ -21,18 +21,18 @@ Attribute   | Description
 --------- | ------
 vcuAmount |	The amount of VCUs assigned to the order
 targetCurrency |	The desired currency for the order to be charged in
-payWithBalance |	Flag (boolean) indicating if this order should automatically discount from customer balance (this indicates if the customer is allowed to create orders after completing payment)
+payWithBalance |	Flag (boolean) indicating if this order should automatically discount from the customer balance (this indicates if the customer is allowed to create orders after completing payment)
 
 **Response Attributes**
 
 Attribute   | Description
 --------- | ------
 id |	The generated order ID
-vcuAmount |	The total amount of VCU requested in the order
-vcuUnitPrice |	The unit price of a VCU at the time the order completion
+vcuAmount |	The total amount of VCUs requested in the order
+vcuUnitPrice |	The unit price of a VCU at the time of order completion
 targetCurrency |	The currency in which the order will be charged in
 status |	Discloses the order's current status
-createdAt |	The date and time the order was created
+createdAt |	Discloses the order's current status
 
 ### Example Request
 
@@ -66,7 +66,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/orders' \
 https://api-b2b.carbonext.com.br/v1/orders/:orderId/cancel
 ```
 
-This request cancels an order. The order can only be canceled when it has been issued(after it has been created but before being paid for).
+This request cancels an order. The order can only be canceled when it has been issued(after it has been created, but before it has been paid for).
 
 **Response Attributes**
 

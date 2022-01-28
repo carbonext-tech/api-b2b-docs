@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Recursos
 
-Temos entidades que nos permitem usar nosso filtro de consulta avançada, que veremos na próxima página sobre **Filtros Permitidos**, mas antes disso, vamos ver quais são essas entidades.
+Temos entidades que nos permitem usar nosso filtro de consulta avançada, vamos ver quais são essas entidades.
 
 ## Listar Recursos [GET]
 

@@ -7,13 +7,13 @@ custom_edit_url: null
 
 Request to get the list of permissions which define what the user interacts with, edits, adds or removes from the API.
 
-## List Permissions [GET]
+## Permission List [GET]
 
 ```md title="BASE URL"
 https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20
 ```
 
-This request returns a paginated list all permissions available. These permissions can be attached to users and/or customerApplications (keys).
+This request returns a paginated list with all permissions available. These permissions can be attached to users and/or customerApplications (keys).
 
 **Permission List**
 

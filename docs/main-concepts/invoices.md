@@ -254,13 +254,15 @@ curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
 }
 ```
 
-## Invoices By Status [GET]
+## Invoices by Status [GET]
 
 ```md title="BASE URL"
 https://api-b2b.carbonext.com.br/v1/invoices?status=0
 ```
 
-This request returns a paginated list of invoices filtered by status, you can filter for 5 different statuses, being them Pending, Overdue, Paid, Cancelled and Refunded.
+This request returns a paginated list of invoices filtered by status.
+
+You can filter between  5 different statuses: pending, overdue, paid, cancelled and refunded.
 
 **Response Attributes**
 

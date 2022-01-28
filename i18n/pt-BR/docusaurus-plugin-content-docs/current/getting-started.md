@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Vamos começar
 
-## Criar uma conta
+## Criar uma Conta
 
 Vamos começar com uma autenticação básica para podermos evoluir com as demais requisições da nossa API. Acesse o nosso [site B2B](https://b2b-hml.carbonext.com.br/auth/signup) em ambiente de homologação para criar uma conta de teste.
 
@@ -43,7 +43,7 @@ curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
 }
 ```
 
-## Consultando o preço do VCU
+## Consultando o Preço do VCU
 
 Agora, estamos prontos.
 

@@ -19,7 +19,7 @@ Esta requisição irá criar um pedido.
 
 Atributo | Descrição
 --------- | ------
-vcuAmount | A quantidade de VCU atribuída ao pedido
+vcuAmount | A quantidade de VCUs atribuída ao pedido
 targetCurrency | A moeda desejada para o pedido a ser cobrado
 payWithBalance | Sinalizador (booleano) indicando se este pedido deve ser descontado automaticamente do saldo do cliente (se o cliente tiver permissão para criar pedidos pós-pagos)
 
@@ -28,7 +28,7 @@ payWithBalance | Sinalizador (booleano) indicando se este pedido deve ser descon
 Atributo | Descrição
 --------- | ------
 id | O ID do pedido gerado
-vcuAmount | A quantidade total de VCU solicitada no pedido
+vcuAmount | A quantidade total de VCUs solicitada no pedido
 vcuUnitPrice | O preço unitário de um VCU no momento da criação do pedido
 targetCurrency | A moeda em que o pedido será cobrado
 status | Nome do status atual do pedido
