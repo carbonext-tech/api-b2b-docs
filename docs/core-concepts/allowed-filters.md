@@ -26,7 +26,7 @@ https://api-b2b.carbonext.com.br/v1/allowed-filters/:resource
 | filters   | An array of available filters |
 | sort      | An array of available sorts   |
 
-```md title="Filtros Disponíveis"
+```md title="Available Filters"
 eq: =
 ne: !=
 ge: >=
