@@ -1,6 +1,14 @@
-# Website
+# Carbonext Docs 🌳
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+<div align="center">
+  <img src="https://carbonext-s3.s3.amazonaws.com/public/logo-carbonext-dark.png"><br><br>
+</div>
+
+This repository contains the documentation website code and Markdown source files for [Carbonext API B2B](https://api-docs.carbonext.com.br/).
+
+### Translations
+
+Using internationalization (i18n) for different audiences, currently we have the `English` and `Portuguese` versions available.
 
 ### Installation
 
@@ -16,26 +24,8 @@ $ yarn start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
-
 ```
-$ yarn build
+$ yarn run start --locale pt-BR
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+This command starts a local development server on the **pt-BR** version of the document.
