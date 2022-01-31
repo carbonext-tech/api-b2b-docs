@@ -110,7 +110,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Carbonext. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Carbonext.`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -124,7 +124,6 @@ const config = {
       en: {
         label: "English",
       },
-      // You can omit a locale (e.g. fr) if you don't need to override the defaults
       ptBR: {
         label: "Português",
       },
