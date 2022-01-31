@@ -17,7 +17,7 @@ Parameter   | Description
 --------- | ------
 entity | Your entity can be any [resource](/docs/core-concepts/resources) return that we saw on the previous page about Resources
 
-This endpoint returns the fields accepted for filtering and sorting, it is important to mention, that sort has the `created_desc` filter by default.
+This endpoint returns the fields accepted for filtering and sorting. It is important to mention that sort has the `created_desc` filter by default.
 
 ### Example Request
 
