@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Filtros Permitidos
 
-Nossa API possui um sistema de filtro e ordenação que permite buscar uma entidade por tipo específico.
+Nossa API possui um sistema de filtro e ordenação que permite buscar um recurso por tipo específico.
 
 ## Listar Filtros Permitidos [GET]
 
@@ -25,17 +25,6 @@ https://api-b2b.carbonext.com.br/v1/allowed-filters/:resource
 | --------- | -------------------------------------- |
 | filters   | Um array dos filtros disponíveis       |
 | sort      | Um array com as ordenações disponíveis |
-
-```md title="Filtros Disponíveis"
-eq: =
-ne: !=
-ge: >=
-le: <=
-gt: >
-lt: <
-in: `status` in (1,2,3) retorna os registros com `status` igual a 1 ou 2 ou 3 (status aqui é o campo com filtro tipo `_in`)
-like: retorna registros que contenham o valor buscado no filtro (case insensitive)
-```
 
 Este endpoint retorna os campos aceito para filtragem e ordenação, é importante mencionar que essa ordenação possui o filtro `created_desc` por padrão.
 
@@ -72,6 +61,17 @@ curl 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
     "status"
   ]
 }
+```
+
+```md title="Filtros Disponíveis"
+eq: =
+ne: !=
+ge: >=
+le: <=
+gt: >
+lt: <
+in: `status` in (1,2,3) retorna os registros com `status` igual a 1 ou 2 ou 3 (status aqui é o campo com filtro tipo `_in`)
+like: retorna registros que contenham o valor buscado no filtro (case insensitive)
 ```
 
 ## Listar Faturas por Filtro [GET]

@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Query Filters
 
-Our API has a filter and sort system that allows searching for an entity by specific type.
+Our API has a filter and sort system that allows searching for a resource by specific type.
 
 ## List Allowed Filters [GET]
 
@@ -25,17 +25,6 @@ https://api-b2b.carbonext.com.br/v1/allowed-filters/:resource
 | --------- | ----------------------------- |
 | filters   | An array of available filters |
 | sort      | An array of available sorts   |
-
-```md title="Available Filters"
-eq: =
-ne: !=
-ge: >=
-le: <=
-gt: >
-lt: <
-in: `status` in (1,2,3) returns records with `status` equal to 1 or 2 or 3 (status here is the field with filter type `_in`)
-like: returns records that contain the value sought in the filter (case insensitive)
-```
 
 This endpoint returns the fields accepted for filtering and sorting. It is important to mention that sort has the `created_desc` filter by default.
 
@@ -72,6 +61,17 @@ curl 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
     "status"
   ]
 }
+```
+
+```md title="Available Filters"
+eq: =
+ne: !=
+ge: >=
+le: <=
+gt: >
+lt: <
+in: `status` in (1,2,3) returns records with `status` equal to 1 or 2 or 3 (status here is the field with filter type `_in`)
+like: returns records that contain the value sought in the filter (case insensitive)
 ```
 
 ## List Invoices by Filter [GET]
