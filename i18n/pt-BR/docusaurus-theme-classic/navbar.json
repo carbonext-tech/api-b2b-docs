@@ -3,12 +3,16 @@
     "message": "Docs",
     "description": "Navbar item with label Docs"
   },
-  "item.label.App Cbx": {
-    "message": "App Cbx",
-    "description": "Navbar item with label App Cbx"
-  },
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"
+  },
+  "item.label.App B2B": {
+    "message": "App B2B",
+    "description": "Navbar item with label App B2B"
+  },
+  "item.label.App B2C": {
+    "message": "App B2C",
+    "description": "Navbar item with label App B2C"
   }
 }

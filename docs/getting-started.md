@@ -25,7 +25,7 @@ Before making our first request, we need an authorization `token` that we receiv
 ### Example Request
 
 ```javascript
-curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
+curl 'https://auth-hml.carbonext.com.br/connect/userinfo' \
 --data-urlencode 'client_id={{client_id}}' \
 --data-urlencode 'client_secret={{client_secret}}' \
 --data-urlencode 'grant_type=client_credentials' \
@@ -52,7 +52,7 @@ Let's query the VCU price with the following example, passing `vcu-amount` as a 
 ### Example Request
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
+curl 'https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1000000' \
     -H 'Accept: application/json' \
     -H 'Authorization: Bearer {token}'
 ```

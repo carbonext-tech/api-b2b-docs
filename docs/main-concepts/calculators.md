@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Calculators
 
-This page contains requests related to calculate the amount of tCO2eq emitted by different types of transport, as well as the price to offset those emissions.
+This page contains requests to calculate the amount of tCO2eq emitted by different types of transport, as well as the price to offset those emissions.
 
 ## Types [GET]
 

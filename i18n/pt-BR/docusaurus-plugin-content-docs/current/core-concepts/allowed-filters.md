@@ -5,19 +5,28 @@ custom_edit_url: null
 
 # Filtros Permitidos
 
-Nossa API possui um sistema de filtro e ordenação que permite buscar uma entidade por tipo específico.
+Nossa API possui um sistema de filtro e ordenação que permite buscar um recurso por tipo específico.
 
 ## Listar Filtros Permitidos [GET]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/allowed-filters/:entity
+https://api-b2b.carbonext.com.br/v1/allowed-filters/:resource
 ```
 
-| Parâmetro | Descrição                                                                                                                      |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| entity  | Sua entidade pode ser qualquer retorno de [recursos](/docs/core-concepts/resources) que vimos na página anterior sobre Recursos |
+**Parâmetro de Requisição**
 
-Este endpoint retorna os campos aceitos para filtragem e ordenação, é importante mencionar que essa ordenação possui o filtro `created_desc` por padrão.
+| Parâmetro | Descrição                                                                                                                          |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| resource  | Este `resource` pode ser qualquer retorno de [recursos](/docs/core-concepts/resources) que vimos na página anterior sobre Recursos |
+
+**Parâmetros de Resposta**
+
+| Parâmetro | Descrição                              |
+| --------- | -------------------------------------- |
+| filters   | Um array dos filtros disponíveis       |
+| sort      | Um array com as ordenações disponíveis |
+
+Este endpoint retorna os campos aceito para filtragem e ordenação, é importante mencionar que essa ordenação possui o filtro `created_desc` por padrão.
 
 ### Exemplo de Requisição
 
@@ -33,24 +42,152 @@ curl 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
     "status_eq",
     "status_ne",
     "status_in",
-    "price_ge",
-    "price_le",
-    "price_gt",
-    "price_lt",
-    "total_qty_eq",
-    "total_qty_ge",
-    "total_qty_le",
-    "total_qty_gt",
-    "total_qty_lt"
+    "totalPrice_ge",
+    "totalPrice_le",
+    "totalPrice_gt",
+    "totalPrice_lt",
+    "totalVcuAmount_eq",
+    "totalVcuAmount_ge",
+    "totalVcuAmount_le",
+    "totalVcuAmount_gt",
+    "totalVcuAmount_lt"
   ],
   "sort": [
-    "created",
-    "updated",
+    "createdAt",
     "paid",
-    "due_date",
-    "price",
-    "total_qty",
+    "dueDate",
+    "totalPrice",
+    "totalVcuAmount",
     "status"
   ]
 }
+```
+
+```md title="Filtros Disponíveis"
+eq: =
+ne: !=
+ge: >=
+le: <=
+gt: >
+lt: <
+in: `status` in (1,2,3) retorna os registros com `status` igual a 1 ou 2 ou 3 (status aqui é o campo com filtro tipo `_in`)
+like: retorna registros que contenham o valor buscado no filtro (case insensitive)
+```
+
+## Listar Faturas por Filtro [GET]
+
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending
+```
+
+Vamos ver um exemplo prático de filtro listando faturas, nesse exemplo retornaremos uma lista em ordenação crescente baseada no `totalVcuAmount`, para filtrar com mais de uma condição podemos utilizar o separador de campo `~` para cada filtro na mesma query, dessa forma, podemos filtrar por `totalVcuAmount` maior que 30 e que possua status igual a `Paid-pending`.
+
+**Parâmetros de Resposta**
+
+| Parâmetro | Descrição                     |
+| --------- | ----------------------------- |
+| items     | Um array de faturas filtradas |
+
+### Exemplo de Requisição
+
+```javascript
+curl 'https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending' \
+    -H 'Accept: application/json' \
+    -H 'Authorization: Bearer {token}'
+```
+
+### Exemplo de Resposta
+
+```json
+{
+  "items": [
+    {
+      "id": "8b864cbf-c181-4405-b119-91b2f63b1954",
+      "status": "Pending",
+      "totalVcuAmount": 30,
+      "totalPrice": 2310,
+      "currency": "BRL",
+      "customerId": "a2170dcf-a87f-4fdb-b4e6-54e4f0889324",
+      "createdAt": "2022-01-05T22:20:57.378254",
+      "paidAt": null,
+      "dueDate": null
+    },
+    {
+      "id": "5a8ff819-f60b-450b-9efb-f62c1445d511",
+      "status": "Pending",
+      "totalVcuAmount": 45,
+      "totalPrice": 3465,
+      "currency": "BRL",
+      "customerId": "a2170dcf-a87f-4fdb-b4e6-54e4f0889324",
+      "createdAt": "2022-01-05T22:09:21.372156",
+      "paidAt": null,
+      "dueDate": null
+    },
+    {
+      "id": "5e27bd46-95ce-4fd1-86c6-04fbd18e45bb",
+      "status": "Pending",
+      "totalVcuAmount": 45,
+      "totalPrice": 3465,
+      "currency": "BRL",
+      "customerId": "a2170dcf-a87f-4fdb-b4e6-54e4f0889324",
+      "createdAt": "2022-01-05T22:20:08.853038",
+      "paidAt": null,
+      "dueDate": null
+    },
+    {
+      "id": "3951ae7b-2c3d-4bd8-a05c-7755328413b5",
+      "status": "Pending",
+      "totalVcuAmount": 60,
+      "totalPrice": 4620,
+      "currency": "BRL",
+      "customerId": "a2170dcf-a87f-4fdb-b4e6-54e4f0889324",
+      "createdAt": "2022-01-05T22:15:43.037432",
+      "paidAt": null,
+      "dueDate": null
+    },
+    {
+      "id": "b92c0e55-45b0-4be2-9b85-c28d834137eb",
+      "status": "Pending",
+      "totalVcuAmount": 100,
+      "totalPrice": 7700,
+      "currency": "BRL",
+      "customerId": "a2170dcf-a87f-4fdb-b4e6-54e4f0889324",
+      "createdAt": "2021-12-10T20:47:11.424205",
+      "paidAt": null,
+      "dueDate": null
+    },
+    {
+      "id": "117f2fd6-953d-42d0-895d-31abc809af88",
+      "status": "Paid",
+      "totalVcuAmount": 10000,
+      "totalPrice": 770000,
+      "currency": "BRL",
+      "customerId": "a2170dcf-a87f-4fdb-b4e6-54e4f0889324",
+      "createdAt": "2021-12-09T19:49:43.112941",
+      "paidAt": "2021-12-10T20:12:09.154332",
+      "dueDate": null
+    },
+    {
+      "id": "71050ef4-ae2a-4966-beaf-603d75b3f8c2",
+      "status": "Paid",
+      "totalVcuAmount": 10000,
+      "totalPrice": 770000,
+      "currency": "BRL",
+      "customerId": "a2170dcf-a87f-4fdb-b4e6-54e4f0889324",
+      "createdAt": "2021-12-06T13:54:13.56172",
+      "paidAt": "2021-12-06T14:06:19.755607",
+      "dueDate": null
+    }
+  ],
+  "pageIndex": 1,
+  "totalPages": 1,
+  "totalCount": 7,
+  "hasPreviousPage": false,
+  "hasNextPage": false
+}
+```
+
+```md title="Atributos do Parâmetro"
+sort-by: totalQuantity_asc
+filter-by: totalQuantity_ge:30~status_in:Paid-pending
 ```
