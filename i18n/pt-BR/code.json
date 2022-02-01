@@ -17,12 +17,6 @@
   "Now with Carbonext it's easy to make your project carbon neutral.": {
     "message": "Agora com a Carbonext, fica fácil tornar o seu projeto Carbono Neutro."
   },
-  "API for calculating, buying, selling and offsetting carbon credits.": {
-    "message": "API para cálculo, compra, venda e neutralização de créditos de carbono."
-  },
-  "Make your app carbon neutral": {
-    "message": "Seu app Carbono Neutro"
-  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
@@ -218,5 +212,14 @@
   "theme.tags.tagsPageTitle": {
     "message": "Marcadores",
     "description": "The title of the tag list page"
+  },
+  "Get Started": {
+    "message": "Começar"
+  },
+  "Now you can make your app Carbon Neutral!": {
+    "message": "Agora você pode tornar o seu app Carbono Neutro!"
+  },
+  "Using our documentation you will be able to calculate and neutralize carbon footprints, in addition to buying and selling credits referring to these neutralizations integrating with our API.": {
+    "message": "Utilizando a nossa documentação você conseguirá calcular e neutralizar pegadas de carbono, além de comprar e vender créditos referentes à essas neutralizações integrando com a nossa API."
   }
 }

@@ -19,20 +19,19 @@ function HomepageHeader() {
   return (
     <header className={clsx("hero hero--primary bg-header", styles.heroBanner)}>
       <div className="container">
-        <h1 className="title">{siteConfig.title}</h1>
-        <p className="subtitle">
+        <h1 className={styles.title}>
+          <Translate>Now you can make your app Carbon Neutral!</Translate>
+        </h1>
+        <p className={styles.subtitle}>
           <Translate>
-            API for calculating, buying, selling and offsetting carbon credits.
+            Using our documentation you will be able to calculate and neutralize
+            carbon footprints, in addition to buying and selling credits
+            referring to these neutralizations integrating with our API.
           </Translate>
         </p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro"
-          >
-            <Translate>Make your app carbon neutral</Translate>
-          </Link>
-        </div>
+        <Link className={styles.buttons} to="/docs/intro">
+          <Translate>Get Started</Translate>
+        </Link>
       </div>
     </header>
   );
