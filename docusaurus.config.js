@@ -56,8 +56,13 @@ const config = {
             label: "Docs",
           },
           {
+            href: "https://b2b.carbonext.com.br",
+            label: "App B2B",
+            position: "left",
+          },
+          {
             href: "https://app.carbonext.com.br/",
-            label: "App Cbx",
+            label: "App B2C",
             position: "left",
           },
           {
