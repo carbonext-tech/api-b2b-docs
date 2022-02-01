@@ -14,13 +14,13 @@
 .title {
   color: #fff;
   font-size: 2rem;
-  margin-bottom: 36px;
+  margin-bottom: 20px;
 }
 
 .subtitle {
   color: #fff;
   font-size: 1.5rem;
-  margin-bottom: 46px;
+  margin-bottom: 36px;
 }
 
 @media screen and (max-width: 900px) {
