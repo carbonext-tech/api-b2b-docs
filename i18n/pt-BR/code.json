@@ -216,10 +216,13 @@
   "Get Started": {
     "message": "Começar"
   },
-  "Now you can make your app Carbon Neutral!": {
-    "message": "Agora você pode tornar o seu app Carbono Neutro!"
+  "Now you can make your app": {
+    "message": "Agora você pode tornar o seu app"
   },
-  "Using our documentation you will be able to calculate and neutralize carbon footprints, in addition to buying and selling credits referring to these neutralizations integrating with our API.": {
+  "Carbon Neutral": {
+    "message": "Carbono Neutro"
+  },
+  "Using our documentation you will be able to calculate and offsetting carbon footprints, in addition to buying and selling credits referring to these neutralizations integrating with our API.": {
     "message": "Utilizando a nossa documentação você conseguirá calcular e neutralizar pegadas de carbono, além de comprar e vender créditos referentes à essas neutralizações integrando com a nossa API."
   }
 }

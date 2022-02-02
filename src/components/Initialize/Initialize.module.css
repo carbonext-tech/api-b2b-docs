@@ -1,0 +1,72 @@
+.content {
+  background: #2facc2;
+  width:100%;
+
+  color:#fff;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.practice {
+  padding: 50px;
+}
+
+.amazon {
+  background: url(../../../static/img/amazon.jpeg) no-repeat;
+  background-size: cover;
+  padding: 200px 230px;
+}
+
+.link {
+  color: rgb(247, 253, 203);
+  transition: all .1s;
+}
+
+.link:hover {
+  color: rgb(247, 253, 203);
+  filter: brightness(1.2);
+}
+
+.c1 {
+  color: #374151;
+  background-color: #FEFCE8;
+  display: inline-block;
+  border-bottom: 2px solid #fef08a;
+  height: 1.5rem;
+  border-radius: 0.25rem;
+  padding: 0 0.25rem;
+
+  cursor: pointer;
+  transition: all .1s;
+}
+
+.c1:hover {
+  background-color: #FEF9C3;
+}
+
+@media screen and (max-width: 1198px) {
+  .steps {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .amazon {
+    display: none;
+  }
+
+  .practice {
+    padding: 50px 16px;
+  }
+}
