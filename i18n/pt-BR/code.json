@@ -222,7 +222,34 @@
   "Carbon Neutral": {
     "message": "Carbono Neutro"
   },
-  "Using our documentation you will be able to calculate and offsetting carbon footprints, in addition to buying and selling credits referring to these neutralizations integrating with our API.": {
+  "Using our documentation you will be able to calculate and offsetting carbon footprints, in addition to buying and selling credits referring to these offsetting integrating with our API.": {
     "message": "Utilizando a nossa documentação você conseguirá calcular e neutralizar pegadas de carbono, além de comprar e vender créditos referentes à essas neutralizações integrando com a nossa API."
+  },
+  "Understand how to use our API in just 5 minutes.": {
+    "message": "Entenda como utilizar nossa API em apenas 5 minutos."
+  },
+  "Access our website in a test environment and register by": {
+    "message": "Acesse o nosso site em ambiente de teste e faça o seu cadastro"
+  },
+  "clicking here": {
+    "message": "clicando aqui"
+  },
+  "Fill the card with the number": {
+    "message": "Preencha o cartão de crédito com o número"
+  },
+  "with any CVC and any future expiration date.": {
+    "message": "com qualquer CVC e qualquer data de expiração futura."
+  },
+  "Enter the amount of VCUs and complete the purchase.": {
+    "message": "Digite a quantidade de VCUs e finalize a compra."
+  },
+  "Now with your": {
+    "message": "Agora com o seu"
+  },
+  "and": {
+    "message": "e"
+  },
+  "you will be able to make requests to our API": {
+    "message": "você será capaz de realizar requisições em nossa API"
   }
 }

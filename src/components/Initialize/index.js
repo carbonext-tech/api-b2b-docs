@@ -16,33 +16,44 @@ export const Initialize = () => {
         <div className={styles.amazon} />
         <div className={styles.practice}>
           <h1 className={styles.title}>
-            Understand how to use our API in just 5 minutes.
+            <Translate>
+              Understand how to use our API in just 5 minutes.
+            </Translate>
           </h1>
           <ol>
             <li>
-              Access our website in a test environment and register by &nbsp;
+              <Translate>
+                Access our website in a test environment and register by
+              </Translate>
+              &nbsp;
               <Link
                 to="https://b2b-hml.carbonext.com.br/auth/signup"
                 className={styles.link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                clicking here
+                <Translate>clicking here</Translate>
               </Link>
               .
             </li>
             <li>
-              Fill the card with the number &nbsp;
-              <span className={styles.c1}>4242 4242 4242 4242</span>, with any
-              CVC and any future expiration date.
+              <Translate>Fill the card with the number</Translate>&nbsp;
+              <span className="c1">4242 4242 4242 4242</span>,{" "}
+              <Translate>
+                with any CVC and any future expiration date.
+              </Translate>
             </li>
-            <li>Enter the amount of VCUs and complete the purchase.</li>
+            <li>
+              <Translate>
+                Enter the amount of VCUs and complete the purchase.
+              </Translate>
+            </li>
           </ol>
           <p>
-            Now with your&nbsp;
-            <span className={styles.c1}>client_id</span> and{" "}
-            <span className={styles.c1}>client_secret</span> you will be able to
-            make requests to our API
+            <Translate>Now with your</Translate>&nbsp;
+            <span className="c1">client_id</span> <Translate>and</Translate>{" "}
+            <span className="c1">client_secret</span>{" "}
+            <Translate>you will be able to make requests to our API</Translate>.
           </p>
         </div>
       </div>
