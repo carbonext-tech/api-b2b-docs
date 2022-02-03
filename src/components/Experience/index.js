@@ -18,24 +18,24 @@ export const Experience = () => {
           <Earth className={styles.featureSvg} alt="Earth" />
           <div className={styles.info}>
             <h1 className={styles.title}>
-              Carbon Neutral experience for different market sectors
+              <Translate>Carbon Neutral experience for different market sectors</Translate>
             </h1>
             <p className={styles.text}>
-              <span className={styles.topic}>Freight - </span>It's possible to
+              <span className={styles.topic}><Translate>Freight</Translate> - </span><Translate>It's possible to
               offer your final customer the option of a Carbon Neutral freight,
               that is, to offsetting the carbon footprint of transporting the
-              product to his home.
+              product to his home.</Translate>
             </p>
             <p className={styles.text}>
-              <span className={styles.topic}>Air travel - </span>
-              Airlines can allow their passengers to have a Carbon Neutral
+              <span className={styles.topic}><Translate>Air travel</Translate> - </span>
+              <Translate>Airlines can allow their passengers to have a Carbon Neutral
               travel experience with the carbon footprint of their flights
-              neutralized.
+              neutralized.</Translate>
             </p>
             <p className={styles.text}>
-              <span className={styles.topic}>Bus trip - </span>
-              Bus and tour companies can offer their customers the possibility
-              of neutralizing the carbon footprint of their trips.
+              <span className={styles.topic}><Translate>Bus trip</Translate> - </span>
+              <Translate>Bus and tour companies can offer their customers the possibility
+              of neutralizing the carbon footprint of their trips.</Translate>
             </p>
           </div>
         </div>
