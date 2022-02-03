@@ -10,6 +10,7 @@
 :root {
   /* Customized */
   --cbx-primary: #10B981;
+  --cbx-blue: #024787;
 
   /* Docusaurus default */
   --ifm-color-primary: #25c2a0;
@@ -37,14 +38,15 @@
 
 .wrapper {
   max-width: 1280px;
+  padding: 0 16px;
   margin: auto;
 }
 
 .c1 {
   color: #374151;
-  background-color: #FEFCE8;
+  background-color: #eeeeee;
   display: inline-block;
-  border-bottom: 2px solid #fef08a;
+  border-bottom: 2px solid #adadad;
   height: 1.5rem;
   border-radius: 0.25rem;
   padding: 0 0.25rem;
@@ -54,7 +56,7 @@
 }
 
 .c1:hover {
-  background-color: #FEF9C3;
+  background-color: #dadada;
 }
 
 .docusaurus-highlight-code-line {

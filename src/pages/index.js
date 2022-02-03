@@ -14,6 +14,7 @@ import styles from "./index.module.css";
 import { Amazon } from "../components/Lotties/Amazon";
 import HomepageFeatures from "../components/HomePageFeatures";
 import { Initialize } from "../components/Initialize";
+import { Experience } from "../components/Experience";
 
 function HomepageHeader() {
   return (
@@ -59,6 +60,7 @@ export default function Home() {
       <main>
         <Initialize />
         <HomepageFeatures />
+        <Experience />
       </main>
     </Layout>
   );
