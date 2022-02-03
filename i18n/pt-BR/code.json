@@ -216,10 +216,61 @@
   "Get Started": {
     "message": "Começar"
   },
-  "Now you can make your app Carbon Neutral!": {
-    "message": "Agora você pode tornar o seu app Carbono Neutro!"
+  "Now you can make your app": {
+    "message": "Agora você pode tornar o seu app"
   },
-  "Using our documentation you will be able to calculate and neutralize carbon footprints, in addition to buying and selling credits referring to these neutralizations integrating with our API.": {
+  "Carbon Neutral": {
+    "message": "Carbono Neutro"
+  },
+  "Using our documentation you will be able to calculate and offsetting carbon footprints, in addition to buying and selling credits referring to these offsetting integrating with our API.": {
     "message": "Utilizando a nossa documentação você conseguirá calcular e neutralizar pegadas de carbono, além de comprar e vender créditos referentes à essas neutralizações integrando com a nossa API."
+  },
+  "Understand how to use our API in just 5 minutes.": {
+    "message": "Entenda como utilizar nossa API em apenas 5 minutos."
+  },
+  "Access our website in a test environment and register by": {
+    "message": "Acesse o nosso site em ambiente de teste e faça o seu cadastro"
+  },
+  "clicking here": {
+    "message": "clicando aqui"
+  },
+  "Fill the card with the number": {
+    "message": "Preencha o cartão de crédito com o número"
+  },
+  "with any CVC and any future expiration date.": {
+    "message": "com qualquer CVC e qualquer data de expiração futura."
+  },
+  "Enter the amount of VCUs and complete the purchase.": {
+    "message": "Digite a quantidade de VCUs e finalize a compra."
+  },
+  "Now with your": {
+    "message": "Agora com o seu"
+  },
+  "and": {
+    "message": "e"
+  },
+  "you will be able to make requests to our API": {
+    "message": "você será capaz de realizar requisições em nossa API"
+  },
+  "Carbon Neutral experience for different market sectors": {
+    "message": "Experiência Carbono Neutro para diversos ramos do mercado"
+  },
+  "Freight": {
+    "message": "Frete"
+  },
+  "It's possible to offer your final customer the option of a Carbon Neutral freight, that is, to offsetting the carbon footprint of transporting the product to his home.": {
+    "message": "É possível oferecer para o seu cliente final a opção de um frete Carbono Neutro, ou seja, neutralizar a pegada de carbono do transporte do produto até a casa dele."
+  },
+  "Air travel": {
+    "message": "Viagem de avião"
+  },
+  "Airlines can allow their passengers to have a Carbon Neutral travel experience with the carbon footprint of their flights neutralized.": {
+    "message": "Companhias aéreas podem permitir que seus passageiros tenham uma experiência de viagem Carbono Neutro com a pegada de carbono de seus voos neutralizada."
+  },
+  "Bus trip": {
+    "message": "Viagem de ônibus"
+  },
+  "Bus and tour companies can offer their customers the possibility of neutralizing the carbon footprint of their trips.": {
+    "message": "Empresas de ônibus e de turismo podem oferecer para seus clientes a possibilidade de neutralizarem a pegada de carbono de suas viagens."
   }
 }

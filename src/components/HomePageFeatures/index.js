@@ -6,7 +6,7 @@ import Translate from "@docusaurus/Translate";
 const FeatureList = [
   {
     title: <Translate>Easy to Use</Translate>,
-    Svg: require("../../static/img/easy.svg").default,
+    Svg: require("../../../static/img/easy.svg").default,
     description: (
       <>
         <Translate>
@@ -17,7 +17,7 @@ const FeatureList = [
   },
   {
     title: <Translate>Focus on Result</Translate>,
-    Svg: require("../../static/img/graphics.svg").default,
+    Svg: require("../../../static/img/graphics.svg").default,
     description: (
       <>
         <Translate>
@@ -28,7 +28,7 @@ const FeatureList = [
   },
   {
     title: <Translate>To be Carbon Neutral</Translate>,
-    Svg: require("../../static/img/trees.svg").default,
+    Svg: require("../../../static/img/trees.svg").default,
     description: (
       <>
         <Translate>
@@ -55,7 +55,7 @@ function Feature({ Svg, title, description }) {
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
+    <section className={clsx("wrapper", styles.features)}>
       <div className="container">
         <div className="row">
           {FeatureList.map((props, idx) => (

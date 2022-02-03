@@ -6,32 +6,45 @@ import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 // Styles
 import styles from "./index.module.css";
 
 // Components
-import HomepageFeatures from "../components/HomepageFeatures";
+import { Amazon } from "../components/Lotties/Amazon";
+import HomepageFeatures from "../components/HomePageFeatures";
+import { Initialize } from "../components/Initialize";
+import { Experience } from "../components/Experience";
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx("hero hero--primary bg-header", styles.heroBanner)}>
-      <div className="container">
-        <h1 className={styles.title}>
-          <Translate>Now you can make your app Carbon Neutral!</Translate>
-        </h1>
-        <p className={styles.subtitle}>
-          <Translate>
-            Using our documentation you will be able to calculate and neutralize
-            carbon footprints, in addition to buying and selling credits
-            referring to these neutralizations integrating with our API.
-          </Translate>
-        </p>
-        <Link className={styles.buttons} to="/docs/intro">
-          <Translate>Get Started</Translate>
-        </Link>
+    <header className={clsx("hero", styles.heroBanner)}>
+      <div  className="container wrapper">
+        <div className={styles.header}>
+          <div className={styles.intro}>
+            <h1 className={styles.title}>
+              <Translate>Now you can make your app</Translate>
+              &nbsp;
+              <span className={styles.carbon}>
+                <Translate>Carbon Neutral</Translate>
+              </span>
+            </h1>
+            <p className={styles.subtitle}>
+              <Translate>
+                Using our documentation you will be able to calculate and
+                offsetting carbon footprints, in addition to buying and selling
+                credits referring to these offsetting integrating with our
+                API.
+              </Translate>
+            </p>
+            <Link className={styles.buttons} to="/docs/intro">
+              <Translate>Get Started</Translate>
+            </Link>
+          </div>
+          <div className={styles.lottie}>
+            <Amazon />
+          </div>
+        </div>
       </div>
     </header>
   );
@@ -45,7 +58,9 @@ export default function Home() {
     >
       <HomepageHeader />
       <main>
+        <Initialize />
         <HomepageFeatures />
+        <Experience />
       </main>
     </Layout>
   );
