@@ -17,14 +17,12 @@ export const Initialize = () => {
         <div className={styles.practice}>
           <h1 className={styles.title}>
             <Translate>
-              Understand how to use our API in just 5 minutes.
+              Understand how to use our API in just three steps.
             </Translate>
           </h1>
           <ol>
             <li>
-              <Translate>
-                Access our website in a test environment and register by
-              </Translate>
+              <Translate>Access our testing environment</Translate>
               &nbsp;
               <Link
                 to="https://b2b-hml.carbonext.com.br/auth/signup"
@@ -37,23 +35,24 @@ export const Initialize = () => {
               .
             </li>
             <li>
-              <Translate>Fill the card with the number</Translate>&nbsp;
+              <Translate>Use the following test card</Translate>&nbsp;
               <span className="c1">4242 4242 4242 4242</span>,{" "}
               <Translate>
-                with any CVC and any future expiration date.
+                with any CVC and any future expiration date, to make an initial
+                purchase.
               </Translate>
             </li>
             <li>
               <Translate>
-                Enter the amount of VCUs and complete the purchase.
+                Select how many VCUs to buy on your first order
               </Translate>
             </li>
           </ol>
           <p>
-            <Translate>Now with your</Translate>&nbsp;
+            <Translate>Now save your</Translate>&nbsp;
             <span className="c1">client_id</span> <Translate>and</Translate>{" "}
             <span className="c1">client_secret</span>{" "}
-            <Translate>you will be able to make requests to our API</Translate>.
+            <Translate>test keys to make API calls</Translate>.
           </p>
         </div>
       </div>
