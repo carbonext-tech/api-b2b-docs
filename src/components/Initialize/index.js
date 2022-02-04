@@ -44,7 +44,7 @@ export const Initialize = () => {
             </li>
             <li>
               <Translate>
-                Select how many VCUs to buy on your first order
+                Select how many VCUs to buy on your first order.
               </Translate>
             </li>
           </ol>
