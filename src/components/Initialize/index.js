@@ -18,7 +18,7 @@ export const Initialize = () => {
 
   return (
     <section
-      data-aos="fade-left"
+      data-aos="fade-right"
       className={styles.content}
     >
       <div className={clsx("wrapper", styles.steps)}>

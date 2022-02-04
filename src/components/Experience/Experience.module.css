@@ -1,6 +1,7 @@
 .featureSvg {
-  width: 100%;
-  margin-right: 20px;
+  width: 80%;
+  max-height: 400px;
+  margin-right: 50px;
 }
 
 .content {

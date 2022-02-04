@@ -46,10 +46,8 @@ function HomepageHeader() {
             </h1>
             <p className={styles.subtitle}>
               <Translate>
-                Using our documentation you will be able to calculate and
-                offsetting carbon footprints, in addition you can buying and
-                selling credits referring to these offsetting integrating with
-                our API.
+                Using our documentation, you will be able to calculate and
+                offsetting carbon footprints, and by integrating with our API, you can offer your customers carbon offsetting options.
               </Translate>
             </p>
             <Link className={styles.buttons} to="/docs/intro">

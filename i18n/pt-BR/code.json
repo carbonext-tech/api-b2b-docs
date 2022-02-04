@@ -240,9 +240,6 @@
   "Bus trip": {
     "message": "Viagem de ônibus"
   },
-  "Using our documentation you will be able to calculate and offsetting carbon footprints, in addition you can buying and selling credits referring to these offsetting integrating with our API.": {
-    "message": "Utilizando a nossa documentação você conseguirá calcular e neutralizar pegadas de carbono, além de comprar e vender créditos referentes à essas neutralizações integrando com a nossa API."
-  },
   "Flights": {
     "message": "Voos"
   },
@@ -265,12 +262,15 @@
     "message": "com qualquer CVC e qualquer data de expiração futura para realizar sua primeira compra."
   },
   "Select how many VCUs to buy on your first order.": {
-    "message": "Selecione quantos VCUs deseja adquirir em sua primeira compra."
+    "message": "Digite a quantidade de VCUs (crédito de carbono) desejada e finalize a sua compra."
   },
   "Now save your": {
     "message": "Agora salve o seu"
   },
   "test keys to make API calls": {
     "message": "para realizar chamadas em nossa API"
+  },
+  "Using our documentation, you will be able to calculate and offsetting carbon footprints, and by integrating with our API, you can offer your customers carbon offsetting options.": {
+    "message": "Utilizando a nossa documentação você conseguirá calcular e neutralizar pegadas de carbono, além disso, integrando com a nossa API, é possível oferecer aos seus clientes opções de neutralização de carbono."
   }
 }
