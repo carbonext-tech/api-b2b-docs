@@ -27,15 +27,13 @@ export const Experience = () => {
               product to his home.</Translate>
             </p>
             <p className={styles.text}>
-              <span className={styles.topic}><Translate>Air travel</Translate> - </span>
-              <Translate>Airlines can allow their passengers to have a Carbon Neutral
-              travel experience with the carbon footprint of their flights
-              neutralized.</Translate>
+              <span className={styles.topic}><Translate>Flights</Translate> - </span>
+              <Translate>Airlines can proportionate Carbon Neutral flights to their passengers.</Translate>
             </p>
             <p className={styles.text}>
               <span className={styles.topic}><Translate>Bus trip</Translate> - </span>
               <Translate>Bus and tour companies can offer their customers the possibility
-              of neutralizing the carbon footprint of their trips.</Translate>
+              of offsetting the carbon footprint of their trips.</Translate>
             </p>
           </div>
         </div>

@@ -32,7 +32,7 @@ function HomepageHeader() {
             <p className={styles.subtitle}>
               <Translate>
                 Using our documentation you will be able to calculate and
-                offsetting carbon footprints, in addition to buying and selling
+                offsetting carbon footprints, in addition you can buying and selling
                 credits referring to these offsetting integrating with our
                 API.
               </Translate>
