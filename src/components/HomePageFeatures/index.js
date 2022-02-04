@@ -1,7 +1,14 @@
-import React from "react";
+// React
+import React, { useEffect } from "react";
+
+// Libs
 import clsx from "clsx";
-import styles from "./HomepageFeatures.module.css";
 import Translate from "@docusaurus/Translate";
+import Aos from 'aos';
+
+// Styles
+import styles from "./HomepageFeatures.module.css";
+import "aos/dist/aos.css";
 
 const FeatureList = [
   {
@@ -54,8 +61,15 @@ function Feature({ Svg, title, description }) {
 }
 
 export default function HomepageFeatures() {
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
-    <section className={clsx("wrapper", styles.features)}>
+    <section
+      data-aos="fade-up-right"
+      className={clsx("wrapper", styles.features)}
+    >
       <div className="container">
         <div className="row">
           {FeatureList.map((props, idx) => (

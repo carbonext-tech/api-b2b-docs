@@ -10,7 +10,9 @@
 :root {
   /* Customized */
   --cbx-primary: #10B981;
-  --cbx-blue: #024787;
+  --cbx-blue: #2c486d;
+  --cbx-green: #33b18b;
+  --cbx-black: #242527;
 
   /* Docusaurus default */
   --ifm-color-primary: #25c2a0;
@@ -51,12 +53,7 @@
   border-radius: 0.25rem;
   padding: 0 0.25rem;
 
-  cursor: pointer;
   transition: all .1s;
-}
-
-.c1:hover {
-  background-color: #dadada;
 }
 
 .docusaurus-highlight-code-line {

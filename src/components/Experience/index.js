@@ -1,39 +1,61 @@
 // React
-import React from "react";
+import React, { useEffect } from "react";
 
 // Libs
 import clsx from "clsx";
 import Translate from "@docusaurus/Translate";
+import Aos from 'aos';
 
 // Styles
 import styles from "./Experience.module.css";
+import "aos/dist/aos.css";
 
+// Svg
 import Earth from "../../../static/img/earth.svg";
 
 export const Experience = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <>
-      <section className={styles.content}>
+      <section data-aos="zoom-in" className={styles.content}>
         <div className={clsx("wrapper", styles.services)}>
           <Earth className={styles.featureSvg} alt="Earth" />
           <div className={styles.info}>
             <h1 className={styles.title}>
-              <Translate>Carbon Neutral experience for different market sectors</Translate>
+              <Translate>
+                Carbon Neutral experience for different market sectors
+              </Translate>
             </h1>
             <p className={styles.text}>
-              <span className={styles.topic}><Translate>Freight</Translate> - </span><Translate>It's possible to
-              offer your final customer the option of a Carbon Neutral freight,
-              that is, to offsetting the carbon footprint of transporting the
-              product to his home.</Translate>
+              <span className={styles.topic}>
+                <Translate>Freight</Translate> -{" "}
+              </span>
+              <Translate>
+                It's possible to offer your final customer the option of a
+                Carbon Neutral freight, that is, to offsetting the carbon
+                footprint of transporting the product to his home.
+              </Translate>
             </p>
             <p className={styles.text}>
-              <span className={styles.topic}><Translate>Flights</Translate> - </span>
-              <Translate>Airlines can proportionate Carbon Neutral flights to their passengers.</Translate>
+              <span className={styles.topic}>
+                <Translate>Flights</Translate> -{" "}
+              </span>
+              <Translate>
+                Airlines can proportionate Carbon Neutral flights to their
+                passengers.
+              </Translate>
             </p>
             <p className={styles.text}>
-              <span className={styles.topic}><Translate>Bus trip</Translate> - </span>
-              <Translate>Bus and tour companies can offer their customers the possibility
-              of offsetting the carbon footprint of their trips.</Translate>
+              <span className={styles.topic}>
+                <Translate>Bus trip</Translate> -{" "}
+              </span>
+              <Translate>
+                Bus and tour companies can offer their customers the possibility
+                of offsetting the carbon footprint of their trips.
+              </Translate>
             </p>
           </div>
         </div>

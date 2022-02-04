@@ -6,6 +6,7 @@ import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
+import { motion } from "framer-motion";
 
 // Styles
 import styles from "./index.module.css";
@@ -17,24 +18,36 @@ import { Initialize } from "../components/Initialize";
 import { Experience } from "../components/Experience";
 
 function HomepageHeader() {
+  const letter = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1,
+      y: 0,
+    }
+  }
+
   return (
     <header className={clsx("hero", styles.heroBanner)}>
-      <div  className="container wrapper">
+      <div className="container wrapper">
         <div className={styles.header}>
           <div className={styles.intro}>
             <h1 className={styles.title}>
               <Translate>Now you can make your app</Translate>
               &nbsp;
-              <span className={styles.carbon}>
+              <motion.span
+                animate="visible"
+                variants={letter}
+                transition={{ duration: 1 }}
+                initial="hidden"
+                className={styles.carbon}
+              >
                 <Translate>Carbon Neutral</Translate>
-              </span>
+              </motion.span>
             </h1>
             <p className={styles.subtitle}>
               <Translate>
-                Using our documentation you will be able to calculate and
-                offsetting carbon footprints, in addition you can buying and selling
-                credits referring to these offsetting integrating with our
-                API.
+                Using our documentation, you will be able to calculate and
+                offsetting carbon footprints, and by integrating with our API, you can offer your customers carbon offsetting options.
               </Translate>
             </p>
             <Link className={styles.buttons} to="/docs/intro">

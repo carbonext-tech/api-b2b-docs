@@ -1,17 +1,26 @@
 // React
-import React from "react";
+import React, { useEffect } from "react";
 
 // Libs
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import Translate from "@docusaurus/Translate";
+import Aos from 'aos';
 
 // Styles
 import styles from "./Initialize.module.css";
+import "aos/dist/aos.css";
 
 export const Initialize = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
-    <section className={styles.content}>
+    <section
+      data-aos="fade-right"
+      className={styles.content}
+    >
       <div className={clsx("wrapper", styles.steps)}>
         <div className={styles.amazon} />
         <div className={styles.practice}>
