@@ -16,6 +16,7 @@
 }
 
 .practice {
+  font-weight: 500;
   padding: 50px 0;
 }
 
@@ -78,7 +79,8 @@ ol > li:before {
 
   .title {
     font-size: 2rem;
-    margin-top: 48px;
+    margin: 48px auto 26px;
+    text-align: center;
   }
 
   .amazon {
