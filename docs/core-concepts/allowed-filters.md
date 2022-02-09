@@ -21,7 +21,7 @@ https://api-b2b.carbonext.com.br/v1/allowed-filters/:resource
 
 **Response Parameters**
 
-| Parameter | Description                     |
+| Parameter | Description                   |
 | --------- | ----------------------------- |
 | filters   | An array of available filters |
 | sort      | An array of available sorts   |
@@ -42,6 +42,7 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
     "status_eq",
     "status_ne",
     "status_in",
+    "totalPrice_eq",
     "totalPrice_ge",
     "totalPrice_le",
     "totalPrice_gt",
@@ -50,7 +51,12 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
     "totalVcuAmount_ge",
     "totalVcuAmount_le",
     "totalVcuAmount_gt",
-    "totalVcuAmount_lt"
+    "totalVcuAmount_lt",
+    "createdAt_eq",
+    "createdAt_ge",
+    "createdAt_le",
+    "createdAt_gt",
+    "createdAt_lt"
   ],
   "sort": [
     "createdAt",
@@ -63,15 +69,17 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
 }
 ```
 
+Let's see how many filters we have and what they mean.
+
 ```md title="Available Filters"
-eq: =
-ne: !=
-ge: >=
-le: <=
-gt: >
-lt: <
+eq: = Returns fields with values equals then what was passed in the filter.
+ne: != Returns fields with different values then what was passed in the filter.
+ge: >= Returns fields with values greater then or equals what was passed in the filter.
+le: <= Returns fields with values less then or equals what was passed in the filter. For `createdAt`, at 23:59:59pm before the date chosen in the `YYYY-MM-DD` format.
+gt: > Returns fields with values greater then what was passed in the filter.
+lt: < Returns fields with values less then what was passed in the filter. For `createdAt`, at 00:00am before the date chosen in the `YYYY-MM-DD` format.
 in: `status` in (1,2,3) returns records with `status` equal to 1 or 2 or 3 (status here is the field with filter type `_in`)
-like: returns records that contain the value sought in the filter (case insensitive)
+like: returns records that contain the value sought in the filter (case insensitive).
 ```
 
 ## List Invoices by Filter [GET]
@@ -84,9 +92,9 @@ Let's see a practical example of a filter listing invoices, in this example we w
 
 **Response Parameters**
 
-| Parameter | Description |
+| Parameter | Description                   |
 | --------- | ----------------------------- |
-| items | An array of filtered invoices |
+| items     | An array of filtered invoices |
 
 ### Request Example
 

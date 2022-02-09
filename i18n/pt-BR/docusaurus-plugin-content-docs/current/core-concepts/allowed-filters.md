@@ -42,6 +42,7 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
     "status_eq",
     "status_ne",
     "status_in",
+    "totalPrice_eq",
     "totalPrice_ge",
     "totalPrice_le",
     "totalPrice_gt",
@@ -50,7 +51,12 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
     "totalVcuAmount_ge",
     "totalVcuAmount_le",
     "totalVcuAmount_gt",
-    "totalVcuAmount_lt"
+    "totalVcuAmount_lt",
+    "createdAt_eq",
+    "createdAt_ge",
+    "createdAt_le",
+    "createdAt_gt",
+    "createdAt_lt"
   ],
   "sort": [
     "createdAt",
@@ -63,13 +69,15 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
 }
 ```
 
+Vamos ver quantos filtros podemos utilizar e o que eles significam.
+
 ```md title="Filtros Disponíveis"
-eq: =
-ne: !=
-ge: >=
-le: <=
-gt: >
-lt: <
+eq: = Retorna os campos com os valores iguais ao que foi passado no filtro.
+ne: != Retorna os campos com os valores diferentes ao que foi passado no filtro.
+ge: >= Retorna os campos com os valores maiores ou iguais ao que foi passado no filtro.
+le: <= Retorna os campos com os valores menores ou iguais ao que foi passado no filtro. Para o `createdAt`, às 23:59:59 horas antes da data escolhida no formato `AAAA-MM-DD`.
+gt: > Retorna os campos com os valores maiores ao que foi passado no filtro.
+lt: < Retorna os campos com os valores menores ao que foi passado no filtro. Para o `createdAt`, às 00:00 horas antes da data escolhida no formato `AAAA-MM-DD`.
 in: `status` in (1,2,3) retorna os registros com `status` igual a 1 ou 2 ou 3 (status aqui é o campo com filtro tipo `_in`)
 like: retorna registros que contenham o valor buscado no filtro (case insensitive)
 ```
