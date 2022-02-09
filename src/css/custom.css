@@ -9,9 +9,8 @@
 /* You can override the default Infima variables here. */
 :root {
   /* Customized */
-  --cbx-primary: #10B981;
+  --cbx-primary: #33b18b;
   --cbx-blue: #2c486d;
-  --cbx-green: #33b18b;
   --cbx-black: #242527;
 
   /* Docusaurus default */
