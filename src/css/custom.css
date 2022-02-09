@@ -44,6 +44,12 @@
   margin: auto;
 }
 
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    padding: 0;
+  }
+}
+
 .c1 {
   color: #374151;
   background-color: #eeeeee;
