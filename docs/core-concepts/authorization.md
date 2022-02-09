@@ -10,7 +10,7 @@ This is the API that will handle client-side requests for our B2B applications. 
 ## Authorize Client [POST]
 
 ```url title="BASE URL"
-https://api-auth.carbonext.com.br/connect/token
+https://auth.carbonext.com.br/connect/token
 ```
 
 This request validates the provided credentials and returns the generated tokens
@@ -34,7 +34,7 @@ refresh_token | The refresh token provided in the authorization request
 ### Example Request
 
 ```javascript
-curl 'https://api-auth.carbonext.com.br/connect/token' \
+curl -X POST 'https://auth.carbonext.com.br/connect/token' \
 --data-urlencode 'client_id={{client_id}}' \
 --data-urlencode 'client_secret={{client_secret}}' \
 --data-urlencode 'grant_type=client_credentials' \
@@ -62,7 +62,7 @@ scope: offline_access
 ## Refresh Token [POST]
 
 ```url title="BASE URL"
-https://api-auth.carbonext.com.br/connect/token
+https://auth.carbonext.com.br/connect/token
 ```
 
 This endpoint retrieves information about the logged in user or application key.
@@ -76,7 +76,7 @@ refresh_token | The refresh token provided in the authorization response
 ### Example Request
 
 ```javascript
-curl 'https://api-auth.carbonext.com.br/connect/token' \
+curl -X POST 'https://auth.carbonext.com.br/connect/token' \
 --data-urlencode 'grant_type=refresh_token' \
 --data-urlencode 'refresh_token={{refresh_token}}' \
 --data-urlencode 'client_id={{client_id}}' \
@@ -106,7 +106,7 @@ client_secret: {{client_secret}}
 ## User Info [GET]
 
 ```url title="BASE URL"
-https://api-auth.carbonext.com.br/connect/userinfo
+https://auth.carbonext.com.br/connect/userinfo
 ```
 
 A request that retrieves information from the user (or application key).
@@ -129,8 +129,8 @@ Permissions |	An array containing the permissions keys for the user (or applicat
 ### Example Request
 
 ```javascript
-curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
-    -H 'Accept: application/json'
+curl -X GET 'https://auth.carbonext.com.br/connect/userinfo' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 

@@ -28,7 +28,7 @@ currency | O tipo de moeda para o qual foi calculado
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 

@@ -39,7 +39,7 @@ Esta requisição retorna uma lista paginada de todas as permissões disponívei
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 

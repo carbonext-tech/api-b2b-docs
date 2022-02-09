@@ -253,7 +253,7 @@ Esta solicitação calculará o preço final para compensar a emissão calculada
 
 ```javascript
 curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw {
     "type": 2,
@@ -303,7 +303,7 @@ Esta requisição calculará o preço final, na moeda solicitada, para compensar
 
 ```javascript
 curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw {
     "type": 0,

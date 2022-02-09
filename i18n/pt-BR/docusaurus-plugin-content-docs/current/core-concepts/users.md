@@ -38,9 +38,9 @@ Esta requisição cria um novo usuário.
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/users' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
---data-raw {
+--data-raw '{
     "email": "usuario3@email.com",
     "userPassword": "123456",
     "name": "Usuario 3",
@@ -58,7 +58,8 @@ curl 'https://api-b2b.carbonext.com.br/v1/users' \
         {
             "key": "customerApplication_read"
         }
-}
+    ]
+}'
 ```
 
 ### Exemplo de Resposta
@@ -108,7 +109,7 @@ Essa requisição retorna uma lista paginada de usuários ativos.
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/users?page=1&pagesize=10' \
-    -H 'Accept: application/json'
+    -H 'Content-Type: application/json'
     -H 'Authorization: Bearer {token}'
 ```
 
@@ -223,7 +224,7 @@ Esta requisição atualiza os dados de um usuário.
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/users/3f44d194-52cd-4a2b-ac37-1c9a7713add1' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw {
     "name": "Usuario 2999000000",
@@ -295,7 +296,7 @@ id: 8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/users/8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d' \
-    -H 'Accept: application/json'
+    -H 'Content-Type: application/json'
     -H 'Authorization: Bearer {token}'
 ```
 

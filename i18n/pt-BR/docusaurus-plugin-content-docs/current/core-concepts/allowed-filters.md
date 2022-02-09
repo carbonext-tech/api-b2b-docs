@@ -92,7 +92,7 @@ Vamos ver um exemplo prático de filtro listando faturas, nesse exemplo retornar
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 

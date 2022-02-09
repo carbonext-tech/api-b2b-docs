@@ -33,7 +33,7 @@ Sem `ordersCreatedFrom`, a solicitação usará apenas `ordersIds` para criar a 
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw {
     "ordersIds":[
@@ -48,7 +48,7 @@ Com `ordersCreatedFrom` a solicitação criará uma fatura a partir da data de r
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw {
     "ordersCreatedFrom":"01/01/2022 22:09:40",
@@ -61,7 +61,7 @@ Ou se você tiver um intervalo de tempo específico, você pode declarar no atri
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw {
     "ordersCreatedFrom":"01/01/2022 22:09:40",
@@ -139,7 +139,7 @@ Essa solicitação retorna uma lista paginada de faturas.
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 
@@ -277,7 +277,7 @@ Esta solicitação retornará informações sobre uma fatura específica.
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/invoices/8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd'
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 

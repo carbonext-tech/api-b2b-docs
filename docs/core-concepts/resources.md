@@ -16,7 +16,7 @@ https://api-b2b.carbonext.com.br/v1/resources
 ### Example Request
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/resources'
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/resources'
 ```
 
 ### Example Response

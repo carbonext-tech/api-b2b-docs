@@ -32,43 +32,43 @@ You can create an invoice in three different ways.
 Without `ordersCreatedFrom` the request will use only `ordersIds` to create the invoice.
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
-    -H 'Accept: application/json' \
+curl -X POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
---data-raw {
+--data-raw '{
     "ordersIds":[
         "f4f7e937-c5ae-4d85-be5f-13ad804c0670"
     ],
     "vcuAmount": 100,
     "targetCurrency":"BRL"
-}
+}'
 ```
 
 With `ordersCreatedFrom` the request will create an invoice from the date received to the current day.
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
-    -H 'Accept: application/json' \
+curl -X POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
---data-raw {
+--data-raw '{
     "ordersCreatedFrom":"01/01/2022 22:09:40",
     "vcuAmount": 100,
     "targetCurrency":"BRL"
-}
+}'
 ```
 
 Lastly, if you have a specific time interval, you can declare in the `ordersCreatedTo` attribute. It also works without the `ordersCreatedFrom`, this way an invoice is generated for all orders created before the date described.
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
-    -H 'Accept: application/json' \
+curl -X POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
---data-raw {
+--data-raw '{
     "ordersCreatedFrom":"01/01/2022 22:09:40",
     "ordersCreatedTo":"05/01/2022 12:00:00",
     "vcuAmount": 100,
     "targetCurrency":"BRL"
-}
+}'
 ```
 
 ### Example Response
@@ -139,8 +139,8 @@ This request returns a paginated list of invoices.
 ### Example Request
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
-    -H 'Accept: application/json' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 
@@ -277,8 +277,8 @@ This request will return information about a specific invoice.
 ### Example Request
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices/8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd'
-    -H 'Accept: application/json' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices/8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 

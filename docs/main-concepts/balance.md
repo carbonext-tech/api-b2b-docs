@@ -40,8 +40,8 @@ balancesByCurrency |	An array of objects, each containing a VcuBalance object, a
 ### Example Request
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices/balance' \
-    -H 'Accept: application/json' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/customers/balance' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 

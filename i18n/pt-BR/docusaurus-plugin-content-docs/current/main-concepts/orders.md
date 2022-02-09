@@ -38,7 +38,7 @@ createdAt | A data e hora em que o pedido foi criado
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/orders' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw {
     "vcuAmount":150,
@@ -81,7 +81,7 @@ createdAt | A data e hora em que o pedido foi criado
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/orders/f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2/cancel' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 
@@ -120,7 +120,7 @@ Retorna `true` se, e somente se, todos os pedidos forem cancelados com sucesso.
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/orders/cancel' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw {
     "ordersIds":
@@ -152,7 +152,7 @@ items	 | Um array de pedidos paginados do cliente
 
 ```javascript
 curl 'https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=100' \
-    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 
