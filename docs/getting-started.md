@@ -25,7 +25,7 @@ Before making our first request, we need an authorization `token` that we receiv
 ### Example Request
 
 ```javascript
-curl -X POST 'https://auth-hml.carbonext.com.br/connect/userinfo' \
+curl -X POST 'https://auth-hml.carbonext.com.br/connect/token' \
 --data-urlencode 'client_id={{client_id}}' \
 --data-urlencode 'client_secret={{client_secret}}' \
 --data-urlencode 'grant_type=client_credentials' \
