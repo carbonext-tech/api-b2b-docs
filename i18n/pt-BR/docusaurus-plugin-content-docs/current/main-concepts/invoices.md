@@ -32,43 +32,43 @@ Você pode criar uma fatura de três maneiras diferentes.
 Sem `ordersCreatedFrom`, a solicitação usará apenas `ordersIds` para criar a fatura.
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
-    -H 'Accept: application/json' \
+curl -X POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
---data-raw {
+--data-raw '{
     "ordersIds":[
         "f4f7e937-c5ae-4d85-be5f-13ad804c0670"
     ],
     "vcuAmount": 100,
     "targetCurrency":"BRL"
-}
+}'
 ```
 
 Com `ordersCreatedFrom` a solicitação criará uma fatura a partir da data de recebimento até o dia atual.
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
-    -H 'Accept: application/json' \
+curl -X POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
---data-raw {
+--data-raw '{
     "ordersCreatedFrom":"01/01/2022 22:09:40",
     "vcuAmount": 100,
     "targetCurrency":"BRL"
-}
+}'
 ```
 
 Ou se você tiver um intervalo de tempo específico, você pode declarar no atributo `ordersCreatedTo`. Também funciona sem o `ordersCreatedFrom`, desta forma é criada uma fatura para todos os pedidos criados antes da data descrita.
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
-    -H 'Accept: application/json' \
+curl -X POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
---data-raw {
+--data-raw '{
     "ordersCreatedFrom":"01/01/2022 22:09:40",
     "ordersCreatedTo":"05/01/2022 12:00:00",
     "vcuAmount": 100,
     "targetCurrency":"BRL"
-}
+}'
 ```
 
 ### Exemplo de Resposta
@@ -138,8 +138,8 @@ Essa solicitação retorna uma lista paginada de faturas.
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices' \
-    -H 'Accept: application/json' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 
@@ -276,8 +276,8 @@ Esta solicitação retornará informações sobre uma fatura específica.
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices/8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd'
-    -H 'Accept: application/json' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices/8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 

@@ -31,7 +31,7 @@ This endpoint returns the fields accepted for filtering and sorting. It is impor
 ### Example Request
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
 ```
 
 ### Example Response
@@ -91,8 +91,8 @@ Let's see a practical example of a filter listing invoices, in this example we w
 ### Request Example
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending' \
-    -H 'Accept: application/json' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 

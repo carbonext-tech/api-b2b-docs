@@ -24,7 +24,7 @@ customerApplication_write
 Parâmetro | Descrição
 --------- | ------
 clientId | O ID do cliente gerado
-clientName | O nome do cliente
+displayName | O nome do cliente
 permissions | Um array de objeto que contém as chaves de permissões do usuário
 
 **Atributos de Resposta**
@@ -36,12 +36,12 @@ customerApplicationKey | A chave secreta do cliente gerada. Essa chave não pode
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
-    -H 'Accept: application/json' \
+curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
---data-raw {
+--data-raw '{
     "clientId":"teste-app1",
-    "applicationDisplayName": "Teste Chave",
+    "displayName": "Teste Chave",
     "permissions":
     [
         {
@@ -51,7 +51,7 @@ curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
             "id": "financial_read"
         }
     ]
-}
+}'
 ```
 
 ### Exemplo de Resposta
@@ -79,13 +79,13 @@ customerApplication_read
 
 Atributo | Descrição
 --------- | ------
-items | Um array de pedidos paginados do cliente
+items | Um array de aplicações paginadas do cliente
 
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
-    -H 'Accept: application/json' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 

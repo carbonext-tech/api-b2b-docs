@@ -39,10 +39,10 @@ This request creates a new user.
 ### Example Request
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/users' \
-    -H 'Accept: application/json' \
+curl -X POST 'https://api-b2b.carbonext.com.br/v1/users' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
---data-raw {
+--data-raw '{
     "email": "usuario3@email.com",
     "userPassword": "123456",
     "name": "Usuario 3",
@@ -60,7 +60,8 @@ curl 'https://api-b2b.carbonext.com.br/v1/users' \
         {
             "key": "customerApplication_read"
         }
-}
+    ]
+}'
 ```
 
 ### Example Response
@@ -111,8 +112,8 @@ This request returns a paginated list of active users.
 ### Example Request
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/users?page=1&pagesize=10' \
-    -H 'Accept: application/json'
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/users?page=1&pagesize=10' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 
@@ -228,33 +229,30 @@ This request updates a user.
 ### Example Request
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/users/3f44d194-52cd-4a2b-ac37-1c9a7713add1' \
-    -H 'Accept: application/json'
-    -H 'Authorization: Bearer {token}'
-```
-
-```json
---data-raw {
+curl -X PUT 'https://api-b2b.carbonext.com.br/v1/users/3f44d194-52cd-4a2b-ac37-1c9a7713add1' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer {token}' \
+--data-raw '{
     "name": "Usuario 2999000000",
     "permissions":[
-                {
-                    "name": "Users - Write",
-                    "key": "users_write"
-                },
-                {
-                    "name": "CustomerApplication - Write",
-                    "key": "customerApplication_write"
-                },
-                {
-                    "name": "Users - Read",
-                    "key": "users_read"
-                },
-                {
-                    "name": "CustomerApplication - Read",
-                    "key": "customerApplication_read"
-                }
+      {
+        "name": "Users - Write",
+        "key": "users_write"
+      },
+      {
+        "name": "CustomerApplication - Write",
+        "key": "customerApplication_write"
+      },
+      {
+        "name": "Users - Read",
+         "key": "users_read"
+      },
+      {
+        "name": "CustomerApplication - Read",
+        "key": "customerApplication_read"
+      }
     ]
-}
+}'
 ```
 
 ### Example Response
@@ -303,8 +301,8 @@ id: 8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d
 ### Example Request
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/users/8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d' \
-    -H 'Accept: application/json'
+curl -X DELETE 'https://api-b2b.carbonext.com.br/v1/users/8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d' \
+    -H 'Content-Type: application/json'
     -H 'Authorization: Bearer {token}'
 ```
 

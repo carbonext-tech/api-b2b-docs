@@ -30,7 +30,7 @@ requestUnit |	Unit in which the field `unitValue` should be sent when making req
 ### Example Request
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/types'
+curl -X GET 'https://api-calculator.carbonext.com.br/v1/calculators/types'
 ```
 
 ### Example Response
@@ -71,9 +71,7 @@ This request returns an array of Airports.
 ### Example Request
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/airports' \
-    -H 'Accept: application/json' \
-    -H 'Authorization: Bearer {token}'
+curl -X GET 'https://api-calculator.carbonext.com.br/v1/calculators/airports'
 ```
 
 ### Example Response
@@ -165,11 +163,12 @@ emissionUnit |	The unit of the emission, based on the `Type` parameter used in t
 ### Example Request
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/'
---data-raw {
+curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
+    -H 'Content-Type: application/json' \
+--data-raw '{
     "type": 0,
     "distance": 100000
-}
+}'
 ```
 
 ### Example Response
@@ -209,13 +208,14 @@ emissionUnit| The value is tCO2eq. The result is calculated for the `unitValue` 
 ### Example Request
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/calculate'
---data-raw {
+curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
+    -H 'Content-Type: application/json' \
+--data-raw '{
     "type": 0,
     "originCode": "01526-000",
     "destCode": "66060425",
     "unitValue": 20000
-}
+}'
 ```
 
 ### Example Response
@@ -255,14 +255,14 @@ emissionUnit	| The unit of the emission, based on the `Type` parameter used in t
 ### Example Request
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
-    -H 'Accept: application/json' \
+curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
---data-raw {
+--data-raw '{
     "type": 2,
     "distance": 1000000,
     "currency":"BRL"
-}
+}'
 ```
 
 ### Example Response
@@ -306,16 +306,16 @@ emissionUnit |	The value is tCO2eq. The result is calculated for the `unitValue`
 ### Example Request
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
-    -H 'Accept: application/json' \
+curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
---data-raw {
+--data-raw '{
     "type": 0,
     "currency": "BRL",
     "originCode": "60183692",
     "destCode": "04131000",
     "unitValue": 300000
-}
+}'
 ```
 
 ### Example Response

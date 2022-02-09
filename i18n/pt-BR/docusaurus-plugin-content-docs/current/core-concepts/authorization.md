@@ -10,7 +10,7 @@ Este é o endpoint que tratará as requisições do lado do cliente para nossas 
 ## Autorizar Cliente [POST]
 
 ```md title="BASE URL"
-https://api-auth.carbonext.com.br/connect/token
+https://auth.carbonext.com.br/connect/token
 ```
 
 Esta solicitação valida as credenciais fornecidas e retorna os tokens gerados
@@ -34,7 +34,7 @@ refresh_token | O token de atualização fornecido na requisição de autorizaç
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-auth.carbonext.com.br/connect/token' \
+curl -X POST 'https://auth.carbonext.com.br/connect/token' \
 --data-urlencode 'client_id={{client_id}}' \
 --data-urlencode 'client_secret={{client_secret}}' \
 --data-urlencode 'grant_type=client_credentials' \
@@ -62,7 +62,7 @@ scope: offline_access
 ## Atualizar Token [POST]
 
 ```md title="BASE URL"
-https://api-auth.carbonext.com.br/connect/token
+https://auth.carbonext.com.br/connect/token
 ```
 
 Este endpoint recupera informações sobre o usuário conectado ou a chave da aplicação.
@@ -76,7 +76,7 @@ refresh_token | O token de atualização fornecido na resposta de autorização
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-auth.carbonext.com.br/connect/token' \
+curl -X POST 'https://auth.carbonext.com.br/connect/token' \
 --data-urlencode 'grant_type=refresh_token' \
 --data-urlencode 'refresh_token={{refresh_token}}' \
 --data-urlencode 'client_id={{client_id}}' \
@@ -106,7 +106,7 @@ client_secret: {{client_secret}}
 ## Informações de Usuário [GET]
 
 ```md title="BASE URL"
-https://api-auth.carbonext.com.br/connect/userinfo
+https://auth.carbonext.com.br/connect/userinfo
 ```
 
 Uma solicitação que recupera informações do usuário (ou chave da aplicação).
@@ -129,8 +129,8 @@ permissions | Uma matriz contendo as chaves de permissões para o usuário (ou a
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-auth.carbonext.com.br/connect/userinfo' \
-    -H 'Accept: application/json'
+curl -X GET 'https://auth.carbonext.com.br/connect/userinfo' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 

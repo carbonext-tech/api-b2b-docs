@@ -27,8 +27,8 @@ currency |	The currency of the price for which the price was calculated
 ### Example Request
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
-    -H 'Accept: application/json' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 

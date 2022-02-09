@@ -38,8 +38,8 @@ This request returns a paginated list with all permissions available. These perm
 ### Example Request
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20' \
-    -H 'Accept: application/json' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
 
