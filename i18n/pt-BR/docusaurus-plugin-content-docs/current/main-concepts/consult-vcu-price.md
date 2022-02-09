@@ -27,7 +27,7 @@ currency | O tipo de moeda para o qual foi calculado
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```

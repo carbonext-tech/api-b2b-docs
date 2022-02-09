@@ -36,7 +36,7 @@ customerApplicationKey | A chave secreta do cliente gerada. Essa chave não pode
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
+curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw '{
@@ -84,7 +84,7 @@ items | Um array de aplicações paginadas do cliente
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```

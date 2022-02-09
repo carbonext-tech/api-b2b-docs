@@ -34,7 +34,7 @@ refresh_token | O token de atualização fornecido na requisição de autorizaç
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://auth.carbonext.com.br/connect/token' \
+curl -X POST 'https://auth.carbonext.com.br/connect/token' \
 --data-urlencode 'client_id={{client_id}}' \
 --data-urlencode 'client_secret={{client_secret}}' \
 --data-urlencode 'grant_type=client_credentials' \
@@ -76,7 +76,7 @@ refresh_token | O token de atualização fornecido na resposta de autorização
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://auth.carbonext.com.br/connect/token' \
+curl -X POST 'https://auth.carbonext.com.br/connect/token' \
 --data-urlencode 'grant_type=refresh_token' \
 --data-urlencode 'refresh_token={{refresh_token}}' \
 --data-urlencode 'client_id={{client_id}}' \
@@ -129,7 +129,7 @@ permissions | Uma matriz contendo as chaves de permissões para o usuário (ou a
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://auth.carbonext.com.br/connect/userinfo' \
+curl -X GET 'https://auth.carbonext.com.br/connect/userinfo' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```

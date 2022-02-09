@@ -25,7 +25,7 @@ Antes de realizar nossa primeira requisição, precisamos de um `token` de autor
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://auth-hml.carbonext.com.br/connect/token' \
+curl -X POST 'https://auth-hml.carbonext.com.br/connect/token' \
 --data-urlencode 'client_id={{client_id}}' \
 --data-urlencode 'client_secret={{client_secret}}' \
 --data-urlencode 'grant_type=client_credentials' \
@@ -52,7 +52,7 @@ Vamos consultar o preço do VCU com o exemplo a seguir, passando `vcu-amount` co
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1000000' \
+curl -X GET 'https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1000000' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```

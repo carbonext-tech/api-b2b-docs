@@ -31,7 +31,7 @@ Este endpoint retorna os campos aceito para filtragem e ordenação, é importan
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
 ```
 
 ### Exemplo de Resposta
@@ -91,7 +91,7 @@ Vamos ver um exemplo prático de filtro listando faturas, nesse exemplo retornar
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```

@@ -30,7 +30,7 @@ A requisição também retornará a unidade que a requisição de cálculo usar�
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/types'
+curl -X GET 'https://api-calculator.carbonext.com.br/v1/calculators/types'
 ```
 
 ### Exemplo de Resposta
@@ -71,7 +71,7 @@ Esta requisição retorna um array de Aeroportos.
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/airports'
+curl -X GET 'https://api-calculator.carbonext.com.br/v1/calculators/airports'
 ```
 
 ### Exemplo de Resposta
@@ -163,11 +163,12 @@ Esta requisição retorna a quantidade de tCO2eq que a entrega ou transporte emi
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/'
---data-raw {
+curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
+    -H 'Content-Type: application/json' \
+--data-raw '{
     "type": 0,
     "distance": 100000
-}
+}'
 ```
 
 ### Exemplo de Resposta
@@ -206,13 +207,14 @@ Este endpoint calcula a quantidade de tCO2eq emitida ao viajar entre dois locais
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/calculate'
---data-raw {
+curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
+    -H 'Content-Type: application/json' \
+--data-raw '{
     "type": 0,
     "originCode": "01526-000",
     "destCode": "66060425",
     "unitValue": 20000
-}
+}'
 ```
 
 ### Exemplo de Resposta
@@ -252,14 +254,14 @@ Esta solicitação calculará o preço final para compensar a emissão calculada
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
+curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
---data-raw {
+--data-raw '{
     "type": 2,
     "distance": 1000000,
     "currency":"BRL"
-}
+}'
 ```
 
 ### Exemplo de Resposta
@@ -302,16 +304,16 @@ Esta requisição calculará o preço final, na moeda solicitada, para compensar
 ### Exemplo de Requisição
 
 ```javascript
-curl 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
+curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/price' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
---data-raw {
+--data-raw '{
     "type": 0,
     "currency": "BRL",
     "originCode": "60183692",
     "destCode": "04131000",
     "unitValue": 300000
-}
+}'
 ```
 
 ### Exemplo de Resposta

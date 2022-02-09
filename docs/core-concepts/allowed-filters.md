@@ -31,7 +31,7 @@ This endpoint returns the fields accepted for filtering and sorting. It is impor
 ### Example Request
 
 ```javascript
-curl 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
 ```
 
 ### Example Response
