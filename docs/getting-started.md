@@ -5,12 +5,23 @@ custom_edit_url: null
 
 # Getting Started
 
-## Creating account
+## Step 1 - Acquiring the credentials
 
-Let's start with a basic authentication so we can evolve with the other requests of our API. Access our [B2B site](https://b2b-hml.carbonext.com.br/auth/signup) in homologation environment to create a test account.
+Let's start with a basic authentication so we can evolve with the other requests of our API.
 
-To generate your keys and make queries in our API, it is necessary to buy at least one credit, you can register a test credit card without authentication
-to buy our VCU, fill in the form on the checkout page with card number `4242 4242 4242 4242` with any **CVC** and any future **expiration date**, add the number of **VCUs** you want to buy, click on **Comprar e continuar** and wait for the purchase confirmation.
+To generate your keys and make queries in our API, it is necessary to buy at least one credit, so let's access our test environment and use a test credit card without authentication to buy our first VCU.
+
+* Go to [https://b2b-hml.carbonext.com.br/auth/signup](https://b2b-hml.carbonext.com.br/auth/signup).
+
+* Fill in all fields.
+
+* Click on **Cadastrar e continuar**.
+
+* Fill the credit card with the number `4242 4242 4242 4242` with any **CVC** and any future **expiration date**.
+
+* Add the number of **VCUs** you want to buy.
+
+* Click on **Comprar e continuar**.
 
 :::tip keys generated
 
@@ -18,9 +29,17 @@ Congratulations you just generated your `client_id` and `client_secret`, save th
 
 :::
 
-## Authorization
+## Step 2 - Acquiring the Access Token
 
-Before making our first request, we need an authorization `token` that we receive through the following endpoint passing our `client_id` and `client_secret` in the body of the request in `urlencode` format.
+Now we need an authorization `token`, for this, let's use the [Postman](https://www.postman.com/downloads/), an application to realize API tests.
+
+After initialize Postman, create a new request with POST method and add the  following URL of our API in test environment.
+
+```md title="BASE URL"
+https://auth-hml.carbonext.com.br/connect/token
+```
+
+After this, bellow the URL click on **Body > x-www-form-urlencoded** and add the keys and they correspondent values following the next example request.
 
 ### Example Request
 
@@ -31,6 +50,12 @@ curl -X POST 'https://auth-hml.carbonext.com.br/connect/token' \
 --data-urlencode 'grant_type=client_credentials' \
 --data-urlencode 'scope=offline_access'
 ```
+
+Fill your correspondent `client_id` and `client_secret`. This way, our request must be filled in as follows.
+
+![Exemplo Postman](/img/examples/postman-1.jpg)
+
+When sending our request, we will have as response the `access_token`, that will allow us to interact with several other endpoints. 
 
 ### Example Response
 
@@ -43,11 +68,23 @@ curl -X POST 'https://auth-hml.carbonext.com.br/connect/token' \
 }
 ```
 
-## Consulting VCU Price
+## Step 3 - Consulting VCU Price
 
 Now, we are ready.
 
-Let's query the VCU price with the following example, passing `vcu-amount` as a parameter and our `access_token` in the **Header** of request.
+Again in Postman, let's create a new request with GET method and add the following URL.
+
+```md title="BASE URL"
+https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1000000
+```
+
+Note that we are passing the amount of VCUs through the query of our request, being her the `vcu-amount` with the desired value to consult the price.
+
+Just below the URL, click on the **Authorization** option, change the value of **Type** to **Bearer Token** and paste your `access_token` in the field on the right.
+
+Your request must be configured as follows.
+
+![Exemplo Postman](/img/examples/postman-2.jpg)
 
 ### Example Request
 
@@ -56,6 +93,8 @@ curl -X GET 'https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1000000' 
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
+
+We will have as response the following data.
 
 ### Example Response
 
