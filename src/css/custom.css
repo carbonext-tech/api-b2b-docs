@@ -31,7 +31,7 @@
   box-sizing: border-box;
 }
 
-.bg-header {
+.bg-img {
   background: url('https://carbonext-s3.s3.amazonaws.com/public/assets-b2b/bg-amazon.jpg') no-repeat;
   background-size: cover;
   background-position: center;
