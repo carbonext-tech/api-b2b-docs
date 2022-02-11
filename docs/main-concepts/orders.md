@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Orders
 
-This page presents requests related to orders. Orders refer to requests for carbon credit (VCU) purchases.
+In the B2B API, an order is a call for a specific amount of VCU, that will be debited from the customers balance. This order, when paid, will generate a certificate issued by Carbonext on behalf of the customer.
 
 ## Order [POST]
 
@@ -17,22 +17,21 @@ This request creates an order.
 
 **Request Attributes**
 
-Attribute   | Description
---------- | ------
-vcuAmount |	The amount of VCUs assigned to the order
-targetCurrency |	The desired currency for the order to be charged in
-payWithBalance |	Flag (boolean) indicating if this order should automatically discount from the customer balance (this indicates if the customer is allowed to create orders after completing payment)
+| Attribute      | Description                                         |
+| -------------- | --------------------------------------------------- |
+| vcuAmount      | The amount of VCUs assigned to the order            |
+| targetCurrency | The desired currency for the order to be charged in |
 
 **Response Attributes**
 
-Attribute   | Description
---------- | ------
-id |	The generated order ID
-vcuAmount |	The total amount of VCUs requested in the order
-vcuUnitPrice |	The unit price of a VCU at the time of order completion
-targetCurrency |	The currency in which the order will be charged in
-status |	Discloses the order's current status
-createdAt |	Discloses the order's current status
+| Attribute      | Description                                             |
+| -------------- | ------------------------------------------------------- |
+| id             | The generated order ID                                  |
+| vcuAmount      | The total amount of VCUs requested in the order         |
+| vcuUnitPrice   | The unit price of a VCU at the time of order completion |
+| targetCurrency | The currency in which the order will be charged in      |
+| status         | Discloses the order's current status                    |
+| createdAt      | Discloses the order's current status                    |
 
 ### Example Request
 
@@ -42,8 +41,7 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/orders' \
     -H 'Authorization: Bearer {token}' \
 --data-raw '{
     "vcuAmount":150,
-    "targetCurrency":"BRL",
-    "PayWithBalance":false
+    "targetCurrency":"BRL"
 }'
 ```
 
@@ -70,14 +68,14 @@ This request cancels an order. The order can only be canceled when it has been i
 
 **Response Attributes**
 
-Attribute   | Description
---------- | ------
-Id |	The order's Id
-vcuAmount |	The amount of VCUs that this order was handling
-vcuUnitPrice |	The VCU price when the order was created
-targetCurrency |	The currency this order was being handled in
-status |	Name of the order's current status, value will be "Cancelled"
-createdAt |	The date and time this order was created
+| Attribute      | Description                                                   |
+| -------------- | ------------------------------------------------------------- |
+| Id             | The order's Id                                                |
+| vcuAmount      | The amount of VCUs that this order was handling               |
+| vcuUnitPrice   | The VCU price when the order was created                      |
+| targetCurrency | The currency this order was being handled in                  |
+| status         | Name of the order's current status, value will be "Cancelled" |
+| createdAt      | The date and time this order was created                      |
 
 ### Example Request
 
@@ -114,9 +112,9 @@ Orders can also be cancelled in batches.
 
 **Request parameters**
 
-Parameter   | Description
---------- | ------
-ordersIds |	An array of Ids of the orders to be cancelled
+| Parameter | Description                                   |
+| --------- | --------------------------------------------- |
+| ordersIds | An array of Ids of the orders to be cancelled |
 
 Returns `true` if, and only if, all orders were successfully cancelled.
 
@@ -137,7 +135,7 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/orders/cancel' \
 ### Example Response
 
 ```javascript
-true
+true;
 ```
 
 ## Orders [GET]
@@ -150,9 +148,9 @@ This request returns a paginated list of orders.
 
 **Response attributes**
 
-Attribute   | Description
---------- | ------
-items |	An array of paginated orders from the customer
+| Attribute | Description                                    |
+| --------- | ---------------------------------------------- |
+| items     | An array of paginated orders from the customer |
 
 ### Example Request
 
