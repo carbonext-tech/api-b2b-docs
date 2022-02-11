@@ -19,15 +19,15 @@ Today our prices are solely indicated in BRL (Brazilian Reais) and USD (American
 
 **Response Attributes**
 
-Attribute   | Description
---------- | ------
-vcuPrice |	The price applied for 1 VCU (equivalent to 1 ton CO2eq)
-currency |	The currency of the price for which the price was calculated
+| Attribute | Description                                                  |
+| --------- | ------------------------------------------------------------ |
+| vcuPrice  | The price applied for 1 VCU (equivalent to 1 ton CO2eq)      |
+| currency  | The currency of the price for which the price was calculated |
 
 ### Example Request
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
@@ -36,7 +36,7 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
 
 ```json
 {
-  "vcuPrice": 77,
+  "vcuPrice": 137.5,
   "currency": "BRL"
 }
 ```

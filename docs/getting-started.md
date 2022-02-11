@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Getting Started
 
-## Step 1 - Acquiring the credentials
+## Step 1 - Acquiring the Credentials
 
 Let's start with a basic authentication so we can evolve with the other requests of our API.
 
@@ -51,11 +51,11 @@ curl -X POST 'https://auth-hml.carbonext.com.br/connect/token' \
 --data-urlencode 'scope=offline_access'
 ```
 
-Fill your correspondent `client_id` and `client_secret`. This way, our request must be filled in as follows.
+Fill yours newly generated `client_id` and `client_secret`. This way, our request must be filled in as follows.
 
 ![Exemplo Postman](/img/examples/postman-1.jpg)
 
-When sending our request, we will have as response the `access_token`, that will allow us to interact with several other endpoints. 
+This endpoint will return the `access_token` as well as the `refresh_token`, that can be used to get another access token though the `OAuth2.0` refresh token flow, and the expires_in, witch represents the lifetime of the token in seconds.
 
 ### Example Response
 
@@ -68,17 +68,17 @@ When sending our request, we will have as response the `access_token`, that will
 }
 ```
 
-## Step 3 - Consulting VCU Price
+## Step 3 - Retrieving the VCU Price
 
-Now, we are ready.
+Now, you are ready.
 
 Again in Postman, let's create a new request with GET method and add the following URL.
 
 ```md title="BASE URL"
-https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1000000
+https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1
 ```
 
-Note that we are passing the amount of VCUs through the query of our request, being her the `vcu-amount` with the desired value to consult the price.
+The VCU amount is passed via the query string parameter `vcu-amount`.
 
 Just below the URL, click on the **Authorization** option, change the value of **Type** to **Bearer Token** and paste your `access_token` in the field on the right.
 
@@ -89,7 +89,7 @@ Your request must be configured as follows.
 ### Example Request
 
 ```javascript
-curl -X GET 'https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1000000' \
+curl -X GET 'https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
@@ -100,9 +100,11 @@ We will have as response the following data.
 
 ```json
 {
-  "vcuPrice": 77,
-  "currency": "BRL"
+    "vcuPrice": 137.5,
+    "currency": "BRL"
 }
 ```
 
+:::info
 Let's see more about our authorization requests and other concepts in the next page.
+:::

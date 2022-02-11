@@ -11,17 +11,17 @@ Vamos começar com uma autenticação básica para podermos evoluir com as demai
 
 Para gerar suas credenciais e realizar consultas em nossa API, é necessário comprar pelo menos um crédito, sendo assim, vamos acessar nosso ambiente de homologação e utilizar um cartão de crédito de testes sem autenticação para comprar nosso primeiro VCU.
 
-* Acesse [https://b2b-hml.carbonext.com.br/auth/signup](https://b2b-hml.carbonext.com.br/auth/signup).
+- Acesse [https://b2b-hml.carbonext.com.br/auth/signup](https://b2b-hml.carbonext.com.br/auth/signup).
 
-* Preencha todos os campos.
+- Preencha todos os campos.
 
-* Clique em **Cadastrar e continuar**.
+- Clique em **Cadastrar e continuar**.
 
-* Preencha o cartão com o número `4242 4242 4242 4242` com qualquer **CVC** e qualquer **data de validade** futura.
+- Preencha o cartão com o número `4242 4242 4242 4242` com qualquer **CVC** e qualquer **data de validade** futura.
 
-* Adicione o número de **VCUs** que você deseja comprar.
+- Adicione o número de **VCUs** que você deseja comprar.
 
-* Clique em **Comprar e continuar**
+- Clique em **Comprar e continuar**
 
 :::tip chaves geradas
 
@@ -75,7 +75,7 @@ Agora, estamos prontos.
 Novamente no Postman, vamos criar uma nova requisição no método GET e adicionar a seguinte URL.
 
 ```md title="BASE URL"
-https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1000000
+https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1
 ```
 
 Note que estamos passando a quantidade de VCUs pela query da nossa requisição, sendo ela o `vcu-amount` com o valor desejado para a consulta de preço.
@@ -89,7 +89,7 @@ Sua requisição deverá estar configurada da seguinte forma.
 ### Exemplo de Requisição
 
 ```javascript
-curl -X GET 'https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1000000' \
+curl -X GET 'https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
@@ -100,9 +100,11 @@ Teremos como retorno os seguintes dados.
 
 ```json
 {
-  "vcuPrice": 77,
+  "vcuPrice": 137.5,
   "currency": "BRL"
 }
 ```
 
+:::info
 Veremos mais sobre nossas requisições de autorização e outros conceitos na próxima página.
+:::

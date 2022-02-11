@@ -17,19 +17,19 @@ This request validates the provided credentials and returns the generated tokens
 
 **Parameter Attributes**
 
-Parameter   | Description
---------- | ------
-clientId | The client's public credential key
-clientSecret | The client's private credential key
+| Parameter    | Description                         |
+| ------------ | ----------------------------------- |
+| clientId     | The client's public credential key  |
+| clientSecret | The client's private credential key |
 
 **Response Attributes**
 
-Parameter   | Description
---------- | ------
-accessToken | A token used to authorize the user's access.
-token_type | The type of token
-expires_in | The amount of time until the token expires, in seconds
-refresh_token | The refresh token provided in the authorization request
+| Parameter     | Description                                             |
+| ------------- | ------------------------------------------------------- |
+| accessToken   | A token used to authorize the user's access.            |
+| token_type    | The type of token                                       |
+| expires_in    | The amount of time until the token expires, in seconds  |
+| refresh_token | The refresh token provided in the authorization request |
 
 ### Example Request
 
@@ -65,13 +65,13 @@ scope: offline_access
 https://auth.carbonext.com.br/connect/token
 ```
 
-This endpoint retrieves information about the logged in user or application key.
+This endpoint allows the user to request a new token when their current token expires.
 
 **Parameter Attributes**
 
-Parameter   | Description
---------- | ------
-refresh_token | The refresh token provided in the authorization response
+| Parameter     | Description                                              |
+| ------------- | -------------------------------------------------------- |
+| refresh_token | The refresh token provided in the authorization response |
 
 ### Example Request
 
@@ -102,7 +102,6 @@ client_id: {{client_id}}
 client_secret: {{client_secret}}
 ```
 
-
 ## User Info [GET]
 
 ```url title="BASE URL"
@@ -113,18 +112,18 @@ A request that retrieves information from the user (or application key).
 
 **Response Attributes**
 
-Attributes   | Description
---------- | ------
-ClientId |	The client identification (public key)
-UserId |	The user identification
-Name |	The user's name
-Email |	The user's email
-IsEmailValid |	A boolean to identify if the user's email has been verified
-CustomerId |	The ID of the customer the user or application is related to
-CustomerApplicationId |	The ID of the customer's application (key)
-CustomerTaxId |	The customer's tax document number
-CustomerLegalName |	The customer's legal name
-Permissions |	An array containing the permissions keys for the user (or application)
+| Attributes            | Description                                                            |
+| --------------------- | ---------------------------------------------------------------------- |
+| ClientId              | The client identification (public key)                                 |
+| UserId                | The user identification                                                |
+| Name                  | The user's name                                                        |
+| Email                 | The user's email                                                       |
+| IsEmailValid          | A boolean to identify if the user's email has been verified            |
+| CustomerId            | The ID of the customer the user or application is related to           |
+| CustomerApplicationId | The ID of the customer's application (key)                             |
+| CustomerTaxId         | The customer's tax document number                                     |
+| CustomerLegalName     | The customer's legal name                                              |
+| Permissions           | An array containing the permissions keys for the user (or application) |
 
 ### Example Request
 
@@ -138,17 +137,17 @@ curl -X GET 'https://auth.carbonext.com.br/connect/userinfo' \
 
 ```json
 {
-  "clientId": "pre-pago",
+  "clientId": "5d7aac18-f566-49ec-b6cb-48e533d0d262",
   "userId": null,
   "name": null,
-  "email": null,
-  "isAdmin": false,
-  "isEmailValid": null,
-  "customerId": "6aea7d01-5062-4aa3-ae22-ecd8069d6329",
-  "customerApplicationId": "11b02c18-0a2a-4908-90ff-33ff88ce0672",
-  "customerTaxId": "29.232.086/0001-60",
-  "customerLegalName": "Teste pré pago",
+  "email": "exemplo.req@email.com",
+  "isEmailValid": false,
+  "customerId": "c892597a-997c-4a6f-a4cf-6e370240edff",
+  "customerApplicationId": "ef04cbdc-5197-4812-a910-0d5253b4b2f5",
+  "customerTaxId": "10.203.485/0001-74",
+  "customerLegalName": "Carbon Teste",
   "permissions": [
+    "certificates_read",
     "customerApplication_read",
     "customerApplication_write",
     "financial_read",

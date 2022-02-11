@@ -10,7 +10,7 @@ Vamos ver como consultar o preço do VCU (Verified Carbon Unity).
 ## Preço do VCU [GET]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=10&target-currency=BRL
+https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1&target-currency=BRL
 ```
 
 Este endpoint retornará o preço unitário do VCU. É muito importante passar o `vcu-amount` através dos parâmetros de consulta e o `target-currency` pode ser considerado opcional. Todos os preços são definidos em BRL por padrão.
@@ -19,15 +19,15 @@ Hoje nossos preços são indicados apenas em BRL (Reais) e USD (Dólar Americano
 
 **Atributos de Resposta**
 
-Atributo | Descrição
---------- | ------
-vcuPrice | O preço aplicado para 1 VCU (equivalente a 1 tonelada CO2eq)
-currency | O tipo de moeda para o qual foi calculado
+| Atributo | Descrição                                                    |
+| -------- | ------------------------------------------------------------ |
+| vcuPrice | O preço aplicado para 1 VCU (equivalente a 1 tonelada CO2eq) |
+| currency | O tipo de moeda para o qual foi calculado                    |
 
 ### Exemplo de Requisição
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1&target-currency=BRL' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
@@ -36,7 +36,7 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1000000' \
 
 ```json
 {
-  "vcuPrice": 77,
+  "vcuPrice": 137.50,
   "currency": "BRL"
 }
 ```
