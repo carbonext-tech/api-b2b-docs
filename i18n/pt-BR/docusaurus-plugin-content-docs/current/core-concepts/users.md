@@ -20,7 +20,7 @@ Esta requisição cria um novo usuário.
 | email        | E-mail do usuário                                                |
 | userPassword | Senha do usuário                                                 |
 | name         | Nome do usuário                                                  |
-| permissions  | Um array de objeto que contém as chaves de permissões do usuário |
+| permissions  | Um array de string que contém as chaves de permissões do usuário |
 
 **Atributos de Resposta**
 
@@ -29,10 +29,10 @@ Esta requisição cria um novo usuário.
 | id                | ID do usuário                                                     |
 | email             | E-mail do usuário                                                 |
 | name              | Nome do usuário                                                   |
-| picture           | Link para a foto do perfil do usuário                             |
-| preferredLanguage | Escolha de idioma do usuário                                      |
-| isAdmin           | Um sinalizador (booleano) que indica se o usuário é Administrador |
 | permissions       | Um array de objeto que contém as permissões do usuário            |
+<!-- | picture           | Link para a foto do perfil do usuário                             | -->
+<!-- | preferredLanguage | Escolha de idioma do usuário                                      | -->
+<!-- | isAdmin           | Um sinalizador (booleano) que indica se o usuário é Administrador | -->
 
 ### Exemplo de Requisição
 
@@ -215,10 +215,10 @@ Esta requisição atualiza os dados de um usuário.
 | id                | ID gerado para o usuário                                          |
 | email             | E-mail do usuário                                                 |
 | name              | Nome do usuário                                                   |
-| picture           | Link para a foto do perfil do usuário                             |
-| preferredLanguage | Escolha de idioma do usuário                                      |
-| isAdmin           | Um sinalizador (booleano) que indica se o usuário é Administrador |
 | permissions       | Um array de objeto que contém as permissões do usuário            |
+<!-- | picture           | Link para a foto do perfil do usuário                             | -->
+<!-- | preferredLanguage | Escolha de idioma do usuário                                      | -->
+<!-- | isAdmin           | Um sinalizador (booleano) que indica se o usuário é Administrador | -->
 
 ### Exemplo de Requisição
 

@@ -22,7 +22,7 @@ This request creates a new user.
 | email        | User's email                                                        |
 | userPassword | User's password                                                     |
 | name         | User's name                                                         |
-| permissions  | An array of object that contains the keys of the user's permissions |
+| permissions  | An array of string, that contains the Ids of the user's permissions |
 
 **Response attributes**
 
@@ -31,10 +31,10 @@ This request creates a new user.
 | id                | User's Id                                                    |
 | email             | User's email                                                 |
 | name              | User's name                                                  |
-| picture           | Link to user's profile picture                               |
-| preferredLanguage | User's language choice                                       |
-| isAdmin           | A flag (boolean) that indicates if the user is Administrator |
 | permissions       | An array of object that contains the user's permissions      |
+<!-- | picture           | Link to user's profile picture                               | -->
+<!-- | preferredLanguage | User's language choice                                       | -->
+<!-- | isAdmin           | A flag (boolean) that indicates if the user is Administrator | -->
 
 ### Example Request
 
@@ -221,10 +221,10 @@ This request updates a user.
 | id                | User's generated id                                          |
 | email             | User's email                                                 |
 | name              | User's name                                                  |
-| picture           | Link to user's profile picture                               |
-| preferredLanguage | User's language choice                                       |
-| isAdmin           | A flag (boolean) that indicates if the user is Administrator |
 | permissions       | An array of object that contains the user's permissions      |
+<!-- | picture           | Link to user's profile picture                               | -->
+<!-- | preferredLanguage | User's language choice                                       | -->
+<!-- | isAdmin           | A flag (boolean) that indicates if the user is Administrator | -->
 
 ### Example Request
 
