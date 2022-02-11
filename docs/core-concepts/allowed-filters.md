@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Query Filters
 
-Our API has a filter and sort system that allows searching for a resource by specific type.
+Our APIs have a filtering system that alow querying for a resource by many different attributes and operations.
 
 ## List Allowed Filters [GET]
 
@@ -21,17 +21,18 @@ https://api-b2b.carbonext.com.br/v1/allowed-filters/:resource
 
 **Response Parameters**
 
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| filters   | An array of available filters |
-| sort      | An array of available sorts   |
+| Parameter | Description                             |
+| --------- | --------------------------------------- |
+| filters   | An array of available filters           |
+| sort      | An array of available sorts             |
+| aggregate | Performs math operations for the filter |
 
-This endpoint returns the fields accepted for filtering and sorting. It is important to mention that sort has the `created_desc` filter by default.
+This endpoint returns the fields accepted for filtering and sorting. It is important to mention that sort has the `createdAt_desc` filter by default.
 
 ### Example Request
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/orders'
 ```
 
 ### Example Response
@@ -42,36 +43,38 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
     "status_eq",
     "status_ne",
     "status_in",
-    "totalPrice_eq",
-    "totalPrice_ge",
-    "totalPrice_le",
-    "totalPrice_gt",
-    "totalPrice_lt",
-    "totalVcuAmount_eq",
-    "totalVcuAmount_ge",
-    "totalVcuAmount_le",
-    "totalVcuAmount_gt",
-    "totalVcuAmount_lt",
+    "vcuUnitPrice_ge",
+    "vcuUnitPrice_le",
+    "vcuUnitPrice_gt",
+    "vcuUnitPrice_lt",
+    "vcuAmount_eq",
+    "vcuAmount_ge",
+    "vcuAmount_le",
+    "vcuAmount_gt",
+    "vcuAmount_lt",
+    "invoiceId_eq",
     "createdAt_eq",
     "createdAt_ge",
     "createdAt_le",
     "createdAt_gt",
-    "createdAt_lt"
+    "createdAt_lt",
+    "totalPrice_eq",
+    "totalPrice_ge",
+    "totalPrice_le",
+    "totalPrice_gt",
+    "totalPrice_lt"
   ],
-  "sort": [
-    "createdAt",
-    "paid",
-    "dueDate",
-    "totalPrice",
-    "totalVcuAmount",
-    "status"
-  ]
+  "sort": ["createdAt", "vcuAmount", "status", "vcuUnitPrice"],
+  "aggregate": {
+    "columns": ["vcuAmount", "vcuUnitPrice", "totalPrice"],
+    "operations": ["sum", "avg", "min", "max", "count"]
+  }
 }
 ```
 
-Let's see how many filters we have and what they mean.
+Let's see how many filters operations we have and what they mean.
 
-```md title="Available Filters"
+```md title="Available Filters Operations"
 eq: = Returns fields with values equals then what was passed in the filter.
 ne: != Returns fields with different values then what was passed in the filter.
 ge: >= Returns fields with values greater then or equals what was passed in the filter.
@@ -88,7 +91,11 @@ like: returns records that contain the value sought in the filter (case insensit
 https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending
 ```
 
-Let's see a practical example of a filter listing invoices, in this example we will return a list in order based on `totalVcuAmount`, to filter with more than one condition that we can use the `~` field separator for each filter in the same query, in this way, we can filter for `totalVcuAmount` greater than 30 and which had a status equal to `Paid-pending`.
+Let's see a practical example of the query filters applied to invoices, in this example we will return a list of invoices filtered by `totalVcuAmount` and `status`. To user more than one filter on the same query, they must be separated by tilde (~).
+
+The filter syntax is `?filter-by=<filter1>:<value2>~<filter2>:<value2>`, as for the filters with the <in> operator, the values must be separated by hyphen - .
+
+The following example will to illustrate querying invoices with `totalVcuAmount` greater or equal than 30, that have a `status` either `Paid` or `Pending` (enum status names are case insensitive)
 
 **Response Parameters**
 
@@ -102,6 +109,11 @@ Let's see a practical example of a filter listing invoices, in this example we w
 curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
+```
+
+```md title="Parameter Attributes"
+sort-by: totalQuantity_asc
+filter-by: totalQuantity_ge:30~status_in:Paid-pending
 ```
 
 ### Response Example
@@ -193,9 +205,4 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount
   "hasPreviousPage": false,
   "hasNextPage": false
 }
-```
-
-```md title="Parameter Attributes"
-sort-by: totalQuantity_asc
-filter-by: totalQuantity_ge:30~status_in:Paid-pending
 ```
