@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Faturas
 
-Após gerar os pedidos, precisamos visualizar as faturas para os mesmos, nesta página veremos como realizar requisições para essas faturas.
+As faturas podem ser geradas tanto comprando créditos VCU quanto faturando pedidos em aberto (não pagos), neste caso, a fatura pode ser paga com cartão de crédito ou boleto bancário (pretendemos aceitar outros tipos de pagamento no futuro).
 
 <!-- ## Faturas [POST]
 

@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Invoices
 
-After generating orders, we need to see the invoices for said orders. On this page we will learn how to create requests for these invoices.
+Invoices can be created either by purchasing VCU credits or by billing open (non-paid) orders, in the later, the invoice can be paid by credit card or by bank slip (we do plan on accepting other payment types in the future).
 
 <!-- ## Invoices [POST]
 
