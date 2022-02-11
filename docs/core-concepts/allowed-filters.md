@@ -93,7 +93,7 @@ https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-b
 
 Let's see a practical example of the query filters applied to invoices, in this example we will return a list of invoices filtered by `totalVcuAmount` and `status`. To user more than one filter on the same query, they must be separated by tilde (~).
 
-The filter syntax is `?filter-by=<filter1>:<value2>~<filter2>:<value2>`, as for the filters with the <in> operator, the values must be separated by hyphen - .
+The filter syntax is `?filter-by=filter1:value2~filter2:value2`, as for the filters with the `in` operator, the values must be separated by hyphen - .
 
 The following example will to illustrate querying invoices with `totalVcuAmount` greater or equal than 30, that have a `status` either `Paid` or `Pending` (enum status names are case insensitive)
 
