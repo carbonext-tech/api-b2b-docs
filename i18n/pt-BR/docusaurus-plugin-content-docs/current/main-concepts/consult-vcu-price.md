@@ -13,9 +13,9 @@ Vamos ver como consultar o preço do VCU (Verified Carbon Unity).
 https://api-b2b.carbonext.com.br/v1/prices?vcu-amount=1&target-currency=BRL
 ```
 
-Este endpoint retornará o preço unitário do VCU. É muito importante passar o `vcu-amount` através dos parâmetros de consulta e o `target-currency` pode ser considerado opcional. Todos os preços são definidos em BRL por padrão.
+Este endpoint retornará o preço unitário do VCU. Os parâmetros `vcu-amount` e `target-currency` são opcionais. Os valores padrão são `vcu-amount=1` e `target-currency=BRL`.
 
-Hoje nossos preços são indicados apenas em BRL (Reais) e USD (Dólar Americano). Planejamos expandir nossas ofertas para mais opções de moeda no futuro.
+As moedas atualmente aceitas são BRL (Reais Brasileiros) e USD (Dólar Americano), pretendemos expandir essa lista no futuro.
 
 **Atributos de Resposta**
 

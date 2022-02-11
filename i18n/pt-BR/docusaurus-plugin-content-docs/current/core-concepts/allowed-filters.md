@@ -93,7 +93,7 @@ https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-b
 
 Vejamos um exemplo prático dos filtros de consulta aplicados a faturas, neste exemplo retornaremos uma lista de faturas filtradas por `totalVcuAmount` e `status`. Para usar mais de um filtro na mesma consulta, eles devem ser separados por til (~).
 
-A sintaxe do filtro é `?filter-by=<filter1>:<value2>~<filter2>:<value2>`, já para os filtros com o operador <in>, os valores devem ser separados por hífen - .
+A sintaxe do filtro é `?filter-by=filter1:value2~filter2:value2`, já para os filtros com o operador `in`, os valores devem ser separados por hífen - .
 
 O exemplo a seguir ilustrará a consulta de faturas com `totalVcuAmount` maior ou igual a 30, que possuam um `status` como `Paid` ou `Pending` (nomes de status enum não diferenciam maiúsculas de minúsculas)
 
