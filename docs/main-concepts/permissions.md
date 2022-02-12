@@ -23,7 +23,7 @@ This request returns a paginated list with all permissions available. These perm
 | orders_write              | Add, edit or remove orders    |
 | customerApplication_read  | Customer read only            |
 | customerApplication_write | Add, edit or remove customers |
-| financial_write           | Add or cancel invoices        |
+| financial_write           | Add invoices                  |
 | financial_read            | Financial read only           |
 | users_write               | Add, edit or remove users     |
 | users_read                | Users read only               |
@@ -32,8 +32,8 @@ This request returns a paginated list with all permissions available. These perm
 **Response Attributes**
 
 | Attributes | Description           |
-| --------- | --------------------- |
-| Items     | A list of permissions |
+| ---------- | --------------------- |
+| Items      | A list of permissions |
 
 ### Example Request
 
