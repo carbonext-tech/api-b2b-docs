@@ -7,7 +7,7 @@ custom_edit_url: null
 
 The request in this page refers to customer balance.
 
-This is a sum of all invoices (which generate carbon credits) and orders (which generate debt), alongside with detailed information of open invoices (debit) and non billed orders to the customer.
+The balance is the difference between paid invoices, which generate credits, and all non-cancelled orders created for the customer, alongside with detailed information for future debt, which are the non-billed orders.
 
 ## Balance [GET]
 
