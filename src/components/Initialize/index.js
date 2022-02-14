@@ -26,7 +26,7 @@ export const Initialize = () => {
         <div className={styles.practice}>
           <h1 className={styles.title}>
             <Translate>
-              Understand how to use our API in just four steps.
+              Understand how to use our APIs in just four steps.
             </Translate>
           </h1>
           <ol>
