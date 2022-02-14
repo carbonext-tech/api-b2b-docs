@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Pedidos
 
-Esta página apresenta requisições relacionadas a pedidos, um pedido é a solicitação de compra de créditos de carbono (VCU).
+Na API B2B, um pedido é uma chamada de um valor específico de VCU, que será debitado do saldo do cliente. Este pedido, quando pago, gerará um certificado emitido pela Carbonext em nome do cliente.
 
 ## Pedido [POST]
 
@@ -17,22 +17,21 @@ Esta requisição irá criar um pedido.
 
 **Atributos de Requisição**
 
-Atributo | Descrição
---------- | ------
-vcuAmount | A quantidade de VCUs atribuída ao pedido
-targetCurrency | A moeda desejada para o pedido a ser cobrado
-payWithBalance | Sinalizador (booleano) indicando se este pedido deve ser descontado automaticamente do saldo do cliente (se o cliente tiver permissão para criar pedidos pós-pagos)
+| Atributo       | Descrição                                                                                                                                                           |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| vcuAmount      | A quantidade de VCUs atribuída ao pedido                                                                                                                            |
+| targetCurrency | A moeda desejada para o pedido a ser cobrado                                                                                                                        |
 
 **Atributos de Resposta**
 
-Atributo | Descrição
---------- | ------
-id | O ID do pedido gerado
-vcuAmount | A quantidade total de VCUs solicitada no pedido
-vcuUnitPrice | O preço unitário de um VCU no momento da criação do pedido
-targetCurrency | A moeda em que o pedido será cobrado
-status | Nome do status atual do pedido
-createdAt | A data e hora em que o pedido foi criado
+| Atributo       | Descrição                                                  |
+| -------------- | ---------------------------------------------------------- |
+| id             | O ID do pedido gerado                                      |
+| vcuAmount      | A quantidade total de VCUs solicitada no pedido            |
+| vcuUnitPrice   | O preço unitário de um VCU no momento da criação do pedido |
+| targetCurrency | A moeda em que o pedido será cobrado                       |
+| status         | Nome do status atual do pedido                             |
+| createdAt      | A data e hora em que o pedido foi criado                   |
 
 ### Exemplo de Requisição
 
@@ -42,8 +41,7 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/orders' \
     -H 'Authorization: Bearer {token}' \
 --data-raw '{
     "vcuAmount":150,
-    "targetCurrency":"BRL",
-    "PayWithBalance":false
+    "targetCurrency":"BRL"
 }'
 ```
 
@@ -68,14 +66,14 @@ Esta solicitação cancela um pedido, um pedido só pode ser cancelado enquanto 
 
 **Atributos de Resposta**
 
-Atributo | Descrição
---------- | ------
-id | O ID do pedido gerado
-vcuAmount | A quantidade total de VCU solicitada no pedido
-vcuUnitPrice | O preço unitário de um VCU no momento da criação do pedido
-targetCurrency | A moeda em que o pedido será cobrado
-status | Nome do status atual do pedido, o valor será "Cancelled"
-createdAt | A data e hora em que o pedido foi criado
+| Atributo       | Descrição                                                  |
+| -------------- | ---------------------------------------------------------- |
+| id             | O ID do pedido gerado                                      |
+| vcuAmount      | A quantidade total de VCU solicitada no pedido             |
+| vcuUnitPrice   | O preço unitário de um VCU no momento da criação do pedido |
+| targetCurrency | A moeda em que o pedido será cobrado                       |
+| status         | Nome do status atual do pedido, o valor será "Cancelled"   |
+| createdAt      | A data e hora em que o pedido foi criado                   |
 
 ### Exemplo de Requisição
 
@@ -110,9 +108,9 @@ Os pedidos também podem ser cancelados em lotes.
 
 **Parâmetros de Requisição**
 
-Parâmetro | Descrição
---------- | ------
-ordersIds | Um array de IDs dos pedidos a serem cancelados
+| Parâmetro | Descrição                                      |
+| --------- | ---------------------------------------------- |
+| ordersIds | Um array de IDs dos pedidos a serem cancelados |
 
 Retorna `true` se, e somente se, todos os pedidos forem cancelados com sucesso.
 
@@ -133,7 +131,7 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/orders/cancel' \
 ### Exemplo de Resposta
 
 ```javascript
-true
+true;
 ```
 
 ## Pedidos [GET]
@@ -144,9 +142,9 @@ Esta solicitação retorna uma lista paginada de pedidos.
 
 **Atributos de resposta**
 
-Atributo | Descrição
---------- | ------
-items	 | Um array de pedidos paginados do cliente
+| Atributo | Descrição                                |
+| -------- | ---------------------------------------- |
+| items    | Um array de pedidos paginados do cliente |
 
 ### Exemplo de Requisição
 

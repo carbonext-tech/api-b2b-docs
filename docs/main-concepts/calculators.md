@@ -15,7 +15,7 @@ https://api-calculator.carbonext.com.br/v1/calculators/types
 
 A request that lists the supported transport types for emissions calculation.
 
-The request will also return the unit that the calculation request will use (e.g, "grams" for deliveries, "passenger" for transportation, etc.), and the unit of the response(e.g, "tCO2eq/tonne" for deliveries or "tCO2eq/passenger" for transportation, etc.).
+The request will also return the unit that the calculation request will use (e.g, "grams", "passenger"), and the unit of the response(e.g, "tCO2eq/tonne", "tCO2eq/passenger") for freight of products, and for transportation by bus and airplane, respectively.
 
 **Response Attributes**
 
@@ -150,7 +150,7 @@ This request returns the amount of tCO2eq the delivery or transport will emit, b
 
 Parameter   | Description
 --------- | ------
-type | The type identifier from the `Get Types` request
+type | The type identifier from the `GET Types` request
 distance | The distance to be traveled, in meters
 
 **Response attributes**
@@ -192,10 +192,10 @@ This endpoint calculates the amount of tCO2eq emitted when traveling between two
 
 Parameter   | Description
 --------- | ------
-type |	The type identifier from the 'Get Types' request
+type |	The type identifier from the 'GET Types' request
 originCode |	The code that the transport will depart from
 destZipCode |	The code that the transport will arrive at
-unitValue |	The unit amount to calculate the emissions for (i.e, 10 passengers, 10000 grams, etc.). The unit is specified by the field 'requestUnit' from 'Get Types' request
+unitValue |	The unit amount to calculate the emissions for (i.e, 10 passengers, 10000 grams, etc.). The unit is specified by the field 'requestUnit' from 'GET Types' request
 
 **Response attributes**
 
@@ -239,7 +239,7 @@ This request will calculate the final price to offset the calculated emission.
 
 Parameter   | Description
 --------- | ------
-type | The type identifier from the `Get Types` request
+type | The type identifier from the `GET Types` request
 distance	| The distance to be traveled, in meters
 currency	| The currency to calculate the final price in
 
@@ -288,11 +288,11 @@ This request will calculate the final price, in the requested currency, to offse
 
 Parameter   | Description
 --------- | ------
-type |	The type identifier from the `Get Types` request
+type |	The type identifier from the `GET Types` request
 currency |	The currency to calculate the final price in
 originCode |	The code that the transport will depart from
 destZipCode |	The code that the transport will arrive at
-unitValue |	The unit amount to calculate the emissions for (i.e, 10 passengers, 10000 grams, etc.). The unit is specified by the field `requestUnit` from `Get Types` request
+unitValue |	The unit amount to calculate the emissions for (i.e, 10 passengers, 10000 grams, etc.). The unit is specified by the field `requestUnit` from `GET Types` request
 
 **Response attributes**
 

@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Filtros Permitidos
 
-Nossa API possui um sistema de filtro e ordenação que permite buscar um recurso por tipo específico.
+Nossas APIs possuem um sistema de filtragem que permitem a consulta de um recurso por diversos atributos e operações.
 
 ## Listar Filtros Permitidos [GET]
 
@@ -21,17 +21,18 @@ https://api-b2b.carbonext.com.br/v1/allowed-filters/:resource
 
 **Parâmetros de Resposta**
 
-| Parâmetro | Descrição                              |
-| --------- | -------------------------------------- |
-| filters   | Um array dos filtros disponíveis       |
-| sort      | Um array com as ordenações disponíveis |
+| Parâmetro | Descrição                                   |
+| --------- | ------------------------------------------- |
+| filters   | Um array dos filtros disponíveis            |
+| sort      | Um array com as ordenações disponíveis      |
+| aggregate | Realiza operações matemáticas para o filtro |
 
-Este endpoint retorna os campos aceito para filtragem e ordenação, é importante mencionar que essa ordenação possui o filtro `created_desc` por padrão.
+Este endpoint retorna os campos aceito para filtragem e ordenação, é importante mencionar que essa ordenação possui o filtro `createdAt_desc` por padrão.
 
 ### Exemplo de Requisição
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/orders'
 ```
 
 ### Exemplo de Resposta
@@ -42,34 +43,44 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/invoices'
     "status_eq",
     "status_ne",
     "status_in",
+    "vcuUnitPrice_ge",
+    "vcuUnitPrice_le",
+    "vcuUnitPrice_gt",
+    "vcuUnitPrice_lt",
+    "vcuAmount_eq",
+    "vcuAmount_ge",
+    "vcuAmount_le",
+    "vcuAmount_gt",
+    "vcuAmount_lt",
+    "invoiceId_eq",
+    "createdAt_eq",
+    "createdAt_ge",
+    "createdAt_le",
+    "createdAt_gt",
+    "createdAt_lt",
+    "totalPrice_eq",
     "totalPrice_ge",
     "totalPrice_le",
     "totalPrice_gt",
-    "totalPrice_lt",
-    "totalVcuAmount_eq",
-    "totalVcuAmount_ge",
-    "totalVcuAmount_le",
-    "totalVcuAmount_gt",
-    "totalVcuAmount_lt"
+    "totalPrice_lt"
   ],
-  "sort": [
-    "createdAt",
-    "paid",
-    "dueDate",
-    "totalPrice",
-    "totalVcuAmount",
-    "status"
-  ]
+  "sort": ["createdAt", "vcuAmount", "status", "vcuUnitPrice"],
+  "aggregate": {
+    "columns": ["vcuAmount", "vcuUnitPrice", "totalPrice"],
+    "operations": ["sum", "avg", "min", "max", "count"]
+  }
 }
 ```
 
-```md title="Filtros Disponíveis"
-eq: =
-ne: !=
-ge: >=
-le: <=
-gt: >
-lt: <
+Vamos ver quantos filtros podemos utilizar e o que eles significam.
+
+```md title="Operações de Filtro Disponíveis"
+eq: = Retorna os campos com os valores iguais ao que foi passado no filtro.
+ne: != Retorna os campos com os valores diferentes ao que foi passado no filtro.
+ge: >= Retorna os campos com os valores maiores ou iguais ao que foi passado no filtro.
+le: <= Retorna os campos com os valores menores ou iguais ao que foi passado no filtro. Para o `createdAt`, às 23:59:59 horas antes da data escolhida no formato `AAAA-MM-DD`.
+gt: > Retorna os campos com os valores maiores ao que foi passado no filtro.
+lt: < Retorna os campos com os valores menores ao que foi passado no filtro. Para o `createdAt`, às 00:00 horas antes da data escolhida no formato `AAAA-MM-DD`.
 in: `status` in (1,2,3) retorna os registros com `status` igual a 1 ou 2 ou 3 (status aqui é o campo com filtro tipo `_in`)
 like: retorna registros que contenham o valor buscado no filtro (case insensitive)
 ```
@@ -80,7 +91,11 @@ like: retorna registros que contenham o valor buscado no filtro (case insensitiv
 https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending
 ```
 
-Vamos ver um exemplo prático de filtro listando faturas, nesse exemplo retornaremos uma lista em ordenação crescente baseada no `totalVcuAmount`, para filtrar com mais de uma condição podemos utilizar o separador de campo `~` para cada filtro na mesma query, dessa forma, podemos filtrar por `totalVcuAmount` maior que 30 e que possua status igual a `Paid-pending`.
+Vejamos um exemplo prático dos filtros de consulta aplicados a faturas, neste exemplo retornaremos uma lista de faturas filtradas por `totalVcuAmount` e `status`. Para usar mais de um filtro na mesma consulta, eles devem ser separados por til (~).
+
+A sintaxe do filtro é `?filter-by=filter1:value2~filter2:value2`, já para os filtros com o operador `in`, os valores devem ser separados por hífen - .
+
+O exemplo a seguir ilustrará a consulta de faturas com `totalVcuAmount` maior ou igual a 30, que possuam um `status` como `Paid` ou `Pending` (nomes de status enum não diferenciam maiúsculas de minúsculas)
 
 **Parâmetros de Resposta**
 
@@ -94,6 +109,11 @@ Vamos ver um exemplo prático de filtro listando faturas, nesse exemplo retornar
 curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
+```
+
+```md title="Atributos do Parâmetro"
+sort-by: totalQuantity_asc
+filter-by: totalQuantity_ge:30~status_in:Paid-pending
 ```
 
 ### Exemplo de Resposta
@@ -185,9 +205,4 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount
   "hasPreviousPage": false,
   "hasNextPage": false
 }
-```
-
-```md title="Atributos do Parâmetro"
-sort-by: totalQuantity_asc
-filter-by: totalQuantity_ge:30~status_in:Paid-pending
 ```

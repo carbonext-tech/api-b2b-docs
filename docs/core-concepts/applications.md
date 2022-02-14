@@ -5,12 +5,12 @@ custom_edit_url: null
 
 # Applications
 
-The requests on this page present endpoints for applications
+Applications are the set credentials (`client_id` and `client_secret`) to be used on the `OAuth2.0` `client_credentials` flow to autorize requests on our APIs.
 
 ## Application [POST]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/customers/applications
+https://api-b2b.carbonext.com.br/v1/customers/applications?customer-id=1f2f3c6f-0177-4905-88d4-f4e0b667fdca
 ```
 
 This endpoint creates a new application key, used to build machine-to-machine (M2M) integrations.
@@ -21,34 +21,35 @@ customerApplication_write
 
 **Request attributes**
 
-Parameter   | Description
---------- | ------
-clientId | The generated client Id
-displayName | The client's name
-permissions | An array of object that contains the keys of the user's permissions
+| Parameter   | Description                                                    |
+| ----------- | -------------------------------------------------------------- |
+| clientId    | The generated client Id                                        |
+| displayName | The client's name                                              |
+| permissions | An array of object that contains the application's permissions |
 
 **Response attribute**
 
-Parameter   | Description
---------- | ------
-customerApplicationKey | The generated client secret. This secret can not be retrieved again from our API, so it must be securely stored.
+| Parameter    | Description                                                                |
+| ------------ | -------------------------------------------------------------------------- |
+| id           | The application ID in the database                                         |
+| clientId     | User ID code                                                               |
+| clientSecret | Code used together with the `client_id` to grant authorization to the user |
 
 ### Example Request
 
 ```javascript
-curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
+curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications?customer-id=1f2f3c6f-0177-4905-88d4-f4e0b667fdca' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw '{
-    "clientId":"teste-app1",
-    "displayName": "Teste Chave",
-    "permissions":
-    [
+    "clientId": "badlbede",
+    "displayName": "Chave de teste",
+    "permissions": [
         {
-            "id": "financial_write"
+            "id": "45bbe1bc-4d5a-4991-baac-42fa95d35824"
         },
         {
-            "id": "financial_read"
+            "id": "65c514f4-424f-4c82-9827-482d564091c0"
         }
     ]
 }'
@@ -58,14 +59,20 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
 
 ```json
 {
-  "customerApplicationKey": "df51476e-fe9c-498b-bf41-831bbe2f3a33"
+  "id": "d5e1e2ce-7c7e-4ce6-9d07-d395625e3860",
+  "clientId": "badlbede",
+  "clientSecret": "9831be6d-6904-4728-b792-7e94ba00ac18"
 }
+```
+
+```md title="Params"
+customer-id: 1f2f3c6f-0177-4905-88d4-f4e0b667fdca
 ```
 
 ## List Applications [GET]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/customers/applications?page=2&page-size=10
+https://api-b2b.carbonext.com.br/v1/customers/applications
 ```
 
 This endpoint returns a paginated list of applications (keys).
@@ -77,9 +84,9 @@ customerApplication_read
 
 **Response attributes**
 
-Attributes   | Description
---------- | ------
-Items | An array of paginated applications from the customer
+| Attributes | Description                                          |
+| ---------- | ---------------------------------------------------- |
+| Items      | An array of paginated applications from the customer |
 
 ### Example Request
 

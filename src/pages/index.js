@@ -32,7 +32,7 @@ function HomepageHeader() {
         <div className={styles.header}>
           <div className={styles.intro}>
             <h1 className={styles.title}>
-              <Translate>Now you can make your app</Translate>
+              <Translate>Now you can make your business</Translate>
               &nbsp;
               <motion.span
                 animate="visible"
@@ -46,8 +46,7 @@ function HomepageHeader() {
             </h1>
             <p className={styles.subtitle}>
               <Translate>
-                Using our documentation, you will be able to calculate and
-                offsetting carbon footprints, and by integrating with our API, you can offer your customers carbon offsetting options.
+                Using our documentation, you will learn how to integrate with our APIs to be able to calculate and offset carbon footprints. Allowing you to offer your customers solutions that help preserve the Amazon rainforest and contribute to mitigate climate changes.
               </Translate>
             </p>
             <Link className={styles.buttons} to="/docs/intro">

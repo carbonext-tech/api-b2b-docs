@@ -5,12 +5,12 @@ custom_edit_url: null
 
 # Aplicações
 
-As requisições nesta página apresentam endpoints para aplicações.
+As aplicações são as credenciais definidas (`client_id` e `client_secret`) a serem usadas no fluxo `client_credentials` `OAuth2.0` para autorizar solicitações em nossas APIs.
 
 ## Aplicação [POST]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/customers/applications
+https://api-b2b.carbonext.com.br/v1/customers/applications?customer-id=1f2f3c6f-0177-4905-88d4-f4e0b667fdca
 ```
 
 Este endpoint cria uma nova chave de aplicação, usada para criar integrações Machine to Machine (M2M).
@@ -21,44 +21,51 @@ customerApplication_write
 
 **Atributos de Requisição**
 
-Parâmetro | Descrição
---------- | ------
-clientId | O ID do cliente gerado
-displayName | O nome do cliente
-permissions | Um array de objeto que contém as chaves de permissões do usuário
+| Parâmetro   | Descrição                                                 |
+| ----------- | --------------------------------------------------------- |
+| clientId    | O ID do cliente gerado                                    |
+| displayName | O nome do cliente                                         |
+| permissions | Uma array de objeto que contém as permissões da aplicação |
 
 **Atributos de Resposta**
 
-Parameter   | Description
---------- | ------
-customerApplicationKey | A chave secreta do cliente gerada. Essa chave não pode ser recuperada novamente em nossa API, portanto, deve ser armazenado com segurança.
+| Parâmetro    | Descrição                                                 |
+| ------------ | --------------------------------------------------------- |
+| id           | O ID da aplicação na base de dados                                    |
+| clientId     | Código de identificação do usuário                                        |
+| clientSecret | Código utilizado junto com o `client_id` para conceder autorização ao usuário |
 
 ### Exemplo de Requisição
 
 ```javascript
-curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
+curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications?customer-id=1f2f3c6f-0177-4905-88d4-f4e0b667fdca' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw '{
-    "clientId":"teste-app1",
-    "displayName": "Teste Chave",
-    "permissions":
-    [
+    "clientId": "badlbede",
+    "displayName": "Chave de teste",
+    "permissions": [
         {
-            "id": "financial_write"
+            "id": "45bbe1bc-4d5a-4991-baac-42fa95d35824"
         },
         {
-            "id": "financial_read"
+            "id": "65c514f4-424f-4c82-9827-482d564091c0"
         }
     ]
 }'
+```
+
+```md title="Params"
+customer-id: 1f2f3c6f-0177-4905-88d4-f4e0b667fdca
 ```
 
 ### Exemplo de Resposta
 
 ```json
 {
-  "customerApplicationKey": "df51476e-fe9c-498b-bf41-831bbe2f3a33"
+  "id": "d5e1e2ce-7c7e-4ce6-9d07-d395625e3860",
+  "clientId": "badlbede",
+  "clientSecret": "9831be6d-6904-4728-b792-7e94ba00ac18"
 }
 ```
 
@@ -77,9 +84,9 @@ customerApplication_read
 
 **Atributos de Resposta**
 
-Atributo | Descrição
---------- | ------
-items | Um array de aplicações paginadas do cliente
+| Atributo | Descrição                                   |
+| -------- | ------------------------------------------- |
+| items    | Um array de aplicações paginadas do cliente |
 
 ### Exemplo de Requisição
 

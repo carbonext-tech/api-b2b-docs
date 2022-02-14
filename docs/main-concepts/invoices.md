@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Invoices
 
-After generating orders, we need to see the invoices for said orders. On this page we will learn how to create requests for these invoices.
+Invoices can be created either by purchasing VCU credits or by billing open (non-paid) orders, in the later, the invoice can be paid by credit card or by bank slip (we do plan on accepting other payment types in the future).
 
 <!-- ## Invoices [POST]
 
@@ -132,14 +132,14 @@ This request returns a paginated list of invoices.
 
 **Response Attributes**
 
-| Attribute       | Description                                                    |
-| --------------- | -------------------------------------------------------------- |
-| items           | An object containing all invoices related to the customer id   |
+| Attribute | Description                                                  |
+| --------- | ------------------------------------------------------------ |
+| items     | An object containing all invoices related to the customer id |
 
 ### Example Request
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices?page=1&page-size=10&sort-by=totalVcuAmount_desc' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
@@ -150,105 +150,21 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices' \
 {
   "items": [
     {
-      "id": "8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd",
-      "status": "Pending",
-      "totalVcuAmount": 200,
-      "totalPrice": 15400,
-      "currency": "BRL",
-      "customerId": "6aea7d01-5062-4aa3-ae22-ecd8069d6329",
-      "orders": [
-        {
-          "id": "c9dd9aca-e258-4e9a-82a7-f2a70815c193",
-          "vcuAmount": 200,
-          "vcuUnitPrice": 77,
-          "targetCurrency": "BRL",
-          "status": "Billed",
-          "createdAt": "22/10/2021 00:36:16"
-        }
-      ]
-    },
-    {
-      "id": "a1da7c6b-b94e-4e68-aa69-bfa7f2bb9b15",
+      "id": "24882adc-d020-4e5a-ac26-36c12d24c507",
       "status": "Paid",
-      "totalVcuAmount": 75,
-      "totalPrice": 5775,
+      "totalVcuAmount": 1.0,
+      "totalPrice": 137.5,
       "currency": "BRL",
-      "customerId": "6aea7d01-5062-4aa3-ae22-ecd8069d6329",
-      "orders": [
-        {
-          "id": "712a7f26-cfe2-48db-afca-e79805238756",
-          "vcuAmount": 55,
-          "vcuUnitPrice": 77,
-          "targetCurrency": "BRL",
-          "status": "Refunded",
-          "createdAt": "21/10/2021 23:44:33"
-        }
-      ]
-    },
-    {
-      "id": "a4bc61bf-1b2b-4216-94ed-b434d5843542",
-      "status": "Paid",
-      "totalVcuAmount": 100,
-      "totalPrice": 7700,
-      "currency": "BRL",
-      "customerId": "6aea7d01-5062-4aa3-ae22-ecd8069d6329",
-      "orders": [
-        {
-          "id": "7caee506-fc6c-4cb3-8826-9bdc0855eb4a",
-          "vcuAmount": 55,
-          "vcuUnitPrice": 77,
-          "targetCurrency": "BRL",
-          "status": "Paid",
-          "createdAt": "21/10/2021 23:42:59"
-        },
-        {
-          "id": "815873f3-54d3-4e11-bbbd-05f76aaec3df",
-          "vcuAmount": 50,
-          "vcuUnitPrice": 77,
-          "targetCurrency": "BRL",
-          "status": "Refunded",
-          "createdAt": "21/10/2021 22:36:40"
-        },
-        {
-          "id": "c99a2da7-ab55-4156-ac4e-d6f3df7d3d28",
-          "vcuAmount": 30,
-          "vcuUnitPrice": 77,
-          "targetCurrency": "BRL",
-          "status": "Refunded",
-          "createdAt": "21/10/2021 22:36:23"
-        }
-      ]
-    },
-    {
-      "id": "b81ebfbe-984c-40cc-a7fc-1e33fa926176",
-      "status": "Paid",
-      "totalVcuAmount": 100,
-      "totalPrice": 7700,
-      "currency": "BRL",
-      "customerId": "6aea7d01-5062-4aa3-ae22-ecd8069d6329",
-      "orders": [
-        {
-          "id": "7caee506-fc6c-4cb3-8826-9bdc0855eb4a",
-          "vcuAmount": 55,
-          "vcuUnitPrice": 77,
-          "targetCurrency": "BRL",
-          "status": "Paid",
-          "createdAt": "21/10/2021 23:42:59"
-        },
-        {
-          "id": "815873f3-54d3-4e11-bbbd-05f76aaec3df",
-          "vcuAmount": 50,
-          "vcuUnitPrice": 77,
-          "targetCurrency": "BRL",
-          "status": "Refunded",
-          "createdAt": "21/10/2021 22:36:40"
-        }
-      ]
+      "customerId": "c892597a-997c-4a6f-a4cf-6e370240edff",
+      "createdAt": "2022-02-11T16:47:02.894999",
+      "paidAt": "2022-02-11T16:47:05.226771",
+      "dueDate": null
     }
   ],
   "pageIndex": 1,
   "totalPages": 1,
-  "totalCount": 4,
+  "totalCount": 1,
+  "aggregations": null,
   "hasPreviousPage": false,
   "hasNextPage": false
 }
@@ -272,39 +188,34 @@ This request will return information about a specific invoice.
 | totalPrice     | The amount of currency being dealt in this invoice, in the currency specified below |
 | currency       | The currency being dealt in this invoice                                            |
 | customerId     | The Id of the customer that owns the invoice                                        |
-| orders         | List of orders attached to the invoice                                              |
+| createdAt      | Date created                                                                        |
+| paidAt         | Date it was paid                                                                    |
+| dueDate        | Due date                                                                            |
 
 ### Example Request
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices/8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd' \
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices/24882adc-d020-4e5a-ac26-36c12d24c507' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
+```
+
+```md title="PATH VARIABLES"
+id: 24882adc-d020-4e5a-ac26-36c12d24c507
 ```
 
 ### Example Response
 
 ```json
 {
-  "id": "8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd",
-  "status": "Pending",
-  "totalVcuAmount": 200,
-  "totalPrice": 15400,
+  "id": "24882adc-d020-4e5a-ac26-36c12d24c507",
+  "status": "Paid",
+  "totalVcuAmount": 1.0,
+  "totalPrice": 137.5,
   "currency": "BRL",
-  "customerId": "6aea7d01-5062-4aa3-ae22-ecd8069d6329",
-  "orders": [
-    {
-      "id": "c9dd9aca-e258-4e9a-82a7-f2a70815c193",
-      "vcuAmount": 200,
-      "vcuUnitPrice": 77,
-      "targetCurrency": "BRL",
-      "status": "Billed",
-      "createdAt": "22/10/2021 00:36:16"
-    }
-  ]
+  "customerId": "c892597a-997c-4a6f-a4cf-6e370240edff",
+  "createdAt": "2022-02-11T16:47:02.894999",
+  "paidAt": "2022-02-11T16:47:05.226771",
+  "dueDate": null
 }
-```
-
-```md title="PATH VARIABLES"
-id: 8dc48e75-4b71-4fa2-ada8-8516fb1a2cfd
 ```

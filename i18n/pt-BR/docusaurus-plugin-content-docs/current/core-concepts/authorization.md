@@ -17,19 +17,19 @@ Esta solicitação valida as credenciais fornecidas e retorna os tokens gerados
 
 **Atributos do Parâmetro**
 
-Parâmetro | Descrição
---------- | ------
-clientId | A chave de credencial pública do cliente
-clientSecret | A chave de credencial privada do cliente
+| Parâmetro    | Descrição                                |
+| ------------ | ---------------------------------------- |
+| clientId     | A chave de credencial pública do cliente |
+| clientSecret | A chave de credencial privada do cliente |
 
 **Atributos da resposta**
 
-Parâmetro | Descrição
---------- | ------
-accessToken | Um token usado para autorizar o acesso do usuário.
-token_type | O tipo do token
-expires_in | A quantidade de tempo até que o token expire, números em segundos
-refresh_token | O token de atualização fornecido na requisição de autorização
+| Parâmetro     | Descrição                                                         |
+| ------------- | ----------------------------------------------------------------- |
+| accessToken   | Um token usado para autorizar o acesso do usuário.                |
+| token_type    | O tipo do token                                                   |
+| expires_in    | A quantidade de tempo até que o token expire, números em segundos |
+| refresh_token | O token de atualização fornecido na requisição de autorização     |
 
 ### Exemplo de Requisição
 
@@ -65,13 +65,13 @@ scope: offline_access
 https://auth.carbonext.com.br/connect/token
 ```
 
-Este endpoint recupera informações sobre o usuário conectado ou a chave da aplicação.
+Este endpoint permite o usuário solicitar um novo token quando a validade do seu token atual expirar.
 
 **Atributos do Parâmetro**
 
-Parâmetro   | Descrição
---------- | ------
-refresh_token | O token de atualização fornecido na resposta de autorização
+| Parâmetro     | Descrição                                                   |
+| ------------- | ----------------------------------------------------------- |
+| refresh_token | O token de atualização fornecido na resposta de autorização |
 
 ### Exemplo de Requisição
 
@@ -102,7 +102,6 @@ client_id: {{client_id}}
 client_secret: {{client_secret}}
 ```
 
-
 ## Informações de Usuário [GET]
 
 ```md title="BASE URL"
@@ -113,18 +112,18 @@ Uma solicitação que recupera informações do usuário (ou chave da aplicaçã
 
 **Atributos de resposta**
 
-Atributos | Descrição
---------- | ------
-clientId | A identificação do cliente (chave pública)
-userId | A identificação do usuário
-name | O nome do usuário
-email | O e-mail do usuário
-isEmailValid | Um booleano para identificar se o e-mail do usuário foi verificado
-customerId | O ID do cliente ao qual o usuário ou aplicação está relacionado
-customerApplicationId | O ID da aplicação do cliente (chave)
-customerTaxId | Número do documento fiscal do cliente
-customerLegalName | O nome legal do cliente
-permissions | Uma matriz contendo as chaves de permissões para o usuário (ou aplicação)
+| Atributos             | Descrição                                                                 |
+| --------------------- | ------------------------------------------------------------------------- |
+| clientId              | A identificação do cliente (chave pública)                                |
+| userId                | A identificação do usuário                                                |
+| name                  | O nome do usuário                                                         |
+| email                 | O e-mail do usuário                                                       |
+| isEmailValid          | Um booleano para identificar se o e-mail do usuário foi verificado        |
+| customerId            | O ID do cliente ao qual o usuário ou aplicação está relacionado           |
+| customerApplicationId | O ID da aplicação do cliente (chave)                                      |
+| customerTaxId         | Número do documento fiscal do cliente                                     |
+| customerLegalName     | O nome legal do cliente                                                   |
+| permissions           | Uma matriz contendo as chaves de permissões para o usuário (ou aplicação) |
 
 ### Exemplo de Requisição
 
@@ -138,17 +137,17 @@ curl -X GET 'https://auth.carbonext.com.br/connect/userinfo' \
 
 ```json
 {
-  "clientId": "pre-pago",
+  "clientId": "5d7aac18-f566-49ec-b6cb-48e533d0d262",
   "userId": null,
   "name": null,
-  "email": null,
-  "isAdmin": false,
-  "isEmailValid": null,
-  "customerId": "6aea7d01-5062-4aa3-ae22-ecd8069d6329",
-  "customerApplicationId": "11b02c18-0a2a-4908-90ff-33ff88ce0672",
-  "customerTaxId": "29.232.086/0001-60",
-  "customerLegalName": "Teste pré pago",
+  "email": "exemplo.req@email.com",
+  "isEmailValid": false,
+  "customerId": "c892597a-997c-4a6f-a4cf-6e370240edff",
+  "customerApplicationId": "ef04cbdc-5197-4812-a910-0d5253b4b2f5",
+  "customerTaxId": "10.203.485/0001-74",
+  "customerLegalName": "Carbon Teste",
   "permissions": [
+    "certificates_read",
     "customerApplication_read",
     "customerApplication_write",
     "financial_read",

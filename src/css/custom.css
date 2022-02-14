@@ -9,9 +9,8 @@
 /* You can override the default Infima variables here. */
 :root {
   /* Customized */
-  --cbx-primary: #10B981;
+  --cbx-primary: #33b18b;
   --cbx-blue: #2c486d;
-  --cbx-green: #33b18b;
   --cbx-black: #242527;
 
   /* Docusaurus default */
@@ -32,7 +31,7 @@
   box-sizing: border-box;
 }
 
-.bg-header {
+.bg-img {
   background: url('https://carbonext-s3.s3.amazonaws.com/public/assets-b2b/bg-amazon.jpg') no-repeat;
   background-size: cover;
   background-position: center;
@@ -42,6 +41,12 @@
   max-width: 1280px;
   padding: 0 16px;
   margin: auto;
+}
+
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    padding: 0;
+  }
 }
 
 .c1 {
