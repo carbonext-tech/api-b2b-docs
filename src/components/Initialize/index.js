@@ -26,7 +26,7 @@ export const Initialize = () => {
         <div className={styles.practice}>
           <h1 className={styles.title}>
             <Translate>
-              Understand how to use our API in just three steps.
+              Understand how to use our API in just four steps.
             </Translate>
           </h1>
           <ol>
@@ -56,13 +56,13 @@ export const Initialize = () => {
                 Select how many VCUs to buy on your first order.
               </Translate>
             </li>
+            <li>
+              <Translate>Now save your</Translate>&nbsp;
+              <span className="c1">client_id</span> <Translate>and</Translate>{" "}
+              <span className="c1">client_secret</span>{" "}
+              <Translate>test keys to make API calls</Translate>.
+            </li>
           </ol>
-          <p>
-            <Translate>Now save your</Translate>&nbsp;
-            <span className="c1">client_id</span> <Translate>and</Translate>{" "}
-            <span className="c1">client_secret</span>{" "}
-            <Translate>test keys to make API calls</Translate>.
-          </p>
         </div>
       </div>
     </section>

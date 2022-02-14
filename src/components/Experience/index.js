@@ -35,7 +35,7 @@ export const Experience = () => {
               </span>
               <Translate>
                 It's possible to offer your final customer the option of a
-                Carbon Neutral freight, that is, to offsetting the carbon
+                Carbon Neutral freight, that is, to offset the carbon
                 footprint of transporting the product to his home.
               </Translate>
             </p>
@@ -44,7 +44,7 @@ export const Experience = () => {
                 <Translate>Flights</Translate> -{" "}
               </span>
               <Translate>
-                Airlines can proportionate Carbon Neutral flights to their
+                Airlines can offer Carbon Neutral flights to their
                 passengers.
               </Translate>
             </p>
