@@ -32,8 +32,8 @@ function HomepageHeader() {
         <div className={styles.header}>
           <div className={styles.intro}>
             <h1 className={styles.title}>
-              <Translate>Now you can make your business</Translate>
-              &nbsp;
+              <Translate>Now you can make your business</Translate><br />
+
               <motion.span
                 animate="visible"
                 variants={letter}
