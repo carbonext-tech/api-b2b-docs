@@ -90,13 +90,11 @@ Vamos ver quantos filtros podemos utilizar e o que eles significam.
 |   in   | `status` in (1,2,3) retorna os registros com `status` igual a 1 ou 2 ou 3 (status aqui é o campo com filtro tipo `_in`) |
 |  like  | retorna registros que contenham o valor buscado no filtro (case insensitive)                                            |
 
-````
-
 ## Listar Faturas por Filtro [GET]
 
 ```md title="BASE URL"
 https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending
-````
+```
 
 Vejamos um exemplo prático dos filtros de consulta aplicados a faturas, neste exemplo retornaremos uma lista de faturas filtradas por `totalVcuAmount` e `status`. Para usar mais de um filtro na mesma consulta, eles devem ser separados por til (~).
 
