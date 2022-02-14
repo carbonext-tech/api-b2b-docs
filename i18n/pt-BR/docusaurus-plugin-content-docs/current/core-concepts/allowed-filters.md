@@ -74,22 +74,29 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/orders'
 
 Vamos ver quantos filtros podemos utilizar e o que eles significam.
 
-```md title="Operações de Filtro Disponíveis"
-eq: = Retorna os campos com os valores iguais ao que foi passado no filtro.
-ne: != Retorna os campos com os valores diferentes ao que foi passado no filtro.
-ge: >= Retorna os campos com os valores maiores ou iguais ao que foi passado no filtro.
-le: <= Retorna os campos com os valores menores ou iguais ao que foi passado no filtro. Para o `createdAt`, às 23:59:59 horas antes da data escolhida no formato `AAAA-MM-DD`.
-gt: > Retorna os campos com os valores maiores ao que foi passado no filtro.
-lt: < Retorna os campos com os valores menores ao que foi passado no filtro. Para o `createdAt`, às 00:00 horas antes da data escolhida no formato `AAAA-MM-DD`.
-in: `status` in (1,2,3) retorna os registros com `status` igual a 1 ou 2 ou 3 (status aqui é o campo com filtro tipo `_in`)
-like: retorna registros que contenham o valor buscado no filtro (case insensitive)
-```
+**Operações de Filtro Disponíveis**
+
+| Filtro | Valor | Descrição                                                                                                                                                               |
+| :----: | :---: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   eq   |   =   | Retorna os campos com os valores iguais ao que foi passado no filtro.                                                                                                   |
+|   ne   |  !=   | Retorna os campos com os valores diferentes ao que foi passado no filtro.                                                                                               |
+|   ge   |  >=   | Retorna os campos com os valores maiores ou iguais ao que foi passado no filtro.                                                                                        |
+|   le   |  <=   | Retorna os campos com os valores menores ou iguais ao que foi passado no filtro. Para o `createdAt`, às 23:59:59 horas antes da data escolhida no formato `AAAA-MM-DD`. |
+|   gt   |   >   | Retorna os campos com os valores maiores ao que foi passado no filtro.                                                                                                  |
+|   lt   |   <   | Retorna os campos com os valores menores ao que foi passado no filtro. Para o `createdAt`, às 00:00 horas antes da data escolhida no formato `AAAA-MM-DD`.              |
+
+| Filtro | Descrição                                                                                                               |
+| :----: | :---------------------------------------------------------------------------------------------------------------------- |
+|   in   | `status` in (1,2,3) retorna os registros com `status` igual a 1 ou 2 ou 3 (status aqui é o campo com filtro tipo `_in`) |
+|  like  | retorna registros que contenham o valor buscado no filtro (case insensitive)                                            |
+
+````
 
 ## Listar Faturas por Filtro [GET]
 
 ```md title="BASE URL"
 https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending
-```
+````
 
 Vejamos um exemplo prático dos filtros de consulta aplicados a faturas, neste exemplo retornaremos uma lista de faturas filtradas por `totalVcuAmount` e `status`. Para usar mais de um filtro na mesma consulta, eles devem ser separados por til (~).
 

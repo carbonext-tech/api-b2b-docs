@@ -74,16 +74,22 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/orders'
 
 Let's see how many filters operations we have and what they mean.
 
-```md title="Available Filters Operations"
-eq: = Returns fields with values equals then what was passed in the filter.
-ne: != Returns fields with different values then what was passed in the filter.
-ge: >= Returns fields with values greater then or equals what was passed in the filter.
-le: <= Returns fields with values less then or equals what was passed in the filter. For `createdAt`, at 23:59:59pm before the date chosen in the `YYYY-MM-DD` format.
-gt: > Returns fields with values greater then what was passed in the filter.
-lt: < Returns fields with values less then what was passed in the filter. For `createdAt`, at 00:00am before the date chosen in the `YYYY-MM-DD` format.
-in: `status` in (1,2,3) returns records with `status` equal to 1 or 2 or 3 (status here is the field with filter type `_in`)
-like: returns records that contain the value sought in the filter (case insensitive).
-```
+
+**Available Filters Operations**
+
+| Filter | Value | Description                                                                                                                                                     |
+| :----: | :---: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   eq   |   =   | Returns fields with values equals then what was passed in the filter.                                                                                           |
+|   ne   |  !=   | Returns fields with different values then what was passed in the filter.                                                                                        |
+|   ge   |  >=   | Returns fields with values greater then or equals what was passed in the filter.                                                                                |
+|   le   |  <=   | Returns fields with values less then or equals what was passed in the filter. For `createdAt`, at 23:59:59pm before the date chosen in the `YYYY-MM-DD` format. |
+|   gt   |   >   | Returns fields with values greater then what was passed in the filter.                                                                                          |
+|   lt   |   <   | Returns fields with values less then what was passed in the filter. For `createdAt`, at 00:00am before the date chosen in the `YYYY-MM-DD` format.              |
+
+| Filter | Description |
+|:--:|:----|
+in | `status` in (1,2,3) returns records with `status` equal to 1 or 2 or 3 (status here is the field with filter type `_in`)
+like | returns records that contain the value sought in the filter (case insensitive).
 
 ## List Invoices by Filter [GET]
 
