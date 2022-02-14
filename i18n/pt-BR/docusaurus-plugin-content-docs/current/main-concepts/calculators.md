@@ -15,7 +15,7 @@ https://api-calculator.carbonext.com.br/v1/calculators/types
 
 Uma requisição que lista os tipos de transporte suportados para cálculo de emissões.
 
-A requisição também retornará a unidade que a requisição de cálculo usará (por exemplo, "gramas" para entregas, "passageiro" para transporte etc.), e a unidade da resposta (por exemplo, "tCO2eq/tonelada" para entregas ou " tCO2eq/passageiro" para transporte, etc.).
+A solicitação também retornará a unidade que a solicitação de cálculo utilizará (por exemplo, "gramas", "passageiro"), e a unidade da resposta (por exemplo, "tCO2eq/tonelada", "tCO2eq/passageiro") para frete de produtos , e para transporte de ônibus e avião, respectivamente.
 
 **Atributos de Resposta**
 
@@ -150,7 +150,7 @@ Esta requisição retorna a quantidade de tCO2eq que a entrega ou transporte emi
 
 | Parâmetro | Descrição                                         |
 | --------- | ------------------------------------------------- |
-| type      | O identificador de tipo da requisição `Get Types` |
+| type      | O identificador de tipo da requisição `GET Types` |
 | distance  | A distância a ser percorrida, em metros           |
 
 **Atributos de Resposta**
@@ -192,10 +192,10 @@ Este endpoint calcula a quantidade de tCO2eq emitida ao viajar entre dois locais
 
 | Parâmetro   | Descrição                                                                                                                                                               |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type        | O identificador de tipo da solicitação `Get Types`                                                                                                                      |
+| type        | O identificador de tipo da solicitação `GET Types`                                                                                                                      |
 | originCode  | O código de onde partirá o transporte                                                                                                                                   |
 | destZipCode | O código ao qual o transporte chegará                                                                                                                                   |
-| unitValue   | O valor unitário para calcular as emissões (ou seja, 10 passageiros, 10.000 gramas, etc.). A unidade é especificada pelo campo `requestUnit` da solicitação `Get Types` |
+| unitValue   | O valor unitário para calcular as emissões (ou seja, 10 passageiros, 10.000 gramas, etc.). A unidade é especificada pelo campo `requestUnit` da solicitação `GET Types` |
 
 **Atributos de Resposta**
 
@@ -238,7 +238,7 @@ Esta solicitação calculará o preço final para compensar a emissão calculada
 
 | Parâmetro | Descrição                                          |
 | --------- | -------------------------------------------------- |
-| type      | O identificador de tipo da solicitação `Get Types` |
+| type      | O identificador de tipo da solicitação `GET Types` |
 | distance  | A distância a ser percorrida, em metros            |
 | currency  | A moeda para calcular o preço final                |
 
@@ -287,10 +287,10 @@ Esta requisição calculará o preço final, na moeda solicitada, para compensar
 
 | Parâmetro   | Descrição                                                                                                                                                               |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type        | O identificador de tipo da solicitação `Get Types`                                                                                                                      |
+| type        | O identificador de tipo da solicitação `GET Types`                                                                                                                      |
 | originCode  | O código de onde partirá o transporte                                                                                                                                   |
 | destZipCode | O código ao qual o transporte chegará                                                                                                                                   |
-| unitValue   | O valor unitário para calcular as emissões (ou seja, 10 passageiros, 10.000 gramas, etc.). A unidade é especificada pelo campo `requestUnit` da solicitação `Get Types` |
+| unitValue   | O valor unitário para calcular as emissões (ou seja, 10 passageiros, 10.000 gramas, etc.). A unidade é especificada pelo campo `requestUnit` da solicitação `GET Types` |
 
 **Atributos de Resposta**
 
