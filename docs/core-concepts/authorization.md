@@ -114,16 +114,16 @@ A request that retrieves information from the user (or application key).
 
 | Attributes            | Description                                                            |
 | --------------------- | ---------------------------------------------------------------------- |
-| ClientId              | The client identification (public key)                                 |
-| UserId                | The user identification                                                |
-| Name                  | The user's name                                                        |
-| Email                 | The user's email                                                       |
-| IsEmailValid          | A boolean to identify if the user's email has been verified            |
-| CustomerId            | The ID of the customer the user or application is related to           |
-| CustomerApplicationId | The ID of the customer's application (key)                             |
-| CustomerTaxId         | The customer's tax document number                                     |
-| CustomerLegalName     | The customer's legal name                                              |
-| Permissions           | An array containing the permissions keys for the user (or application) |
+| clientId              | The client identification (public key)                                 |
+| userId                | The user identification                                                |
+| name                  | The user's name                                                        |
+| email                 | The user's email                                                       |
+| isEmailValid          | A boolean to identify if the user's email has been verified            |
+| customerId            | The ID of the customer the user or application is related to           |
+| customerApplicationId | The ID of the customer's application (key)                             |
+| customerTaxId         | The customer's tax document number                                     |
+| customerLegalName     | The customer's legal name                                              |
+| permissions           | An array containing the permissions keys for the user (or application) |
 
 ### Example Request
 

@@ -24,15 +24,13 @@ Esta requisição cria um novo usuário.
 
 **Atributos de Resposta**
 
-| Atributos         | Descrição                                                         |
-| ----------------- | ----------------------------------------------------------------- |
-| id                | ID do usuário                                                     |
-| email             | E-mail do usuário                                                 |
-| name              | Nome do usuário                                                   |
-| permissions       | Um array de objeto que contém as permissões do usuário            |
-<!-- | picture           | Link para a foto do perfil do usuário                             | -->
-<!-- | preferredLanguage | Escolha de idioma do usuário                                      | -->
-<!-- | isAdmin           | Um sinalizador (booleano) que indica se o usuário é Administrador | -->
+| Atributos       | Descrição                                              |
+| --------------- | ------------------------------------------------------ |
+| id              | ID do usuário                                          |
+| email           | E-mail do usuário                                      |
+| name            | Nome do usuário                                        |
+| isEmailVerified | Se o usuário verificou o e-mail, isto retornará `true` |
+| permissions     | Um array de objeto que contém as permissões do usuário |
 
 ### Exemplo de Requisição
 
@@ -41,22 +39,19 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/users' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw '{
-    "email": "usuario3@email.com",
+    "email": "userteste@email.com",
     "userPassword": "123456",
-    "name": "Usuario 3",
+    "name": "Teste",
     "permissions":
     [
         {
-            "key": "users_write"
+            "id": "53dfaef6-125d-43ac-92de-a03e49c66d70"
         },
         {
-            "key": "users_read"
+            "id": "2158a42d-90a5-4f9e-9346-e81f28a822d1"
         },
         {
-            "key": "customerApplication_write"
-        },
-        {
-            "key": "customerApplication_read"
+            "id": "f15cbe98-c53f-4042-b952-be7a39783a4a"
         }
     ]
 }'
@@ -66,28 +61,28 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/users' \
 
 ```json
 {
-  "id": "71d29b88-7edc-4601-8434-98faede4732a",
-  "email": "usuario3@email.com",
-  "name": "Usuario 3",
-  "picture": null,
-  "preferredLanguage": null,
-  "isAdmin": false,
+  "id": "61211194-e09c-46fc-9cf4-e11fa2510987",
+  "email": "userteste@email.com",
+  "name": "Teste",
+  "isEmailVerified": false,
   "permissions": [
     {
-      "name": "Users - Write",
-      "key": "users_write"
-    },
-    {
-      "name": "Users - Read",
-      "key": "users_read"
-    },
-    {
-      "name": "CustomerApplication - Write",
-      "key": "customerApplication_write"
-    },
-    {
+      "id": "f15cbe98-c53f-4042-b952-be7a39783a4a",
       "name": "CustomerApplication - Read",
-      "key": "customerApplication_read"
+      "key": "customerApplication_read",
+      "description": null
+    },
+    {
+      "id": "2158a42d-90a5-4f9e-9346-e81f28a822d1",
+      "name": "CustomerApplication - Write",
+      "key": "customerApplication_write",
+      "description": null
+    },
+    {
+      "id": "53dfaef6-125d-43ac-92de-a03e49c66d70",
+      "name": "Certificates - Read",
+      "key": "certificates_read",
+      "description": null
     }
   ]
 }
@@ -122,68 +117,41 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/users?page=1&pagesize=10' \
       "id": "3f44d194-52cd-4a2b-ac37-1c9a7713add1",
       "email": "usuario2@email.com",
       "name": "Usuario 2",
-      "picture": null,
-      "preferredLanguage": null,
-      "isAdmin": false,
+      "isEmailVerified": false,
       "permissions": [
         {
-          "name": "Users - Write",
-          "key": "users_write"
-        },
-        {
-          "name": "Users - Read",
-          "key": "users_read"
-        }
-      ]
-    },
-    {
-      "id": "71d29b88-7edc-4601-8434-98faede4732a",
-      "email": "usuario3@email.com",
-      "name": "Usuario 3",
-      "picture": null,
-      "preferredLanguage": null,
-      "isAdmin": false,
-      "permissions": [
-        {
-          "name": "Users - Write",
-          "key": "users_write"
-        },
-        {
+          "id": "2158a42d-90a5-4f9e-9346-e81f28a822d1",
           "name": "CustomerApplication - Write",
-          "key": "customerApplication_write"
+          "key": "customerApplication_write",
+          "description": null
         },
         {
-          "name": "Users - Read",
-          "key": "users_read"
-        },
-        {
-          "name": "CustomerApplication - Read",
-          "key": "customerApplication_read"
+          "id": "53dfaef6-125d-43ac-92de-a03e49c66d70",
+          "name": "Certificates - Read",
+          "key": "certificates_read",
+          "description": null
         }
       ]
     },
     {
-      "id": "7b8b783a-69af-4ede-b1f1-bb4fa05cc855",
-      "email": "usuario1@email.com",
-      "name": "Usuario 1",
-      "picture": null,
-      "preferredLanguage": null,
-      "isAdmin": false,
+      "id": "353a4285-4581-442a-aaea-f87ddf7b831d",
+      "email": "testeuser@email.com",
+      "name": "Teste",
+      "isEmailVerified": false,
       "permissions": [
         {
-          "name": "Orders - Read",
-          "key": "orders_read"
-        },
-        {
-          "name": "Orders - Write",
-          "key": "orders_write"
+          "id": "f15cbe98-c53f-4042-b952-be7a39783a4a",
+          "name": "CustomerApplication - Read",
+          "key": "customerApplication_read",
+          "description": null
         }
       ]
     }
   ],
   "pageIndex": 1,
   "totalPages": 1,
-  "totalCount": 3,
+  "totalCount": 2,
+  "aggregations": null,
   "hasPreviousPage": false,
   "hasNextPage": false
 }
@@ -210,42 +178,27 @@ Esta requisição atualiza os dados de um usuário.
 
 **Atributos de Resposta**
 
-| Atributo          | Descrição                                                         |
-| ----------------- | ----------------------------------------------------------------- |
-| id                | ID gerado para o usuário                                          |
-| email             | E-mail do usuário                                                 |
-| name              | Nome do usuário                                                   |
-| permissions       | Um array de objeto que contém as permissões do usuário            |
-<!-- | picture           | Link para a foto do perfil do usuário                             | -->
-<!-- | preferredLanguage | Escolha de idioma do usuário                                      | -->
-<!-- | isAdmin           | Um sinalizador (booleano) que indica se o usuário é Administrador | -->
+| Atributo        | Descrição                                              |
+| --------------- | ------------------------------------------------------ |
+| id              | ID gerado para o usuário                               |
+| email           | E-mail do usuário                                      |
+| name            | Nome do usuário                                        |
+| isEmailVerified | Se o usuário verificou o e-mail, isto retornará `true` |
+| permissions     | Um array de objeto que contém as permissões do usuário |
 
 ### Exemplo de Requisição
 
 ```javascript
-curl -X PUT 'https://api-b2b.carbonext.com.br/v1/users/3f44d194-52cd-4a2b-ac37-1c9a7713add1' \
+curl -X PUT 'https://api-b2b.carbonext.com.br/v1/users/61211194-e09c-46fc-9cf4-e11fa2510987' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw '{
-    "name": "Usuario 2999000000",
-    "permissions": [
-        {
-            "name": "Users - Write",
-            "key": "users_write"
-        },
-        {
-            "name": "CustomerApplication - Write",
-            "key": "customerApplication_write"
-        },
-        {
-            "name": "Users - Read",
-            "key": "users_read"
-        },
-        {
-            "name": "CustomerApplication - Read",
-            "key": "customerApplication_read"
-        }
-    ]
+  "name": "User29",
+  "permissions":[
+    {
+      "id":"2158a42d-90a5-4f9e-9346-e81f28a822d1"
+    }
+  ]
 }'
 ```
 
@@ -253,28 +206,16 @@ curl -X PUT 'https://api-b2b.carbonext.com.br/v1/users/3f44d194-52cd-4a2b-ac37-1
 
 ```json
 {
-  "id": "3f44d194-52cd-4a2b-ac37-1c9a7713add1",
-  "email": "usuario2@email.com",
-  "name": "Usuario 2999000000",
-  "picture": null,
-  "preferredLanguage": null,
-  "isAdmin": false,
+  "id": "61211194-e09c-46fc-9cf4-e11fa2510987",
+  "email": "userteste@email.com",
+  "name": "User29",
+  "isEmailVerified": false,
   "permissions": [
     {
-      "name": "Users - Write",
-      "key": "users_write"
-    },
-    {
+      "id": "2158a42d-90a5-4f9e-9346-e81f28a822d1",
       "name": "CustomerApplication - Write",
-      "key": "customerApplication_write"
-    },
-    {
-      "name": "Users - Read",
-      "key": "users_read"
-    },
-    {
-      "name": "CustomerApplication - Read",
-      "key": "customerApplication_read"
+      "key": "customerApplication_write",
+      "description": null
     }
   ]
 }
@@ -286,7 +227,7 @@ curl -X PUT 'https://api-b2b.carbonext.com.br/v1/users/3f44d194-52cd-4a2b-ac37-1
 https://api-b2b.carbonext.com.br/v1/users/:id
 ```
 
-Esta requisição deleta um usuário através do `id` passado pelo parâmetro.
+Esta requisição exclui um usuário através do `id` passado pelo parâmetro.
 
 ```md title="PATH VARIABLES"
 id: 8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d

@@ -86,7 +86,7 @@ customerApplication_read
 
 | Attributes | Description                                          |
 | ---------- | ---------------------------------------------------- |
-| Items      | An array of paginated applications from the customer |
+| items      | An array of paginated applications from the customer |
 
 ### Example Request
 
