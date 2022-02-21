@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 7
 custom_edit_url: null
 ---
 

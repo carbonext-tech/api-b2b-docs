@@ -6,9 +6,5 @@
   "sidebar.tutorialSidebar.category.Core Concepts": {
     "message": "Conceitos Básicos",
     "description": "The label for category Core Concepts in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Main Concepts": {
-    "message": "Conceitos Principais",
-    "description": "The label for category Main Concepts in sidebar tutorialSidebar"
   }
 }
