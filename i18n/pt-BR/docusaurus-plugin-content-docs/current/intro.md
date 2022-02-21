@@ -11,10 +11,10 @@ Nossa API B2B funciona de forma creditícia, ou seja, primeiro você compra cré
 
 Todos os créditos adquiridos são retirados automaticamente em seu nome usando unidades de carbono verificadas do [VERRA](https://verra.org/).
 
-Se você planeja fazer solicitações de grandes quantidades de VCUs ou de forma regular, pode entrar em contato com nossa equipe pelo e-mail [suporte@carbonext.com.br](mailto:suporte@carbonext.com.br) para nos ajudar a entender suas necessidades.
-
 Nossa API possui recursos que permitem consultar preços de VCU, usar nossas calculadoras, criar pedidos de crédito e muito mais. Todos os nossos endpoints retornam respostas JSON, usam códigos de resposta HTTP padrão e autenticação `OAuth 2.0`.
 
 Utilizando o protocolo `OAuth 2.0` para autenticar e autorizar nossos clientes, geramos **tokens de acesso** com as melhores práticas de segurança, protegendo seus créditos de carbono adquiridos conosco.
+
+Se você planeja fazer solicitações de grandes quantidades de VCUs ou de forma regular, pode entrar em contato com nossa equipe pelo e-mail [suporte@carbonext.com.br](mailto:suporte@carbonext.com.br) para nos ajudar a entender suas necessidades.
 
 **Vamos começar ?**
