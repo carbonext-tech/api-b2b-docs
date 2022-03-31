@@ -105,6 +105,105 @@ We will have as response the following data.
 }
 ```
 
+## Step 4 - Creating an order to buy VCUs
+
+After the VCU price consult, it's time to you create your first order.
+
+In Postman, let's create a new request with POST method and add the following URL.
+
+```md title="BASE URL"
+https://api-b2b-hml.carbonext.com.br/v1/orders
+```
+
+Below the URL, click on the **Authorization** option, change the value of **Type** to **Bearer Token** and paste your `access_token` in the field on the right.
+
+On **Body**, select the **raw** option and change the **Text** type to **JSON** type. In the request body, let's put the following data.
+
+```json
+{
+    "vcuAmount":150,
+    "targetCurrency":"BRL"
+}
+```
+
+Your request must be configured as follows.
+
+![Exemplo Postman](/img/examples/postman-3.jpg)
+
+### Example Request
+
+```javascript
+curl -X POST 'https://api-b2b-hml.carbonext.com.br/v1/orders' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer {token}' \
+--data-raw '{
+    "vcuAmount":150,
+    "targetCurrency":"BRL"
+}'
+```
+
+We will have as response the following data.
+
+### Example Response
+
+```json
+{
+  "id": "f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2",
+  "vcuAmount": 150,
+  "vcuUnitPrice": 77,
+  "targetCurrency": "BRL",
+  "status": "Issued",
+  "createdAt": "28/10/2021 21:12:14"
+}
+```
+
+## Step 5 - Consulting the current balance
+
+Now, you can consult your current balance.
+
+In Postman, let's create a new request with GET method and add the following URL.
+
+```md title="BASE URL"
+https://api-b2b-hml.carbonext.com.br/v1/invoices/balance
+```
+
+Below the URL, click on the **Authorization** option, change the value of **Type** to **Bearer Token** and paste your `access_token` in the field on the right.
+
+Your request must be configured as follows.
+
+![Exemplo Postman](/img/examples/postman-4.jpg)
+
+### Example Request
+
+```javascript
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/customers/balance' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer {token}'
+```
+
+We will have as response the following data.
+
+### Example Response
+
+```json
+{
+  "startDate": "2021-12-06T13:57:02.360827",
+  "endDate": "2022-02-11T21:54:29.3093176Z",
+  "balancesByCurrency": [
+    {
+      "currency": "BRL",
+      "vcuBalance": {
+        "type": "VCU",
+        "balance": 18657.993454505508869857137455,
+        "credit": 20000,
+        "debt": 1342.0065454944911301428625454,
+        "futureDebt": 5
+      }
+    }
+  ]
+}
+```
+
 :::info
 Let's see more about our authorization requests and other concepts in the next page.
 :::
