@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Resources
 
-Ours APIs have advanced query filters, the following request returns a list of resources that allow such queries.
+Our APIs have advanced query filters, the following request returns a list of resources that allow such queries.
 
 ## List Resources [GET]
 

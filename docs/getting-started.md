@@ -7,7 +7,7 @@ custom_edit_url: null
 
 ## Step 1 - Acquiring the Credentials
 
-Let's start with a basic authentication so we can evolve with the other requests of our API.
+Let's start with basic authentication so we can evolve with the other requests of our API.
 
 To generate your keys and make queries in our API, it is necessary to buy at least one credit, so let's access our test environment and use a test credit card without authentication to buy our first VCU.
 
@@ -25,7 +25,7 @@ To generate your keys and make queries in our API, it is necessary to buy at lea
 
 :::tip keys generated
 
-Congratulations you just generated your `client_id` and `client_secret`, save them in a safe place, because they will only be displayed once.
+Congratulations, you just generated your `client_id` and `client_secret`, save them in a safe place, because they will only be displayed once.
 
 :::
 
@@ -33,7 +33,7 @@ Congratulations you just generated your `client_id` and `client_secret`, save th
 
 Now we need an authorization `token`, for this, let's use the [Postman](https://www.postman.com/downloads/), an application to realize API tests.
 
-After initialize Postman, create a new request with POST method and add the  following URL of our API in test environment.
+After initializing Postman, let's create a new request with the POST method and add the following URL of our API in the test environment.
 
 ```md title="BASE URL"
 https://auth-hml.carbonext.com.br/connect/token
@@ -72,7 +72,7 @@ This endpoint will return the `access_token` as well as the `refresh_token`, tha
 
 Now, you are ready.
 
-Again in Postman, let's create a new request with GET method and add the following URL.
+Again in Postman, let's create a new request with the GET method and add the following URL.
 
 ```md title="BASE URL"
 https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1
@@ -107,9 +107,9 @@ We will have as response the following data.
 
 ## Step 4 - Creating an Order to Buy VCUs
 
-After the VCU price consult, it's time to you create your first order.
+After the VCU price consult, it's time for you to create your first order.
 
-In Postman, let's create a new request with POST method and add the following URL.
+In Postman, let's create a new request with the POST method and add the following URL.
 
 ```md title="BASE URL"
 https://api-b2b-hml.carbonext.com.br/v1/orders
@@ -161,7 +161,7 @@ We will have as response the following data.
 
 Now, you can consult your current balance.
 
-In Postman, let's create a new request with GET method and add the following URL.
+In Postman, let's create a new request with the GET method and add the following URL.
 
 ```md title="BASE URL"
 https://api-b2b-hml.carbonext.com.br/v1/invoices/balance
@@ -205,5 +205,5 @@ We will have as response the following data.
 ```
 
 :::info
-Let's see more about our authorization requests and other concepts in the next page.
+Let's see more about our authorization requests and other concepts on the next page.
 :::

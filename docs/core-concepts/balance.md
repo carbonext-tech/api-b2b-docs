@@ -5,9 +5,9 @@ custom_edit_url: null
 
 # Balance
 
-The request in this page refers to customer balance.
+The request on this page refers to customer balance.
 
-The balance is the difference between paid invoices, which generate credits, and all non-cancelled orders created for the customer, alongside with detailed information for future debt, which are the non-billed orders.
+The balance is the difference between paid invoices, which generate credits, and all non-canceled orders created for the customer, alongside detailed information for future debt, which is the non-billed orders.
 
 ## Balance [GET]
 
@@ -27,7 +27,7 @@ financial_read
 | Parameter (opcional)               | Description                                                                                                                                                                  |
 | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | startDate<br/>`Format: YYYY-MM-DD` | Sets the start date to perform balance calculation from. This parameter is optional, if omitted the API will calculate the balance from the very first order and/or invoice. |
-| endDate<br/>`Format: YYYY-MM-DD`   | Sets the end date to perform balance calculation to. This parameter is optional, if omitted the API will calculate the balance until the current date.                       |
+| endDate<br/>`Format: YYYY-MM-DD`   | Sets the end date to perform balance calculation. This parameter is optional, if omitted the API will calculate the balance until the current date.                       |
 
 **Response parameters**
 

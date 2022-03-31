@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Orders
 
-In the B2B API, an order is a call for a specific amount of VCU, that will be debited from the customers balance. This order, when paid, will generate a certificate issued by Carbonext on behalf of the customer.
+In the B2B API, an order is a call for a specific amount of VCU, that will be debited from the customer's balance. This order, when paid, will generate a certificate issued by Carbonext on behalf of the customer.
 
 ## Order [POST]
 
@@ -74,7 +74,7 @@ This request cancels an order. The order can only be canceled when it has been i
 | vcuAmount      | The amount of VCUs that this order was handling               |
 | vcuUnitPrice   | The VCU price when the order was created                      |
 | targetCurrency | The currency this order was being handled in                  |
-| status         | Name of the order's current status, value will be "Cancelled" |
+| status         | Name of the order's current status, the value will be "Cancelled" |
 | createdAt      | The date and time this order was created                      |
 
 ### Example Request

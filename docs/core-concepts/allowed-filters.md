@@ -74,22 +74,21 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/orders'
 
 Let's see how many filters operations we have and what they mean.
 
-
 **Available Filters Operations**
 
-| Filter | Value | Description                                                                                                                                                     |
-| :----: | :---: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|   eq   |   =   | Returns fields with values equals then what was passed in the filter.                                                                                           |
-|   ne   |  !=   | Returns fields with different values then what was passed in the filter.                                                                                        |
-|   ge   |  >=   | Returns fields with values greater then or equals what was passed in the filter.                                                                                |
-|   le   |  <=   | Returns fields with values less then or equals what was passed in the filter. For `createdAt`, at 23:59:59pm before the date chosen in the `YYYY-MM-DD` format. |
-|   gt   |   >   | Returns fields with values greater then what was passed in the filter.                                                                                          |
-|   lt   |   <   | Returns fields with values less then what was passed in the filter. For `createdAt`, at 00:00am before the date chosen in the `YYYY-MM-DD` format.              |
+| Filter | Value | Description                                                                                                                                                       |
+| :----: | :---: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   eq   |   =   | Returns fields with values equal then what was passed in the filter.                                                                                              |
+|   ne   |  !=   | Returns fields with different values than what was passed in the filter.                                                                                          |
+|   ge   |  >=   | Returns fields with values greater than or equal to what was passed in the filter.                                                                                |
+|   le   |  <=   | Returns fields with values less than or equal to what was passed in the filter. For `createdAt`, at 23:59:59pm before the date chosen in the `YYYY-MM-DD` format. |
+|   gt   |   >   | Returns fields with values greater than what was passed in the filter.                                                                                            |
+|   lt   |   <   | Returns fields with values less than what was passed in the filter. For `createdAt`, at 00:00 am before the date chosen in the `YYYY-MM-DD` format.               |
 
-| Filter | Description |
-|:--:|:----|
-in | `status` in (1,2,3) returns records with `status` equal to 1 or 2 or 3 (status here is the field with filter type `_in`)
-like | returns records that contain the value sought in the filter (case insensitive).
+| Filter | Description                                                                                                              |
+| :----: | :----------------------------------------------------------------------------------------------------------------------- |
+|   in   | `status` in (1,2,3) returns records with `status` equal to 1 or 2 or 3 (status here is the field with filter type `_in`) |
+|  like  | Returns records that contain the value sought in the filter (case insensitive).                                          |
 
 ## List Invoices by Filter [GET]
 
@@ -97,11 +96,11 @@ like | returns records that contain the value sought in the filter (case insensi
 https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending
 ```
 
-Let's see a practical example of the query filters applied to invoices, in this example we will return a list of invoices filtered by `totalVcuAmount` and `status`. To user more than one filter on the same query, they must be separated by tilde (~).
+Let's see a practical example of the query filters applied to invoices, in this example, we will return a list of invoices filtered by `totalVcuAmount` and `status`. To use more than one filter on the same query, they must be separated by a tilde (~).
 
-The filter syntax is `?filter-by=filter1:value2~filter2:value2`, as for the filters with the `in` operator, the values must be separated by hyphen - .
+The filter syntax is `?filter-by=filter1:value2~filter2:value2`, as for the filters with the `in` operator, the values must be separated by a hyphen -.
 
-The following example will to illustrate querying invoices with `totalVcuAmount` greater or equal than 30, that have a `status` either `Paid` or `Pending` (enum status names are case insensitive)
+The following example will illustrate querying invoices with `totalVcuAmount` greater or equal to 30, that have a `status` either `Paid` or `Pending` (enum status names are case insensitive)
 
 **Response Parameters**
 

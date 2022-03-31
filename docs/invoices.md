@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Invoices
 
-Invoices can be created either by purchasing VCU credits or by billing open (non-paid) orders, in the later, the invoice can be paid by credit card or by bank slip (we do plan on accepting other payment types in the future).
+Invoices can be created either by purchasing VCU credits or by billing open (non-paid) orders, in the latter, the invoice can be paid by credit card or by bank slip (we do plan on accepting other payment types in the future).
 
 <!-- ## Invoices [POST]
 
@@ -186,7 +186,7 @@ This request will return information about a specific invoice.
 | status         | The status of an invoice                                                            |
 | totalVcuAmount | How many VCUs are being dealt in this invoice                                       |
 | totalPrice     | The amount of currency being dealt in this invoice, in the currency specified below |
-| currency       | The currency being dealt in this invoice                                            |
+| currency       | The currency being dealt with in this invoice                                            |
 | customerId     | The Id of the customer that owns the invoice                                        |
 | createdAt      | Date created                                                                        |
 | paidAt         | Date it was paid                                                                    |

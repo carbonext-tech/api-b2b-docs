@@ -25,7 +25,7 @@ Para gerar suas credenciais e realizar consultas em nossa API, é necessário co
 
 :::tip chaves geradas
 
-Parabéns você acabou de gerar seu `client_id` e `client_secret`, salve-os em um local seguro, pois eles serão exibidos apenas uma vez.
+Parabéns, você acabou de gerar seu `client_id` e `client_secret`, salve-os em um local seguro, pois eles serão exibidos apenas uma vez.
 
 :::
 

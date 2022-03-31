@@ -25,7 +25,7 @@ customerApplication_write
 | ----------- | -------------------------------------------------------------- |
 | clientId    | The generated client Id                                        |
 | displayName | The client's name                                              |
-| permissions | An array of object that contains the application's permissions |
+| permissions | An array of an object that contains the application's permissions |
 
 **Response attribute**
 

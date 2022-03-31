@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Users
 
-The requests in this page handle CRUD operations on Users resources.
+The requests on this page handle CRUD operations on Users' resources.
 
 ## Users [POST]
 
@@ -22,7 +22,7 @@ This request creates a new user.
 | email        | User's email                                                        |
 | userPassword | User's password                                                     |
 | name         | User's name                                                         |
-| permissions  | An array of string, that contains the Ids of the user's permissions |
+| permissions  | An array of strings, that contains the Ids of the user's permissions |
 
 **Response attributes**
 
@@ -32,7 +32,7 @@ This request creates a new user.
 | email           | User's email                                              |
 | name            | User's name                                               |
 | isEmailVerified | If the user has verified the email, it will return `true` |
-| permissions     | An array of object that contains the user's permissions   |
+| permissions     | An array of an object that contains the user's permissions   |
 
 ### Example Request
 
@@ -190,7 +190,7 @@ This request updates a user.
 | email           | User's email                                              |
 | name            | User's name                                               |
 | isEmailVerified | If the user has verified the email, it will return `true` |
-| permissions     | An array of object that contains the user's permissions   |
+| permissions     | An array of an object that contains the user's permissions   |
 
 ### Example Request
 
@@ -233,7 +233,7 @@ curl -X PUT 'https://api-b2b.carbonext.com.br/v1/users/61211194-e09c-46fc-9cf4-e
 https://api-b2b.carbonext.com.br/v1/users/:id
 ```
 
-This request deletes a user through the id passed by parameter.
+This request deletes a user through the id passed by the parameter.
 
 ```md title="PATH VARIABLES"
 id: 8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d

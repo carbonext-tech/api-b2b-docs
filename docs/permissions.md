@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Permission List
 
-Request to get the list of permissions which define what the user interacts with, edits, adds or removes from the API.
+Request to get the list of permissions that define what the user interacts with, edits, adds, or removes from the API.
 
 ## Permission List [GET]
 
@@ -19,15 +19,15 @@ This request returns a paginated list with all permissions available. These perm
 
 | Permission                | Description                   |
 | ------------------------- | ----------------------------- |
-| orders_read               | Orders read only              |
+| orders_read               | Orders read-only              |
 | orders_write              | Add, edit or remove orders    |
-| customerApplication_read  | Customer read only            |
+| customerApplication_read  | Customer read-only            |
 | customerApplication_write | Add, edit or remove customers |
 | financial_write           | Add invoices                  |
-| financial_read            | Financial read only           |
+| financial_read            | Financial read-only           |
 | users_write               | Add, edit or remove users     |
-| users_read                | Users read only               |
-| certificates_read         | Certificates read only        |
+| users_read                | Users read-only               |
+| certificates_read         | Certificates read-only        |
 
 **Response Attributes**
 

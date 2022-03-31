@@ -195,7 +195,7 @@ Parameter   | Description
 type |	The type identifier from the 'GET Types' request
 originCode |	The code that the transport will depart from
 destZipCode |	The code that the transport will arrive at
-unitValue |	The unit amount to calculate the emissions for (i.e, 10 passengers, 10000 grams, etc.). The unit is specified by the field 'requestUnit' from 'GET Types' request
+unitValue |	The unit amount to calculate the emissions for (i.e, 10 passengers, 10000 grams, etc.). The unit is specified by the field 'requestUnit' from the 'GET Types' request
 
 **Response attributes**
 
