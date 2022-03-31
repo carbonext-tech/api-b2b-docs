@@ -130,7 +130,7 @@ Sua requisição deverá estar configurada da seguinte forma.
 
 ![Exemplo Postman](/img/examples/postman-3.jpg)
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl -X POST 'https://api-b2b-hml.carbonext.com.br/v1/orders' \
@@ -144,7 +144,7 @@ curl -X POST 'https://api-b2b-hml.carbonext.com.br/v1/orders' \
 
 Teremos como retorno os seguintes dados.
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
@@ -173,7 +173,7 @@ Sua requisição deverá estar configurada da seguinte forma.
 
 ![Exemplo Postman](/img/examples/postman-4.jpg)
 
-### Example Request
+### Exemplo de Requisição
 
 ```javascript
 curl -X GET 'https://api-b2b-hml.carbonext.com.br/v1/customers/balance' \
@@ -183,7 +183,7 @@ curl -X GET 'https://api-b2b-hml.carbonext.com.br/v1/customers/balance' \
 
 Teremos como retorno os seguintes dados.
 
-### Example Response
+### Exemplo de Resposta
 
 ```json
 {
