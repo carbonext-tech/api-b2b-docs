@@ -105,7 +105,7 @@ We will have as response the following data.
 }
 ```
 
-## Step 4 - Creating an order to buy VCUs
+## Step 4 - Creating an Order to Buy VCUs
 
 After the VCU price consult, it's time to you create your first order.
 
@@ -157,7 +157,7 @@ We will have as response the following data.
 }
 ```
 
-## Step 5 - Consulting the current balance
+## Step 5 - Consulting the Current Balance
 
 Now, you can consult your current balance.
 

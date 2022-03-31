@@ -105,7 +105,7 @@ Teremos como retorno os seguintes dados.
 }
 ```
 
-## Step 4 - Criando um pedido para comprar VCUs
+## Step 4 - Criando um Pedido para Comprar VCUs
 
 Após consultar o preço do VCU, chegou a hora de você criar seu primeiro pedido.
 
@@ -157,7 +157,7 @@ Teremos como retorno os seguintes dados.
 }
 ```
 
-## Step 5 - Consultando seu saldo atual
+## Step 5 - Consultando seu Saldo Atual
 
 Agora, você pode consultar o seu saldo atual.
 
