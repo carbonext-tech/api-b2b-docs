@@ -164,7 +164,7 @@ Agora, você pode consultar o seu saldo atual.
 No Postman, vamos criar uma nova requisição com o método GET e adicionar a seguinte URL.
 
 ```md title="BASE URL"
-https://api-b2b-hml.carbonext.com.br/v1/invoices/balance
+https://api-b2b-hml.carbonext.com.br/v1/customers/balance
 ```
 
 Abaixo da URL, clique na opção **Authorization**, troque o valor do **Type** para **Bearer Token** e cole o seu `access_token` no campo à direita.
