@@ -176,7 +176,7 @@ Your request must be configured as follows.
 ### Example Request
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/customers/balance' \
+curl -X GET 'https://api-b2b-hml.carbonext.com.br/v1/customers/balance' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}'
 ```
