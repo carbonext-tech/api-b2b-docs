@@ -40,7 +40,7 @@ const FeatureList = [
     description: (
       <>
         <Translate>
-          Now with Carbonext it's easy to make your project carbon neutral.
+          Now with Carbonext, it's easy to make your project carbon neutral.
         </Translate>
       </>
     ),

@@ -37,7 +37,7 @@ function HomepageHeader() {
               Using our documentation, you will learn how to integrate with our
               APIs to be able to calculate and offset carbon footprints.
               Allowing you to offer your customers solutions that help preserve
-              the Amazon rainforest and contribute to mitigate climate changes.
+              the Amazon rainforest and contribute to mitigating climate changes.
             </Translate>
           </p>
           <Link className="default-btn" to="/docs/intro">

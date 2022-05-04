@@ -14,9 +14,6 @@
   "To be Carbon Neutral": {
     "message": "Ser Carbono Neutro"
   },
-  "Now with Carbonext it's easy to make your project carbon neutral.": {
-    "message": "Agora com a Carbonext, fica fácil tornar o seu projeto Carbono Neutro."
-  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
@@ -240,9 +237,6 @@
   "Bus and tour companies can offer their customers the possibility of offsetting the carbon footprint of their trips.": {
     "message": "Empresas de ônibus e de turismo podem oferecer para seus clientes a possibilidade de neutralizarem a pegada de carbono de suas viagens."
   },
-  "Access our testing environment": {
-    "message": "Acesse o nosso ambiente de teste"
-  },
   "Use the following test card": {
     "message": "Use o seguinte cartão de testes"
   },
@@ -261,9 +255,6 @@
   "Now you can make your business": {
     "message": "Agora você pode tornar o seu negócio"
   },
-  "Using our documentation, you will learn how to integrate with our APIs to be able to calculate and offset carbon footprints. Allowing you to offer your customers solutions that help preserve the Amazon rainforest and contribute to mitigate climate changes.": {
-    "message": "Usando a nossa documentação, você aprenderá a se integrar com nossas APIs para poder calcular e compensar as pegadas de carbono. Podendo oferecer aos seus clientes soluções que ajudam a preservar a floresta amazônica e mitigar as mudanças climáticas."
-  },
   "It's possible to offer your final customer the option of a Carbon Neutral freight, that is, to offset the carbon footprint of transporting the product to his home.": {
     "message": "É possível oferecer para o seu cliente final a opção de um frete Carbono Neutro, ou seja, neutralizar a pegada de carbono do transporte do produto até a casa dele."
   },
@@ -278,5 +269,14 @@
   },
   "Different Markets": {
     "message": "Diferentes mercados"
+  },
+  "Using our documentation, you will learn how to integrate with our APIs to be able to calculate and offset carbon footprints. Allowing you to offer your customers solutions that help preserve the Amazon rainforest and contribute to mitigating climate changes.": {
+    "message": "Usando a nossa documentação, você aprenderá a se integrar com nossas APIs para poder calcular e compensar as pegadas de carbono. Podendo oferecer aos seus clientes soluções que ajudam a preservar a floresta amazônica e mitigar as mudanças climáticas."
+  },
+  "Now with Carbonext, it's easy to make your project carbon neutral.": {
+    "message": "Agora com a Carbonext, fica fácil tornar o seu projeto Carbono Neutro."
+  },
+  "Access our testing environment by": {
+    "message": "Acesse o nosso ambiente de teste"
   }
 }

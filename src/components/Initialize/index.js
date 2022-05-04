@@ -26,7 +26,7 @@ export const Initialize = () => {
         </h1>
         <ol>
           <li>
-            <Translate>Access our testing environment</Translate>
+            <Translate>Access our testing environment by</Translate>
             &nbsp;
             <Link
               to="https://b2b-hml.carbonext.com.br/auth/signup"
