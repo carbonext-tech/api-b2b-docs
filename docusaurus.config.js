@@ -91,25 +91,33 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Instagram",
-                href: "https://instagram.com/carbonext.oficial",
+                label: "Linkedin",
+                href: "https://www.linkedin.com/company/carbonext-sa",
               },
               {
-                label: "Website",
-                href: "https://carbonext.com.br",
+                label: "Facebook",
+                href: "https://www.facebook.com/carbonext.oficial",
+              },
+              {
+                label: "Instagram",
+                href: "https://instagram.com/carbonext.oficial",
               },
             ],
           },
           {
             title: "More",
             items: [
-              // {
-              //   label: "Blog",
-              //   to: "/blog",
-              // },
               {
                 label: "GitHub",
                 href: "https://github.com/carbonext-co2e/api-b2b-docs",
+              },
+              {
+                label: "Website",
+                href: "https://carbonext.com.br",
+              },
+              {
+                label: "YouTube",
+                href: "https://www.youtube.com/channel/UCSfI3nEPvcDXG-GES7lVsjA",
               },
             ],
           },

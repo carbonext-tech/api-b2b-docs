@@ -4,14 +4,64 @@ import React, { useEffect } from "react";
 // Libs
 import clsx from "clsx";
 import Translate from "@docusaurus/Translate";
-import Aos from 'aos';
+import Aos from "aos";
 
 // Styles
 import styles from "./Experience.module.css";
 import "aos/dist/aos.css";
 
-// Svg
-import Earth from "../../../static/img/earth.svg";
+const FeatureList = [
+  {
+    title: <Translate>Freight</Translate>,
+    Svg: require("../../../static/img/icons/freight.svg").default,
+    description: (
+      <>
+        <Translate>
+          It's possible to offer your final customer the option of a Carbon
+          Neutral freight, that is, to offset the carbon footprint of
+          transporting the product to his home.
+        </Translate>
+      </>
+    ),
+  },
+  {
+    title: <Translate>Flights</Translate>,
+    Svg: require("../../../static/img/icons/flight.svg").default,
+    description: (
+      <>
+        <Translate>
+          Airlines can offer Carbon Neutral flights to their passengers.
+        </Translate>
+      </>
+    ),
+  },
+  {
+    title: <Translate>Bus trip</Translate>,
+    Svg: require("../../../static/img/icons/bus.svg").default,
+    description: (
+      <>
+        <Translate>
+          Bus and tour companies can offer their customers the possibility of
+          offsetting the carbon footprint of their trips.
+        </Translate>
+      </>
+    ),
+  },
+];
+
+function Feature({ Svg, title, description }) {
+  return (
+    <div className={clsx("col col--4")}>
+      <div className={styles.icon}>
+        <Svg className={styles.featureSvg} alt={title} />
+      </div>
+      <div className="padding-horiz--md">
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.description}>{description}</p>
+      </div>
+    </div>
+  );
+}
 
 export const Experience = () => {
   useEffect(() => {
@@ -19,47 +69,25 @@ export const Experience = () => {
   }, []);
 
   return (
-    <>
-      <section data-aos="zoom-in" className={styles.content}>
-        <div className={clsx("wrapper", styles.services)}>
-          <Earth className={styles.featureSvg} alt="Earth" />
-          <div className={styles.info}>
-            <h1 className={styles.title}>
-              <Translate>
-                Carbon Neutral experience for different market sectors
-              </Translate>
-            </h1>
-            <p className={styles.text}>
-              <span className={styles.topic}>
-                <Translate>Freight</Translate> -{" "}
-              </span>
-              <Translate>
-                It's possible to offer your final customer the option of a
-                Carbon Neutral freight, that is, to offset the carbon
-                footprint of transporting the product to his home.
-              </Translate>
-            </p>
-            <p className={styles.text}>
-              <span className={styles.topic}>
-                <Translate>Flights</Translate> -{" "}
-              </span>
-              <Translate>
-                Airlines can offer Carbon Neutral flights to their
-                passengers.
-              </Translate>
-            </p>
-            <p className={styles.text}>
-              <span className={styles.topic}>
-                <Translate>Bus trip</Translate> -{" "}
-              </span>
-              <Translate>
-                Bus and tour companies can offer their customers the possibility
-                of offsetting the carbon footprint of their trips.
-              </Translate>
-            </p>
+    <section className={styles.bg}>
+      <div className={styles.features}>
+        <div
+          data-aos="zoom-in"
+          className={styles.wrapper}
+        >
+          <h1 className={clsx(styles.title, styles.tmain)}>
+            <Translate>
+              Carbon Neutral experience for different market sectors
+            </Translate>
+          </h1>
+
+          <div className="row">
+            {FeatureList.map((props, idx) => (
+              <Feature key={idx} {...props} />
+            ))}
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };

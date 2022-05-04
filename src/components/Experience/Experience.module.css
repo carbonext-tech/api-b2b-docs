@@ -1,59 +1,61 @@
-.featureSvg {
-  width: 80%;
-  max-height: 400px;
-  margin-right: 50px;
+.bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+    url("../../../static/img/lp/purple-gradient.jpg") no-repeat;
+  background-size: cover;
+  width: 100%;
 }
 
-.content {
-  padding: 48px 0;
-  background: var(--cbx-blue);
-  color: #fff;
-}
-
-.services {
+.features {
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 60px 64px 40px 64px;
+  width: 100%;
 }
 
-.info {
-  max-width: 60%;
+.featureSvg {
+  height: 100px;
+  width: 150px;
+}
+
+.container {
+  padding: 60px 80px 40px 80px;
+}
+
+.icon {
+  margin-bottom: 20px;
 }
 
 .title {
-  font-weight: bold;
-  font-size: 2rem;
-  margin-bottom: 26px;
-  color: var(--cbx-primary);
+  color: var(--cbx-orange);
 }
 
-.topic {
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: var(--cbx-primary);
+.tmain {
+  margin-bottom: 40px;
+  padding: 0 16px;
 }
 
-.text {
-  font-size: 1.1rem;
+.description {
+  color: #fff;
 }
 
-@media screen and (max-width: 890px) {
-  .featureSvg {
-    max-width: 250px;
-    height: 250px;
-    margin-right: 0px;
+.wrapper {
+  max-width: 1026px;
+  margin: auto;
+}
+
+@media screen and (max-width: 720px) {
+  .features {
+    padding: 40px 14px;
   }
 
-  .services {
-    flex-direction: column;
-    justify-content: center;
+  .icon {
+    margin-top: 20px;
   }
+}
 
-  .info {
-    max-width: 100%;
-  }
-
-  .title {
-    text-align: center;
-    margin-top: 60px;
+@media screen and (max-width: 996px) {
+  .icon {
+    margin-top: 20px;
   }
 }

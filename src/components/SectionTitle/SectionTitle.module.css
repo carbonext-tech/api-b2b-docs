@@ -1,0 +1,55 @@
+.content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  color: #fff;
+}
+
+.sectiontitle {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.firstbar {
+  height: 0.25rem;
+  width: 2rem;
+  background: linear-gradient(to right, #7944a6, #302a5e);
+  border-radius: 9999px;
+}
+
+.secondbar {
+  height: 0.25rem;
+  width: 4rem;
+  background: linear-gradient(to right, #2276c3, #03928c);
+  border-radius: 9999px;
+}
+
+.thirdbar {
+  height: 0.25rem;
+  width: 2rem;
+  background: linear-gradient(to right, #83b934, #e4d704);
+  border-radius: 9999px;
+}
+
+@media (max-width: 380px) {
+  .sectiontitle {
+    font-size: 1rem;
+  }
+
+  .firstbar {
+    width: 0.6rem;
+  }
+
+  .secondbar {
+    width: 1.3rem;
+  }
+
+  .thirdbar {
+    width: 0.6rem;
+  }
+}

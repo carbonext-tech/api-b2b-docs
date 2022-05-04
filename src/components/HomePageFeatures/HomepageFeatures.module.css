@@ -1,11 +1,58 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 48px 0;
+  justify-content: center;
+  padding: 60px 64px 40px 64px;
   width: 100%;
+  background: var(--cbx-black);
 }
 
 .featureSvg {
-  height: 200px;
+  height: 100px;
   width: 150px;
+}
+
+.container {
+  padding: 60px 80px 40px 80px;
+}
+
+.icon {
+  margin-bottom: 20px;
+}
+
+.title {
+  color: var(--cbx-green);
+}
+
+.description {
+  color: #fff;
+}
+
+.wrapper {
+  max-width: 1026px;
+  margin: auto;
+}
+
+.divider {
+  margin: 80px 0;
+}
+
+.fix {
+  margin: 0 0 0 16px;
+}
+
+@media screen and (max-width: 720px) {
+  .features {
+    padding: 40px 14px;
+  }
+
+  .icon {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .icon {
+    margin-top: 20px;
+  }
 }

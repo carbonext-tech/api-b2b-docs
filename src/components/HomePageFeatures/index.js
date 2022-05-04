@@ -4,16 +4,17 @@ import React, { useEffect } from "react";
 // Libs
 import clsx from "clsx";
 import Translate from "@docusaurus/Translate";
-import Aos from 'aos';
+import Aos from "aos";
 
 // Styles
 import styles from "./HomepageFeatures.module.css";
 import "aos/dist/aos.css";
+import SectionTitle from "../SectionTitle";
 
 const FeatureList = [
   {
     title: <Translate>Easy to Use</Translate>,
-    Svg: require("../../../static/img/easy.svg").default,
+    Svg: require("../../../static/img/icons/develop.svg").default,
     description: (
       <>
         <Translate>
@@ -24,7 +25,7 @@ const FeatureList = [
   },
   {
     title: <Translate>Focus on Result</Translate>,
-    Svg: require("../../../static/img/graphics.svg").default,
+    Svg: require("../../../static/img/icons/graphics.svg").default,
     description: (
       <>
         <Translate>
@@ -35,7 +36,7 @@ const FeatureList = [
   },
   {
     title: <Translate>To be Carbon Neutral</Translate>,
-    Svg: require("../../../static/img/trees.svg").default,
+    Svg: require("../../../static/img/icons/co2.svg").default,
     description: (
       <>
         <Translate>
@@ -49,12 +50,12 @@ const FeatureList = [
 function Feature({ Svg, title, description }) {
   return (
     <div className={clsx("col col--4")}>
-      <div className="text--center">
+      <div className={styles.icon}>
         <Svg className={styles.featureSvg} alt={title} />
       </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
+      <div className="padding-horiz--md">
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.description}>{description}</p>
       </div>
     </div>
   );
@@ -66,15 +67,24 @@ export default function HomepageFeatures() {
   }, []);
 
   return (
-    <section
-      data-aos="fade-up-right"
-      className={clsx("wrapper", styles.features)}
-    >
-      <div className="container">
+    <section className={styles.features}>
+      <div data-aos="fade-up-right" className={styles.wrapper}>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
+        </div>
+
+        <div className={styles.divider} />
+
+        <div className={styles.fix}>
+          <SectionTitle
+            title={
+              <p>
+                <Translate>Different Markets</Translate>
+              </p>
+            }
+          />
         </div>
       </div>
     </section>
