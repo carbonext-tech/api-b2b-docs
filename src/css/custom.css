@@ -41,7 +41,8 @@
 }
 
 .default-btn {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: bold;
   text-transform: uppercase;
   background: var(--cbx-blue);
   color: var(--cbx-dark-blue);
@@ -56,7 +57,7 @@
   background: white;
 }
 
-@media screen and (max-width: 305px) {
+@media screen and (max-width: 325px) {
   .default-btn {
     padding: 0.8rem 3rem;
   }

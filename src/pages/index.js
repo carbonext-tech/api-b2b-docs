@@ -21,7 +21,7 @@ function HomepageHeader() {
       <div className={styles.banner}>
         <div className={styles.wrapper}>
           <h1 className={styles.title}>
-            <Translate>Now you can make your business</Translate>
+            <Translate>now you can make your business</Translate>
             <br />
 
             <span className={styles.carbon}>
@@ -30,14 +30,20 @@ function HomepageHeader() {
           </h1>
         </div>
       </div>
+      <div className={styles.darkGradient} />
       <div className={styles.intro}>
         <div className={styles.wrapper}>
           <p className={styles.description}>
             <Translate>
-              Using our documentation, you will learn how to integrate with our
-              APIs to be able to calculate and offset carbon footprints.
-              Allowing you to offer your customers solutions that help preserve
-              the Amazon rainforest and contribute to mitigating climate changes.
+              Using our APIs you can offset carbon emissions from apps,
+              operations, and products, allowing you to offer solutions that
+              help preserve the Amazon Rainforest and contribute to mitigating
+              climate changes.
+            </Translate>
+            <br />
+            <br />
+            <Translate>
+              In our docs, you will learn how to integrate with our APIs to calculate and offset your carbon emissions.
             </Translate>
           </p>
           <Link className="default-btn" to="/docs/intro">
@@ -46,7 +52,13 @@ function HomepageHeader() {
 
           <div className={styles.divider} />
 
-          <SectionTitle title={<p><Translate>How to use</Translate></p>} />
+          <SectionTitle
+            title={
+              <p>
+                <Translate>How to use</Translate>
+              </p>
+            }
+          />
         </div>
       </div>
     </header>
@@ -55,10 +67,7 @@ function HomepageHeader() {
 
 export default function Home() {
   return (
-    <Layout
-      title="Home"
-      description="Carbonext API B2B documentation"
-    >
+    <Layout title="Home" description="Carbonext API B2B documentation">
       <HomepageHeader />
       <main>
         <Initialize />
