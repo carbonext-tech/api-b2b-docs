@@ -18,7 +18,7 @@ import {
   AiOutlineInstagram,
 } from "react-icons/ai";
 
-const Logo = require("../../../static/img/carbonext-clean.svg").default;
+const Logo = require("../../../static/img/logo.png").default;
 const AdressSvg = require("../../../static/img/icons/address.svg").default;
 
 function CustomFooter() {
@@ -51,7 +51,8 @@ function CustomFooter() {
         <div className={clsx(styles.wrapper, styles.container)}>
           <div className={styles.social}>
             <div className={styles.logoContainer}>
-              <Logo className={styles.logoImg} />
+              {/* <Logo className={styles.logoImg} /> */}
+              <img src={Logo} alt="logo" draggable={false} />
             </div>
             <div className={styles.icons}>
               {carbonextSocialLinks.map(({ url, icon: Icon }, index) => (
@@ -112,7 +113,7 @@ function CustomFooter() {
               <p className={clsx(styles.copyText, styles.textAddress)}>
                 <AdressSvg className={styles.addressIcon} />
                 <span>
-                  Rua do Rocio, 220 – conjunto 21 - Vila Olímpia – São Paulo/SP
+                  Rua do Rocio, 220 – cj 21 - Vila Olímpia – São Paulo/SP
                 </span>
               </p>
               <p className={clsx(styles.copyText, styles.secondTextAddress)}>

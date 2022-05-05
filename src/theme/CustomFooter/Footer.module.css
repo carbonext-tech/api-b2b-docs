@@ -15,7 +15,7 @@
 }
 
 .icons {
-  margin-top: 90px;
+  margin-top: 70px;
 }
 
 .icon {
@@ -32,7 +32,7 @@
 }
 
 .logoContainer {
-  max-width: 300px;
+  max-width: 250px;
 }
 
 .logoImg {
@@ -43,6 +43,8 @@
 .columns {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  max-width: 450px;
 }
 
 .column {
@@ -123,7 +125,7 @@
   }
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 930px) {
   .container {
     display: block;
   }
@@ -147,7 +149,7 @@
   }
 }
 
-@media screen and (max-width: 565px) {
+@media screen and (max-width: 400px) {
   .columns {
     display: block;
   }
