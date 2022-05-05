@@ -103,19 +103,27 @@ function CustomFooter() {
       <div className={styles.copy}>
         <div className={styles.wrapper}>
           <div className={styles.copyContent}>
-            <p className={styles.copyText}>
+            <p className={clsx(styles.copyText, styles.copyright)}>
               <Translate>
                 Copyright © All rights reserved to Carbonext
               </Translate>
             </p>
-            <p className={clsx(styles.copyText, styles.addressText)}>
-              <AdressSvg className={styles.addressIcon} />
-              <span>
-                <Translate>
-                  Rocio Street, 220 - set 21 - Vila Olímpia - São Paulo
-                </Translate>
-              </span>
-            </p>
+            <div>
+              <p className={clsx(styles.copyText, styles.textAddress)}>
+                <AdressSvg className={styles.addressIcon} />
+                <span>
+                  Rua do Rocio, 220 – conjunto 21 - Vila Olímpia – São Paulo/SP
+                </span>
+              </p>
+              <p className={clsx(styles.copyText, styles.secondTextAddress)}>
+                <AdressSvg className={styles.addressIcon} />
+                <span>
+                  Tv Dom Romualdo de Seixas, 1476 - 8º andar - Sala 805 e 806
+                  <br />
+                  Umarizal, Belém/PA
+                </span>
+              </p>
+            </div>
           </div>
         </div>
       </div>

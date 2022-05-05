@@ -1,7 +1,7 @@
 .content {
   background: #000;
   color: #fff;
-  padding: 60px 80px 60px 80px;
+  padding: 64px 80px 64px 80px;
 }
 
 .container {
@@ -87,7 +87,7 @@
 .copy {
   background: var(--cbx-dark);
   color: var(--cbx-yellow);
-  padding: 50px 80px;
+  padding: 54px 80px;
 }
 
 .copyContent {
@@ -104,20 +104,22 @@
 }
 
 .addressIcon {
-  margin-right: 6px;
+  margin-right: 8px;
+}
+
+.secondTextAddress {
+  margin-top: 16px;
 }
 
 @media screen and (max-width: 1025px) {
   .copyContent {
-    display: block;
+    flex-direction: column-reverse;
+    align-items: start;
   }
 
-  .addressIcon {
-    display: none;
-  }
-
-  .addressText {
-    margin-top: 14px;
+  .copyright {
+    margin: 32px auto 0;
+    text-align: center;
   }
 }
 
@@ -137,18 +139,12 @@
 
 @media screen and (max-width: 720px) {
   .content {
-    padding: 40px 26px;
+    padding: 64px 26px;
   }
 
   .copy {
     padding: 40px 26px;
   }
-}
-
-@media screen and (max-width: 636px) {
-  /* .copyText {
-    display: block;
-  } */
 }
 
 @media screen and (max-width: 565px) {
