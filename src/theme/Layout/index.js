@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import ErrorBoundary from "@docusaurus/ErrorBoundary";
 import SkipToContent from "@theme/SkipToContent";
@@ -25,10 +25,17 @@ function Layout(props) {
   const { children, noFooter, wrapperClassName, pageClassName } = props;
   useKeyboardNavigation();
 
-  const isLandingPage =
-    typeof window !== "undefined" && window.location.pathname.includes("docs");
+  const [isLoading, setIsLoading] = useState(true);
+  let isLandingPage = typeof window !== "undefined" && window.location.pathname === "/";
 
-    console.log(isLandingPage);
+  useEffect(() => {
+    isLandingPage = typeof window !== "undefined" && window.location.pathname === "/";
+    setIsLoading(false);
+  }, []);
+
+  if (isLoading) {
+    return <h1>Loading</h1>
+  }
 
   return (
     <LayoutProviders>
@@ -50,7 +57,7 @@ function Layout(props) {
         <ErrorBoundary fallback={ErrorPageContent}>{children}</ErrorBoundary>
       </div>
 
-      {!isLandingPage ? <CustomFooter /> : <Footer />}
+      {isLandingPage ? <CustomFooter /> : <Footer />}
     </LayoutProviders>
   );
 }
