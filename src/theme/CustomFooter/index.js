@@ -7,12 +7,8 @@
 import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import { useThemeConfig } from "@docusaurus/theme-common";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import isInternalUrl from "@docusaurus/isInternalUrl";
 import styles from "./Footer.module.css";
-import ThemedImage from "@theme/ThemedImage";
-import IconExternalLink from "@theme/IconExternalLink";
+import Translate from "@docusaurus/Translate";
 
 // Icons
 import {
@@ -74,11 +70,13 @@ function CustomFooter() {
             <div className={styles.column}>
               <h1 className={styles.docs}>DOCs</h1>
               <Link to="/docs/intro" className={styles.link}>
-                Introduction
+                <Translate>Introduction</Translate>
               </Link>
             </div>
             <div className={styles.column}>
-              <h1 className={styles.community}>COMMUNITY</h1>
+              <h1 className={styles.community}>
+                <Translate>COMMUNITY</Translate>
+              </h1>
               <Link
                 to="https://carbonext.com.br/"
                 target="_blank"
@@ -88,7 +86,9 @@ function CustomFooter() {
               </Link>
             </div>
             <div className={styles.column}>
-              <h1 className={styles.more}>MORE</h1>
+              <h1 className={styles.more}>
+                <Translate>MORE</Translate>
+              </h1>
               <Link
                 to="https://github.com/carbonext-co2e/api-b2b-docs"
                 target="_blank"
@@ -104,12 +104,16 @@ function CustomFooter() {
         <div className={styles.wrapper}>
           <div className={styles.copyContent}>
             <p className={styles.copyText}>
-              Copyright © Todos os direitos reservados à Carbonext
+              <Translate>
+                Copyright © All rights reserved to Carbonext
+              </Translate>
             </p>
             <p className={clsx(styles.copyText, styles.addressText)}>
               <AdressSvg className={styles.addressIcon} />
               <span>
-                Rua do Rocio, 220 – conjunto 21 - Vila Olímpia – São Paulo/SP
+                <Translate>
+                  Rocio Street, 220 - set 21 - Vila Olímpia - São Paulo
+                </Translate>
               </span>
             </p>
           </div>

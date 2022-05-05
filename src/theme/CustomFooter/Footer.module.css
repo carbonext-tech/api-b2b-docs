@@ -85,7 +85,7 @@
 }
 
 .copy {
-  background: var(--cbx-gray);
+  background: var(--cbx-dark);
   color: var(--cbx-yellow);
   padding: 50px 80px;
 }

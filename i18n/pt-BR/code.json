@@ -281,5 +281,20 @@
   },
   "In our docs, you will learn how to integrate with our APIs to calculate and offset your carbon emissions.": {
     "message": "Em nossos documentos, você aprenderá como integrar com nossas APIs para calcular e compensar suas emissões de carbono."
+  },
+  "Introduction": {
+    "message": "Introdução"
+  },
+  "COMMUNITY": {
+    "message": "COMUNIDADE"
+  },
+  "MORE": {
+    "message": "MAIS"
+  },
+  "Copyright © All rights reserved to Carbonext": {
+    "message": "Copyright © Todos os direitos reservados à Carbonext"
+  },
+  "Rocio Street, 220 - set 21 - Vila Olímpia - São Paulo": {
+    "message": "Rua do Rocio, 220 – conjunto 21 - Vila Olímpia – São Paulo/SP"
   }
 }
