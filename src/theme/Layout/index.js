@@ -34,7 +34,7 @@ function Layout(props) {
   }, []);
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return <div />
   }
 
   return (
