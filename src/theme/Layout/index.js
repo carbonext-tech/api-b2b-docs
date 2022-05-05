@@ -26,7 +26,9 @@ function Layout(props) {
   useKeyboardNavigation();
 
   const isLandingPage =
-    typeof window !== "undefined" && window.location.pathname === "/";
+    typeof window !== "undefined" && window.location.pathname.includes("docs");
+
+    console.log(isLandingPage);
 
   return (
     <LayoutProviders>
@@ -48,7 +50,7 @@ function Layout(props) {
         <ErrorBoundary fallback={ErrorPageContent}>{children}</ErrorBoundary>
       </div>
 
-      {isLandingPage ? <CustomFooter /> : <Footer />}
+      {!isLandingPage ? <CustomFooter /> : <Footer />}
     </LayoutProviders>
   );
 }
