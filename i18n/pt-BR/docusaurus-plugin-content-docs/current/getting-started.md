@@ -11,7 +11,7 @@ Vamos começar com uma autenticação básica para podermos evoluir com as demai
 
 Para gerar suas credenciais e realizar consultas em nossa API, é necessário comprar pelo menos um crédito, sendo assim, vamos acessar nosso ambiente de homologação e utilizar um cartão de crédito de testes sem autenticação para comprar nosso primeiro VCU.
 
-- Acesse [https://b2b-hml.carbonext.com.br/auth/signup](https://b2b-hml.carbonext.com.br/auth/signup).
+- Acesse [https://b2b-hml.carbonext.com.br/onboarding/signup](https://b2b-hml.carbonext.com.br/onboarding/signup).
 
 - Preencha todos os campos.
 

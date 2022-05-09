@@ -11,7 +11,7 @@ Let's start with basic authentication so we can evolve with the other requests o
 
 To generate your keys and make queries in our API, it is necessary to buy at least one credit, so let's access our test environment and use a test credit card without authentication to buy our first VCU.
 
-* Go to [https://b2b-hml.carbonext.com.br/auth/signup](https://b2b-hml.carbonext.com.br/auth/signup).
+* Go to [https://b2b-hml.carbonext.com.br/onboarding/signup](https://b2b-hml.carbonext.com.br/onboarding/signup).
 
 * Fill in all fields.
 
