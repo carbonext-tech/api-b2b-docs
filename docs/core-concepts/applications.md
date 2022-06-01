@@ -5,18 +5,18 @@ custom_edit_url: null
 
 # Applications
 
-Applications are the set credentials (`client_id` and `client_secret`) to be used on the `OAuth2.0` `client_credentials` flow to autorize requests on our APIs.
+Applications are the set of credentials (`client_id` and `client_secret`) to be used on the `OAuth2.0` `client_credentials` flow to autorize requests on our APIs.
 
 ## Application [POST]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/customers/applications?customer-id=1f2f3c6f-0177-4905-88d4-f4e0b667fdca
+https://api-b2b.carbonext.com.br/v1/customers/applications
 ```
 
 This endpoint creates a new application key, used to build machine-to-machine (M2M) integrations.
 
 ```md title="Required permissions"
-customerApplication_write
+customer_applications_write
 ```
 
 **Request attributes**
@@ -38,7 +38,7 @@ customerApplication_write
 ### Example Request
 
 ```javascript
-curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications?customer-id=1f2f3c6f-0177-4905-88d4-f4e0b667fdca' \
+curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw '{
@@ -65,10 +65,6 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications?custome
 }
 ```
 
-```md title="Params"
-customer-id: 1f2f3c6f-0177-4905-88d4-f4e0b667fdca
-```
-
 ## List Applications [GET]
 
 ```md title="BASE URL"
@@ -78,8 +74,8 @@ https://api-b2b.carbonext.com.br/v1/customers/applications
 This endpoint returns a paginated list of applications (keys).
 
 ```md title="Required permissions"
-customerApplication_write
-customerApplication_read
+customer_applications_write
+customer_applications_read
 ```
 
 **Response attributes**
@@ -110,7 +106,7 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
         },
         {
           "name": "CustomerApplication - Write",
-          "key": "customerApplication_write"
+          "key": "customer_applications_write"
         },
         {
           "name": "Financial - Write",
@@ -130,7 +126,7 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
         },
         {
           "name": "CustomerApplication - Read",
-          "key": "customerApplication_read"
+          "key": "customer_applications_read"
         },
         {
           "name": "Orders - Write",

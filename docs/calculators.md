@@ -10,7 +10,7 @@ This page contains requests to calculate the amount of tCO2eq emitted by differe
 ## Types [GET]
 
 ```md title="BASE URL"
-https://api-calculator.carbonext.com.br/v1/calculators/types
+https://api-calculators.carbonext.com.br/v1/calculators/types
 ```
 
 A request that lists the supported transport types for emissions calculation.
@@ -30,7 +30,7 @@ requestUnit |	Unit in which the field `unitValue` should be sent when making req
 ### Example Request
 
 ```javascript
-curl -X GET 'https://api-calculator.carbonext.com.br/v1/calculators/types'
+curl -X GET 'https://api-calculators.carbonext.com.br/v1/calculators/types'
 ```
 
 ### Example Response
@@ -63,7 +63,7 @@ curl -X GET 'https://api-calculator.carbonext.com.br/v1/calculators/types'
 ## Airports [GET]
 
 ```md title="BASE URL"
-https://api-calculator.carbonext.com.br/v1/calculators/airports
+https://api-calculators.carbonext.com.br/v1/calculators/airports
 ```
 
 This request returns an array of Airports.
@@ -71,7 +71,7 @@ This request returns an array of Airports.
 ### Example Request
 
 ```javascript
-curl -X GET 'https://api-calculator.carbonext.com.br/v1/calculators/airports'
+curl -X GET 'https://api-calculators.carbonext.com.br/v1/calculators/airports'
 ```
 
 ### Example Response
@@ -141,7 +141,7 @@ curl -X GET 'https://api-calculator.carbonext.com.br/v1/calculators/airports'
 ## Calculate Emission by Distance [POST]
 
 ```md title="BASE URL"
-https://api-calculator.carbonext.com.br/v1/calculators/calculate
+https://api-calculators.carbonext.com.br/v1/calculators/calculate
 ```
 
 This request returns the amount of tCO2eq the delivery or transport will emit, based on a given distance.
@@ -163,7 +163,7 @@ emissionUnit |	The unit of the emission, based on the `Type` parameter used in t
 ### Example Request
 
 ```javascript
-curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
+curl -X POST 'https://api-calculators.carbonext.com.br/v1/calculators/calculate' \
     -H 'Content-Type: application/json' \
 --data-raw '{
     "type": 0,
@@ -183,7 +183,7 @@ curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' 
 ## Calculate Transport Emission by Code [POST]
 
 ```md title="BASE URL"
-https://api-calculator.carbonext.com.br/v1/calculators/calculate
+https://api-calculators.carbonext.com.br/v1/calculators/calculate
 ```
 
 This endpoint calculates the amount of tCO2eq emitted when traveling between two locations, for example, ZipCodes for road transport types (only Brazilian ZipCodes are supported for now) or airport codes for flight transport type.
@@ -208,7 +208,7 @@ emissionUnit| The value is tCO2eq. The result is calculated for the `unitValue` 
 ### Example Request
 
 ```javascript
-curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
+curl -X POST 'https://api-calculators.carbonext.com.br/v1/calculators/calculate' \
     -H 'Content-Type: application/json' \
 --data-raw '{
     "type": 0,

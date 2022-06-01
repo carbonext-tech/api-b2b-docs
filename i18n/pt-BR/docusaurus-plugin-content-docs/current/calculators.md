@@ -10,7 +10,7 @@ Esta página contém requisições relacionadas ao cálculo da quantidade de tCO
 ## Tipos [GET]
 
 ```md title="BASE URL"
-https://api-calculator.carbonext.com.br/v1/calculators/types
+https://api-calculators.carbonext.com.br/v1/calculators/types
 ```
 
 Uma requisição que lista os tipos de transporte suportados para cálculo de emissões.
@@ -30,7 +30,7 @@ A solicitação também retornará a unidade que a solicitação de cálculo uti
 ### Exemplo de Requisição
 
 ```javascript
-curl -X GET 'https://api-calculator.carbonext.com.br/v1/calculators/types'
+curl -X GET 'https://api-calculators.carbonext.com.br/v1/calculators/types'
 ```
 
 ### Exemplo de Resposta
@@ -63,7 +63,7 @@ curl -X GET 'https://api-calculator.carbonext.com.br/v1/calculators/types'
 ## Aeroportos [GET]
 
 ```md title="BASE URL"
-https://api-calculator.carbonext.com.br/v1/calculators/airports
+https://api-calculators.carbonext.com.br/v1/calculators/airports
 ```
 
 Esta requisição retorna um array de Aeroportos.
@@ -71,7 +71,7 @@ Esta requisição retorna um array de Aeroportos.
 ### Exemplo de Requisição
 
 ```javascript
-curl -X GET 'https://api-calculator.carbonext.com.br/v1/calculators/airports'
+curl -X GET 'https://api-calculators.carbonext.com.br/v1/calculators/airports'
 ```
 
 ### Exemplo de Resposta
@@ -141,7 +141,7 @@ curl -X GET 'https://api-calculator.carbonext.com.br/v1/calculators/airports'
 ## Calcular Emissão por Distância [POST]
 
 ```md title="BASE URL"
-https://api-calculator.carbonext.com.br/v1/calculators/calculate
+https://api-calculators.carbonext.com.br/v1/calculators/calculate
 ```
 
 Esta requisição retorna a quantidade de tCO2eq que a entrega ou transporte emitirá, com base em uma determinada distância.
@@ -163,7 +163,7 @@ Esta requisição retorna a quantidade de tCO2eq que a entrega ou transporte emi
 ### Exemplo de Requisição
 
 ```javascript
-curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
+curl -X POST 'https://api-calculators.carbonext.com.br/v1/calculators/calculate' \
     -H 'Content-Type: application/json' \
 --data-raw '{
     "type": 0,
@@ -183,7 +183,7 @@ curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' 
 ## Calcular Emissão de Transporte por Código [POST]
 
 ```md title="BASE URL"
-https://api-calculator.carbonext.com.br/v1/calculators/calculate
+https://api-calculators.carbonext.com.br/v1/calculators/calculate
 ```
 
 Este endpoint calcula a quantidade de tCO2eq emitida ao viajar entre dois locais, por exemplo, CEPs para tipos de transporte rodoviário (somente CEPs brasileiros são suportados no momento) ou códigos de aeroporto para tipo de transporte aéreo.
@@ -207,7 +207,7 @@ Este endpoint calcula a quantidade de tCO2eq emitida ao viajar entre dois locais
 ### Exemplo de Requisição
 
 ```javascript
-curl -X POST 'https://api-calculator.carbonext.com.br/v1/calculators/calculate' \
+curl -X POST 'https://api-calculators.carbonext.com.br/v1/calculators/calculate' \
     -H 'Content-Type: application/json' \
 --data-raw '{
     "type": 0,

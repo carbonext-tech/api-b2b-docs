@@ -13,7 +13,7 @@ Faça uma requisição para receber a lista de permissões, essas permissões pe
 https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20
 ```
 
-Esta requisição retorna uma lista paginada de todas as permissões disponíveis. Essas permissões podem ser anexadas a usuários e/ou customerApplications (chaves).
+Esta requisição retorna uma lista paginada de todas as permissões disponíveis. Essas permissões podem ser anexadas a usuários e/ou customer_applications (chaves).
 
 **Lista de Permissões**
 

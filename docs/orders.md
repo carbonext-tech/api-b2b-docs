@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Orders
 
-In the B2B API, an order is a call for a specific amount of VCU, that will be debited from the customer's balance. This order, when paid, will generate a certificate issued by Carbonext on behalf of the customer.
+In the B2B API, an order is a call for a specific amount of VCU, that will be debited from the customer's balance. This order, when paid, will generate a certificate issued by Carbonext on behalf of the customer. The Carbonext certificate can, however, be issued and sent to another party, if requested, using the ``certificateRecipientInfo`` attribute.
 
 ## Order [POST]
 
@@ -21,6 +21,14 @@ This request creates an order.
 | -------------- | --------------------------------------------------- |
 | vcuAmount      | The amount of VCUs assigned to the order            |
 | targetCurrency | The desired currency for the order to be charged in |
+| certificateRecipientInfo | Information of the recipient to whom the certificate will be issued for |
+
+
+| CertificateRecipientInfo      | Description                                         |
+| -------------- | --------------------------------------------------- |
+| name      | Name of the party to whom the certificate will be issued for |
+| email | E-mail address of the party to whom the certificate will be issued for. The certificate will be sent to this email |
+| taxId | Document ID of the party to whom the certificate will be issued for |
 
 **Response Attributes**
 
@@ -41,7 +49,12 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/orders' \
     -H 'Authorization: Bearer {token}' \
 --data-raw '{
     "vcuAmount":150,
-    "targetCurrency":"BRL"
+    "targetCurrency":"BRL",
+    "certificateRecipientInfo": {
+        "name": "Jane Doe",
+        "email": "janedoe@company.com",
+        "taxId": "000.000.000-00"
+    }
 }'
 ```
 

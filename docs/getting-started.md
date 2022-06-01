@@ -31,12 +31,12 @@ Congratulations, you just generated your `client_id` and `client_secret`, save t
 
 ## Step 2 - Acquiring the Access Token
 
-Now we need an authorization `token`, for this, let's use the [Postman](https://www.postman.com/downloads/), an application to realize API tests.
+Now we need an authorization `token`, for this, let's use the [Postman](https://www.postman.com/downloads/), an application that help us making API requests.
 
 After initializing Postman, let's create a new request with the POST method and add the following URL of our API in the test environment.
 
 ```md title="BASE URL"
-https://auth-hml.carbonext.com.br/connect/token
+https://auth-hml.carbonext.com.br/auth/realms/co2free/protocol/openid-connect/token
 ```
 
 After this, bellow the URL click on **Body > x-www-form-urlencoded** and add the keys and they correspondent values following the next example request.
@@ -51,11 +51,11 @@ curl -X POST 'https://auth-hml.carbonext.com.br/connect/token' \
 --data-urlencode 'scope=offline_access'
 ```
 
-Fill yours newly generated `client_id` and `client_secret`. This way, our request must be filled in as follows.
+Fill in the `client_id` and `client_secret` you just generated in the previous step. This way, our request must be filled in as follows.
 
 ![Exemplo Postman](/img/examples/postman-1.jpg)
 
-This endpoint will return the `access_token` as well as the `refresh_token`, that can be used to get another access token though the `OAuth2.0` refresh token flow, and the expires_in, witch represents the lifetime of the token in seconds.
+This endpoint will return the `access_token` as well as the `refresh_token`, that can be used to get another access token through the `OAuth2.0` refresh token flow, and the expires_in, witch represents the lifetime of the token in seconds.
 
 ### Example Response
 

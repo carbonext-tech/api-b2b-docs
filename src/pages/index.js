@@ -21,7 +21,7 @@ function HomepageHeader() {
       <div className={styles.banner}>
         <div className={styles.wrapper}>
           <h1 className={styles.title}>
-            <Translate>now you can make your business</Translate>
+            <Translate>Now you can make your business</Translate>
             <br />
 
             <span className={styles.carbon}>
@@ -35,9 +35,8 @@ function HomepageHeader() {
         <div className={styles.wrapper}>
           <p className={styles.description}>
             <Translate>
-              Using our APIs you can offset carbon emissions from apps,
-              operations, and products, allowing you to offer solutions that
-              help preserve the Amazon Rainforest and contribute to mitigating
+              Using our APIs ecossystem you can offset carbon emissions from apps, operations and products. Giving you the possibility to offer solutions that
+              contribute preserving the Amazon Rainforest, thus mitigating
               climate changes.
             </Translate>
             <br />

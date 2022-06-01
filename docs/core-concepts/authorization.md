@@ -10,7 +10,7 @@ This is the API that will handle client-side requests for our B2B applications. 
 ## Authorize Client [POST]
 
 ```url title="BASE URL"
-https://auth.carbonext.com.br/connect/token
+https://auth-hml.carbonext.com.br/auth/realms/co2free/protocol/openid-connect/token
 ```
 
 This request validates the provided credentials and returns the generated tokens
@@ -59,10 +59,10 @@ grant_type: client_credentials
 scope: offline_access
 ```
 
-## Refresh Token [POST]
+<!-- ## Refresh Token [POST]
 
 ```url title="BASE URL"
-https://auth.carbonext.com.br/connect/token
+https://auth-hml.carbonext.com.br/auth/realms/co2free/protocol/openid-connect/token
 ```
 
 This endpoint allows the user to request a new token when their current token expires.
@@ -100,9 +100,9 @@ grant_type: refresh_token
 refresh_token: {{refresh_token}}
 client_id: {{client_id}}
 client_secret: {{client_secret}}
-```
+``` -->
 
-## User Info [GET]
+<!-- ## User Info [GET]
 
 ```url title="BASE URL"
 https://auth.carbonext.com.br/connect/userinfo
@@ -158,4 +158,4 @@ curl -X GET 'https://auth.carbonext.com.br/connect/userinfo' \
     "users_write"
   ]
 }
-```
+``` -->

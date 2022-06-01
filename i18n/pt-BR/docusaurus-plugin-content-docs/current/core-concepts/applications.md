@@ -10,7 +10,7 @@ As aplicações são as credenciais definidas (`client_id` e `client_secret`) a 
 ## Aplicação [POST]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/customers/applications?customer-id=1f2f3c6f-0177-4905-88d4-f4e0b667fdca
+https://api-b2b.carbonext.com.br/v1/customers/applications
 ```
 
 Este endpoint cria uma nova chave de aplicação, usada para criar integrações Machine to Machine (M2M).
@@ -38,7 +38,7 @@ customerApplication_write
 ### Exemplo de Requisição
 
 ```javascript
-curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications?customer-id=1f2f3c6f-0177-4905-88d4-f4e0b667fdca' \
+curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
     -H 'Content-Type: application/json' \
     -H 'Authorization: Bearer {token}' \
 --data-raw '{
@@ -54,11 +54,6 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications?custome
     ]
 }'
 ```
-
-```md title="Params"
-customer-id: 1f2f3c6f-0177-4905-88d4-f4e0b667fdca
-```
-
 ### Exemplo de Resposta
 
 ```json

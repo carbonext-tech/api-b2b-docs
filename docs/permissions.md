@@ -13,21 +13,23 @@ Request to get the list of permissions that define what the user interacts with,
 https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20
 ```
 
-This request returns a paginated list with all permissions available. These permissions can be attached to users and/or customerApplications (keys).
+This request returns a paginated list with all permissions available. These permissions can be attached to users and/or customer_applications (keys).
 
 **Permission List**
 
-| Permission                | Description                   |
-| ------------------------- | ----------------------------- |
-| orders_read               | Orders read-only              |
-| orders_write              | Add, edit or remove orders    |
-| customerApplication_read  | Customer read-only            |
-| customerApplication_write | Add, edit or remove customers |
-| financial_write           | Add invoices                  |
-| financial_read            | Financial read-only           |
-| users_write               | Add, edit or remove users     |
-| users_read                | Users read-only               |
-| certificates_read         | Certificates read-only        |
+| Permission                  | Description                   |
+| -------------------------   | ----------------------------- |
+| orders_read                 | List Orders             |
+| orders_write                | Add, edit or remove orders    |
+| customer_applications_read  | List Customers            |
+| customer_applications_write | Add, edit or remove customers |
+| financial_write             | Add invoices                  |
+| financial_read              | List Invoices           |
+| users_write                 | Add, edit or remove users     |
+| users_read                  | List Users               |
+| subscriptions_write         | Add, edit or suspend subscriptions |
+| subscriptions_read          | List subscriptions               |
+| certificates_read           | List Certificates        |
 
 **Response Attributes**
 
@@ -50,8 +52,8 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20
   "items": [
     {
       "id": "afd59c5b-bc68-47a2-b79f-4f917579306f",
-      "name": "CustomerApplication - Read",
-      "key": "customerApplication_read",
+      "name": "Customer Applications - Read",
+      "key": "customer_applications_read",
       "description": null
     },
     {
@@ -62,8 +64,8 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20
     },
     {
       "id": "36008ea5-b1f2-4137-93ad-189ef72b1574",
-      "name": "CustomerApplication - Write",
-      "key": "customerApplication_write",
+      "name": "Customer Applications - Write",
+      "key": "customer_applications_write",
       "description": null
     },
     {

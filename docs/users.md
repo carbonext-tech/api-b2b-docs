@@ -70,14 +70,14 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/users' \
   "permissions": [
     {
       "id": "f15cbe98-c53f-4042-b952-be7a39783a4a",
-      "name": "CustomerApplication - Read",
-      "key": "customerApplication_read",
+      "name": "Customer Applications - Read",
+      "key": "customer_applications_read",
       "description": null
     },
     {
       "id": "2158a42d-90a5-4f9e-9346-e81f28a822d1",
-      "name": "CustomerApplication - Write",
-      "key": "customerApplication_write",
+      "name": "Customer Applications - Write",
+      "key": "customer_applications_write",
       "description": null
     },
     {
@@ -125,8 +125,8 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/users?page=1&pagesize=10' \
       "permissions": [
         {
           "id": "2158a42d-90a5-4f9e-9346-e81f28a822d1",
-          "name": "CustomerApplication - Write",
-          "key": "customerApplication_write",
+          "name": "Customer Applications - Write",
+          "key": "customer_applications_write",
           "description": null
         },
         {
@@ -145,8 +145,8 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/users?page=1&pagesize=10' \
       "permissions": [
         {
           "id": "f15cbe98-c53f-4042-b952-be7a39783a4a",
-          "name": "CustomerApplication - Read",
-          "key": "customerApplication_read",
+          "name": "Customer Applications - Read",
+          "key": "customer_applications_read",
           "description": null
         }
       ]
@@ -219,8 +219,8 @@ curl -X PUT 'https://api-b2b.carbonext.com.br/v1/users/61211194-e09c-46fc-9cf4-e
   "permissions": [
     {
       "id": "2158a42d-90a5-4f9e-9346-e81f28a822d1",
-      "name": "CustomerApplication - Write",
-      "key": "customerApplication_write",
+      "name": "Customer Applications - Write",
+      "key": "customer_applications_write",
       "description": null
     }
   ]

@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Carbonext - API Docs",
-  url: "https://b2b-docs.carbonext.com.br",
+  url: "https://api-docs.carbonext.com.br",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
