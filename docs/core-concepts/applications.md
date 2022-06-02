@@ -3,7 +3,7 @@ sidebar_position: 2
 custom_edit_url: null
 ---
 
-# Applications
+# API Keys
 
 Applications are the set of credentials (`client_id` and `client_secret`) to be used on the `OAuth2.0` `client_credentials` flow to autorize requests on our APIs. All applications created on the B2B API will have the prefix `cbx_b2b`.
 

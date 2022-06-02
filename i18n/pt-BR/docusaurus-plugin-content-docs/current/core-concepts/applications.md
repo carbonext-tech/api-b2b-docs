@@ -3,9 +3,9 @@ sidebar_position: 2
 custom_edit_url: null
 ---
 
-# Aplicações
+# Chaves de API
 
-As aplicações são as credenciais definidas (`client_id` e `client_secret`) a serem usadas no fluxo `client_credentials` `OAuth2.0` para autorizar solicitações em nossas APIs.
+As chaves de API são as credenciais definidas (`client_id` e `client_secret`) a serem usadas no fluxo `client_credentials` `OAuth2.0` para autorizar solicitações em nossas APIs.
 
 ## Aplicação [POST]
 
@@ -81,7 +81,7 @@ customer_applications_read
 
 | Atributo | Descrição                                   |
 | -------- | ------------------------------------------- |
-| items    | Um array de aplicações paginadas do cliente |
+| items    | Um array de chaves de API paginadas do cliente |
 
 ### Exemplo de Requisição
 
