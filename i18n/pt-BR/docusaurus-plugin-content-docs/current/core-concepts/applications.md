@@ -16,7 +16,7 @@ https://api-b2b.carbonext.com.br/v1/customers/applications
 Este endpoint cria uma nova chave de aplicação, usada para criar integrações Machine to Machine (M2M).
 
 ```md title="Required permissions"
-customerApplication_write
+customer_applications_write
 ```
 
 **Atributos de Requisição**
@@ -58,23 +58,23 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
 
 ```json
 {
-  "id": "d5e1e2ce-7c7e-4ce6-9d07-d395625e3860",
-  "clientId": "badlbede",
-  "clientSecret": "9831be6d-6904-4728-b792-7e94ba00ac18"
+  "id": "1a11ca1c-195e-477c-b9e6-59adbe7de3f5",
+  "clientId": "cbx_b2b_myapp",
+  "clientSecret": "8c4ad3e2-bb0b-42f1-a214-c75a1ea8fbd6"
 }
 ```
 
-## Listar Aplicações [GET]
+## Listar Chaves de API [GET]
 
 ```md title="BASE URL"
 https://api-b2b.carbonext.com.br/v1/customers/applications?page=2&page-size=10
 ```
 
-Esse endpoint retorna uma lista paginada de aplicativos (chaves).
+Esse endpoint retorna uma lista paginada de chaves de API.
 
 ```md title="Required permissions"
-customerApplication_write
-customerApplication_read
+customer_applications_write
+customer_applications_read
 ```
 
 **Atributos de Resposta**
@@ -97,41 +97,9 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
 {
   "items": [
     {
+      "id": "a85f6c65-7f65-4c61-a188-8fab18fe844f",
       "clientId": "app-test",
-      "permissions": [
-        {
-          "name": "Users - Write",
-          "key": "users_write"
-        },
-        {
-          "name": "CustomerApplication - Write",
-          "key": "customerApplication_write"
-        },
-        {
-          "name": "Financial - Write",
-          "key": "financial_write"
-        },
-        {
-          "name": "Users - Read",
-          "key": "users_read"
-        },
-        {
-          "name": "Financial - Read",
-          "key": "financial_read"
-        },
-        {
-          "name": "Orders - Read",
-          "key": "orders_read"
-        },
-        {
-          "name": "CustomerApplication - Read",
-          "key": "customerApplication_read"
-        },
-        {
-          "name": "Orders - Write",
-          "key": "orders_write"
-        }
-      ]
+      "displayName": "Test application"
     }
   ],
   "pageIndex": 1,
@@ -140,4 +108,57 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/customers/applications' \
   "hasPreviousPage": false,
   "hasNextPage": false
 }
+```
+
+## Consultar uma Chave de API [GET]
+
+```md title="BASE URL"
+https://api-b2b.carbonext.com.br/v1/customers/applications/:id
+```
+
+Esse endpoint retorna um objeto de chave de API.
+
+```md title="Required permissions"
+customer_applications_write
+customer_applications_read
+```
+
+**Atributos de Resposta**
+
+| Attributes | Description                                          |
+| ---------- | ---------------------------------------------------- |
+| Application      | Um objeto de chave de API |
+
+### Exemplo de Requisição
+
+```javascript
+curl -X GET 'https://api-b2b.carbonext.com.br/v1/customers/applications/a85f6c65-7f65-4c61-a188-8fab18fe844f' \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer {token}'
+```
+
+### Exemplo de Resposta
+
+```json
+{
+    "id": "a85f6c65-7f65-4c61-a188-8fab18fe844f",
+    "clientId": "cbx_b2b_app_test",
+    "displayName": "Test App",
+    "permissions": [
+        {
+            "id": "5db0f399-28ab-4980-b320-9c321eea3bb1",
+            "name": "orders_read",
+            "description": null
+        },
+        {
+            "id": "d1b9f6cb-a392-41d2-8bb5-8b07cebf137c",
+            "name": "orders_write",
+            "description": null
+        }
+    ]
+}
+```
+
+```md title="PATH VARIABLES"
+id: a85f6c65-7f65-4c61-a188-8fab18fe844f
 ```

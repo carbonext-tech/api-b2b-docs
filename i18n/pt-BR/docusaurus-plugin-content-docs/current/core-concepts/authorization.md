@@ -38,7 +38,7 @@ curl -X POST 'https://auth.carbonext.com.br/connect/token' \
 --data-urlencode 'client_id={{client_id}}' \
 --data-urlencode 'client_secret={{client_secret}}' \
 --data-urlencode 'grant_type=client_credentials' \
---data-urlencode 'scope=offline_access'
+--data-urlencode 'scope=offline_access roles'
 ```
 
 ### Exemplo de Resposta
@@ -47,8 +47,7 @@ curl -X POST 'https://auth.carbonext.com.br/connect/token' \
 {
   "access_token": "kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI",
   "token_type": "Bearer",
-  "expires_in": 3596,
-  "refresh_token": "cjju3PUmqzyw3vfp8aJ-afSFPwbObvOGweWKiQ5ezNA"
+  "expires_in": 3596
 }
 ```
 
@@ -59,7 +58,7 @@ grant_type: client_credentials
 scope: offline_access
 ```
 
-## Atualizar Token [POST]
+<!-- ## Atualizar Token [POST]
 
 ```md title="BASE URL"
 https://auth.carbonext.com.br/connect/token
@@ -100,9 +99,9 @@ grant_type: refresh_token
 refresh_token: {{refresh_token}}
 client_id: {{client_id}}
 client_secret: {{client_secret}}
-```
+``` -->
 
-## Informações de Usuário [GET]
+<!-- ## Informações de Usuário [GET]
 
 ```md title="BASE URL"
 https://auth.carbonext.com.br/connect/userinfo
@@ -158,4 +157,4 @@ curl -X GET 'https://auth.carbonext.com.br/connect/userinfo' \
     "users_write"
   ]
 }
-```
+``` -->

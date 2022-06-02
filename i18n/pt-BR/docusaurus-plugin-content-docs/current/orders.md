@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Pedidos
 
-Na API B2B, um pedido é uma chamada de um valor específico de VCU, que será debitado do saldo do cliente. Este pedido, quando pago, gerará um certificado emitido pela Carbonext em nome do cliente.
+Na API B2B, um pedido é uma chamada de um valor específico de VCU, que será debitado do saldo do cliente. Um certificado Carbonext será emitido pela em nome do cliente quando este pedido for pago. Entretanto, este certificado poderá ser emitido em nome de outra pessoa, através do atributo ``certificateRecipientInfo``.
 
 ## Pedido [POST]
 
@@ -21,6 +21,14 @@ Esta requisição irá criar um pedido.
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | vcuAmount      | A quantidade de VCUs atribuída ao pedido                                                                                                                            |
 | targetCurrency | A moeda desejada para o pedido a ser cobrado                                                                                                                        |
+| certificateRecipientInfo | Informações da pessoa para quem o certificado será emitido |
+
+
+| CertificateRecipientInfo      | Descrição                                         |
+| -------------- | --------------------------------------------------- |
+| name      | Nome da pessoa para quem o certificado será emitido |
+| email | E-mail da pessoa para quem o certificado será emitido. O certificado será enviado para este e-mail |
+| taxId | Número do documento (CPF/CNPJ) da pessoa para quem o certificado será emitido |
 
 **Atributos de Resposta**
 

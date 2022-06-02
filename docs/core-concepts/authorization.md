@@ -38,7 +38,7 @@ curl -X POST 'https://auth.carbonext.com.br/connect/token' \
 --data-urlencode 'client_id={{client_id}}' \
 --data-urlencode 'client_secret={{client_secret}}' \
 --data-urlencode 'grant_type=client_credentials' \
---data-urlencode 'scope=offline_access'
+--data-urlencode 'scope=offline_access roles'
 ```
 
 ### Example Response
@@ -47,8 +47,7 @@ curl -X POST 'https://auth.carbonext.com.br/connect/token' \
 {
   "access_token": "kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI",
   "token_type": "Bearer",
-  "expires_in": 3596,
-  "refresh_token": "cjju3PUmqzyw3vfp8aJ-afSFPwbObvOGweWKiQ5ezNA"
+  "expires_in": 3596
 }
 ```
 
