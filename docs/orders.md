@@ -22,6 +22,7 @@ This request creates an order.
 | vcuAmount      | The amount of VCUs assigned to the order            |
 | targetCurrency | The desired currency for the order to be charged in |
 | certificateRecipientInfo | Information of the recipient to whom the certificate will be issued for |
+| metaData | String field you can use to write extra information about your order. Up to 500 characters. |
 
 
 | CertificateRecipientInfo      | Description                                         |
@@ -40,6 +41,7 @@ This request creates an order.
 | targetCurrency | The currency in which the order will be charged in      |
 | status         | Discloses the order's current status                    |
 | createdAt      | Discloses the order's current status                    |
+| metaData       | String field you can use to write extra information about your order. Up to 500 characters. |
 
 ### Example Request
 
@@ -54,7 +56,8 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/orders' \
         "name": "Jane Doe",
         "email": "janedoe@company.com",
         "taxId": "000.000.000-00"
-    }
+    },
+    "metaData": "Order extra information"
 }'
 ```
 
@@ -67,7 +70,8 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/orders' \
   "vcuUnitPrice": 77,
   "targetCurrency": "BRL",
   "status": "Issued",
-  "createdAt": "28/10/2021 21:12:14"
+  "createdAt": "28/10/2021 21:12:14",
+  "metaData": "Order extra information"
 }
 ```
 
@@ -89,6 +93,7 @@ This request cancels an order. The order can only be canceled when it has been i
 | targetCurrency | The currency this order was being handled in                  |
 | status         | Name of the order's current status, the value will be "Cancelled" |
 | createdAt      | The date and time this order was created                      |
+| metaData | String field you can use to write extra information about your order. Up to 500 characters. |
 
 ### Example Request
 
@@ -107,7 +112,8 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/orders/f8e48b36-b0e4-41eb-bbe5
   "vcuUnitPrice": 77,
   "targetCurrency": "BRL",
   "status": "Cancelled",
-  "createdAt": "28/10/2021 21:12:14"
+  "createdAt": "28/10/2021 21:12:14",
+  "metaData": "Order extra information"
 }
 ```
 
@@ -184,7 +190,8 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=6' \
       "vcuUnitPrice": 71.5,
       "targetCurrency": "BRL",
       "status": "Issued",
-      "createdAt": "20/10/2021 20:39:35"
+      "createdAt": "20/10/2021 20:39:35",
+      "metaData": "Order extra information"
     },
     {
       "id": "bd437c96-1bb2-44b6-90bc-c4ae8ae8f226",
@@ -192,7 +199,8 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=6' \
       "vcuUnitPrice": 71.5,
       "targetCurrency": "BRL",
       "status": "Refunded",
-      "createdAt": "20/10/2021 21:51:06"
+      "createdAt": "20/10/2021 21:51:06",
+      "metaData": "Order extra information"
     },
     {
       "id": "e17c0ffb-c5d9-4a7f-b17a-19809ddad5c5",
@@ -200,7 +208,8 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=6' \
       "vcuUnitPrice": 77,
       "targetCurrency": "BRL",
       "status": "Cancelled",
-      "createdAt": "20/10/2021 22:47:56"
+      "createdAt": "20/10/2021 22:47:56",
+      "metaData": "Order extra information"
     },
     {
       "id": "40c99e49-4994-48e4-b41f-f0c03c6efa0f",
@@ -208,7 +217,8 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=6' \
       "vcuUnitPrice": 14,
       "targetCurrency": "USD",
       "status": "Issued",
-      "createdAt": "20/10/2021 22:47:40"
+      "createdAt": "20/10/2021 22:47:40",
+      "metaData": "Order extra information"
     },
     {
       "id": "aac91e0b-0d7c-42aa-919f-2c62f0808f76",
@@ -216,7 +226,8 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=6' \
       "vcuUnitPrice": 77,
       "targetCurrency": "BRL",
       "status": "Issued",
-      "createdAt": "20/10/2021 22:47:57"
+      "createdAt": "20/10/2021 22:47:57",
+      "metaData": "Order extra information"
     },
     {
       "id": "4fab5861-b549-4a8c-9d01-dbbd2c09c87d",
@@ -224,7 +235,8 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=6' \
       "vcuUnitPrice": 14,
       "targetCurrency": "USD",
       "status": "Billed",
-      "createdAt": "20/10/2021 22:47:39"
+      "createdAt": "20/10/2021 22:47:39",
+      "metaData": "Order extra information"
     }
   ],
   "pageIndex": 1,
