@@ -7,197 +7,257 @@ custom_edit_url: null
 
 ## Step 1 - Acquiring the Credentials
 
-Let's start with basic authentication so we can evolve with the other requests of our API.
+The following procedure is equivalent to the act of typing your username and password on the website that generates a certificate and access to your data, in the same way that integration with your system will be connected to authentication and no endpoint will respond without using the **token* * .
 
-To generate your keys and make queries in our API, it is necessary to buy at least one credit, so let's access our test environment and use a test credit card without authentication to buy our first VCU.
+To generate your credentials and perform queries in our API, it is necessary to buy at least one credit, for the purpose of testing the application we will use the approval environment to:
+- create your user;
+- register your company;
+- generate your purchase with a credit card number without authentication in this environment.
 
-* Go to [https://b2b-hml.carbonext.com.br/onboarding/signup](https://b2b-hml.carbonext.com.br/onboarding/signup).
+Then access [https://b2b-hml.carbonext.com.br/signup](https://b2b-hml.carbonext.com.br/signup).
 
-* Fill in all fields.
+- Fill in all fields;
+- Click on **Register and continue**;
+- Fill in the card with the number `4242 4242 4242 4242` with any **CVC** and any future **expiration date**;
+- Add the number of **VCUs** you want to buy;
+- Click on **Buy and Continue**.
 
-* Click on **Cadastrar e continuar**.
+:::tip generated keys
 
-* Fill the credit card with the number `4242 4242 4242 4242` with any **CVC** and any future **expiration date**.
-
-* Add the number of **VCUs** you want to buy.
-
-* Click on **Comprar e continuar**.
-
-:::tip keys generated
-
-Congratulations, you just generated your `client_id` and `client_secret`, save them in a safe place, because they will only be displayed once.
+Congratulations, you've just generated your `client_id` and `client_secret`, save them in a safe place as they will only be displayed once.
 
 :::
 
 ## Step 2 - Acquiring the Access Token
 
-Now we need an authorization `token`, for this, let's use the [Postman](https://www.postman.com/downloads/), an application that help us making API requests.
-
-After initializing Postman, let's create a new request with the POST method and add the following URL of our API in the test environment.
+Using your endpoint testing software, create a request with the **POST** method and add the following approval URL to the API:
 
 ```md title="BASE URL"
 https://auth-hml.carbonext.com.br/auth/realms/co2free/protocol/openid-connect/token
 ```
 
-After this, bellow the URL click on **Body > x-www-form-urlencoded** and add the keys and they correspondent values following the next example request.
+In **Body > x-www-form-urlencoded** add the keys and their corresponding values following the request example below:
 
-### Example Request
+### Sample Request
 
 ```javascript
-curl -X POST 'https://auth-hml.carbonext.com.br/connect/token' \
---data-urlencode 'client_id={{client_id}}' \
---data-urlencode 'client_secret={{client_secret}}' \
---data-urlencode 'grant_type=client_credentials' \
---data-urlencode 'scope=offline_access'
+var axios = require('axios');
+var qs = require('qs');
+var data = qs.stringify({
+  'grant_type': 'password',
+  'username': 'seuemail@email.com.br',
+  'password': 's#nhaSecret1',
+  'scope': 'roles',
+  'client_id': 'cbx-b2b-frontend' 
+});
+var config = {
+  method: 'post',
+  url: 'https://auth-hml.carbonext.com.br/auth/realms/co2free/protocol/openid-connect/token',
+  headers: { 
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
-Fill in the `client_id` and `client_secret` you just generated in the previous step. This way, our request must be filled in as follows.
+When sending the request, we will return the `access_token` that will allow us to interact with our endpoints.
 
-![Exemplo Postman](/img/examples/postman-1.jpg)
-
-This endpoint will return the `access_token` as well as the `refresh_token`, that can be used to get another access token through the `OAuth2.0` refresh token flow, and the expires_in, witch represents the lifetime of the token in seconds.
-
-### Example Response
+### Sample Answer
 
 ```json
 {
   "access_token": "kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI",
+  "expires_in": 36000,
+  "refresh_expires_in": 1800,
+  "refresh_token": "kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2",
   "token_type": "Bearer",
-  "expires_in": 3596,
-  "refresh_token": "cjju3PUmqzyw3vfp8aJ-afSFPwbObvOGweWKiQ5ezNA"
+  "not-before-policy": 0,
+  "session_state": "9cdc7608-91dd-4319-b677-e755d5b0dde3",
+  "scope": "profile email roles"
 }
 ```
 
-## Step 3 - Retrieving the VCU Price
+## Step 3 - Querying the VCU Price
 
-Now, you are ready.
-
-Again in Postman, let's create a new request with the GET method and add the following URL.
+Now that we have the necessary authorization, let's check the price of the VCU, create a request with the GET method and add the following URL:
 
 ```md title="BASE URL"
 https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1
 ```
 
-The VCU amount is passed via the query string parameter `vcu-amount`.
+Note that we pass the amount of VCUs (`vcu-amount`) to the price query.
 
-Just below the URL, click on the **Authorization** option, change the value of **Type** to **Bearer Token** and paste your `access_token` in the field on the right.
+In **Authorization**, change the **Type** to **Bearer Token** and paste your `access_token` in **Value**.
 
-Your request must be configured as follows.
-
-![Exemplo Postman](/img/examples/postman-2.jpg)
-
-### Example Request
+### Sample Request
 
 ```javascript
-curl -X GET 'https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-dev.carbonext.com.br/v1/prices?vcu-amount=1',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI'
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
-We will have as response the following data.
-
-### Example Response
+### Sample Answer
 
 ```json
 {
-    "vcuPrice": 137.5,
-    "currency": "BRL"
+  "vcuPrice": 110.5,
+  "currency": "BRL"
 }
 ```
 
 ## Step 4 - Creating an Order to Buy VCUs
 
-After the VCU price consult, it's time for you to create your first order.
-
-In Postman, let's create a new request with the POST method and add the following URL.
+The time has come to place the first order, it is now that the amount of VCUs necessary to neutralize your consumption in the desired period will be effected, [calculate here](https://api-docs.carbonext.com.br/pt-BR/ docs/calculators), create a new request with the POST method and add the URL:
 
 ```md title="BASE URL"
 https://api-b2b-hml.carbonext.com.br/v1/orders
 ```
 
-Below the URL, click on the **Authorization** option, change the value of **Type** to **Bearer Token** and paste your `access_token` in the field on the right.
-
-On **Body**, select the **raw** option and change the **Text** type to **JSON** type. In the request body, let's put the following data.
+In **Authorization**, change the **Type** to **Bearer Token** and paste your `access_token` in **Value** and in **Body**, select the type **JSON** with the following data:
 
 ```json
 {
-    "vcuAmount":150,
-    "targetCurrency":"BRL"
+  "vcuAmount":3,
+  "targetCurrency":"BRL",
+  "certificateRecipientInfo": {}
 }
 ```
 
-Your request must be configured as follows.
-
-![Exemplo Postman](/img/examples/postman-3.jpg)
-
-### Example Request
+### Sample Request
 
 ```javascript
-curl -X POST 'https://api-b2b-hml.carbonext.com.br/v1/orders' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}' \
---data-raw '{
-    "vcuAmount":150,
-    "targetCurrency":"BRL"
-}'
+var axios = require('axios');
+var data = JSON.stringify({
+  "vcuAmount": 3,
+  "targetCurrency": "BRL"
+});
+
+var config = {
+  method: 'post',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/orders',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI', 
+    'Content-Type': 'application/json'
+  },
+  data: data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
-We will have as response the following data.
-
-### Example Response
+### Sample Answer
 
 ```json
 {
-  "id": "f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2",
-  "vcuAmount": 150,
-  "vcuUnitPrice": 77,
-  "targetCurrency": "BRL",
-  "status": "Issued",
-  "createdAt": "28/10/2021 21:12:14"
+   [
+     {
+      "id": "c74de45c-7c6e-4f64-8a1f-271536445abc",
+      "vcuAmount": 1.77935976736,
+      "vcuUnitPrice": 110.00,
+      "totalPrice": 195.7295744096000,
+      "targetCurrency": "BRL",
+      "status": "Billed",
+      "createdAt": "2022-07-12T14:34:17.075459",
+      "notifyCertificateTo": null,
+      "type": "Subscription",
+      "paymentDate": null,
+      "metaData": null,
+      "retireForRecipient": false,
+      "certificateRecipientInfo": {
+        "name": "Empresa First",
+        "email": "ricardo@gmail.com",
+        "taxId": "62.650.503/7304-86"
+      },
+      "invoices": [],
+      "subscriptions": []
+      }
+  ],
+  "pageIndex": 1,
+  "totalPages": 1,
+  "totalCount": 41,
+  "aggregations": null,
+  "hasPreviousPage": false,
+  "hasNextPage": false
 }
 ```
 
-## Step 5 - Consulting the Current Balance
+## Step 5 - Checking your Current Balance
 
-Now, you can consult your current balance.
+Now, you can check your updated balance, for that create a new request with the GET method and add the following URL.
 
-In Postman, let's create a new request with the GET method and add the following URL.
 
 ```md title="BASE URL"
 https://api-b2b-hml.carbonext.com.br/v1/customers/balance
 ```
 
-Below the URL, click on the **Authorization** option, change the value of **Type** to **Bearer Token** and paste your `access_token` in the field on the right.
+In **Authorization**, change the value of **Type** to **Bearer Token** and paste your `access_token` in **Value**.
 
-Your request must be configured as follows.
-
-![Exemplo Postman](/img/examples/postman-4.jpg)
-
-### Example Request
+### Sample Request
 
 ```javascript
-curl -X GET 'https://api-b2b-hml.carbonext.com.br/v1/customers/balance' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/customers/balance',
+  headers: { 
+    'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI'
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
-We will have as response the following data.
-
-### Example Response
+### Sample Answer
 
 ```json
 {
-  "startDate": "2021-12-06T13:57:02.360827",
-  "endDate": "2022-02-11T21:54:29.3093176Z",
+  "startDate": "2022-07-12T14:12:13.714817",
+  "endDate": "2022-07-21T17:00:25.0851306Z",
   "balancesByCurrency": [
     {
       "currency": "BRL",
       "vcuBalance": {
         "type": "VCU",
-        "balance": 18657.993454505508869857137455,
-        "credit": 20000,
-        "debt": 1342.0065454944911301428625454,
-        "futureDebt": 5
+        "balance": 15.997878,
+        "credit": 16.0,
+        "debt": 37.53443683424,
+        "futureDebt": 9.0
       }
     }
   ]
@@ -205,5 +265,5 @@ We will have as response the following data.
 ```
 
 :::info
-Let's see more about our authorization requests and other concepts on the next page.
+We'll see more about authorization requests and other concepts on the next page.
 :::

@@ -13,9 +13,9 @@ As compras podem ser feitas de forma:
 - **pré-paga** nesse modelo ao concluir o cadastro no site você deverá comprar suas primeiras unidades VCUs;
 - **pós-paga** após contato e aprovação de nosso departamento comercial, entre em contato com nossa equipe pelo e-mail [relacionamento@carbonext.com.br](mailto:suporte@carbonext.com.br) para nos ajudar a entender suas necessidades..
 
-Em ambos modelos as compras podem ser fracionadas em pedidos de acordo com sua necessidade de amortização de emissão de carbono.
+Em ambos modelos as compras podem ser fracionadas em pedidos de acordo com sua necessidade de neutralização de emissão de carbono.
 
-Na API você encontrará recursos que permitem calcular a emissão de carbono, consultar o preço da VCU, comprar créditos e efetuar os pedidos do consumo.
+Na API você encontrará recursos que permitem calcular a emissão de carbono, consultar o preço da VCU, comprar créditos e efetuar os pedidos de acordo com seu consumo.
 
 Todos os endponts retornam:
 - respostas em formato JSON;
