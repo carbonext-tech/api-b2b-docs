@@ -5,14 +5,21 @@ custom_edit_url: null
 
 # Introduction
 
-Carbonext's B2B API was developed to bring companies closer to our mission towards the protection of the Amazon Rainforest.
+Our B2B API was developed to bring companies closer to our cause of protecting and preserving forests.
 
-Our B2B API works in a credit manner, that is, first you purchase carbon credits, one carbon credit is equivalent to one ton of CO2 not thrown into the atmosphere (tCO2eq). Then you can create orders. Every order will consume from these credits, thus giving you a balance, that can be fetched at any time through an API request.
+We trade VCUs (Verified Carbon Units), whose unit represents 1 ton of carbon that is no longer emitted into the atmosphere (tCO2eq), verified by VERRA and retired on behalf of the buyer.
 
-All purchased credits are automatically retired on your behalf using Verified Carbon Units (VCUs) from [VERRA](https://verra.org/).
+Purchases can be made as follows:
+- **prepayment** in this model, the registration on the website of your VCUs units must be acquired;
+- **postpaid** after contact and approval from our commercial department, contact our team at e-mail [relacionamento@carbonext.com.br](mailto:suporte@carbonext.com.br) to help us understand your needs.
 
-Our API has resources that let you query VCU pricing, use our calculators, create orders, and much more. All of our endpoints return JSON responses, use standard HTTP response codes and use `OAuth 2.0` with `OpenID` for authorization and authentication, ensuring the best security practices to protect the carbon credits you bought from us.
+In both models, purchases can be divided into orders according to their need for carbon emission amortization.
 
-If you plan on making requests for large amounts of VCUs regularly or if the pre-paid model does not fit your needs, you can contact our team via e-mail [suporte@carbonext.com.br](mailto:suporte@carbonext.com.br) to help us understand your requirements.
+In the API you will find resources that allow you to calculate carbon emissions, consult the VCU price, buy credits and place orders for consumption.
+
+All endpoints return:
+- responses in JSON format;
+- use standard HTTP response codes;
+- in addition to `OAUTH 2.0` together with `OpenID` for authorization and authentication, guaranteeing the best security practices in the generation of **access tokens** to protect your acquired credits.
 
 **Let's Get Started ?**

@@ -5,16 +5,21 @@ custom_edit_url: null
 
 # Introdução
 
-A API B2B da Carbonext foi desenvolvida com o intuito de aproximar as empresas para a nossa causa, trabalhando pela proteção e preservação da floresta Amazônica.
+Nossa API B2B foi desenvolvida para aproximar as empresas de nossa causa de proteção e preservação das florestas.
 
-Nossa API B2B funciona na forma de créditos, ou seja, primeiro você compra créditos de carbono, um crédito de carbono equivale a uma tonelada de carbono que deixou de ser emitida na atmosfera (tCO2eq). Então você pode criar pedidos. Cada pedido consumirá desses créditos, dando assim a você um saldo, que pode ser consultado a qualquer momento através de uma requisição a nossa API.
+Negociamos VCUs (unidades de carbono verificada), cuja unidade representa 1 tonelada de carbono que deixou de ser emitida na atmosfera (tCO2eq), verificadas pelo [VERRA](https://verra.org) e aposentadas em nome do comprador.
 
-Todos os créditos adquiridos são aposentados automaticamente em seu nome usando unidades de carbono verificadas (VCUs) do [VERRA](https://verra.org/).
+As compras podem ser feitas de forma:
+- **pré-paga** nesse modelo ao concluir o cadastro no site você deverá comprar suas primeiras unidades VCUs;
+- **pós-paga** após contato e aprovação de nosso departamento comercial, entre em contato com nossa equipe pelo e-mail [relacionamento@carbonext.com.br](mailto:suporte@carbonext.com.br) para nos ajudar a entender suas necessidades..
 
-Nossa API possui recursos que permitem consultar preços de VCU, usar nossas calculadoras, criar pedidos e muito mais. Todos os nossos endpoints retornam respostas em formato JSON, usam códigos de resposta HTTP padrão, além de `OAuth 2.0` em conjunto com `OpenID` para autorização e autenticação, garantindo assim, as melhores práticas de segurança para proteger os seus créditos adquiridos conosco.
+Em ambos modelos as compras podem ser fracionadas em pedidos de acordo com sua necessidade de amortização de emissão de carbono.
 
-Utilizando o protocolo `OAuth 2.0` para autenticar e autorizar nossos clientes, geramos **tokens de acesso** com as melhores práticas de segurança, protegendo seus créditos de carbono adquiridos conosco.
+Na API você encontrará recursos que permitem calcular a emissão de carbono, consultar o preço da VCU, comprar créditos e efetuar os pedidos do consumo.
 
-Se você planeja fazer solicitações de grandes quantidades de VCUs de forma regular ou se o modelo pré-pago não atende o seu negócio, você pode entrar em contato com nossa equipe pelo e-mail [suporte@carbonext.com.br](mailto:suporte@carbonext.com.br) para nos ajudar a entender suas necessidades.
+Todos os endponts retornam:
+- respostas em formato JSON;
+- usam códigos de resposta HTTP padrão;
+- além de `OAUTH 2.0` em conjunto com `OpenID` para autorização e autenticação, garantindo as melhores práticas de segurança na geração de **tokens de acesso** para proteger os seus créditos adquiridos.
 
 **Vamos começar ?**
