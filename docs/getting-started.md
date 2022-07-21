@@ -24,7 +24,7 @@ Then access [https://b2b-hml.carbonext.com.br/signup](https://b2b-hml.carbonext.
 
 :::tip generated keys
 
-Congratulations, you've just generated your `client_id` and `client_secret`, save them in a safe place as they will only be displayed once.
+Congratulations, you've just generated your `client_id` and `client_secret`, save them in a safe place as they will only be displayed once and will be used to authorize access by your API.
 
 :::
 

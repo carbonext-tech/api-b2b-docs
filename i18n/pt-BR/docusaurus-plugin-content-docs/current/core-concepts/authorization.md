@@ -5,22 +5,23 @@ custom_edit_url: null
 
 # Autorização
 
-Este é o endpoint que tratará as requisições do lado do cliente para nossas aplicações B2B. Antes de tudo, vamos ver como criar um token de autorização.
+Agora que você já tem acesso ao sistema e testou as funcionalidades básicas, vamos avançar para o uso de autorização M2M (**machine to machine**) em que a autenticação gerada pelo usuário e senha permite acesso por outras aplicações através de chaves de acesso.
 
 ## Autorizar Cliente [POST]
 
 ```md title="BASE URL"
-https://auth.carbonext.com.br/connect/token
+https://auth-dev.carbonext.com.br/auth/realms/co2free/protocol/openid-connect/token
 ```
 
-Esta solicitação valida as credenciais fornecidas e retorna os tokens gerados
+Esta solicitação valida as credenciais fornecidas e retorna o token gerado.
 
 **Atributos do Parâmetro**
 
-| Parâmetro    | Descrição                                |
+| Parâmetro    | Valor                                |
 | ------------ | ---------------------------------------- |
-| clientId     | A chave de credencial pública do cliente |
-| clientSecret | A chave de credencial privada do cliente |
+| client_id     | A chave de credencial pública do cliente |
+| client_secret | A chave de credencial privada do cliente |
+| grant_type | client_credentials |
 
 **Atributos da resposta**
 
@@ -31,14 +32,35 @@ Esta solicitação valida as credenciais fornecidas e retorna os tokens gerados
 | expires_in    | A quantidade de tempo até que o token expire, números em segundos |
 | refresh_token | O token de atualização fornecido na requisição de autorização     |
 
+
 ### Exemplo de Requisição
 
 ```javascript
-curl -X POST 'https://auth.carbonext.com.br/connect/token' \
---data-urlencode 'client_id={{client_id}}' \
---data-urlencode 'client_secret={{client_secret}}' \
---data-urlencode 'grant_type=client_credentials' \
---data-urlencode 'scope=offline_access roles'
+var axios = require('axios');
+var qs = require('qs');
+var data = qs.stringify({
+  'client_id': 'cbx_b2b_3fe7cbb3-212b-4591-acb3-009ca9e57ff7',
+  'client_secret': '7beb0588-edb3-44f4-bbfc-9779cd5c9dbf',
+  'grant_type': 'client_credentials',
+  'scope': 'roles' 
+});
+var config = {
+  method: 'post',
+  url: 'https://auth-dev.carbonext.com.br/auth/realms/co2free/protocol/openid-connect/token',
+  headers: { 
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
 ```
 
 ### Exemplo de Resposta
@@ -46,19 +68,22 @@ curl -X POST 'https://auth.carbonext.com.br/connect/token' \
 ```json
 {
   "access_token": "kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI",
+  "expires_in": 36000,
+  "refresh_expires_in": 0,
   "token_type": "Bearer",
-  "expires_in": 3596
+  "not-before-policy": 0,
+  "scope": "profile email roles"
 }
 ```
 
+<!--
 ```md title="BODY urlencoded"
 client_id: {{client_id}}
 client_secret: {{client_secret}}
 grant_type: client_credentials
 scope: offline_access
 ```
-
-<!-- ## Atualizar Token [POST]
+## Atualizar Token [POST]
 
 ```md title="BASE URL"
 https://auth.carbonext.com.br/connect/token

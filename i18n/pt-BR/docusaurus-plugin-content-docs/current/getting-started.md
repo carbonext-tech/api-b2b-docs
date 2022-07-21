@@ -24,9 +24,9 @@ Então acesse [https://b2b-hml.carbonext.com.br/signup](https://b2b-hml.carbonex
 
 :::tip chaves geradas
 
-Parabéns, você acabou de gerar seu `client_id` e `client_secret`, salve-os em um local seguro, pois eles serão exibidos apenas uma vez.
+Parabéns, você acabou de gerar seu `client_id` e `client_secret`, salve-os em um local seguro, pois eles serão exibidos apenas uma vez e serão usados para autorizar o acesso pela sua API.
 
-:::
+::: 
 
 ## Passo 2 - Adquirindo o Token de Acesso
 
