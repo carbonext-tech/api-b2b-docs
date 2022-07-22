@@ -109,7 +109,7 @@ var data = qs.stringify({
 });
 var config = {
   method: 'get',
-  url: 'https://api-b2b-dev.carbonext.com.br/v1/customers/applications',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/customers/applications',
   headers: { 
     'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI'
   },
@@ -171,7 +171,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: 'https://api-b2b-dev.carbonext.com.br/v1/customers/applications/02c75cc5-b575-4b5f-87d8-bf09e6009c23',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/customers/applications/02c75cc5-b575-4b5f-87d8-bf09e6009c23',
   headers: { 
     'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI'
   }
@@ -232,7 +232,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: 'https://api-b2b-dev.carbonext.com.br/v1/permissions?page=1&page-size=100',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/permissions?page=1&page-size=100',
   headers: { 
     'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI'
   }

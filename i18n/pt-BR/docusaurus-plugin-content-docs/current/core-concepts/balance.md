@@ -12,7 +12,7 @@ O saldo é a diferença entre as faturas pagas, que geram créditos, e todos os 
 ## Saldo [GET]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/customers/balance
+https://api-b2b-hml.carbonext.com.br/v1/customers/balance
 ```
 
 Esta solicitação retorna o saldo do cliente para cada moeda em que possui pedidos e/ou faturas.
@@ -40,26 +40,40 @@ balancesByCurrency | Um array de objetos, cada um contendo um objeto VcuBalance 
 ### Exemplo de Requisição
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/customers/balance' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/customers/balance',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI'
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Exemplo de Resposta
 
 ```json
 {
-  "startDate": "2021-12-06T13:57:02.360827",
-  "endDate": "2022-02-11T21:54:29.3093176Z",
+  "startDate": "2022-07-21T19:07:19.634916",
+  "endDate": "2022-07-22T17:03:29.6645009Z",
   "balancesByCurrency": [
     {
       "currency": "BRL",
       "vcuBalance": {
         "type": "VCU",
-        "balance": 18657.993454505508869857137455,
-        "credit": 20000,
-        "debt": 1342.0065454944911301428625454,
-        "futureDebt": 5
+        "balance": 1.0,
+        "credit": 1.0,
+        "debt": 0.0,
+        "futureDebt": 0.02
       }
     }
   ]

@@ -10,7 +10,7 @@ Agora que você já tem acesso ao sistema e testou as funcionalidades básicas, 
 ## Autorizar Cliente [POST]
 
 ```md title="BASE URL"
-https://auth-dev.carbonext.com.br/auth/realms/co2free/protocol/openid-connect/token
+https://auth-hml.carbonext.com.br/auth/realms/co2free/protocol/openid-connect/token
 ```
 
 Esta solicitação valida as credenciais fornecidas e retorna o token gerado.
@@ -46,7 +46,7 @@ var data = qs.stringify({
 });
 var config = {
   method: 'post',
-  url: 'https://auth-dev.carbonext.com.br/auth/realms/co2free/protocol/openid-connect/token',
+  url: 'https://auth-hml.carbonext.com.br/auth/realms/co2free/protocol/openid-connect/token',
   headers: { 
     'Content-Type': 'application/x-www-form-urlencoded'
   },
