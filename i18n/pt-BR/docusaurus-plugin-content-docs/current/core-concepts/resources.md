@@ -10,13 +10,27 @@ Nossas APIs possuem filtros de consulta avançados, a requisição a seguir reto
 ## Listar Recursos [GET]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/resources
+https://api-b2b-hml.carbonext.com.br/v1/resources
 ```
 
 ### Exemplo de Requisição
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/resources'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/resources',
+  headers: { }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Exemplo de Resposta
@@ -24,11 +38,12 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/resources'
 ```json
 {
     "entities": [
-        "customers",
+        "applications",
         "invoices",
         "orders",
-        "users",
-        "permissions"
+        "subscriptions",
+        "retirements",
+        "users"
     ]
 }
 ```

@@ -10,13 +10,27 @@ Our APIs have advanced query filters, the following request returns a list of re
 ## List Resources [GET]
 
 ```url title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/resources
+https://api-b2b-hml.carbonext.com.br/v1/resources
 ```
 
 ### Example Request
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/resources'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-dev.carbonext.com.br/v1/resources',
+  headers: { }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Example Response
@@ -24,11 +38,12 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/resources'
 ```json
 {
     "entities": [
-        "customers",
+        "applications",
         "invoices",
         "orders",
-        "users",
-        "permissions"
+        "subscriptions",
+        "retirements",
+        "users"
     ]
 }
 ```
