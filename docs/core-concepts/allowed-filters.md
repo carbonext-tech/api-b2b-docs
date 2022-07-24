@@ -10,14 +10,14 @@ Our APIs have a filtering system that alow querying for a resource by many diffe
 ## List Allowed Filters [GET]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/allowed-filters/:resource
+https://api-b2b-hml.carbonext.com.br/v1/allowed-filters/:resource
 ```
 
 **Request Parameter**
 
 | Parameter | Description                                                                                                                |
 | --------- | -------------------------------------------------------------------------------------------------------------------------- |
-| resource  | Your resource can be any [resource](/docs/core-concepts/resources) return that we saw on the previous page about Resources |
+| resource  | It could be any feedback we saw on the [Resources] page (/docs/core-concepts/resources) |
 
 **Response Parameters**
 
@@ -32,7 +32,21 @@ This endpoint returns the fields accepted for filtering and sorting. It is impor
 ### Example Request
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/orders'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/allowed-filters/orders',
+  headers: { }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Example Response
@@ -111,14 +125,23 @@ The following example will illustrate querying invoices with `totalVcuAmount` gr
 ### Request Example
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}'
-```
+var axios = require('axios');
 
-```md title="Parameter Attributes"
-sort-by: totalQuantity_asc
-filter-by: totalQuantity_ge:30~status_in:Paid-pending
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-dev.carbonext.com.br/v1/invoices/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI'
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Response Example

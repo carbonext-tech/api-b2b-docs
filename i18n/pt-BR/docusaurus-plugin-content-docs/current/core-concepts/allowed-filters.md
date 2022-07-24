@@ -10,14 +10,14 @@ Nossas APIs possuem um sistema de filtragem que permitem a consulta de um recurs
 ## Listar Filtros Permitidos [GET]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/allowed-filters/:resource
+https://api-b2b-hml.carbonext.com.br/v1/allowed-filters/:resource
 ```
 
 **Parâmetro de Requisição**
 
 | Parâmetro | Descrição                                                                                                                          |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| resource  | Este `resource` pode ser qualquer retorno de [recursos](/docs/core-concepts/resources) que vimos na página anterior sobre Recursos |
+| resource  | Pode ser qualquer retorno que vimos na página de [Recursos](/docs/core-concepts/resources) |
 
 **Parâmetros de Resposta**
 
@@ -32,7 +32,21 @@ Este endpoint retorna os campos aceito para filtragem e ordenação, é importan
 ### Exemplo de Requisição
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/orders'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/allowed-filters/orders',
+  headers: { }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Exemplo de Resposta
@@ -69,6 +83,7 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/allowed-filters/orders'
     "columns": ["vcuAmount", "vcuUnitPrice", "totalPrice"],
     "operations": ["sum", "avg", "min", "max", "count"]
   }
+  }
 }
 ```
 
@@ -79,7 +94,7 @@ Vamos ver quantos filtros podemos utilizar e o que eles significam.
 | Filtro | Valor | Descrição                                                                                                                                                               |
 | :----: | :---: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |   eq   |   =   | Retorna os campos com os valores iguais ao que foi passado no filtro.                                                                                                   |
-|   ne   |  !=   | Retorna os campos com os valores diferentes ao que foi passado no filtro.                                                                                               |
+|   ne   |  !=   | Retorna os campos com os valores diferentes do que foi passado no filtro.                                                                                               |
 |   ge   |  >=   | Retorna os campos com os valores maiores ou iguais ao que foi passado no filtro.                                                                                        |
 |   le   |  <=   | Retorna os campos com os valores menores ou iguais ao que foi passado no filtro. Para o `createdAt`, às 23:59:59 horas antes da data escolhida no formato `AAAA-MM-DD`. |
 |   gt   |   >   | Retorna os campos com os valores maiores ao que foi passado no filtro.                                                                                                  |
@@ -87,13 +102,13 @@ Vamos ver quantos filtros podemos utilizar e o que eles significam.
 
 | Filtro | Descrição                                                                                                               |
 | :----: | :---------------------------------------------------------------------------------------------------------------------- |
-|   in   | `status` in (1,2,3) retorna os registros com `status` igual a 1 ou 2 ou 3 (status aqui é o campo com filtro tipo `_in`) |
+|   in   | `status_in` (1,2,3) retorna os registros com `status` igual a 1 ou 2 ou 3 (status aqui é o campo com filtro tipo `_in`) |
 |  like  | retorna registros que contenham o valor buscado no filtro (case insensitive)                                            |
 
 ## Listar Faturas por Filtro [GET]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending
+https://api-b2b-hml.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending
 ```
 
 Vejamos um exemplo prático dos filtros de consulta aplicados a faturas, neste exemplo retornaremos uma lista de faturas filtradas por `totalVcuAmount` e `status`. Para usar mais de um filtro na mesma consulta, eles devem ser separados por til (~).
@@ -111,9 +126,23 @@ O exemplo a seguir ilustrará a consulta de faturas com `totalVcuAmount` maior o
 ### Exemplo de Requisição
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-dev.carbonext.com.br/v1/invoices/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI'
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ```md title="Atributos do Parâmetro"
