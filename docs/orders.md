@@ -5,12 +5,12 @@ custom_edit_url: null
 
 # Orders
 
-In the B2B API, an order is a call for a specific amount of VCU, that will be debited from the customer's balance. This order, when paid, will generate a certificate issued by Carbonext on behalf of the customer. The Carbonext certificate can, however, be issued and sent to another party, if requested, using the ``certificateRecipientInfo`` attribute.
+In the B2B API, an order is a call for a specific amount of VCU, the amount of which will be debited from the customer's balance and a Carbonext certificate issued in their name or someone else's, through the ``certificateRecipientInfo`` attribute.
 
 ## Order [POST]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/orders
+https://api-b2b-hml.carbonext.com.br/v1/orders
 ```
 
 This request creates an order.
@@ -46,39 +46,64 @@ This request creates an order.
 ### Example Request
 
 ```javascript
-curl -X POST 'https://api-b2b.carbonext.com.br/v1/orders' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}' \
---data-raw '{
-    "vcuAmount":150,
-    "targetCurrency":"BRL",
-    "certificateRecipientInfo": {
-        "name": "Jane Doe",
-        "email": "janedoe@company.com",
-        "taxId": "000.000.000-00"
-    },
-    "metaData": "Order extra information"
-}'
+var axios = require('axios');
+var data = JSON.stringify({
+  "vcuAmount": 0.02,
+  "targetCurrency": "BRL",
+  "certificateRecipientInfo": {
+    "name": "Danilo 50",
+    "email": "danilo.souza+teste50@carbonext.com.br",
+    "taxId": "000.000.000-00"
+  }
+});
+
+var config = {
+  method: 'post',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/orders',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI', 
+    'Content-Type': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Example Response
 
 ```json
 {
-  "id": "f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2",
-  "vcuAmount": 150,
-  "vcuUnitPrice": 77,
+  "id": "4158d5d1-9364-46e6-8d0d-451f528261e7",
+  "vcuAmount": 0.02,
+  "vcuUnitPrice": 110.0,
+  "totalPrice": 2.200,
   "targetCurrency": "BRL",
   "status": "Issued",
-  "createdAt": "28/10/2021 21:12:14",
-  "metaData": "Order extra information"
+  "createdAt": "2022-07-24T18:26:44.4176783Z",
+  "notifyCertificateTo": null,
+  "type": "Postpaid",
+  "paymentDate": null,
+  "metaData": null,
+  "retireForRecipient": false,
+  "certificateRecipientInfo": {
+    "name": "Danilo 50",
+    "email": "danilo.souza+teste50@carbonext.com.br",
+    "taxId": "000.000.000-00"
+  }
 }
 ```
 
 ## Cancel Order [POST]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/orders/:orderId/cancel
+`https://api-b2b-hml.carbonext.com.br/v1/orders/:orderId/cancel`
 ```
 
 This request cancels an order. The order can only be canceled when it has been issued(after it has been created, but before it has been paid for).
@@ -98,33 +123,58 @@ This request cancels an order. The order can only be canceled when it has been i
 ### Example Request
 
 ```javascript
-curl -X POST 'https://api-b2b.carbonext.com.br/v1/orders/f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2/cancel' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}'
+var axios = require('axios');
+
+var config = {
+  method: 'post',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/orders/4158d5d1-9364-46e6-8d0d-451f528261e7/cancel',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI',
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
 ```
 
 ### Example Response
 
 ```json
 {
-  "id": "f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2",
-  "vcuAmount": 150,
-  "vcuUnitPrice": 77,
+  "id": "4158d5d1-9364-46e6-8d0d-451f528261e7",
+  "vcuAmount": 0.02,
+  "vcuUnitPrice": 110.0,
+  "totalPrice": 2.200,
   "targetCurrency": "BRL",
   "status": "Cancelled",
-  "createdAt": "28/10/2021 21:12:14",
-  "metaData": "Order extra information"
+  "createdAt": "2022-07-24T18:26:44.417678",
+  "notifyCertificateTo": null,
+  "type": "Postpaid",
+  "paymentDate": null,
+  "metaData": null,
+  "retireForRecipient": false,
+  "certificateRecipientInfo": {
+    "name": "Danilo 50",
+    "email": "danilo.souza+teste50@carbonext.com.br",
+    "taxId": "000.000.000-00"
+  }
 }
 ```
 
 ```md title="PATH VARIABLES"
-orderId: f8e48b36-b0e4-41eb-bbe5-0cc1bdfc5be2
+orderId: 4158d5d1-9364-46e6-8d0d-451f528261e7
 ```
 
 ## Cancel Orders [POST]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/orders/cancel
+`https://api-b2b-hml.carbonext.com.br/v1/orders/cancel`
 ```
 
 Orders can also be cancelled in batches.
@@ -135,32 +185,57 @@ Orders can also be cancelled in batches.
 | --------- | --------------------------------------------- |
 | ordersIds | An array of Ids of the orders to be cancelled |
 
-Returns `true` if, and only if, all orders were successfully cancelled.
-
 ### Example Request
 
 ```javascript
-curl -X POST 'https://api-b2b.carbonext.com.br/v1/orders/cancel' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}' \
---data-raw '{
-    "ordersIds":
-    [
-        "14a60138-d078-4f1d-b72a-87f0820b7ccb"
-    ]
-}'
+var axios = require('axios');
+
+var config = {
+  method: 'post',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/orders/4158d5d1-9364-46e6-8d0d-451f528261e7/cancel',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI',
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
 ```
 
 ### Example Response
 
 ```javascript
-true;
+{
+  "id": "4158d5d1-9364-46e6-8d0d-451f528261e7",
+  "vcuAmount": 0.02,
+  "vcuUnitPrice": 110.0,
+  "totalPrice": 2.200,
+  "targetCurrency": "BRL",
+  "status": "Cancelled",
+  "createdAt": "2022-07-24T18:26:44.417678",
+  "notifyCertificateTo": null,
+  "type": "Postpaid",
+  "paymentDate": null,
+  "metaData": null,
+  "retireForRecipient": false,
+  "certificateRecipientInfo": {
+    "name": "Danilo 50",
+    "email": "danilo.souza+teste50@carbonext.com.br",
+    "taxId": "000.000.000-00"
+  }
+}
 ```
 
 ## Orders [GET]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=100
+`https://api-b2b-hml.carbonext.com.br/v1/orders?page=1&page-size=6`
 ```
 
 This request returns a paginated list of orders.
@@ -174,9 +249,23 @@ This request returns a paginated list of orders.
 ### Example Request
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=6' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/orders?page=1&page-size=100&sort-by=createdAt_desc',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI',
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Example Response
@@ -185,63 +274,52 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/orders?page=1&page-size=6' \
 {
   "items": [
     {
-      "id": "10c3d119-433d-49c8-a7d3-d471a6473669",
-      "vcuAmount": 20,
-      "vcuUnitPrice": 71.5,
-      "targetCurrency": "BRL",
-      "status": "Issued",
-      "createdAt": "20/10/2021 20:39:35",
-      "metaData": "Order extra information"
-    },
-    {
-      "id": "bd437c96-1bb2-44b6-90bc-c4ae8ae8f226",
-      "vcuAmount": 30,
-      "vcuUnitPrice": 71.5,
-      "targetCurrency": "BRL",
-      "status": "Refunded",
-      "createdAt": "20/10/2021 21:51:06",
-      "metaData": "Order extra information"
-    },
-    {
-      "id": "e17c0ffb-c5d9-4a7f-b17a-19809ddad5c5",
-      "vcuAmount": 10,
-      "vcuUnitPrice": 77,
+      "id": "4158d5d1-9364-46e6-8d0d-451f528261e7",
+      "vcuAmount": 0.02,
+      "vcuUnitPrice": 110.0,
+      "totalPrice": 2.200,
       "targetCurrency": "BRL",
       "status": "Cancelled",
-      "createdAt": "20/10/2021 22:47:56",
-      "metaData": "Order extra information"
+      "createdAt": "2022-07-24T18:26:44.417678",
+      "notifyCertificateTo": null,
+      "type": "Postpaid",
+      "paymentDate": null,
+      "metaData": null,
+      "retireForRecipient": false,
+      "certificateRecipientInfo": {
+        "name": "Danilo 50",
+        "email": "danilo.souza+teste50@carbonext.com.br",
+        "taxId": "000.000.000-00"
+      },
+      "invoices": [],
+      "subscriptions": []
     },
     {
-      "id": "40c99e49-4994-48e4-b41f-f0c03c6efa0f",
-      "vcuAmount": 2,
-      "vcuUnitPrice": 14,
-      "targetCurrency": "USD",
-      "status": "Issued",
-      "createdAt": "20/10/2021 22:47:40",
-      "metaData": "Order extra information"
-    },
-    {
-      "id": "aac91e0b-0d7c-42aa-919f-2c62f0808f76",
-      "vcuAmount": 10,
-      "vcuUnitPrice": 77,
+      "id": "07c8543f-752f-43c7-af65-04a6cf3c8841",
+      "vcuAmount": 0.02,
+      "vcuUnitPrice": 110.00,
+      "totalPrice": 2.2000,
       "targetCurrency": "BRL",
       "status": "Issued",
-      "createdAt": "20/10/2021 22:47:57",
-      "metaData": "Order extra information"
-    },
-    {
-      "id": "4fab5861-b549-4a8c-9d01-dbbd2c09c87d",
-      "vcuAmount": 2,
-      "vcuUnitPrice": 14,
-      "targetCurrency": "USD",
-      "status": "Billed",
-      "createdAt": "20/10/2021 22:47:39",
-      "metaData": "Order extra information"
+      "createdAt": "2022-07-21T19:11:05.698421",
+      "notifyCertificateTo": null,
+      "type": "Postpaid",
+      "paymentDate": null,
+      "metaData": null,
+      "retireForRecipient": false,
+      "certificateRecipientInfo": {
+        "name": "Danilo 50",
+        "email": "danilo.souza+teste50@carbonext.com.br",
+        "taxId": "000.000.000-00"
+      },
+      "invoices": [],
+      "subscriptions": []
     }
   ],
   "pageIndex": 1,
   "totalPages": 1,
-  "totalCount": 6,
+  "totalCount": 2,
+  "aggregations": null,
   "hasPreviousPage": false,
   "hasNextPage": false
 }
