@@ -20,7 +20,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: 'https://api-b2b-dev.carbonext.com.br/v1/resources',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/resources',
   headers: { }
 };
 

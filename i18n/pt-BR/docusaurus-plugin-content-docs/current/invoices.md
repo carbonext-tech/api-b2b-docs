@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Faturas
 
-As faturas podem ser geradas tanto comprando créditos VCU quanto faturando pedidos em aberto (não pagos), neste caso, a fatura pode ser paga com cartão de crédito ou boleto bancário (pretendemos aceitar outros tipos de pagamento no futuro).
+As faturas podem ser geradas comprando créditos VCU com cartão de crédito ou faturando pedidos em aberto (não pagos), neste caso, a fatura pode ser paga com boleto bancário (pretendemos aceitar outros tipos de pagamento no futuro).
 
 <!-- ## Faturas [POST]
 
@@ -125,7 +125,7 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
 ## Faturas [GET]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/invoices
+https://api-b2b-hml.carbonext.com.br/v1/invoices
 ```
 
 Essa solicitação retorna uma lista paginada de faturas.
@@ -139,9 +139,23 @@ Essa solicitação retorna uma lista paginada de faturas.
 ### Exemplo de Requisição
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices?page=1&page-size=10&sort-by=totalVcuAmount_desc' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/invoices?page=1&page-size=10&sort-by=totalVcuAmount_desc&filter-by=totalPrice_ge:7000~status_in:Paid-pending~bla',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI'
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Exemplo de Resposta
@@ -155,7 +169,7 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices?page=1&page-size=10&so
       "totalVcuAmount": 1.0,
       "totalPrice": 137.5,
       "currency": "BRL",
-      "customerId": "c892597a-997c-4a6f-a4cf-6e370240edff",
+      "customerId": "a2170dcf-a87f-4fdb-b4e6-54e4f0889324",
       "createdAt": "2022-02-11T16:47:02.894999",
       "paidAt": "2022-02-11T16:47:05.226771",
       "dueDate": null
@@ -173,7 +187,7 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices?page=1&page-size=10&so
 ## Fatura [GET]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/invoices/:id
+https://api-b2b-hml.carbonext.com.br/v1/invoices/:id
 ```
 
 Esta solicitação retornará informações sobre uma fatura específica.
@@ -195,9 +209,23 @@ Esta solicitação retornará informações sobre uma fatura específica.
 ### Exemplo de Requisição
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/invoices/24882adc-d020-4e5a-ac26-36c12d24c507' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/invoices/:id',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI'
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ```md title="PATH VARIABLES"

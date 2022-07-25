@@ -104,7 +104,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: 'https://api-b2b-dev.carbonext.com.br/v1/prices?vcu-amount=1',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/prices?vcu-amount=1',
   headers: { 
     'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI'
   }

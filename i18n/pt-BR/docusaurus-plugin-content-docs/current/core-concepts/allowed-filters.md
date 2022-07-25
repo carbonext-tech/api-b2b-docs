@@ -130,7 +130,7 @@ var axios = require('axios');
 
 var config = {
   method: 'get',
-  url: 'https://api-b2b-dev.carbonext.com.br/v1/invoices/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/invoices/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending',
   headers: { 
     'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI'
   }
