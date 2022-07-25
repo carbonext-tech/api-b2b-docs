@@ -10,7 +10,7 @@ The requests on this page handle CRUD operations on Users' resources.
 ## Users [POST]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/users
+`https://api-b2b-hml.carbonext.com.br/v1/users`
 ```
 
 This request creates a new user.
@@ -37,26 +37,41 @@ This request creates a new user.
 ### Example Request
 
 ```javascript
-curl -X POST 'https://api-b2b.carbonext.com.br/v1/users' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}' \
---data-raw '{
-    "email": "userteste@email.com",
-    "userPassword": "123456",
-    "name": "Teste",
-    "permissions":
-    [
-        {
-            "id": "53dfaef6-125d-43ac-92de-a03e49c66d70"
-        },
-        {
-            "id": "2158a42d-90a5-4f9e-9346-e81f28a822d1"
-        },
-        {
-            "id": "f15cbe98-c53f-4042-b952-be7a39783a4a"
-        }
-    ]
-}'
+var axios = require('axios');
+var data = JSON.stringify({
+  "email": "userteste@email.com",
+  "userPassword": "12345678",
+  "name": "Teste",
+  "permissions": [
+    {
+      "id": "53dfaef6-125d-43ac-92de-a03e49c66d70"
+    },
+    {
+      "id": "2158a42d-90a5-4f9e-9346-e81f28a822d1"
+    },
+    {
+      "id": "f15cbe98-c53f-4042-b952-be7a39783a4a"
+    }
+  ]
+});
+
+var config = {
+  method: 'post',
+  url: 'https://api-b2b-dev.carbonext.com.br/v1/users',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI',
+    'Content-Type': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Example Response
@@ -93,7 +108,7 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/users' \
 ## Users [GET]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/users?page=1&page-size=10
+`https://api-b2b-hml.carbonext.com.br/v1/users?page=1&page-size=10`
 ```
 
 This request returns a paginated list of active users.
@@ -107,9 +122,24 @@ This request returns a paginated list of active users.
 ### Example Request
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/users?page=1&pagesize=10' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/users?page=1&page-size=10',
+  headers: { 
+    'Accept': 'application/json', 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI',
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Example Response
@@ -164,7 +194,7 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/users?page=1&pagesize=10' \
 ## Users [PUT]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/users/:id
+`https://api-b2b-hml.carbonext.com.br/v1/users/:id`
 ```
 
 This request updates a user.
@@ -195,33 +225,51 @@ This request updates a user.
 ### Example Request
 
 ```javascript
-curl -X PUT 'https://api-b2b.carbonext.com.br/v1/users/61211194-e09c-46fc-9cf4-e11fa2510987' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}' \
---data-raw '{
-  "name": "User29",
-  "permissions":[
-    {
-      "id":"2158a42d-90a5-4f9e-9346-e81f28a822d1"
-    }
-  ]
-}'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/users/161429f6-a6e6-4583-8a5e-f55784b10c63?force-refresh=true&include-permissions=true',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI',
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Example Response
 
 ```json
 {
-  "id": "61211194-e09c-46fc-9cf4-e11fa2510987",
+  "id": "161429f6-a6e6-4583-8a5e-f55784b10c63",
   "email": "userteste@email.com",
-  "name": "User29",
+  "name": "Teste",
   "isEmailVerified": false,
   "permissions": [
     {
-      "id": "2158a42d-90a5-4f9e-9346-e81f28a822d1",
-      "name": "Customer Applications - Write",
-      "key": "customer_applications_write",
-      "description": null
+      "id": "4f3ca574-0b89-4a92-83fa-794edcad6b76",
+      "name": "customer_applications_write",
+      "description": "Criar/Remover Chaves de API",
+      "composite": false,
+      "clientRole": false,
+      "containerId": "CO2FREE",
+      "attributes": null
+    },
+    {
+      "id": "5db0f399-28ab-4980-b320-9c321eea3bb1",
+      "name": "orders_read",
+      "description": "Visualizar pedidos",
+      "composite": false,
+      "clientRole": false,
+      "containerId": "CO2FREE",
+      "attributes": null
     }
   ]
 }
@@ -230,21 +278,39 @@ curl -X PUT 'https://api-b2b.carbonext.com.br/v1/users/61211194-e09c-46fc-9cf4-e
 ## Users [DEL]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/users/:id
+`https://api-b2b-hml.carbonext.com.br/v1/users/:id`
 ```
 
 This request deletes a user through the id passed by the parameter.
 
-```md title="PATH VARIABLES"
-id: 8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d
-```
+**Request parameters**
+
+| Parameter | Description   |
+| --------- | ------------- |
+| id        | The user's id |
 
 ### Example Request
 
 ```javascript
-curl -X DELETE 'https://api-b2b.carbonext.com.br/v1/users/8c9c9ecf-295c-49e5-a3f9-6f2cf27b169d' \
-    -H 'Content-Type: application/json'
-    -H 'Authorization: Bearer {token}'
+var axios = require('axios');
+var data = '';
+
+var config = {
+  method: 'delete',
+  url: 'https://api-b2b-dev.carbonext.com.br/v1/users/161429f6-a6e6-4583-8a5e-f55784b10c63',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI',
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Example Response
