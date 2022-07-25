@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Recursos
 
-Nossas APIs possuem filtros de consulta avançados, a requisição a seguir retorna uma lista de recursos que permitem tais consultas.
+Nossa API possue filtros de consulta avançados, a requisição a seguir retorna uma lista de recursos que permitem tais consultas.
 
 ## Listar Recursos [GET]
 

@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Filtros Permitidos
 
-Nossas APIs possuem um sistema de filtragem que permitem a consulta de um recurso por diversos atributos e operações.
+Nossa API possue um sistema de filtragem que permitem a consulta de um recurso por diversos atributos e operações.
 
 ## Listar Filtros Permitidos [GET]
 
