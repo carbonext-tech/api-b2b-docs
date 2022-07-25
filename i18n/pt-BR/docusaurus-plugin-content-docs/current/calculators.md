@@ -5,17 +5,15 @@ custom_edit_url: null
 
 # Calculadoras
 
-Esta página contém requisições relacionadas ao cálculo da quantidade de tCO2eq emitida por diferentes tipos de transporte, bem como o preço para compensar essas emissões.
+Nossa API calcula a quantidade de tCO2eq emitida por diferentes formas de transporte, bem como o preço para compensar essas emissões.
 
 ## Tipos [GET]
 
 ```md title="BASE URL"
-https://api-calculators.carbonext.com.br/v1/calculators/types
+`https://api-b2b-hml.carbonext.com.br/v1/calculators/types`
 ```
 
-Uma requisição que lista os tipos de transporte suportados para cálculo de emissões.
-
-A solicitação também retornará a unidade que a solicitação de cálculo utilizará (por exemplo, "gramas", "passageiro"), e a unidade da resposta (por exemplo, "tCO2eq/tonelada", "tCO2eq/passageiro") para frete de produtos , e para transporte de ônibus e avião, respectivamente.
+Esse endpoint retorna uma lista de transportes suportados para cálculo de emissões, incluindo a unidade que a solicitação de cálculo utilizará (por exemplo, "gramas", "passageiro") e a unidade de resposta de frete para transportes de ônibus e avião, respectivamente (por exemplo, "tCO2eq/tonelada", "tCO2eq/passageiro").
 
 **Atributos de Resposta**
 
@@ -30,7 +28,21 @@ A solicitação também retornará a unidade que a solicitação de cálculo uti
 ### Exemplo de Requisição
 
 ```javascript
-curl -X GET 'https://api-calculators.carbonext.com.br/v1/calculators/types'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/calculators/types',
+  headers: { }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Exemplo de Resposta
@@ -63,15 +75,29 @@ curl -X GET 'https://api-calculators.carbonext.com.br/v1/calculators/types'
 ## Aeroportos [GET]
 
 ```md title="BASE URL"
-https://api-calculators.carbonext.com.br/v1/calculators/airports
+https://api-b2b-hml.carbonext.com.br/v1/calculators/airports
 ```
 
-Esta requisição retorna um array de Aeroportos.
+Esta requisição retorna uma lista de Aeroportos.
 
 ### Exemplo de Requisição
 
 ```javascript
-curl -X GET 'https://api-calculators.carbonext.com.br/v1/calculators/airports'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/calculators/airports',
+  headers: { }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Exemplo de Resposta
@@ -144,7 +170,7 @@ curl -X GET 'https://api-calculators.carbonext.com.br/v1/calculators/airports'
 https://api-calculators.carbonext.com.br/v1/calculators/calculate
 ```
 
-Esta requisição retorna a quantidade de tCO2eq que a entrega ou transporte emitirá, com base em uma determinada distância.
+Esta requisição retorna a quantidade de tCO2eq que a entrega ou transporte emitirá, com base em uma determinada distância e o transporte.
 
 **Parâmetros de Requisição**
 
@@ -163,12 +189,28 @@ Esta requisição retorna a quantidade de tCO2eq que a entrega ou transporte emi
 ### Exemplo de Requisição
 
 ```javascript
-curl -X POST 'https://api-calculators.carbonext.com.br/v1/calculators/calculate' \
-    -H 'Content-Type: application/json' \
---data-raw '{
-    "type": 0,
-    "distance": 100000
-}'
+var axios = require('axios');
+var data = JSON.stringify({
+  "type": 0,
+  "distance": 100000
+});
+
+var config = {
+  method: 'post',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/calculators/calculate',
+  headers: { 
+    'Content-Type': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Exemplo de Resposta
@@ -183,7 +225,7 @@ curl -X POST 'https://api-calculators.carbonext.com.br/v1/calculators/calculate'
 ## Calcular Emissão de Transporte por Código [POST]
 
 ```md title="BASE URL"
-https://api-calculators.carbonext.com.br/v1/calculators/calculate
+`https://api-b2b-hml.carbonext.com.br/v1/calculators/calculate`
 ```
 
 Este endpoint calcula a quantidade de tCO2eq emitida ao viajar entre dois locais, por exemplo, CEPs para tipos de transporte rodoviário (somente CEPs brasileiros são suportados no momento) ou códigos de aeroporto para tipo de transporte aéreo.
@@ -207,14 +249,30 @@ Este endpoint calcula a quantidade de tCO2eq emitida ao viajar entre dois locais
 ### Exemplo de Requisição
 
 ```javascript
-curl -X POST 'https://api-calculators.carbonext.com.br/v1/calculators/calculate' \
-    -H 'Content-Type: application/json' \
---data-raw '{
-    "type": 0,
-    "originCode": "01526-000",
-    "destCode": "66060425",
-    "unitValue": 20000
-}'
+var axios = require('axios');
+var data = JSON.stringify({
+  "type": 0,
+  "originCode": "01526-000",
+  "destCode": "66060425",
+  "unitValue": 20000
+});
+
+var config = {
+  method: 'post',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/calculators/calculate',
+  headers: { 
+    'Content-Type': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Exemplo de Resposta
