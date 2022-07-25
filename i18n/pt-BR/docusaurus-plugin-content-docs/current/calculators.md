@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Calculadoras
 
-Nossa API calcula a quantidade de tCO2eq emitida por diferentes formas de transporte, bem como o preço para compensar essas emissões.
+Nossa API calcula a quantidade de tCO2eq emitida por diferentes formas de transporte.
 
 ## Tipos [GET]
 

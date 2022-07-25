@@ -7,9 +7,9 @@ custom_edit_url: null
 
 ## Step 1 - Acquiring the Credentials
 
-The following procedure is equivalent to the act of typing your username and password on the website that generates a certificate and access to your data, in the same way that integration with your system will be connected to authentication and no endpoint will respond without using the **token* * .
+Access to API endpoints is linked to authentication and does not respond without using the **token**, so you first need to create a user and generate the certificate for accessing your API.
 
-To generate your credentials and perform queries in our API, it is necessary to buy at least one credit, for the purpose of testing the application we will use the approval environment to:
+For testing purposes with the application, we will use the approval environment to:
 - create your user;
 - register your company;
 - generate your purchase with a credit card number without authentication in this environment.
@@ -24,7 +24,7 @@ Then access [https://b2b-hml.carbonext.com.br/signup](https://b2b-hml.carbonext.
 
 :::tip generated keys
 
-Congratulations, you've just generated your `client_id` and `client_secret`, save them in a safe place as they will only be displayed once and will be used to authorize access by your API.
+Congratulations, you've just generated your `client_id` and `client_secret` that will be used in the integration, save them in a safe place as they will only be displayed once and will be used to authorize access by your API (`M2M`) shortly thereafter.
 
 :::
 
@@ -44,11 +44,9 @@ In **Body > x-www-form-urlencoded** add the keys and their corresponding values 
 var axios = require('axios');
 var qs = require('qs');
 var data = qs.stringify({
-  'grant_type': 'password',
-  'username': 'seuemail@email.com.br',
-  'password': 's#nhaSecret1',
-  'scope': 'roles',
-  'client_id': 'cbx-b2b-frontend' 
+  'client_id': 'cbx_b2b_3fe7cbb3-212b-4591-acb3-009ca9e57ff7',
+  'client_secret': '7beb0588-edb3-44f4-bbfc-9779cd5c9dbf',
+  'grant_type': 'client_credentials' 
 });
 var config = {
   method: 'post',
@@ -76,11 +74,9 @@ When sending the request, we will return the `access_token` that will allow us t
 {
   "access_token": "kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI",
   "expires_in": 36000,
-  "refresh_expires_in": 1800,
-  "refresh_token": "kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2",
+  "refresh_expires_in": 0,
   "token_type": "Bearer",
   "not-before-policy": 0,
-  "session_state": "9cdc7608-91dd-4319-b677-e755d5b0dde3",
   "scope": "profile email roles"
 }
 ```

@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Preço do VCU
 
-Vamos ver como consultar o preço do VCU (Verified Carbon Unity).
+Endpoit para consultar o preço do VCU (Verified Carbon Unity).
 
 ## Preço do VCU [GET]
 

@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Calculators
 
-Our API calculates the amount of tCO2eq emitted by different types of transport, as well as the price to offset these emissions.
+Our API calculates the amount of tCO2eq emitted by different types of transport.
 
 ## Types [GET]
 

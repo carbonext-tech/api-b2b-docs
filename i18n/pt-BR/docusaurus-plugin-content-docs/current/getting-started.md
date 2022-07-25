@@ -7,9 +7,9 @@ custom_edit_url: null
 
 ## Passo 1 - Adquirindo as Credenciais
 
-O procedimento a seguir equivale ao ato de digitar seu usuário e senha no site que gera um certificado e permite acesso aos seus dados, da mesma forma a integração com seu sistema estará ligada a autenticação e nenhum endpoint responderá sem o uso do **token**.
+O acesso aos endpoints da API está ligado à autenticação e não responde sem o uso do **token**, portanto é preciso que primeiro você crie um usuário e gere o certificado para acesso da sua API.
 
-Para gerar suas credenciais e realizar consultas em nossa API, é necessário comprar pelo menos um crédito, para efeito de testes com a aplicação usaremos o ambiente de homologação para:
+Para efeito de testes com a aplicação, usaremos o ambiente de homologação para:
 - criar seu usuário;
 - cadastrar sua empresa;
 - gerar sua compra com uma numeração de cartão de crédito sem autenticação nesse ambiente.
@@ -24,7 +24,7 @@ Então acesse [https://b2b-hml.carbonext.com.br/signup](https://b2b-hml.carbonex
 
 :::tip chaves geradas
 
-Parabéns, você acabou de gerar seu `client_id` e `client_secret`, salve-os em um local seguro, pois eles serão exibidos apenas uma vez e serão usados para autorizar o acesso pela sua API (`M2M`) logo em seguida.
+Parabéns, você acabou de gerar seu `client_id` e `client_secret` que serão usados na integração, salve-os em um local seguro, pois eles serão exibidos apenas uma vez e serão usados para autorizar o acesso pela sua API (`M2M`) logo em seguida.
 
 ::: 
 
@@ -44,11 +44,9 @@ Em **Body > x-www-form-urlencoded** adicione as chaves e seus valores correspond
 var axios = require('axios');
 var qs = require('qs');
 var data = qs.stringify({
-  'grant_type': 'password',
-  'username': 'seuemail@email.com.br',
-  'password': 's#nhaSecret1',
-  'scope': 'roles',
-  'client_id': 'cbx-b2b-frontend' 
+  'client_id': 'cbx_b2b_3fe7cbb3-212b-4591-acb3-009ca9e57ff7',
+  'client_secret': '7beb0588-edb3-44f4-bbfc-9779cd5c9dbf',
+  'grant_type': 'client_credentials' 
 });
 var config = {
   method: 'post',
@@ -74,14 +72,12 @@ Ao enviar a requisição, teremos como retorno o `access_token` que permitirá i
 
 ```json
 {
-  "access_token": "kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI",
-  "expires_in": 36000,
-  "refresh_expires_in": 1800,
-  "refresh_token": "kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2",
-  "token_type": "Bearer",
-  "not-before-policy": 0,
-  "session_state": "9cdc7608-91dd-4319-b677-e755d5b0dde3",
-  "scope": "profile email roles"
+    "access_token": "kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI",
+    "expires_in": 36000,
+    "refresh_expires_in": 0,
+    "token_type": "Bearer",
+    "not-before-policy": 0,
+    "scope": "profile email roles"
 }
 ```
 

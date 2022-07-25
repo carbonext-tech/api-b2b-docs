@@ -7,13 +7,13 @@ custom_edit_url: null
 
 Our B2B API was developed to bring companies closer to our cause of protecting and preserving forests.
 
-We trade VCUs (Verified Carbon Units), whose unit represents 1 ton of carbon that is no longer emitted into the atmosphere (tCO2eq), verified by VERRA and retired on behalf of the buyer.
+We trade VCUs (Verified Carbon Units), whose unit represents 1 ton of carbon that is no longer emitted into the atmosphere (tCO2eq), are verified by [VERRA](https://verra.org) and retired on behalf of the buyer.
 
 Purchases can be made as follows:
 - **prepayment** in this model, the registration on the website of your VCUs units must be acquired;
-- **postpaid** after contact and approval from our commercial department, contact our team at e-mail [relacionamento@carbonext.com.br](mailto:suporte@carbonext.com.br) to help us understand your needs.
+- **postpaid** after approval by our commercial department, please contact us by email [relacionario@carbonext.com.br](mailto:relacionamento@carbonext.com.br) to help us understand your needs.
 
-In both models, purchases can be divided into orders according to their need for carbon emission amortization.
+In both models, purchases can be divided into orders according to your neutralization needs.
 
 In the API you will find resources that allow you to calculate carbon emissions, consult the VCU price, buy credits and place orders for consumption.
 

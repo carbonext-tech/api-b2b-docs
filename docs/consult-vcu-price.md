@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # VCU Price
 
-Let's see how to query the price of the VCU (Verified Carbon Unity).
+Endpoint to consult the price of the VCU (Verified Carbon Unit).
 
 ## VCU Price [GET]
 

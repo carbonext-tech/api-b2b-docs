@@ -57,7 +57,7 @@ var data = JSON.stringify({
 
 var config = {
   method: 'post',
-  url: 'https://api-b2b-dev.carbonext.com.br/v1/users',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/users',
   headers: { 
     'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI',
     'Content-Type': 'application/json'
@@ -297,7 +297,7 @@ var data = '';
 
 var config = {
   method: 'delete',
-  url: 'https://api-b2b-dev.carbonext.com.br/v1/users/161429f6-a6e6-4583-8a5e-f55784b10c63',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/users/161429f6-a6e6-4583-8a5e-f55784b10c63',
   headers: { 
     'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI',
   },
