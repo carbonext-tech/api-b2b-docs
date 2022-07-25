@@ -5,15 +5,15 @@ custom_edit_url: null
 
 # Permission List
 
-Request to get the list of permissions that define what the user interacts with, edits, adds, or removes from the API.
+Our API works with access permissions that define user interactions like edit, add or remove, this endpoint returns a paginated list of these permissions.
 
 ## Permission List [GET]
 
 ```md title="BASE URL"
-https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20
+https://api-b2b-hml.carbonext.com.br/v1/permissions?page=1&page-size=20
 ```
 
-This request returns a paginated list with all permissions available. These permissions can be attached to users and/or customer_applications (keys).
+This request returns a paginated list with all available permissions. These permissions can be attached to users and/or customer_applications (API keys).
 
 **Permission List**
 
@@ -40,14 +40,59 @@ This request returns a paginated list with all permissions available. These perm
 ### Example Request
 
 ```javascript
-curl -X GET 'https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20' \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer {token}'
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://api-b2b-hml.carbonext.com.br/v1/permissions?page=1&page-size=20',
+  headers: { 
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI'
+  }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 ```
 
 ### Example Response
 
 ```json
+
+[
+    {
+        "id": "c56452df-18fe-474b-9cab-82080af3e902",
+        "name": "users_write",
+        "description": "Criar/Remover usuários",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "CO2FREE",
+        "attributes": null
+    },
+    {
+        "id": "497efb5a-25eb-434f-9a2a-2e3aa6b2e6e1",
+        "name": "certificates_read",
+        "description": "Visualizar certificados",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "CO2FREE",
+        "attributes": null
+    },
+    {
+        "id": "4f3ca574-0b89-4a92-83fa-794edcad6b76",
+        "name": "customer_applications_write",
+        "description": "Criar/Remover Chaves de API",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "CO2FREE",
+        "attributes": null
+    }
+]
+/* TODO: não retorna com "items": {}
 {
   "items": [
     {
@@ -112,6 +157,7 @@ curl -X GET 'https://api-b2b.carbonext.com.br/v1/permissions?page=1&page-size=20
   "hasPreviousPage": false,
   "hasNextPage": false
 }
+*/
 ```
 
 ```md title="PARAMS"
