@@ -5,30 +5,7 @@ custom_edit_url: null
 
 # Integrating
 
-## Step 1 - Acquiring the Credentials
-
-The following procedure is equivalent to the act of typing your username and password on the website and generating a certificate that allows access to your data, in the same way the integration with your system will be linked to authentication and no endpoint will respond without using the **token* *.
-
-For testing purposes with the application, we will use the approval environment to:
-- create your user;
-- register your company;
-- generate your purchase with a credit card number without authentication in this environment.
-
-Then access [https://b2b-hml.carbonext.com.br/signup](https://b2b-hml.carbonext.com.br/signup).
-
-- Fill in all fields;
-- Click on **Register and continue**;
-- Fill in the card with the number `4242 4242 4242 4242` with any **CVC** and any future **expiration date**;
-- Add the number of **VCUs** you want to buy;
-- Click on **Buy and Continue**.
-
-:::tip generated keys
-
-Congratulations, you've just generated your `client_id` and `client_secret` that will be used in the integration, save them in a safe place as they will only be displayed once and will be used to authorize access by your API (`M2M`) shortly thereafter.
-
-:::
-
-## Step 2 - Acquiring the Access Token
+## Step 1 - Acquiring the Access Token
 
 Using your endpoint testing software, create a request with the **POST** method and add the following approval URL to the API:
 
@@ -38,7 +15,7 @@ https://auth-hml.carbonext.com.br/auth/realms/co2free/protocol/openid-connect/to
 
 In **Body > x-www-form-urlencoded** add the keys and their corresponding values following the request example below:
 
-### Sample Request
+### Exemple Request
 
 ```javascript
 var axios = require('axios');
@@ -81,7 +58,7 @@ When sending the request, we will return the `access_token` that will allow us t
 }
 ```
 
-## Step 3 - Querying the VCU Price
+## Step 2 - Querying the VCU Price
 
 Now that we have the necessary authorization, let's check the price of the VCU, create a request with the GET method and add the following URL:
 
@@ -124,7 +101,7 @@ axios(config)
 }
 ```
 
-## Step 4 - Creating an Order to Buy VCUs
+## Step 3 - Creating an Order to Buy VCUs
 
 The time has come to place the first order, it is now that the amount of VCUs necessary to neutralize your consumption in the desired period will be effected, [calculate here](https://api-docs.carbonext.com.br/pt-BR/ docs/calculators), create a new request with the POST method and add the URL:
 
@@ -206,7 +183,7 @@ axios(config)
 }
 ```
 
-## Step 5 - Checking your Current Balance
+## Step 4 - Checking your Current Balance
 
 Now, you can check your updated balance, for that create a new request with the GET method and add the following URL.
 
