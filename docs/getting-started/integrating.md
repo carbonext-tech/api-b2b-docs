@@ -7,7 +7,7 @@ custom_edit_url: null
 
 ## Step 1 - Acquiring the Credentials
 
-Access to API endpoints is linked to authentication and does not respond without using the **token**, so you first need to create a user and generate the certificate for accessing your API.
+The following procedure is equivalent to the act of typing your username and password on the website and generating a certificate that allows access to your data, in the same way the integration with your system will be linked to authentication and no endpoint will respond without using the **token* *.
 
 For testing purposes with the application, we will use the approval environment to:
 - create your user;
