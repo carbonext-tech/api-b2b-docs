@@ -17,8 +17,8 @@ Em ambos modelos as compras podem ser fracionadas em pedidos de acordo com sua n
 
 Na API você encontrará recursos que permitem calcular a emissão de carbono, consultar o preço da VCU, comprar créditos e efetuar os pedidos de acordo com seu consumo.
 
-Todos os endponts retornam:
-- respostas em formato JSON;
+Todos os endponts:
+- retornam respostas em formato JSON;
 - usam códigos de resposta HTTP padrão;
 - além de `OAUTH 2.0` em conjunto com `OpenID` para autorização e autenticação, garantindo as melhores práticas de segurança na geração de **tokens de acesso** para proteger os seus créditos adquiridos.
 
