@@ -7,7 +7,7 @@ custom_edit_url: null
 
 ## Acquiring Credentials
 
-Access to API endpoints is linked to authentication and does not respond without using the **token**, so you first need to create a user and generate the certificate for accessing your API.
+The access to API endpoints is linked to authentication and does not respond without using the **token**, so you first need to create a user and generate the certificate for accessing your API.
 
 For the purpose of testing the application, we will use the prepaid payment method in the approval environment to:
 - create your user;
