@@ -3,6 +3,10 @@
     "message": "Next",
     "description": "The label for version current"
   },
+  "sidebar.tutorialSidebar.category.Getting Started": {
+    "message": "Vamos Começar",
+    "description": "The label for category Getting Starteds in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.Core Concepts": {
     "message": "Conceitos Básicos",
     "description": "The label for category Core Concepts in sidebar tutorialSidebar"

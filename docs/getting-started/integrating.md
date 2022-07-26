@@ -3,7 +3,7 @@ sidebar_position: 2
 custom_edit_url: null
 ---
 
-# Getting Started
+# Integrating
 
 ## Step 1 - Acquiring the Credentials
 

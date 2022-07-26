@@ -3,32 +3,9 @@ sidebar_position: 2
 custom_edit_url: null
 ---
 
-# Vamos Começar
+# Integrando
 
-## Passo 1 - Adquirindo as Credenciais
-
-O acesso aos endpoints da API está ligado à autenticação e não responde sem o uso do **token**, portanto é preciso que primeiro você crie um usuário e gere o certificado para acesso da sua API.
-
-Para efeito de testes com a aplicação, usaremos o ambiente de homologação para:
-- criar seu usuário;
-- cadastrar sua empresa;
-- gerar sua compra com uma numeração de cartão de crédito sem autenticação nesse ambiente.
-
-Então acesse [https://b2b-hml.carbonext.com.br/signup](https://b2b-hml.carbonext.com.br/signup).
-
-- Preencha todos os campos;
-- Clique em **Cadastrar e continuar**;
-- Preencha o cartão com o número `4242 4242 4242 4242` com qualquer **CVC** e qualquer **data de validade** futura;
-- Adicione o número de **VCUs** que você deseja comprar;
-- Clique em **Comprar e continuar**.
-
-:::tip chaves geradas
-
-Parabéns, você acabou de gerar seu `client_id` e `client_secret` que serão usados na integração, salve-os em um local seguro, pois eles serão exibidos apenas uma vez e serão usados para autorizar o acesso pela sua API (`M2M`) logo em seguida.
-
-::: 
-
-## Passo 2 - Adquirindo o Token de Acesso
+## Passo 1 - Adquirindo o Token de Acesso
 
 Usando seu software de testes de endpoint, crie uma requisição com o método **POST** e adicione a seguinte URL de homologação na API:
 
@@ -81,7 +58,7 @@ Ao enviar a requisição, teremos como retorno o `access_token` que permitirá i
 }
 ```
 
-## Passo 3 - Consultando o Preço do VCU
+## Passo 2 - Consultando o Preço do VCU
 
 Agora que temos a autorização necessária vamos consultar o preço da VCU, crie uma requisição com o método GET e adicione a seguinte URL:
 
@@ -124,7 +101,7 @@ axios(config)
 }
 ```
 
-## Passo 4 - Criando um Pedido para Comprar VCUs
+## Passo 3 - Criando um Pedido para Comprar VCUs
 
 Chegou a hora de fazer o primeiro pedido, é agora que será efetivada a quantidade de VCUs necessárias para neutralizar seu consumo no período desejado, [calcule aqui](https://api-docs.carbonext.com.br/pt-BR/docs/calculators), crie uma nova requisição com o método POST e adicione a URL:
 
@@ -206,7 +183,7 @@ axios(config)
 }
 ```
 
-## Passo 5 - Consultando seu Saldo Atual
+## Passo 4 - Consultando seu Saldo Atual
 
 Agora, você pode consultar o seu saldo atualizado, para isso crie uma nova requisição com o método GET e adicione a seguinte URL.
 
