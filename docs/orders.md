@@ -51,7 +51,7 @@ var data = JSON.stringify({
   "vcuAmount": 0.02,
   "targetCurrency": "BRL",
   "certificateRecipientInfo": {
-    "name": "Danilo 50",
+    "name": "Example First",
     "email": "example@email.com",
     "taxId": "000.000.000-00"
   }
@@ -93,7 +93,7 @@ axios(config)
   "metaData": null,
   "retireForRecipient": false,
   "certificateRecipientInfo": {
-    "name": "Danilo 50",
+    "name": "Example First",
     "email": "example@email.com",
     "taxId": "000.000.000-00"
   }
@@ -155,7 +155,7 @@ axios(config)
       "metaData": null,
       "retireForRecipient": false,
       "certificateRecipientInfo": {
-        "name": "Danilo 50",
+        "name": "Example First",
         "email": "example@email.com",
         "taxId": "000.000.000-00"
       },
@@ -176,7 +176,7 @@ axios(config)
       "metaData": null,
       "retireForRecipient": false,
       "certificateRecipientInfo": {
-        "name": "Danilo 50",
+        "name": "Example First",
         "email": "example@email.com",
         "taxId": "000.000.000-00"
       },
@@ -258,7 +258,7 @@ axios(config)
   "metaData": null,
   "retireForRecipient": false,
   "certificateRecipientInfo": {
-    "name": "Danilo 50",
+    "name": "Example First",
     "email": "example@email.com",
     "taxId": "000.000.000-00"
   }
@@ -323,7 +323,7 @@ axios(config)
   "metaData": null,
   "retireForRecipient": false,
   "certificateRecipientInfo": {
-    "name": "Danilo 50",
+    "name": "Example First",
     "email": "example@email.com",
     "taxId": "000.000.000-00"
   }
