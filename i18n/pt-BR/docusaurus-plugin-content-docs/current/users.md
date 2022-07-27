@@ -82,23 +82,32 @@ axios(config)
   "isEmailVerified": false,
   "permissions": [
     {
-      "id": "f15cbe98-c53f-4042-b952-be7a39783a4a",
-      "name": "CustomerApplication - Read",
-      "key": "customerApplication_read",
-      "description": null
+        "id": "781d50ae-ab86-4988-8d39-48dca58da6a6",
+        "key": "customer_applications_read",
+        "description": null,
+        "composite": true,
+        "clientRole": false,
+        "containerId": "CO2FREE",
+        "attributes": null
     },
     {
-      "id": "2158a42d-90a5-4f9e-9346-e81f28a822d1",
-      "name": "CustomerApplication - Write",
-      "key": "customerApplication_write",
-      "description": null
+        "id": "781d50ae-ab86-4988-8d39-48dca58da6a6",
+        "key": "customer_applications_write",
+        "description": null,
+        "composite": true,
+        "clientRole": false,
+        "containerId": "CO2FREE",
+        "attributes": null
     },
     {
-      "id": "53dfaef6-125d-43ac-92de-a03e49c66d70",
-      "name": "Certificates - Read",
-      "key": "certificates_read",
-      "description": null
-    }
+        "id": "781d50ae-ab86-4988-8d39-48dca58da6a6",
+        "key": "certificates_read",
+        "description": null,
+        "composite": true,
+        "clientRole": false,
+        "containerId": "CO2FREE",
+        "attributes": null
+    },
   ]
 }
 ```
@@ -152,16 +161,13 @@ axios(config)
       "isEmailVerified": false,
       "permissions": [
         {
-          "id": "2158a42d-90a5-4f9e-9346-e81f28a822d1",
-          "name": "CustomerApplication - Write",
-          "key": "customerApplication_write",
-          "description": null
-        },
-        {
-          "id": "53dfaef6-125d-43ac-92de-a03e49c66d70",
-          "name": "Certificates - Read",
-          "key": "certificates_read",
-          "description": null
+            "id": "781d50ae-ab86-4988-8d39-48dca58da6a6",
+            "key": "customer_applications_read",
+            "description": null,
+            "composite": true,
+            "clientRole": false,
+            "containerId": "CO2FREE",
+            "attributes": null
         }
       ]
     },
@@ -172,10 +178,13 @@ axios(config)
       "isEmailVerified": false,
       "permissions": [
         {
-          "id": "f15cbe98-c53f-4042-b952-be7a39783a4a",
-          "name": "CustomerApplication - Read",
-          "key": "customerApplication_read",
-          "description": null
+            "id": "781d50ae-ab86-4988-8d39-48dca58da6a6",
+            "key": "customer_applications_read",
+            "description": null,
+            "composite": true,
+            "clientRole": false,
+            "containerId": "CO2FREE",
+            "attributes": null
         }
       ]
     }

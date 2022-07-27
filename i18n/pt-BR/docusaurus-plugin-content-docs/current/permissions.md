@@ -21,8 +21,8 @@ Esta requisição retorna uma lista paginada de todas as permissões disponívei
 | ------------------------- | ------------------------------------- |
 | orders_read               | Somente leitura de Pedidos            |
 | orders_write              | Adicionar, editar ou remover pedidos  |
-| customerApplication_read  | Somente leitura de Clientes           |
-| customerApplication_write | Adicionar, editar ou remover clientes |
+| customer_applications_read  | Somente leitura de Clientes           |
+| customer_applications_write | Adicionar, editar ou remover clientes |
 | financial_write           | Adicionar faturas                     |
 | financial_read            | Somente leitura do Financeiro         |
 | users_write               | Adicionar, editar ou remover usuários |

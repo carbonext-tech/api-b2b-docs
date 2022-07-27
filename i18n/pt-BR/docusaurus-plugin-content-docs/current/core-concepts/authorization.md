@@ -171,8 +171,8 @@ curl -X GET 'https://auth.carbonext.com.br/connect/userinfo' \
   "customerLegalName": "Carbon Teste",
   "permissions": [
     "certificates_read",
-    "customerApplication_read",
-    "customerApplication_write",
+    "customer_applications_read",
+    "customer_applications_write",
     "financial_read",
     "financial_write",
     "orders_read",
