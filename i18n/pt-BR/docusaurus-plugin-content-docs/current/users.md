@@ -20,7 +20,6 @@ Esta requisição cria um novo usuário.
 | Atributos    | Descrição                                                        |
 | ------------ | ---------------------------------------------------------------- |
 | email        | E-mail do usuário                                                |
-| userPassword | Senha do usuário                                                 |
 | name         | Nome do usuário                                                  |
 | permissions  | Um array de string que contém as chaves de permissões do usuário |
 
@@ -40,7 +39,6 @@ Esta requisição cria um novo usuário.
 var axios = require('axios');
 var data = JSON.stringify({
   "email": "userteste@email.com",
-  "userPassword": "12345678",
   "name": "Teste",
   "permissions": [
     {
