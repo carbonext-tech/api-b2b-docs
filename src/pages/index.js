@@ -35,7 +35,7 @@ function HomepageHeader() {
         <div className={styles.wrapper}>
           <p className={styles.description}>
             <Translate>
-              Using our APIs ecossystem you can offset carbon emissions from apps, operations and products. Giving you the possibility to offer solutions that
+              Using our APIs ecossystem you can offset greenhouse gases emissions from apps, operations and products. Giving you the possibility to offer solutions that
               contribute preserving the Amazon Rainforest, thus mitigating
               climate changes.
             </Translate>

@@ -29,7 +29,7 @@ export const Initialize = () => {
             <Translate>Access our testing environment by</Translate>
             &nbsp;
             <Link
-              to="https://b2b-hml.carbonext.com.br/onboarding/signup"
+              to="https://b2b-hml.carbonext.com.br/signup"
               className={styles.link}
               target="_blank"
               rel="noopener noreferrer"
