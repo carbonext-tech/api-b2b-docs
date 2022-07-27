@@ -61,7 +61,7 @@ var data = JSON.stringify({
   "targetCurrency": "BRL",
   "certificateRecipientInfo": {
     "name": "Danilo 50",
-    "email": "danilo.souza+teste50@carbonext.com.br",
+    "email": "example@email.com",
     "taxId": "000.000.000-00"
   }
 });
@@ -103,7 +103,7 @@ axios(config)
   "retireForRecipient": false,
   "certificateRecipientInfo": {
     "name": "Danilo 50",
-    "email": "danilo.souza+teste50@carbonext.com.br",
+    "email": "example@email.com",
     "taxId": "000.000.000-00"
   }
 }
@@ -166,7 +166,7 @@ axios(config)
       "retireForRecipient": false,
       "certificateRecipientInfo": {
         "name": "Danilo 50",
-        "email": "danilo.souza+teste50@carbonext.com.br",
+        "email": "example@email.com",
         "taxId": "000.000.000-00"
       },
       "invoices": [],
@@ -187,7 +187,7 @@ axios(config)
       "retireForRecipient": false,
       "certificateRecipientInfo": {
         "name": "Danilo 50",
-        "email": "danilo.souza+teste50@carbonext.com.br",
+        "email": "example@email.com",
         "taxId": "000.000.000-00"
       },
       "invoices": [],
@@ -269,7 +269,7 @@ axios(config)
   "retireForRecipient": false,
   "certificateRecipientInfo": {
     "name": "Danilo 50",
-    "email": "danilo.souza+teste50@carbonext.com.br",
+    "email": "example@email.com",
     "taxId": "000.000.000-00"
   }
 }
@@ -334,7 +334,7 @@ axios(config)
   "retireForRecipient": false,
   "certificateRecipientInfo": {
     "name": "Danilo 50",
-    "email": "danilo.souza+teste50@carbonext.com.br",
+    "email": "example@email.com",
     "taxId": "000.000.000-00"
   }
 }
