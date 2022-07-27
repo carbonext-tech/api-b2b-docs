@@ -7,12 +7,12 @@ custom_edit_url: null
 
 ## Adquirindo as Credenciais
 
-O acesso aos endpoints da API está ligado à autenticação e não responde sem o uso do **token**, portanto, é preciso que primeiro você crie um usuário e gere o certificado para acesso por sua API.
+O acesso aos endpoints da API está ligado à autenticação e não responde sem o uso do **token**, portanto, é preciso que primeiro você crie um usuário e gere as credenciais para acesso por sua API.
 
 Para efeito de testes com a aplicação, usaremos o modo de pagamento pré-pago no ambiente de homologação para:
 - criar seu usuário;
 - cadastrar sua empresa;
-- gerar sua compra com uma numeração de cartão de crédito sem autenticação nesse ambiente.
+- gerar sua compra com um de cartão de crédito de teste.
 
 ### Crie o usuário
 
@@ -56,7 +56,7 @@ E clique em `Comprar e continuar`:
 
 ### Credenciais de acesso
 
-Para garantir a segurança dos dados, sua API integrará com a nossa usando o fluxo `client_credentials` `OAuth2`, nesse momento você deverá anotar as credenciais de acesso (`client_id` e `client_secret`), pois o `client_secret` não será reexibido e depois clique em `Continuar`:
+Para garantir a segurança dos dados, sua API integrará com a nossa usando o fluxo `client_credentials` do pardão `OAuth2`, nesse momento você deverá anotar as credenciais de acesso (`client_id` e `client_secret`), pois o `client_secret` não será exibido novamente e depois clique em `Continuar`:
 
 ![Example Site](/img/examples/signing_up_ptBR_06.png)
 
@@ -82,7 +82,7 @@ Você fará um pedido sempre que precisar neutralizar uma quantidade de carbono 
 
 ![Example Site](/img/examples/signing_up_ptBR_10.png)
 
-Preencha a quantidade CO2 consumida no período, [calcule seu consumo](https://b2b-hml.carbonext.com.br/calculators/subscription), escolha a moeda e dê uma descrição e então clique em `SALVAR`.
+Preencha a quantidade CO2 consumida no período, escolha a moeda, dê uma descrição e então clique em `SALVAR`.
 
 ![Example Site](/img/examples/signing_up_ptBR_11.png)
 

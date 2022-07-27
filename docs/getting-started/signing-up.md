@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 custom_edit_url: null
 ---
 
@@ -7,12 +7,12 @@ custom_edit_url: null
 
 ## Acquiring Credentials
 
-The access to API endpoints is tied to authentication access and does not respond without using the **token**, so you first need to call a user and generate the certificate for your API.
+The access to API endpoints is tied to authentication access and does not respond without using the **token**, so you first need to call a user and generate the credentials for your API.
 
 For testing purposes with the application, use the prepaid payment method in the approval environment to:
 - create your user;
 - register your company;
-- generate your purchase with a credit card number without authentication in this environment.
+- generate your purchase with a teste credit card.
 
 ### Create your user
 
@@ -54,7 +54,7 @@ And click `Comprar e continuar`:
 
 ### Access credentials
 
-To ensure data security, your API will integrate with ours using the `client_credentials` `OAuth2` flow, at this point you must write down the access credentials (`client_id` and `client_secret`), as the `client_secret` will not be redisplayed and then click `Continuar`:
+To ensure data security, your API will integrate with ours using the `client_credentials` flow from `OAuth2` standard, at this point you must write down the access credentials (`client_id` and `client_secret`), as the `client_secret` will not be shown again and then click `Continuar`:
 
 ![Example Site](/img/examples/signing_up_06.png)
 
@@ -80,6 +80,6 @@ You will place an order whenever you need to neutralize an amount of carbon in a
 
 ![Example Site](/img/examples/signing_up_10.png)
 
-Fill in the amount of CO2 consumed in the period, [calculate your consumption](https://b2b-hml.carbonext.com.br/calculators/subscription), choose the currency and give a description and then click `SALVAR`.
+Fill in the amount of CO2 consumed in the period, choose the currency, give a description and then click `SALVAR`.
 
 ![Example Site](/img/examples/signing_up_11.png)
