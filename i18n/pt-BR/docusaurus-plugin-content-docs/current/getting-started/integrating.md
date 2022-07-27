@@ -101,9 +101,9 @@ axios(config)
 }
 ```
 
-## Passo 3 - Criando um Pedido para Comprar VCUs
+## Passo 3 - Criando um Pedido de VCUs
 
-Chegou a hora de fazer o primeiro pedido, é agora que será efetivada a quantidade de VCUs necessárias para neutralizar seu consumo no período desejado, [calcule aqui](https://api-docs.carbonext.com.br/pt-BR/docs/calculators), crie uma nova requisição com o método POST e adicione a URL:
+Chegou a hora de fazer o primeiro pedido, é agora que será efetivada a quantidade de VCUs necessárias para neutralizar suas emissões no período desejado, crie uma nova requisição com o método POST e adicione a URL:
 
 ```md title="BASE URL"
 https://api-b2b-hml.carbonext.com.br/v1/orders
@@ -151,35 +151,23 @@ axios(config)
 
 ```json
 {
-  [
-    {
-      "id": "c74de45c-7c6e-4f64-8a1f-271536445abc",
-      "vcuAmount": 1.77935976736,
-      "vcuUnitPrice": 110.00,
-      "totalPrice": 195.7295744096000,
-      "targetCurrency": "BRL",
-      "status": "Billed",
-      "createdAt": "2022-07-12T14:34:17.075459",
-      "notifyCertificateTo": null,
-      "type": "Subscription",
-      "paymentDate": null,
-      "metaData": null,
-      "retireForRecipient": false,
-      "certificateRecipientInfo": {
-        "name": "Empresa First",
-        "email": "ricardo@gmail.com",
-        "taxId": "62.650.503/7304-86"
-      },
-      "invoices": [],
-      "subscriptions": []
-      }
-  ],
-  "pageIndex": 1,
-  "totalPages": 1,
-  "totalCount": 41,
-  "aggregations": null,
-  "hasPreviousPage": false,
-  "hasNextPage": false
+  "id": "c74de45c-7c6e-4f64-8a1f-271536445abc",
+  "vcuAmount": 3,
+  "vcuUnitPrice": 110.00,
+  "totalPrice": 330,
+  "targetCurrency": "BRL",
+  "status": "Paid",
+  "createdAt": "2022-07-12T14:34:17.075459",
+  "notifyCertificateTo": null,
+  "type": "Subscription",
+  "paymentDate": null,
+  "metaData": null,
+  "retireForRecipient": false,
+  "certificateRecipientInfo": {
+    "name": "Empresa First",
+    "email": "ricardo@gmail.com",
+    "taxId": "62.650.503/7304-86"
+  }
 }
 ```
 
