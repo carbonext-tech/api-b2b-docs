@@ -252,7 +252,7 @@ Este endpoint calcula a quantidade de tCO2eq emitida ao viajar entre dois locais
 var axios = require('axios');
 var data = JSON.stringify({
   "type": 0,
-  "originCode": "01526-000",
+  "originCode": "01526000",
   "destCode": "66060425",
   "unitValue": 20000
 });

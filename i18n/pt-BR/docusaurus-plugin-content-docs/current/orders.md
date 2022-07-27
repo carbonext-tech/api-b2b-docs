@@ -297,13 +297,21 @@ Os pedidos também podem ser cancelados em lotes.
 
 ```javascript
 var axios = require('axios');
+var data = JSON.stringify({
+  "ordersIds": [
+    "c99a2da7-ab55-4156-ac4e-d6f3df7d3d28",
+    "815873f3-54d3-4e11-bbbd-05f76aaec3df"
+  ]
+});
 
 var config = {
   method: 'post',
-  url: 'https://api-b2b-hml.carbonext.com.br/v1/orders/4158d5d1-9364-46e6-8d0d-451f528261e7/cancel',
+  url: 'https://api-b2b-dev.carbonext.com.br/v1/orders/cancel',
   headers: { 
-    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI',
-  }
+    'Authorization': 'Bearer kRjvJJpQpwWHoWKi-K_5SO0w0dkAqiO2QudmyoJxlTI', 
+    'Content-Type': 'application/json'
+  },
+  data : data
 };
 
 axios(config)

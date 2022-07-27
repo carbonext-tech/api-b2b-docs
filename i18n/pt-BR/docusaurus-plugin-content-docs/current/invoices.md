@@ -125,7 +125,7 @@ curl -X POST 'https://api-b2b.carbonext.com.br/v1/invoices' \
 ## Faturas [GET]
 
 ```md title="BASE URL"
-https://api-b2b-hml.carbonext.com.br/v1/invoices
+`https://api-b2b-hml.carbonext.com.br/v1/invoices`
 ```
 
 Essa solicitação retorna uma lista paginada de faturas.

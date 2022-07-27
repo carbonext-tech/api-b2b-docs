@@ -111,7 +111,7 @@ Vamos ver quantos filtros podemos utilizar e o que eles significam.
 https://api-b2b-hml.carbonext.com.br/v1/invoices?sort-by=totalVcuAmount_asc&filter-by=totalVcuAmount_ge:30~status_in:Paid-pending
 ```
 
-Vejamos um exemplo prático dos filtros de consulta aplicados a faturas, neste exemplo retornaremos uma lista de faturas filtradas por `totalVcuAmount` e `status`. Para usar mais de um filtro na mesma consulta, eles devem ser separados por til (~).
+Vejamos um exemplo prático dos filtros de consultas aplicados à faturas, neste exemplo retornaremos uma lista de faturas filtradas por `totalVcuAmount` e `status`. Para usar mais de um filtro na mesma consulta, eles devem ser separados por til (~).
 
 A sintaxe do filtro é `?filter-by=filter1:value2~filter2:value2`, já para os filtros com o operador `in`, os valores devem ser separados por hífen - .
 

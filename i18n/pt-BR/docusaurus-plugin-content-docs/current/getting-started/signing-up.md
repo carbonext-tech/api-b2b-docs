@@ -56,7 +56,7 @@ E clique em `Comprar e continuar`:
 
 ### Credenciais de acesso
 
-Para garantir a segurança dos dados, sua API integrará com a nossa usando o fluxo `client_credentials` do pardão `OAuth2`, nesse momento você deverá anotar as credenciais de acesso (`client_id` e `client_secret`), pois o `client_secret` não será exibido novamente e depois clique em `Continuar`:
+Para garantir a segurança dos dados, sua API integrará com a nossa usando o fluxo `client_credentials` do padrão `OAuth2`, nesse momento você deverá anotar as credenciais de acesso (`client_id` e `client_secret`), pois o `client_secret` não será exibido novamente e depois clique em `Continuar`:
 
 ![Example Site](/img/examples/signing_up_ptBR_06.png)
 
