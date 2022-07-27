@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Faturas
 
-As faturas podem ser geradas comprando créditos VCU com cartão de crédito ou faturando pedidos em aberto (não pagos), neste caso, a fatura pode ser paga com boleto bancário (pretendemos aceitar outros tipos de pagamento no futuro).
+As faturas podem ser geradas comprando créditos VCU com cartão de crédito ou faturando pedidos em aberto ("emitidos"), neste caso, a fatura pode ser paga via boleto ou transferência bancária.
 
 <!-- ## Faturas [POST]
 
