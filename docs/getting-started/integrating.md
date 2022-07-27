@@ -165,7 +165,7 @@ axios(config)
   "retireForRecipient": false,
   "certificateRecipientInfo": {
     "name": "Empresa First",
-    "email": "ricardo@gmail.com",
+    "email": "example@email.com",
     "taxId": "62.650.503/7304-86"
   }
 }
