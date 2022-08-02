@@ -21,7 +21,7 @@ This request creates an order.
 | -------------- | --------------------------------------------------- |
 | vcuAmount      | The amount of VCUs assigned to the order            |
 | targetCurrency | The desired currency for the order to be charged in |
-| certificateRecipientInfo | Information of the recipient to whom the certificate will be issued for |
+| certificateRecipientInfo | Information of the person to whom the certificate will be disclosed, if not disclosed with your company data |
 | metaData | String field you can use to write extra information about your order. Up to 500 characters. |
 
 

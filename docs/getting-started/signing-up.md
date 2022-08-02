@@ -80,6 +80,6 @@ You will place an order whenever you need to neutralize an amount of carbon in a
 
 ![Example Site](/img/examples/signing_up_10.png)
 
-Fill in the amount of CO2 consumed in the period, choose the currency, give a description and then click `SALVAR`.
+Fill in the amount of CO2 consumed in the period, choose the currency, give a description and then click `SALVAR`, if you want to generate the certificate for another company or person, fill in the fields "EMITIR CERTIFICADO PARA", "CPF/CNPJ" and "EMAIL", if these fields are empty, the certificate will be issued to the registered company.
 
 ![Example Site](/img/examples/signing_up_11.png)
