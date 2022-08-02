@@ -82,7 +82,7 @@ Você fará um pedido sempre que precisar neutralizar uma quantidade de carbono 
 
 ![Example Site](/img/examples/signing_up_ptBR_10.png)
 
-Preencha a quantidade CO2 consumida no período, escolha a moeda, dê uma descrição e então clique em `SALVAR`.
+Preencha a quantidade CO2 consumida no período, escolha a moeda, dê uma descrição e então clique em `SALVAR`, se quiser gerar o certificado para outra empresa ou pessoa física preencha os campos "EMITIR CERTIFICADO PARA", "CPF/CNPJ" e "EMAIL", se esses campos ficarem vazios o certificado será emitido para a empresa cadastrada.
 
 ![Example Site](/img/examples/signing_up_ptBR_11.png)
 

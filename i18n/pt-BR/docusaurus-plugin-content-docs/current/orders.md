@@ -21,7 +21,7 @@ Esta requisição irá criar um pedido.
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | vcuAmount      | A quantidade de VCUs atribuída ao pedido                                                                                                                            |
 | targetCurrency | A moeda desejada para o pedido a ser cobrado                                                                                                                        |
-| certificateRecipientInfo | Informações da pessoa para quem o certificado será emitido |
+| certificateRecipientInfo | Informações da pessoa para quem o certificado será emitido, se não for preenchido será emitido com dados de sua empresa |
 | metaData       | Informações adicionais do pedido |
 
 | CertificateRecipientInfo      | Descrição                                         |
